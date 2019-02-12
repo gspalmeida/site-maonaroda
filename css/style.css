@@ -1,0 +1,264 @@
+/*CSS PADRAO*/
+#navbar-wrapper{
+  padding-top: 12px!important;
+  padding-bottom: 12px!important;
+}
+.fw-400{
+  font-weight: 400!important;
+}
+.fw-500{
+  font-weight: 500!important;
+}
+.fw-600{
+  font-weight: 600!important;
+}
+.size-1rem{
+  font-size: 1rem!important;
+}
+.size-15rem{
+  font-size: 1.5rem!important;
+}
+.size-2rem{
+  font-size: 2rem!important;
+}
+.size-3rem{
+  font-size: 3rem!important;
+}
+.size-4rem{
+  font-size: 4rem!important;
+}
+.size-5rem{
+  font-size: 5rem!important;
+}
+.height100vh{
+  min-height: 100vh;
+}
+.height90vh{
+  min-height: 90vh;
+}
+.height60vh{
+  min-height: 60vh;
+}
+.height50vh{
+  min-height: 50vh;
+}
+.height30vh{
+  min-height: 30vh;
+}
+.height20vh{
+  min-height: 20vh;
+}
+.height15vh{
+  min-height: 15vh;
+}
+.height10vh{
+  min-height: 10vh;
+}
+.w-30{
+  min-width: 30% !important;
+}
+.hide-section{
+  display: none !important;
+}
+.card-same-height {
+  min-height: 100%;
+}
+@media (max-width: 425px) {
+  .modal-fluid-custom{
+    margin-top: 15% !important;
+    max-width: 95%!important;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .modal-fluid-custom{
+    margin-top: 11% !important;
+    max-width: 95%!important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-fluid-custom{
+    margin-top: 7% !important;
+    max-width: 95%!important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .modal-fluid-custom{
+    margin-top: 5% !important;
+    max-width: 95%!important;
+  }
+}
+@media (min-width: 1026px) and (max-width: 1920px) {
+  .modal-fluid-custom{
+    margin-top: 4% !important;
+    max-width: 95%!important;
+  }
+}
+@media (min-width: 1921px){
+  .modal-fluid-custom{
+    margin-top: 3% !important;
+    max-width: 95%!important;
+  }
+}
+
+/*Cores*/
+.navbar-custom-color{
+  background-color: #ff7200;
+  color: #ffffff !important;
+}
+#navbarSupportedContent .nav-item.active>.nav-link{
+  background-color: #e06501 !important;
+}
+.footer-custom-color{
+  background-color: #0099b2;
+}
+.copyright-custom-color{
+  background-color: rgba(0,0,0,.2);
+}
+.transparencia-laranja{
+  background-color: #ff73005b;
+}
+.btn-azul-escuro{
+  background-color: #007a8e
+}
+.btn-amarelo{
+  background-color: #fee50d;
+  color: #000000;
+}
+
+/*Home-Intro*/
+#home-intro{
+  background-image: url("../assets/bg-home-intro.jpeg");
+  color: #ffffff;
+}
+#home-intro-corpo{
+  padding-bottom: 25vh;
+}
+#home-intro-cta{
+  position: absolute;
+  left: 25%;
+  bottom: 2vh;
+  background-color: #ff7200;
+}
+.embonitador-img{
+  position: absolute;
+  top: 50px;
+  display: block;
+  width: 97%;
+  height: auto;
+}
+.embonitador-cima{
+  z-index: 999;
+}
+/*Home-Como Funciona*/
+#home-comoFunciona-cta{
+  position: relative;
+  left: 25%;
+  bottom: 0;
+  background-color: #ff6f00;
+}
+/*Home-Depoimentos*/
+#home-depoimentos{
+  background-color: #b6f6f3;
+}
+/*Home-Garantia100%*/
+#home-garantia100{
+  color: #ffffff;
+  min-height: 30vh !important;
+}
+/*Home-Serviços*/
+#home-servicos-corpo{
+  padding: 0 10% 0 10%;
+}
+#home-servicos-residencial-cta{
+  position: relative;
+  left: 25%;
+  bottom: 0;
+}
+#home-servicos-comercial-cta{
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+}
+/*Home Afiliados*/
+#home-afiliados{
+  color: #ffffff;
+  min-height: 100% !important;
+}
+#home-afiliados-cta{
+  position: relative;
+  bottom: 0;
+}
+
+/*SERVICOS*/
+#servicos-intro-cta-residencial{
+  bottom: 2vh;
+  background-color: #ff7200;
+}
+#servicos-intro-cta-comercial{
+  bottom: 2vh;
+  background-color: #ff7200;
+}
+
+
+/*MODAL GARANTIA 100%*/
+#btn-coletaLead-modalGarantia100{
+  position: relative;
+  left: 25%;
+  bottom: 0;
+  background-color: #ff7200;
+}
+
+/*Footer*/
+#footer-btn-faq{
+  position: relative;
+  bottom: 5px;
+}
+.faq-item{
+  background-color: #007a8e;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.faq-title{
+  border: 2px solid #FFFFFF;
+  padding: 5px 1px;
+}
+.faq-title.hoverable:hover{
+  box-shadow: 0 16px 28px 0 rgba(0,0,0,.22), 0 25px 55px 0 rgba(0,0,0,.21);
+  transition: all .55s ease-in-out;
+}
+.faq-title i{
+  float: right;
+  position: relative;
+  right: 10px;
+  margin-top: 6px;
+}
+
+
+
+/*CSS DEV*/
+.bgPreenchimento{
+  background-color: #554A26 !important;
+  color: #000000 !important;
+}
+.bgPreenchimento-2{
+  background-color: #0099b2;
+  color: #ffffff;
+}
+.bgPreenchimento-3{
+  cursor: pointer;
+}
+.bgPreenchimento-4{
+  background-color: #0b2e13;
+  color: #ffffff;
+}
+.bgPreenchimento-5{
+  background-color: #0041ad;
+  color: #000000;
+}
+.btnPreenchimento{
+  bottom: 2vh;
+  background-color: #ff7200;
+}
+.faq-title a{
+  color: #ffffff!important;
+}

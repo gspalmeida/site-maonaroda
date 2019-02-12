@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Mão na Roda - Home</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--<link rel="shortcut icon" type="image/png" href="assets/favicon1.png"/>-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<body>
+
+<!-- Navbar-->
+<div data-include="navbar"></div>
+
+<main>
+  <section class="d-flex align-items-center justify-content-center height90vh" id="home-intro">
+    <div class="container-fluid" id="home-intro-corpo">
+      <div class="row">
+        <div class="col-12" id="home-intro-title">
+          <p class="text-center size-2rem fw-500 py-5 mb-0">Deixe que o Mão na Roda traga cores ao seu ambiente!</p>
+        </div>
+      </div>
+      <div class="row height50vh">
+        <div class="col-12 col-lg-3 order-2 order-lg-0 text-center d-flex justify-content-center align-items-center">
+          <div class="home-intro-frases">
+            <p class="lead fw-500 ">Nada de Imprevistos</p>
+            <p class="lead d-none d-lg-block fw-500">Nada de Confusões</p>
+            <p class="lead d-none d-lg-block fw-500">Nada de Atrasos</p>
+            <p class="lead d-none d-lg-block fw-500">Nada de Ficar na Mão!</p>
+            <label for="cortaImagem">Inserir um numero para cortar a imagem</label>
+            <input type="number" value="500" onchange="clipImage(this.value)" id="cortaImagem">
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 order-1 order-lg-1 text-center d-flex justify-content-center align-items-center">
+          <div class="embonitador-wrapper mt-2 w-100">
+            <img src="assets/embonitador-depois.jpg" class="embonitador-img embonitador-baixo" alt="">
+            <img src="assets/embonitador-antes.jpg" class="embonitador-img embonitador-cima"  alt="">
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 order-0 order-lg-2 text-center fw-500 d-flex justify-content-center align-items-center">
+          <div class="home-intro-frases">
+            <p>Pintores profissionais para sua casa ou escritório</p>
+            <p>Prontos para começar em até 48h</p>
+            <p class="d-none d-lg-block">Profissionais Homologados</p>
+            <p class="d-none d-lg-block">Pagamento Parcelado</p>
+            <p class="d-none d-lg-block">Garantia de Satisfação 100%</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh" id="home-intro-cta">Solicite aqui o seu orçamento!</button>
+  </section>
+  <section class="container text-center my-5" id="home-comoFunciona">
+    <h2 class="h1-responsive font-weight-bold my-5">Como Funciona</h2>
+    <div class="row">
+      <div class="col-4">
+        <img src="http://maonaroda.com/img/how-to01.png" alt="">
+        <p class="lead text-center size-15rem fw-500">Descreva seu projeto</p>
+        <p class="lead text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
+        </p>
+      </div>
+      <div class="col-4">
+        <img src="http://maonaroda.com/img/how-to02.png" alt="">
+        <p class="lead text-center size-15rem fw-500">Assine o Contrato</p>
+        <p class="lead text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
+        </p>
+      </div>
+      <div class="col-4">
+        <img src="http://maonaroda.com/img/how-to03.png" alt="">
+        <p class="lead text-center size-15rem fw-600">Aproveite as novas cores</p>
+        <p class="lead text-center fw-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
+        </p>
+      </div>
+      <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh mb-4" id="home-comoFunciona-cta">
+        Quer um serviço de pintura com Garantia de Qualidade 100%?
+        <br> Mão na roda é o lugar ideal para isso!
+      </button>
+    </div>
+  </section>
+  <section class="container-fluid text-center py-5 d-none" id="home-depoimentos">
+      <h2 class="h1-responsive font-weight-bold mb-2">Depoimentos</h2>
+      <div class="row">
+        <div id="multi-item-example" class="carousel testimonial-carousel slide carousel-multi-item mb-5" data-ride="carousel">
+          <div class="controls-top">
+            <a class="btn-floating light-blue darken-4" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            <a class="btn-floating light-blue darken-4" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#multi-item-example" data-slide-to="0" class="active light-blue darken-4"></li>
+            <li data-target="#multi-item-example" data-slide-to="1" class="light-blue darken-4"></li>
+            <li data-target="#multi-item-example" data-slide-to="2" class="light-blue darken-4"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="col-md-4">
+                <div class="testimonial">
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <h4 class="font-weight-bold mt-4">Anna Deynah</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Web Designer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                </div>
+              </div>
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">John Doe</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Web Developer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis
+                    nostrum exercitationem ullam corporis laboriosam.</p>
+                  <!--Review-->
+                  <div class="grey-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                  </div>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Abbey Clark</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Photographer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Quis autem vel eum iure
+                    reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
+                  <!--Review-->
+                  <div class="grey-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="far fa-star"> </i>
+                  </div>
+                </div>
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+
+              <!--Grid column-->
+              <div class="col-md-4">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Blake Dabney</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Web Designer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis
+                    nostrum exercitationem ullam corporis laboriosam.</p>
+                  <!--Review-->
+                  <div class="grey-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star-half-alt"> </i>
+                  </div>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Andrea Clay</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Front-end developer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae.</p>
+                  <!--Review-->
+                  <div class="grey-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                  </div>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(7).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Cami Gosse</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Phtographer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et
+                    iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+                  <!--Review-->
+                  <div class="grey-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="far fa-star"> </i>
+                  </div>
+                </div>
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <div class="carousel-item">
+
+              <!--Grid column-->
+              <div class="col-md-4">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Bobby Haley</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Web Developer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae.</p>
+                </div>
+              </div>
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Elisa Janson</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Marketer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et
+                    iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+                </div>
+              </div>
+              <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="testimonial">
+                  <!--Avatar-->
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle img-fluid">
+                  </div>
+                  <!--Content-->
+                  <h4 class="font-weight-bold mt-4">Rob Jacobs</h4>
+                  <h6 class="blue-text font-weight-bold my-3">Front-end developer</h6>
+                  <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis
+                    nostrum exercitationem ullam corporis laboriosam.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="text-center jarallax d-flex align-items-center" id="home-garantia100" style="background-image: url('assets/bg-home-garantia100.jpeg');">
+    <div class="container-fluid text-center py-4 px-0 px-sm-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="h1-responsive font-weight-bold">
+            Só o Mão na Roda oferece o selo de Garantia 100%
+          </h2>
+        </div>
+      </div>
+      <button data-toggle="modal" data-target="#modalGarantia100" type="button" class="btn-outline-white btn-lg btn-amarelo size-15rem fw-500 w-50 waves-effect waves-light hoverable height10vh" id="home-depoimentos-cta">Saiba Mais!</button>
+    </div>
+  </section>
+  <section class="container-fluid text-center pl-0 height90vh" id="home-servicos">
+    <div class="d-flex align-items-center justify-content-center height90vh" id="home-servicos-corpo">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="h1-responsive font-weight-bold my-5">Serviços</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-5">
+            <div class="card hoverable px-4 pt-4 h-100">
+              <h2 class="h3-responsive font-weight-bold">Residencial</h2>
+              <p class="lead">
+                Explicação sobre residencial, com o que abrange tanto casa
+                quanto ap. Ao clicar, esta tela some e abre uma tela com a
+                explicação um pouco mais detalhada, tanto pra casa quanto
+                pra ap, separado e com botões chamando para a página de
+                serviços e para solicitar orçamento para cada modalidade.
+              </p>
+              <button onclick="trocaSlide('#home-servicos-corpo', '#home-servicos-residencial')" type="button" class="btn btn-lg btn-azul-escuro w-50 waves-effect waves-light hoverable height10vh mb-4" id="home-servicos-residencial-cta">Ver mais Detalhes</button>
+            </div>
+          </div>
+          <div class="col-6 mb-5">
+            <div class="card hoverable px-4 pt-4 h-100">
+              <h2 class="h3-responsive font-weight-bold">Comercial</h2>
+              <p class="lead">
+                Explicação sobre comercial, com o que abrange toda esta
+                categoria de maneira breve. Ao clicar, a tela de serviços
+                some e abre uma tela com a explicação um pouco mais
+                detalhada, e com botões chamando pra página de serviço e
+                para solicitar orçamento.
+              </p>
+              <button onclick="trocaSlide('#home-servicos-corpo', '#home-servicos-comercial')" type="button" class="btn btn-lg btn-azul-escuro w-50 waves-effect waves-light hoverable height10vh mb-4" id="home-servicos-comercial-cta">Ver mais Detalhes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid height90vh hide-section" id="home-servicos-residencial">
+      <div class="row">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
+          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="h1-responsive">Pintura Residencial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
+            <p class="text-center h5-responsive">
+              Texto explicando os serviços para residencial, de maneira
+              detalhada, apresentando um botão para casa e outro para
+              apartamento, onde, ao clicar, abre uma modal explicando as
+              particularidades de cada residencia e com um botão de
+              orçamento.
+            </p>
+            <p class="text-center fw-600 h5-responsive">
+              Mas e ai doido, é casa ou apto?
+            </p>
+            <div class="container-fluid text-center mt-4">
+              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de pintura interna ou externa')">CASA</button>
+              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a calculadora')">APARTAMENTO</button>
+            </div>
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento" onclick="trocaSlide('#home-servicos-residencial', '#home-servicos-comercial')">Na verdade eu queria embonitar minha empresa, e sou burro cliquei no lugar errado!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid height90vh hide-section" id="home-servicos-comercial">
+      <div class="row">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
+          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="h1-responsive">Pintura Comercial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
+            <p class="text-center h5-responsive">
+              Texto explicando os serviços para residencial, de maneira
+              detalhada, apresentando um botão para casa e outro para
+              apartamento, onde, ao clicar, abre uma modal explicando as
+              particularidades de cada residencia e com um botão de
+              orçamento.
+            </p>
+            <p class="text-center fw-600 h5-responsive">
+              Gostou né irmaozinho? Então clica ai em baixo para solicitar um orçamento sem compromisso
+            </p>
+            <div class="container-fluid text-center mt-4">
+              <button type="button" class="btn btn-lg waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de contactForm')">Solicitar Orçamento</button>
+            </div>
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento" onclick="trocaSlide('#home-servicos-comercial', '#home-servicos-residencial')">Na verdade eu queria embonitar minha casa mas eu sou burro cliquei no lugar errado!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-center jarallax" id="home-afiliados" style="background-image: url('assets/bg-home-afiliados.jpeg');">
+    <div class="container-fluid text-center transparencia-laranja py-4 px-0 px-sm-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="h1-responsive font-weight-bold">Trabalhe com a Mão na Roda</h2>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-10">
+          <h2 class="h4-responsive font-weight-bold my-5">
+            Ganhe dinheiro por se afiliar ao Mão na
+            Roda. Seja um pintor homologado ou
+            parceiro indicando nossos serviços.
+          </h2>
+        </div>
+      </div>
+      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable height10vh" id="home-afiliados-cta">Afiliar-se Gratuitamente!</button>
+    </div>
+  </section>
+
+  <section id="modais">
+    <div data-include="modalGarantia100"></div>
+    <div class="modal fade" id="modalVirarAfiliado" tabindex="-1" role="dialog" aria-labelledby="Modal Virar Afiliado" aria-hidden="true">
+      <div class="modal-dialog cascading-modal" role="document">
+        <div class="modal-content">
+          <div class="modal-c-tabs">
+            <ul class="nav nav-tabs md-tabs tabs-2 bgPreenchimento" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tabPintor" role="tab">
+                  <i class="fas fa-user mr-1"></i>
+                  Pintor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tabParceiro" role="tab">
+                  <i class="fas fa-user-plus mr-1"></i>
+                  Parceiro
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tabPintor" role="tabpanel">
+                <div class="modal-body pt-0">
+                  <div class="form-header mt-0 mb-4 bgPreenchimento">
+                    <h3>
+                      <i class="fas fa-envelope"></i>
+                      Ganhe dinheiro com a Mão na Roda
+                    </h3>
+                  </div>
+                  <p class="dark-grey-text text-center">Voce esta a poucos passos de se tornar um pintor parceiro gratuitamente</p>
+                  <p class="dark-grey-text text-center">Preencha os campos abaixo e entraremos em contato para ajustarmos os ajustes</p>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-lock prefix"></i>
+                    <input type="text" id="modalVirarAfiliado-pintor-nome" class="form-control form-control-sm validate">
+                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-nome">Seu Nome</label>
+                  </div>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-lock prefix"></i>
+                    <input type="number" id="modalVirarAfiliado-pintor-telefone" class="form-control form-control-sm validate">
+                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-telefone">Seu Telefone</label>
+                  </div>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-envelope prefix"></i>
+                    <input type="email" id="modalVirarAfiliado-pintor-email" class="form-control form-control-sm validate">
+                    <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-pintor-email">Seu Email</label>
+                  </div>
+                  <div class="form-sm mt-2 d-flex">
+                    <button class="btn bgPreenchimento mr-auto">Enviar</button>
+                    <button type="button" class="btn bgPreenchimento waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabParceiro" role="tabpanel">
+                <div class="modal-body pt-0">
+                  <div class="form-header mt-0 mb-4 bgPreenchimento">
+                    <h3>
+                      <i class="fas fa-envelope"></i>
+                      Ganhe dinheiro com a Mão na Roda
+                    </h3>
+                  </div>
+                  <p class="dark-grey-text text-center">Voce esta a poucos passos de se tornar um parceiro gratuitamente</p>
+                  <p class="dark-grey-text text-center">Preencha os campos abaixo e entraremos em contato para ajustarmos os ajustes</p>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-lock prefix"></i>
+                    <input type="text" id="modalVirarAfiliado-parceiro-nome" class="form-control form-control-sm validate">
+                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-nome">Seu Nome</label>
+                  </div>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-lock prefix"></i>
+                    <input type="number" id="modalVirarAfiliado-parceiro-telefone" class="form-control form-control-sm validate">
+                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-telefone">Seu Número</label>
+                  </div>
+                  <div class="md-form form-sm">
+                    <i class="fas fa-envelope prefix"></i>
+                    <input type="email" id="modalVirarAfiliado-parceiro-email" class="form-control form-control-sm validate">
+                    <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-parceiro-email">Seu Email</label>
+                  </div>
+                  <div class="form-sm mt-2 d-flex">
+                    <button class="btn bgPreenchimento mr-auto">Enviar</button>
+                    <button type="button" class="btn bgPreenchimento waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal FAQ" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bgPreenchimento text-center">
+            <h6 class="text-uppercase mb-0 mx-auto font-weight-bold h4-responsive">Perguntas Frequentes</h6>
+            <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">×</span></button>
+          </div>
+          <div class="modal-body bgPreenchimento-2">
+            <div class="container-fluid">
+              <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-10 text-center pt-4">
+                  <div class="card faq-item hoverable">
+                    <div class="faq-title">
+                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta1" aria-expanded="false"> Pergunta 1 <i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="collapse" id="faq-pergunta1">
+                      <p class="lead my-3 mx-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                        keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card faq-item hoverable">
+                    <div class="faq-title">
+                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta2" aria-expanded="false"> Pergunta 2 <i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="collapse" id="faq-pergunta2">
+                      <p class="lead my-3 mx-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                        keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card faq-item hoverable">
+                    <div class="faq-title">
+                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta3" aria-expanded="false"> Pergunta 3 <i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="collapse" id="faq-pergunta3">
+                      <p class="lead my-3 mx-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                        keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card faq-item hoverable">
+                    <div class="faq-title ">
+                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta4" aria-expanded="false"> Pergunta 4 <i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="collapse" id="faq-pergunta4">
+                      <p class="lead my-3 mx-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                        keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card faq-item hoverable">
+                    <div class="faq-title">
+                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta5" aria-expanded="false"> Pergunta 5 <i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="collapse" id="faq-pergunta5">
+                      <p class="lead my-3 mx-3">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                        keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                      </p>
+                    </div>
+                  </div>
+                  <button data-toggle="modal" data-target="#modalColetaLeadFAQ" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable" id="footer-btn-faq">Fazer uma Pergunta!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bgPreenchimento-2">
+            <button type="button" class="btn bgPreenchimento waves-effect waves-light mx-auto" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade show" id="modalColetaLeadFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal Coleta Lead FAQ">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">TituloDaModal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <p class="text-center">É uma pena que nao respondemos todas as suas duvidas.</p>
+            <p class="text-center">Mas pergunta ai que a gente responde</p>
+            <div class="md-form">
+              <i class="fa fa-user prefix grey-text"></i>
+              <input type="text" id="modalColetaLeadFAQ-nome" class="form-control validate">
+              <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-nome" class="fw-500">Seu Nome</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="email" id="modalColetaLeadFAQ-email" class="form-control validate">
+              <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-email" class="fw-500">Seu email</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="number" id="modalColetaLeadFAQ-telefone" class="form-control validate">
+              <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-telefone" class="fw-500">Seu Número</label>
+            </div>
+            <div class="md-form amber-textarea active-amber-textarea mb-4">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <textarea type="text" id="modalColetaLeadFAQ-pergunta" class="md-textarea form-control" rows="4"></textarea>
+              <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-pergunta" class="fw-500">Digite sua Pergunta</label>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button id="modalColetaLeadFAQ-enviar" class="btn bgPreenchimento waves-effect waves-light mr-auto">Enviar</button>
+            <button id="modalColetaLeadFAQ-fechar" class="btn bgPreenchimento waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer-->
+<div data-include="footer"></div>
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/galileoJS.js"></script>
+<script>
+    // object-fit polyfill run
+    objectFitImages();
+    /* init Jarallax */
+    jarallax(document.querySelectorAll('.jarallax'));
+    jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+        keepImg: true
+    });
+</script>
+
+</body>
+
+</html>
