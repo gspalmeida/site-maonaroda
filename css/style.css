@@ -1,4 +1,7 @@
 /*CSS PADRAO*/
+.btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
+  word-wrap: initial !important;
+}
 #navbar-wrapper{
   padding-top: 12px!important;
   padding-bottom: 12px!important;
@@ -148,9 +151,6 @@
 .bg-color-laranjado{
   background-color: #ff7200;
 }
-.bg-color-verde{
-  background-color: #0b2e13;
-}
 
 /*Home-Intro*/
 #home-intro{
@@ -176,6 +176,7 @@
 /*Home-Depoimentos*/
 #home-depoimentos{
   background-color: #b6f6f3;
+  min-height: 70vh;
 }
 /*Home-Garantia100%*/
 #home-garantia100{
@@ -183,7 +184,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 30vh !important;
+  min-height: 40vh !important;
   color: #ffffff;
 }
 /*Home-Serviços*/
@@ -192,12 +193,12 @@
 }
 #home-servicos-residencial-cta{
   position: relative;
-  left: 25%;
+  left: 0;
   bottom: 0;
 }
 #home-servicos-comercial-cta{
-  position: absolute;
-  left: 25%;
+  position: relative;
+  left: 0;
   bottom: 0;
 }
 /*Home Afiliados*/
@@ -206,7 +207,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 30vh!important;
+  min-height: 40vh!important;
   color: #ffffff;
 }
 #home-afiliados-cta{
@@ -243,6 +244,7 @@
   background-color: #007a8e;
   padding: 0;
   margin-bottom: 1rem;
+  color: #ffffff !important;
 }
 .faq-title{
   border: 2px solid #FFFFFF;
