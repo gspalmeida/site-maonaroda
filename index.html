@@ -13,82 +13,86 @@
 </head>
 <body>
 
+
 <!-- Navbar-->
 <div data-include="navbar"></div>
 
 <main>
-  <section class="d-flex align-items-center justify-content-center height90vh" id="home-intro">
-    <div class="container-fluid" id="home-intro-corpo">
-      <div class="row">
-        <div class="col-12" id="home-intro-title">
-          <p class="text-center size-2rem fw-500 py-5 mb-0">Deixe que o Mão na Roda traga cores ao seu ambiente!</p>
+  <section class="d-flex flex-column height90vh view jarallax" id="home-intro">
+    <div class="container-fluid height70vh" id="home-intro-corpo">
+      <div class="row height10vh">
+        <div class="col-12 d-flex align-items-center justify-content-center pt-4" id="home-intro-title">
+          <p class="text-center size-25rem fw-500 mb-0">Deixe que o Mão na Roda traga cores ao seu ambiente!</p>
         </div>
       </div>
-      <div class="row height50vh">
+      <div class="row height60vh">
         <div class="col-12 col-lg-3 order-2 order-lg-0 text-center d-flex justify-content-center align-items-center">
           <div class="home-intro-frases">
-            <p class="lead fw-500 ">Nada de Imprevistos</p>
-            <p class="lead d-none d-lg-block fw-500">Nada de Confusões</p>
-            <p class="lead d-none d-lg-block fw-500">Nada de Atrasos</p>
+            <p class="lead fw-500 ">Nada de Imprevistos!</p>
+            <p class="lead d-none d-lg-block fw-500">Nada de Confusões!</p>
+            <p class="lead d-none d-lg-block fw-500">Nada de Atrasos!</p>
             <p class="lead d-none d-lg-block fw-500">Nada de Ficar na Mão!</p>
-            <label for="cortaImagem">Inserir um numero para cortar a imagem</label>
-            <input type="number" value="500" onchange="clipImage(this.value)" id="cortaImagem">
           </div>
         </div>
         <div class="col-12 col-lg-6 order-1 order-lg-1 text-center d-flex justify-content-center align-items-center">
-          <div class="embonitador-wrapper mt-2 w-100">
-            <img src="assets/embonitador-depois.jpg" class="embonitador-img embonitador-baixo" alt="">
-            <img src="assets/embonitador-antes.jpg" class="embonitador-img embonitador-cima"  alt="">
+          <div class="embonitador-wrapper h-100 w-100" id="embonitador-wrapper">
+            <img src="assets/embonitador-depois.jpg" class="embonitador-img embonitador-baixo" id="embonitador-bonito" alt="">
+            <img src="assets/embonitador-antes.jpg" class="embonitador-img embonitador-cima"  id="embonitador-feio" alt="">
           </div>
         </div>
         <div class="col-12 col-lg-3 order-0 order-lg-2 text-center fw-500 d-flex justify-content-center align-items-center">
           <div class="home-intro-frases">
-            <p>Pintores profissionais para sua casa ou escritório</p>
-            <p>Prontos para começar em até 48h</p>
-            <p class="d-none d-lg-block">Profissionais Homologados</p>
-            <p class="d-none d-lg-block">Pagamento Parcelado</p>
-            <p class="d-none d-lg-block">Garantia de Satisfação 100%</p>
+            <p class="lead fw-500">Pintores profissionais para sua casa ou escritório</p>
+            <p class="lead fw-500">Prontos para começar em até 48h</p>
+            <p class="lead fw-500 d-none d-lg-block">Profissionais Homologados</p>
+            <p class="lead fw-500 d-none d-lg-block">Pagamento Parcelado</p>
+            <p class="lead fw-500 d-none d-lg-block">Garantia de Satisfação 100%</p>
           </div>
-
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh" id="home-intro-cta">Solicite aqui o seu orçamento!</button>
-  </section>
-  <section class="container text-center my-5" id="home-comoFunciona">
-    <h2 class="h1-responsive font-weight-bold my-5">Como Funciona</h2>
-    <div class="row">
-      <div class="col-4">
-        <img src="http://maonaroda.com/img/how-to01.png" alt="">
-        <p class="lead text-center size-15rem fw-500">Descreva seu projeto</p>
-        <p class="lead text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
-        </p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+          <button onclick="alertar('abre a modal de orçamento')" type="button" data-toggle="modal" data-target="#modalOrcamento" class="btn btn-lg btn-block mb-3 px-2 waves-effect waves-light height10vh btn-laranjado" id="home-intro-cta">Solicite aqui o seu orçamento!</button>
+        </div>
       </div>
-      <div class="col-4">
-        <img src="http://maonaroda.com/img/how-to02.png" alt="">
-        <p class="lead text-center size-15rem fw-500">Assine o Contrato</p>
-        <p class="lead text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
-        </p>
-      </div>
-      <div class="col-4">
-        <img src="http://maonaroda.com/img/how-to03.png" alt="">
-        <p class="lead text-center size-15rem fw-600">Aproveite as novas cores</p>
-        <p class="lead text-center fw-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus.
-        </p>
-      </div>
-      <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh mb-4" id="home-comoFunciona-cta">
-        Quer um serviço de pintura com Garantia de Qualidade 100%?
-        <br> Mão na roda é o lugar ideal para isso!
-      </button>
     </div>
   </section>
-  <section class="container-fluid text-center py-5 d-none" id="home-depoimentos">
+  <section class="container-fluid text-center mt-5" id="home-comoFunciona">
+    <h2 class="h1-responsive font-weight-bold my-5">Como Funciona</h2>
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-4 mx-auto">
+        <img src="assets/icon-comoFunciona-1.png" alt="">
+        <p class="lead text-center size-15rem fw-500">Descreva seu projeto</p>
+        <p class="lead text-center">
+          Entre em contato por um de nossos canais e diga-nos o que você planeja, e rápidamente lhe encaminharemos um orçamento.
+        </p>
+      </div>
+      <div class="col-12 col-md-10 col-lg-4 mx-auto">
+        <img src="assets/icon-comoFunciona-2.png" alt="">
+        <p class="lead text-center size-15rem fw-500">Assine o Contrato</p>
+        <p class="lead text-center">
+          Todos os nossos serviços possuem um contrato assinado e contam com um selo de garantia 100%.
+        </p>
+      </div>
+      <div class="col-12 col-md-10 col-lg-4 mx-auto">
+        <img src="assets/icon-comoFunciona-3.png" alt="">
+        <p class="lead text-center size-15rem fw-500">Aproveite as novas cores</p>
+        <p class="lead text-center">
+          Em poucos dias estará tudo pronto! Cores renovadas, zero estresse, zero dor de cabeça e serviço nota dez.
+        </p>
+      </div>
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <button onclick="alertar('abre a modal de orçamento')"  data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-lg btn-block px-2 mb-4 waves-effect waves-light height10vh btn-laranjado">
+          <p class="mb-0 pt-2">Quer um serviço de pintura com Garantia de Qualidade 100%?</p>
+          <p class="size-13em fw-500 py-2 mb-0">Conte com o Mão na Roda!</p>
+        </button>
+      </div>
+
+    </div>
+  </section>
+  <section class="container-fluid text-center py-5" id="home-depoimentos">
       <h2 class="h1-responsive font-weight-bold mb-2">Depoimentos</h2>
       <div class="row">
         <div id="multi-item-example" class="carousel testimonial-carousel slide carousel-multi-item mb-5" data-ride="carousel">
@@ -286,7 +290,7 @@
         </div>
       </div>
     </section>
-  <section class="text-center jarallax d-flex align-items-center" id="home-garantia100" style="background-image: url('assets/bg-home-garantia100.jpeg');">
+  <section class="text-center jarallax d-flex align-items-center" id="home-garantia100">
     <div class="container-fluid text-center py-4 px-0 px-sm-5">
       <div class="row">
         <div class="col-12">
@@ -398,7 +402,7 @@
       </div>
     </div>
   </section>
-  <section class="text-center jarallax" id="home-afiliados" style="background-image: url('assets/bg-home-afiliados.jpeg');">
+  <section class="text-center jarallax" id="home-afiliados">
     <div class="container-fluid text-center transparencia-laranja py-4 px-0 px-sm-5">
       <div class="row">
         <div class="col-12">
@@ -420,215 +424,8 @@
 
   <section id="modais">
     <div data-include="modalGarantia100"></div>
-    <div class="modal fade" id="modalVirarAfiliado" tabindex="-1" role="dialog" aria-labelledby="Modal Virar Afiliado" aria-hidden="true">
-      <div class="modal-dialog cascading-modal" role="document">
-        <div class="modal-content">
-          <div class="modal-c-tabs">
-            <ul class="nav nav-tabs md-tabs tabs-2 bgPreenchimento" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tabPintor" role="tab">
-                  <i class="fas fa-user mr-1"></i>
-                  Pintor
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tabParceiro" role="tab">
-                  <i class="fas fa-user-plus mr-1"></i>
-                  Parceiro
-                </a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="tabPintor" role="tabpanel">
-                <div class="modal-body pt-0">
-                  <div class="form-header mt-0 mb-4 bgPreenchimento">
-                    <h3>
-                      <i class="fas fa-envelope"></i>
-                      Ganhe dinheiro com a Mão na Roda
-                    </h3>
-                  </div>
-                  <p class="dark-grey-text text-center">Voce esta a poucos passos de se tornar um pintor parceiro gratuitamente</p>
-                  <p class="dark-grey-text text-center">Preencha os campos abaixo e entraremos em contato para ajustarmos os ajustes</p>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-lock prefix"></i>
-                    <input type="text" id="modalVirarAfiliado-pintor-nome" class="form-control form-control-sm validate">
-                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-nome">Seu Nome</label>
-                  </div>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-lock prefix"></i>
-                    <input type="number" id="modalVirarAfiliado-pintor-telefone" class="form-control form-control-sm validate">
-                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-telefone">Seu Telefone</label>
-                  </div>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-envelope prefix"></i>
-                    <input type="email" id="modalVirarAfiliado-pintor-email" class="form-control form-control-sm validate">
-                    <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-pintor-email">Seu Email</label>
-                  </div>
-                  <div class="form-sm mt-2 d-flex">
-                    <button class="btn bgPreenchimento mr-auto">Enviar</button>
-                    <button type="button" class="btn bgPreenchimento waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabParceiro" role="tabpanel">
-                <div class="modal-body pt-0">
-                  <div class="form-header mt-0 mb-4 bgPreenchimento">
-                    <h3>
-                      <i class="fas fa-envelope"></i>
-                      Ganhe dinheiro com a Mão na Roda
-                    </h3>
-                  </div>
-                  <p class="dark-grey-text text-center">Voce esta a poucos passos de se tornar um parceiro gratuitamente</p>
-                  <p class="dark-grey-text text-center">Preencha os campos abaixo e entraremos em contato para ajustarmos os ajustes</p>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-lock prefix"></i>
-                    <input type="text" id="modalVirarAfiliado-parceiro-nome" class="form-control form-control-sm validate">
-                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-nome">Seu Nome</label>
-                  </div>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-lock prefix"></i>
-                    <input type="number" id="modalVirarAfiliado-parceiro-telefone" class="form-control form-control-sm validate">
-                    <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-telefone">Seu Número</label>
-                  </div>
-                  <div class="md-form form-sm">
-                    <i class="fas fa-envelope prefix"></i>
-                    <input type="email" id="modalVirarAfiliado-parceiro-email" class="form-control form-control-sm validate">
-                    <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-parceiro-email">Seu Email</label>
-                  </div>
-                  <div class="form-sm mt-2 d-flex">
-                    <button class="btn bgPreenchimento mr-auto">Enviar</button>
-                    <button type="button" class="btn bgPreenchimento waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal FAQ" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header bgPreenchimento text-center">
-            <h6 class="text-uppercase mb-0 mx-auto font-weight-bold h4-responsive">Perguntas Frequentes</h6>
-            <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">×</span></button>
-          </div>
-          <div class="modal-body bgPreenchimento-2">
-            <div class="container-fluid">
-              <div class="row d-flex justify-content-center">
-                <div class="col-12 col-md-10 text-center pt-4">
-                  <div class="card faq-item hoverable">
-                    <div class="faq-title">
-                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta1" aria-expanded="false"> Pergunta 1 <i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="collapse" id="faq-pergunta1">
-                      <p class="lead my-3 mx-3">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                        keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="card faq-item hoverable">
-                    <div class="faq-title">
-                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta2" aria-expanded="false"> Pergunta 2 <i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="collapse" id="faq-pergunta2">
-                      <p class="lead my-3 mx-3">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                        keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="card faq-item hoverable">
-                    <div class="faq-title">
-                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta3" aria-expanded="false"> Pergunta 3 <i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="collapse" id="faq-pergunta3">
-                      <p class="lead my-3 mx-3">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                        keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="card faq-item hoverable">
-                    <div class="faq-title ">
-                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta4" aria-expanded="false"> Pergunta 4 <i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="collapse" id="faq-pergunta4">
-                      <p class="lead my-3 mx-3">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                        keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="card faq-item hoverable">
-                    <div class="faq-title">
-                      <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta5" aria-expanded="false"> Pergunta 5 <i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="collapse" id="faq-pergunta5">
-                      <p class="lead my-3 mx-3">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                        keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                      </p>
-                    </div>
-                  </div>
-                  <button data-toggle="modal" data-target="#modalColetaLeadFAQ" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable" id="footer-btn-faq">Fazer uma Pergunta!</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer bgPreenchimento-2">
-            <button type="button" class="btn bgPreenchimento waves-effect waves-light mx-auto" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade show" id="modalColetaLeadFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal Coleta Lead FAQ">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center">
-            <h4 class="modal-title w-100 font-weight-bold">TituloDaModal</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body mx-3">
-            <p class="text-center">É uma pena que nao respondemos todas as suas duvidas.</p>
-            <p class="text-center">Mas pergunta ai que a gente responde</p>
-            <div class="md-form">
-              <i class="fa fa-user prefix grey-text"></i>
-              <input type="text" id="modalColetaLeadFAQ-nome" class="form-control validate">
-              <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-nome" class="fw-500">Seu Nome</label>
-            </div>
-            <div class="md-form">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <input type="email" id="modalColetaLeadFAQ-email" class="form-control validate">
-              <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-email" class="fw-500">Seu email</label>
-            </div>
-            <div class="md-form">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <input type="number" id="modalColetaLeadFAQ-telefone" class="form-control validate">
-              <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-telefone" class="fw-500">Seu Número</label>
-            </div>
-            <div class="md-form amber-textarea active-amber-textarea mb-4">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <textarea type="text" id="modalColetaLeadFAQ-pergunta" class="md-textarea form-control" rows="4"></textarea>
-              <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-pergunta" class="fw-500">Digite sua Pergunta</label>
-            </div>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button id="modalColetaLeadFAQ-enviar" class="btn bgPreenchimento waves-effect waves-light mr-auto">Enviar</button>
-            <button id="modalColetaLeadFAQ-fechar" class="btn bgPreenchimento waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <div data-include="modalFAQ"></div>
+    <div data-include="modalVirarAfiliado"></div>
   </section>
 
 </main>
@@ -651,7 +448,6 @@
         keepImg: true
     });
 </script>
-
 </body>
 
 </html>

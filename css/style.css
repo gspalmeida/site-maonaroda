@@ -21,6 +21,9 @@
 .size-2rem{
   font-size: 2rem!important;
 }
+.size-25rem{
+  font-size: 2.5rem!important;
+}
 .size-3rem{
   font-size: 3rem!important;
 }
@@ -30,11 +33,20 @@
 .size-5rem{
   font-size: 5rem!important;
 }
+.size-13em{
+  font-size: 1.3em!important;
+}
 .height100vh{
   min-height: 100vh;
 }
 .height90vh{
   min-height: 90vh;
+}
+.height80vh{
+  min-height: 80vh;
+}
+.height70vh{
+  min-height: 70vh;
 }
 .height60vh{
   min-height: 60vh;
@@ -124,37 +136,42 @@
   background-color: #fee50d;
   color: #000000;
 }
+.btn-laranjado{
+  background-color: #ff6f00;
+}
+.bg-color-azul-escuro{
+  background-color: #007a8f;
+}
+.bg-color-azul-claro{
+  background-color: #0099b2;
+}
+.bg-color-laranjado{
+  background-color: #ff7200;
+}
+.bg-color-verde{
+  background-color: #0b2e13;
+}
 
 /*Home-Intro*/
 #home-intro{
-  background-image: url("../assets/bg-home-intro.jpeg");
+  background-image: url("../assets/bg-home-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   color: #ffffff;
 }
-#home-intro-corpo{
-  padding-bottom: 25vh;
-}
-#home-intro-cta{
-  position: absolute;
-  left: 25%;
-  bottom: 2vh;
-  background-color: #ff7200;
+.embonitador-wrapper{
+  position: relative;
 }
 .embonitador-img{
-  position: absolute;
-  top: 50px;
-  display: block;
-  width: 97%;
+  position: absolute!important;
+  top: 15%;
+  display: block !important;
+  width: 100%;
   height: auto;
 }
 .embonitador-cima{
   z-index: 999;
-}
-/*Home-Como Funciona*/
-#home-comoFunciona-cta{
-  position: relative;
-  left: 25%;
-  bottom: 0;
-  background-color: #ff6f00;
 }
 /*Home-Depoimentos*/
 #home-depoimentos{
@@ -162,8 +179,12 @@
 }
 /*Home-Garantia100%*/
 #home-garantia100{
-  color: #ffffff;
+  background-image: url('../assets/bg-home-garantia100.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   min-height: 30vh !important;
+  color: #ffffff;
 }
 /*Home-Serviços*/
 #home-servicos-corpo{
@@ -181,8 +202,12 @@
 }
 /*Home Afiliados*/
 #home-afiliados{
+  background-image: url('../assets/bg-home-afiliados.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 30vh!important;
   color: #ffffff;
-  min-height: 100% !important;
 }
 #home-afiliados-cta{
   position: relative;
@@ -199,13 +224,14 @@
   background-color: #ff7200;
 }
 
-
-/*MODAL GARANTIA 100%*/
-#btn-coletaLead-modalGarantia100{
-  position: relative;
-  left: 25%;
-  bottom: 0;
-  background-color: #ff7200;
+/*MODAL FAQ*/
+#modalFAQ .modal-header{
+  border: 0 solid #00000000;
+}
+#modalFAQ .modal-footer{
+  border: 0 solid #00000000;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /*Footer*/

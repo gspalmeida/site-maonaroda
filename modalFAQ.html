@@ -1,41 +1,14 @@
-<footer class="page-footer font-small footer-custom-color">
-  <div class="d-none" id="checkInclude"></div>
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col-md-5 text-center pt-4">
-        <h6 class="text-uppercase mb-4 font-weight-bold h4-responsive">Mao na Roda</h6>
-        <p class="lead">
-          Uma start-up de sucesso no ramo da construção civil. Focada e especializada em pequenas reformas,
-          em específico, pinturas residenciais e de instalações comerciais.
-        </p>
-        <p class="lead">
-          O Mão na Roda é especializado em facilitar os processos de contratação, e fornecer um serviço em
-          prontidão, com garantida de satisfação e profissionais qualificados
-        </p>
-        <h6 class="text-uppercase mb-4 font-weight-bold h4-responsive">Entre em Contato</h6>
-        <div class="container">
-          <div class="row">
-            <div class="col-4 px-0">
-              <i class="fas fa-phone size-15rem" style="transform: rotateY(180deg);"></i> <br>
-              (XX) X XXXX-XXXX
-            </div>
-            <div class="col-4 px-0">
-              <i class="fab fa-whatsapp size-15rem"></i> <br>
-              (XX) X XXXX-XXXX
-            </div>
-            <div class="col-4 px-0">
-              <i class="fas fa-envelope size-15rem"></i> <br>
-              email@maonaroda.com
-            </div>
-          </div>
-        </div>
+<div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal FAQ" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header bg-color-laranjado text-center">
+        <h6 class="text-uppercase text-white mb-0 mx-auto font-weight-bold h4-responsive">Perguntas Frequentes</h6>
+        <button type="button" class="close ml-0 text-white" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">×</span></button>
       </div>
-      <hr class="clearfix w-100 d-md-none">
-      <div class="col-md-7">
+      <div class="modal-body bg-color-azul-escuro">
         <div class="container-fluid">
           <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-10 text-center pt-4">
-              <h6 class="text-uppercase mb-4 font-weight-bold h4-responsive">Principais Perguntas</h6>
               <div class="card faq-item hoverable">
                 <div class="faq-title">
                   <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta1" aria-expanded="false">
@@ -103,31 +76,54 @@
                   </p>
                 </div>
               </div>
-              <button data-toggle="modal" data-target="#modalFAQ" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable" id="footer-btn-faq">Ver mais perguntas!</button>
+              <button data-toggle="modal" data-target="#modalColetaLeadFAQ" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable" id="footer-btn-faq">Faça-nos sua pergunta!</button>
             </div>
           </div>
         </div>
       </div>
+      <div class="modal-footer bg-color-azul-claro">
+        <button type="button" class="btn btn-laranjado waves-effect waves-light mx-auto" data-dismiss="modal">Fechar</button>
+      </div>
     </div>
   </div>
-  <div class="footer-copyright copyright-custom-color text-center py-3">
-    <p class="mb-0 animated pulse infinite slow delay-2s">
-      © 2018 Copyright:<a href="http://www.galileosoft.com.br"> GalileoSoft</a>
-    </p>
+</div>
+<div class="modal fade show" id="modalColetaLeadFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal Coleta Lead FAQ">
+  <div class="modal-dialog modal-side modal-top-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Mais alguma Dúvida? Conta pra Gente!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <p class="text-center">Ficou com alguma dúvida que nao foi respondida?</p>
+        <p class="text-center">Manda pra gente, nós respondemos o quanto antes!</p>
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <input type="text" id="modalColetaLeadFAQ-nome" class="form-control validate">
+          <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-nome" class="fw-500">Seu Nome</label>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="modalColetaLeadFAQ-email" class="form-control validate">
+          <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-email" class="fw-500">Seu email</label>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-phone prefix grey-text" style="transform: rotateY(180deg);"></i>
+          <input type="text" id="modalColetaLeadFAQ-telefone" class="form-control validate">
+          <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-telefone" class="fw-500">Seu Número</label>
+        </div>
+        <div class="md-form amber-textarea active-amber-textarea mb-4">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <textarea type="text" id="modalColetaLeadFAQ-pergunta" class="md-textarea form-control" rows="4"></textarea>
+          <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-pergunta" class="fw-500">Digite sua Pergunta</label>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button id="modalColetaLeadFAQ-enviar" class="btn btn-laranjado waves-effect waves-light mr-auto">Enviar</button>
+        <button id="modalColetaLeadFAQ-fechar" class="btn btn-laranjado waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
   </div>
-</footer>
-<script>
-    var largura = screen.width;
-    if( largura >= 768 ){
-        // Animations init
-        new WOW().init();
-    }
-</script>
-<!--scripts de dev HASHremover-->
-<script>
-    function alertar(string) {
-        alert(string);
-//      alert("vai embonitar");
-//      $(".embonitador-baixo").animate({clip: "rect(auto,500px,auto, auto)"});
-    }
-</script>
+</div>
