@@ -15,6 +15,9 @@
 .fw-600{
   font-weight: 600!important;
 }
+.texto-menor{
+  font-size: 90% !important;
+}
 .size-1rem{
   font-size: 1rem!important;
 }
@@ -214,6 +217,70 @@
   position: relative;
   bottom: 0;
 }
+
+/*PORTIFÓLIO - Half page carousel*/
+.bg-slide-1{
+  background-image: url('../assets/portifolio-banner-pc-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.bg-slide-2{
+  background-image: url('../assets/portifolio-banner-pc-2.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.bg-slide-3{
+  background-image: url('../assets/portifolio-banner-pc-3.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+@media (orientation: portrait) {
+  .bg-slide-1{
+  background-image: url('../assets/portifolio-banner-cell-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  }
+  .bg-slide-2{
+    background-image: url('../assets/portifolio-banner-cell-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+  .bg-slide-3{
+    background-image: url('../assets/portifolio-banner-cell-3.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+}
+header .view {
+  height: 100%;
+}
+header .carousel {
+  height: 70vh;
+}
+.carousel .carousel-inner {
+  height: 100%;
+}
+.carousel .carousel-inner .carousel-item,.carousel .carousel-inner .active {
+  height: 100%;
+}
+.carousel-overlay{
+  background-color: #03002366;
+}
+.btn-carousel-personalizado{
+  font-size: 1.1rem;
+}
+@media (max-width: 425px) {
+  header .carousel {
+    height: 100vh!important;
+  }
+}
+
 
 /*SERVICOS*/
 #servicos-intro-cta-residencial{
