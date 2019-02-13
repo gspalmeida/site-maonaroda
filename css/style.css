@@ -21,6 +21,9 @@
 .size-1rem{
   font-size: 1rem!important;
 }
+.size-13rem{
+  font-size: 1.3rem!important;
+}
 .size-15rem{
   font-size: 1.5rem!important;
 }
@@ -41,6 +44,9 @@
 }
 .size-13em{
   font-size: 1.3em!important;
+}
+.size-15em{
+  font-size: 1.5em!important;
 }
 .height100vh{
   min-height: 100vh;
@@ -135,8 +141,15 @@
 .transparencia-laranja{
   background-color: #ff73005b;
 }
+.transparencia-laranja-escuro{
+  background-color: #8f00004d;
+}
 .btn-azul-escuro{
   background-color: #007a8e
+}
+.btn-azul-claro{
+  background-color: #00b6d4;
+  color: #000000 !important;
 }
 .btn-amarelo{
   background-color: #fee50d;
@@ -150,6 +163,12 @@
 }
 .bg-color-azul-claro{
   background-color: #0099b2;
+}
+.bg-color-azul-calcinha{
+  background-color: #b6f6f3;
+}
+.bg-color-marrom-claro{
+  background-color: #F8EDB8;
 }
 .bg-color-laranjado{
   background-color: #ff7200;
@@ -183,7 +202,7 @@
 }
 /*Home-Garantia100%*/
 #home-garantia100{
-  background-image: url('../assets/bg-home-garantia100.jpeg');
+  background-image: url('../assets/bg-textura-laranja.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -280,7 +299,14 @@ header .carousel {
     height: 100vh!important;
   }
 }
-
+/*COMO FUNCIONA*/
+#comoFunciona-intro{
+  background-image: url("../assets/bg-textura-laranja.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
 
 /*SERVICOS*/
 #servicos-intro-cta-residencial{
