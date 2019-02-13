@@ -309,6 +309,37 @@ header .carousel {
 }
 
 /*SERVICOS*/
+.gifClickHere{
+  height: 10vh;
+}
+.bg-servicos-residencial{
+  background-image: url("../assets/servicos-residencial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
+.bg-servicos-comercial{
+  background-image: url("../assets/servicos-comercial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
+.bg-servicos-residencial-2{
+  background-image: url("../assets/servicos-segunda-view-residencial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
+.bg-servicos-comercial-2{
+  background-image: url("../assets/servicos-segunda-view-comercial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
 #servicos-intro-cta-residencial{
   bottom: 2vh;
   background-color: #ff7200;

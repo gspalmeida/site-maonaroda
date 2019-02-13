@@ -9,7 +9,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <!--<link rel="shortcut icon" type="image/png" href="assets/favicon1.png"/>-->
-  <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
 
@@ -19,27 +19,27 @@
   <section id="servicos-intro" class="height90vh">
     <div class="container-fluid height90vh" id="servicos-intro-corpo">
       <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento bgPreenchimento-3" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-residencial')">
-          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-residencial')">
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
             <div class="container-fluid text-center">
-              <h1>Pintura Residencial</h1>
+              <h1 class="fw-400 black-text">Pintura Residencial</h1>
             </div>
           </div>
           <div class="d-flex flex-row height50vh justify-content-center align-items-center">
-            <h5 class="text-center">GIF <br>DE <br> CLICK</h5>
+            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
           </div>
           <div class="d-flex flex-row height20vh align-items-end justify-content-center">
             <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-residencial">Quero embonitar minha residencia!</button>
           </div>
         </div>
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento-2 bgPreenchimento-3" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-comercial')">
-          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-comercial')">
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
             <div class="container-fluid text-center">
-              <h1>Pintura Comercial</h1>
+              <h1 class="fw-400">Pintura Comercial</h1>
             </div>
           </div>
           <div class="d-flex flex-row height50vh justify-content-center align-items-center">
-            <h5 class="text-center">GIF <br>DE <br> CLICK</h5>
+            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
           </div>
           <div class="d-flex flex-row height20vh align-items-end justify-content-center">
             <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-comercial">Quero embonitar minha empresa!</button>
@@ -49,7 +49,7 @@
     </div>
     <div class="container-fluid height90vh hide-section" id="servicos-intro-residencial">
       <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial-2"></div>
         <div class="col-6 d-flex flex-column align-items-stretch height90vh">
           <div class="d-flex flex-row height20vh align-items-center justify-content-center">
             <div class="container-fluid text-center">
@@ -58,14 +58,11 @@
           </div>
           <div class="d-flex flex-column height50vh justify-content-center align-items-center">
             <p class="text-center h5-responsive">
-              Texto explicando os serviços para residencial, de maneira
-              detalhada, apresentando um botão para casa e outro para
-              apartamento, onde, ao clicar, abre uma modal explicando as
-              particularidades de cada residencia e com um botão de
-              orçamento.
+              O Mão na Roda trabalha para encurtar distâncias e agilizar processos na contratação de profissionais qualificados para pintura residencial.
+              Atentendo sempre em prontidão, em até 48h e apenas com profissionais homologados e um selo de garantia 100%
             </p>
             <p class="text-center fw-600 h5-responsive">
-              Mas e ai doido, é casa ou apto?
+              Casa ou apartamento, basta selecionar a opção e deixar o resto conosco
             </p>
             <div class="container-fluid text-center mt-4">
               <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de pintura interna ou externa')">CASA</button>
@@ -73,14 +70,17 @@
             </div>
           </div>
           <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento" onclick="trocaSlide('#servicos-intro-residencial', '#servicos-intro-comercial')">Na verdade eu queria embonitar minha empresa, e sou burro cliquei no lugar errado!</button>
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
+                    onclick="trocaSlide('#servicos-intro-residencial', '#servicos-intro-comercial')">
+              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
+            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="container-fluid height90vh hide-section" id="servicos-intro-comercial">
       <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bgPreenchimento"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial-2"></div>
         <div class="col-6 d-flex flex-column align-items-stretch height90vh">
           <div class="d-flex flex-row height20vh align-items-center justify-content-center">
             <div class="container-fluid text-center">
@@ -89,21 +89,22 @@
           </div>
           <div class="d-flex flex-column height50vh justify-content-center align-items-center">
             <p class="text-center h5-responsive">
-              Texto explicando os serviços para residencial, de maneira
-              detalhada, apresentando um botão para casa e outro para
-              apartamento, onde, ao clicar, abre uma modal explicando as
-              particularidades de cada residencia e com um botão de
-              orçamento.
+              Quando o assunto é um ambiente comercial, não podemos deixar nas mãos de qualquer um. Por isso o Mão na Roda está aqui,
+              para proporcionar o melhor serviço de pintura comercial, com profissionais homologados, prontidão no atendimento e
+              as melhores tintas do mercado.
             </p>
             <p class="text-center fw-600 h5-responsive">
-              Gostou né irmaozinho? Então clica ai em baixo para solicitar um orçamento sem compromisso
+              O que a sua empresa precisa é de um serviço com garantia 100% Conte com o Mão na Roda pra isso!
             </p>
             <div class="container-fluid text-center mt-4">
               <button type="button" class="btn btn-lg waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de contactForm')">Solicitar Orçamento</button>
             </div>
           </div>
           <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento" onclick="trocaSlide('#servicos-intro-comercial', '#servicos-intro-residencial')">Na verdade eu queria embonitar minha casa mas eu sou burro cliquei no lugar errado!</button>
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
+                    onclick="trocaSlide('#servicos-intro-comercial', '#servicos-intro-residencial')">
+              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
+            </button>
           </div>
         </div>
       </div>
