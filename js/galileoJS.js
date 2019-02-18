@@ -51,8 +51,8 @@ function scrollToTop() {
 function setPadding() {
     if(checkInclude() === true){
         var navbarHeight = $("#navbar-wrapper").height();
-        navbarHeight = navbarHeight + 24;
-        $("body").css("padding-top",navbarHeight);
+        navbarHeight = navbarHeight + 10;
+        $(".1stSection").css("padding-top",navbarHeight);
     }
     else {
         setTimeout(setPadding,1)

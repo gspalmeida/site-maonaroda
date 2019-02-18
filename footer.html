@@ -122,6 +122,21 @@
         // Animations init
         new WOW().init();
     }
+    $(document).ready(function () {
+
+        $('.first-button').on('click', function () {
+            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('.animated-icon1').toggleClass('open');
+        });
+        $('.second-button').on('click', function () {
+            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('.animated-icon2').toggleClass('open');
+        });
+        $('.third-button').on('click', function () {
+            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('.animated-icon3').toggleClass('open');
+        });
+    });
 </script>
 <!--scripts de dev HASHremover-->
 <script>
