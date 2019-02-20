@@ -1,39 +1,43 @@
 .btn-outline-marrom {
-  border: 3px solid #554A26!important;
+  border: 2px solid #554A26!important;
   background-color: transparent!important;
   color: #554A26!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
   font-size: 1.1rem !important;
+  padding: 0.5rem 1rem !important;
 }
 .btn-outline-vermelho{
-  border: 3px solid #591B1B!important;
+  border: 2px solid #591B1B!important;
   background-color: transparent!important;
   color: #591B1B!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
   font-size: 1.1rem !important;
+  padding: 0.5rem 1rem!important;
 }
 .btn-outline-vermelho-claro{
-  border: 3px solid #733a3a!important;
+  border: 2px solid #733a3a!important;
   background-color: transparent!important;
   color: #733a3a!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
   font-size: 1.1rem !important;
+  padding: 0.5rem 1rem!important;
 }
 .btn-outline-azul{
-  border: 3px solid #2E554E!important;
+  border: 2px solid #2E554E!important;
   background-color: transparent!important;
   color: #2E554E!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
   font-size: 1.1rem !important;
+  padding: 0.5rem 1rem!important;
 }
 .btn-outline-verde {
-  border: 3px solid #4caf50!important;
+  border: 2px solid #4caf50!important;
   background-color: transparent!important;
   color: #4caf50!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
   font-size: 1.1rem !important;
+  padding: 0.5rem 1rem!important;
 }
-/*TODO arrumar esses column width com erro*/
 .gallery {
   -webkit-column-count: 3;
   -moz-column-count: 3;

@@ -23,14 +23,3 @@ html,body,.view {
     height: 100vh;
   }
 }
-@media (min-width: 800px) and (max-width: 850px) {
-  .navbar:not(.top-nav-collapse) {
-    background: #554A26!important;
-  }
-}
-/* Adding color to the Navbar on mobile */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #554A26;
-  }
-}
