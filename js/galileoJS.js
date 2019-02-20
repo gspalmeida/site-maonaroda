@@ -77,3 +77,16 @@ function trocaSlide(elementoQueSai, elementoQueEntra) {
         $(elementoQueEntra).off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
     });
 }
+//    Abre a modal de cursos com a Respectiva TAB ativa
+function escolheTabAtiva(nomeDaTab,nomeDaModal){
+    var tabAtiva;
+    var modalAtiva;
+    var tabAtivaFinal;
+    tabAtiva = document.getElementsByClassName(nomeDaTab);
+    $(tabAtiva).addClass('active show');
+    modalAtiva = document.getElementById(nomeDaModal);
+    $(modalAtiva).on('hidden.bs.modal', function(){
+        tabAtivaFinal = document.getElementsByClassName('active show');
+        $(tabAtivaFinal).removeClass('active show');
+    });
+}

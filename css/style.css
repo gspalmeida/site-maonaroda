@@ -145,7 +145,7 @@
   background-color: #00000066;
 }
 .transparencia-laranja{
-  background-color: #ff73005b;
+  background-color: #bb54005b;
 }
 .transparencia-laranja-escuro{
   background-color: #8f00004d;
@@ -388,19 +388,6 @@
   background-position: center center;
   color: #ffffff;
 }
-.embonitador-wrapper{
-  position: relative;
-}
-.embonitador-img{
-  position: absolute!important;
-  top: 15%;
-  display: block !important;
-  width: 100%;
-  height: auto;
-}
-.embonitador-cima{
-  z-index: 999;
-}
 /*Home-Depoimentos*/
 .testimonial-carousel .carousel-control{
   top: 16vh;
@@ -445,12 +432,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 40vh!important;
+  min-height: 25vh!important;
   color: #ffffff;
-}
-#home-afiliados-cta{
-  position: relative;
-  bottom: 0;
 }
 
 /*PORTIFÓLIO - Half page carousel*/

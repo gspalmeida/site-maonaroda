@@ -19,21 +19,20 @@
 
 <main>
   <section class="d-flex flex-column height70vh view jarallax" id="home-intro">
-    <div class="mask height70vh flex-center align-items-center transparencia-preta">
-      <div class="container 1stSection">
-        <div class="row">
-          <div class="col-12 text-center">
-            <img src="assets/logo-intro-home.png" class="img-fluid mx-auto" alt="">
-          </div>
-          <div class="col-12 text-center">
-            <p class="size-12rem fw-500 mt-3">Pintores profissionais para a sua Casa ou Escritorio</p>
-          </div>
-          <!--<div class="col-12 text-center">-->
-            <!--<p class="size-1rem fw-400">Veja o que o Mão na Roda pode fazer por você ou sua empresa!</p>-->
-          <!--</div>-->
-          <div class="col-12 text-center">
-            <a href="portifolio.html" class="btn size-094rem btn-outline-white fw-500">Conheça nosso trabalho!</a>
-          </div>
+    <div class="mask height70vh flex-center align-items-center transparencia-preta"></div>
+    <div class="container">
+      <div class="row 1stSection mb-4">
+        <div class="col-12 text-center">
+          <img src="assets/logo-intro-home.png" class="img-fluid mx-auto" alt="">
+        </div>
+        <div class="col-12 text-center">
+          <p class="size-12rem fw-500 mt-3">Pintores profissionais para a sua Casa ou Escritorio</p>
+        </div>
+        <!--<div class="col-12 text-center">-->
+        <!--<p class="size-1rem fw-400">Veja o que o Mão na Roda pode fazer por você ou sua empresa!</p>-->
+        <!--</div>-->
+        <div class="col-12 text-center">
+          <a href="portifolio.html" class="btn size-094rem btn-outline-white fw-500">Conheça nosso trabalho!</a>
         </div>
       </div>
     </div>
@@ -297,19 +296,20 @@
     <div class="container-fluid text-center transparencia-laranja py-4 px-0 px-sm-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="h1-responsive font-weight-bold">Trabalhe com a Mão na Roda</h2>
+          <h2 class="h3-responsive font-weight-bold">Trabalhe com o Mão na Roda</h2>
         </div>
       </div>
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-10">
-          <h2 class="h4-responsive font-weight-bold my-5">
+          <p class="h6-responsive text-center fw-400">
             Ganhe dinheiro por se afiliar ao Mão na
             Roda. Seja um pintor homologado ou
             parceiro indicando nossos serviços.
-          </h2>
+          </p>
         </div>
       </div>
-      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" class="btn btn-lg btn-amarelo fw-500 w-50 waves-effect waves-light hoverable height10vh" id="home-afiliados-cta">Afiliar-se Gratuitamente!</button>
+      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn btn-lg btn-amarelo fw-500 w-25 waves-effect waves-light hoverable">Ser um pintor Homologado!</button>
+      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn btn-lg btn-amarelo fw-500 w-25 waves-effect waves-light hoverable">Virar um Parceiro!</button>
     </div>
   </section>
 
