@@ -147,7 +147,10 @@
   background-color: #8f00004d;
 }
 .btn-azul-escuro{
-  background-color: #007a8e
+  background-color: #007a8e;
+}
+.btn-azul-escuro:hover{
+  color: #073941!important;
 }
 .btn-azul-claro{
   background-color: #00b6d4;
