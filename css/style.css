@@ -18,8 +18,17 @@
 .texto-menor{
   font-size: 90% !important;
 }
+.size-085rem{
+  font-size: 0.85rem!important;
+}
+.size-094rem{
+  font-size: 0.94rem!important;
+}
 .size-1rem{
   font-size: 1rem!important;
+}
+.size-12rem{
+  font-size: 1.2rem!important;
 }
 .size-13rem{
   font-size: 1.3rem!important;
@@ -131,6 +140,9 @@
 }
 .copyright-custom-color{
   background-color: rgba(0,0,0,.2);
+}
+.transparencia-preta{
+  background-color: #00000066;
 }
 .transparencia-laranja{
   background-color: #ff73005b;
@@ -390,9 +402,11 @@
   z-index: 999;
 }
 /*Home-Depoimentos*/
-#home-depoimentos{
-  background-color: #b6f6f3;
-  min-height: 70vh;
+.testimonial-carousel .carousel-control{
+  top: 16vh;
+}
+.testimonial-carousel .carousel-control:before{
+  color: rgb(255, 111, 0) !important;
 }
 /*Home-Garantia100%*/
 #home-garantia100{
@@ -400,8 +414,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 40vh !important;
+  min-height: 20vh !important;
   color: #ffffff;
+}
+#home-depoimentos-cta{
+  min-width: 25%;
+}
+@media (min-width: 1000px) {
+  #home-depoimentos-cta{
+    min-width: 18%;
+  }
 }
 /*Home-Serviços*/
 #home-servicos-corpo{
