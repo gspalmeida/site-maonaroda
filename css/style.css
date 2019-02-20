@@ -211,10 +211,19 @@
 .top-nav-collapse > div > a > #logoColorida{
   display: inline!important;
 }
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #e0e0e0;
-  }
+@media (max-width: 768px) {
+    .navbar {
+        background-color: #e0e0e0;
+    }
+    #logoBranca{
+        display: none;
+    }
+    #logoColorida{
+        display: inline!important;
+    }
+    #navbar-wrapper > div > button > div > span{
+        background: #fd7d12!important;
+    }
 }
     /*NAVBAR - Animation*/
 .animated-icon1, .animated-icon2, .animated-icon3 {

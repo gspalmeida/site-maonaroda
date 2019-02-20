@@ -292,8 +292,9 @@
       </div>
     </div>
   </section>
-  <section class="text-center jarallax" id="home-afiliados">
-    <div class="container-fluid text-center transparencia-laranja py-4 px-0 px-sm-5">
+  <section class="text-center view jarallax" id="home-afiliados">
+    <div class="transparencia-laranja mask"></div>
+    <div class="container-fluid text-center py-4 px-0 px-sm-5">
       <div class="row">
         <div class="col-12">
           <h2 class="h3-responsive font-weight-bold">Trabalhe com o Mão na Roda</h2>
@@ -308,8 +309,16 @@
           </p>
         </div>
       </div>
-      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn btn-lg btn-amarelo fw-400 w-25 waves-effect waves-light hoverable">Ser um pintor Homologado!</button>
-      <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn btn-lg btn-amarelo fw-400 w-25 waves-effect waves-light hoverable">Virar um Parceiro!</button>
+      <div class="row">
+        <div class="col-1 ml-auto"></div>
+        <div class="col col-md-4 col-lg-3">
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn btn-block btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Ser um pintor Homologado!</button>
+        </div>
+        <div class="col col-md-4 col-lg-3">
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn btn-block btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Virar um Parceiro!</button>
+        </div>
+        <div class="col-1 mr-auto"></div>
+      </div>
     </div>
   </section>
 
