@@ -18,6 +18,9 @@
 .texto-menor{
   font-size: 90% !important;
 }
+.texto-maior{
+  font-size: 110%;
+}
 .size-085rem{
   font-size: 0.85rem!important;
 }
@@ -446,7 +449,7 @@
 }
 /*Home Afiliados*/
 #home-afiliados{
-  background-image: url('../assets/bg-home-afiliados.jpeg');
+  background-image: url('../assets/bg-sala-organizada.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -518,7 +521,7 @@ header .carousel {
 }
 /*COMO FUNCIONA*/
 #comoFunciona-intro{
-  background-image: url("../assets/bg-textura-laranja.jpeg");
+  background-image: url("../assets/bg-sala-organizada.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
