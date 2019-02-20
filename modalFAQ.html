@@ -1,92 +1,283 @@
 <div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal FAQ" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-      <div class="modal-header bg-color-laranjado text-center">
+      <div class="modal-header bg-color-azul-claro text-center">
         <h6 class="text-uppercase text-white mb-0 mx-auto font-weight-bold h4-responsive">Perguntas Frequentes</h6>
         <button type="button" class="close ml-0 text-white" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">×</span></button>
       </div>
-      <div class="modal-body bg-color-azul-escuro">
-        <div class="container-fluid">
-          <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-10 text-center pt-4">
-              <div class="card faq-item hoverable">
-                <div class="faq-title">
-                  <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta1" aria-expanded="false">
+      <div class="modal-body">
+        <div class="container-fluid text-center">
+          <p class="h5-responsive fw-500">Um serviço como o nosso, certamente desperta curiosidade.</p>
+          <p class="h5-resposive fw-400">Esclareça suas dúvidas aqui!</p>
+          <div class="md-accordion accordion text-azul-escuro" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingOne">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h5 class="mb-0">
                     Como saberei a procedência do pintor?
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="collapse" id="faq-pergunta1">
-                  <p class="lead my-3 mx-3">
-                    Todos os nossos profissionais são homologados, nós checamos referências, antecedentes criminais e
-                    habilidades de todos os nossos pintores parceiros
-                  </p>
-                </div>
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
               </div>
-              <div class="card faq-item hoverable">
-                <div class="faq-title">
-                  <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta2" aria-expanded="false">
-                    Só posso pagar à vista e em dinheiro?
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="collapse" id="faq-pergunta2">
-                  <p class="lead my-3 mx-3">
-                    Não precisa! Aceitamos todas as bandeiras de cartão para crédito e débito, e contamos com ótimas formas de pagamento.
-                  </p>
-                </div>
-              </div>
-              <div class="card faq-item hoverable">
-                <div class="faq-title">
-                  <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta3" aria-expanded="false">
-                    Mas e se o serviço for mal feito?
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="collapse" id="faq-pergunta3">
-                  <p class="lead my-3 mx-3">
-                    Isto é uma coisa que você não precisa se preocupar, garantimos que não vai acontecer! Mas se algo sair do previsto
-                    e você for prejudicado, é o mão na roda que vai arcar com todas as reponsabilidades.
-                  </p>
-                </div>
-              </div>
-              <div class="card faq-item hoverable">
-                <div class="faq-title ">
-                  <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta4" aria-expanded="false">
-                    E demora muito pra iniciarmos as pinturas?
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="collapse" id="faq-pergunta4">
-                  <p class="lead my-3 mx-3">
-                    Nada disso! Temos profissionais prontos para iniciar as atividades dentro de 48h após a contratação.
-                  </p>
-                </div>
-              </div>
-              <div class="card hoverable faq-item">
-                <div class="faq-title">
-                  <a class="h5-responsive btn-block text-center" data-toggle="collapse" href="#faq-pergunta5" aria-expanded="false">
-                    Vocês só pintam casas?
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="collapse" id="faq-pergunta5">
-                  <p class="lead my-3 mx-3">
-                    Não. Nos pintamos todas as residências, sejam apartamentos ou casas, e também escritórios e salas comerciais.
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                  <p>
+                    Todos os nossos profissionais são homologados, nós checamos referências,
+                    antecedentes criminais e habilidades de todos os nossos pintores parceiros.
                   </p>
                 </div>
               </div>
             </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingTwo">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h5 class="mb-0">
+                    Só posso pagar à vista e em dinheiro?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block">
+                  Não precisa! Aceitamos todas as bandeiras de cartão para crédito e débito,
+                  e contamos com ótimas formas de pagamento.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingThree">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h5 class="mb-0">
+                    Mas e se o serviço for mal feito?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                  Isto é uma coisa que você não precisa se preocupar, garantimos que não vai acontecer!
+                  Mas se algo sair do previsto e você for prejudicado, é o mão na roda que vai arcar
+                  com todas as reponsabilidades.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingFive">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <h5 class="mb-0">
+                    E demora muito pra iniciarmos as pinturas?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="card-block">
+                  Nada disso! Temos profissionais prontos para iniciar as atividades dentro de 48h após a contratação.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingSix">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  <h5 class="mb-0">
+                    Vocês só pintam casas?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                <div class="card-block">
+                  Não. Nos pintamos todas as residências, sejam apartamentos ou casas, e também escritórios e salas comerciais.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingSeven">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  <h5 class="mb-0">
+                    O que acontece em caso de acidentes?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+                <div class="card-block">
+                  Caso algum de nossos profissionais venha a sofrer qualquer acidente de trabalho, a responsabilidade
+                  e os encargos são nossos! Rapidamente destinaremos outro profissional para finalizar o trabalho e
+                  cuidaremos do acidentado da melhor forma possível!
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingEight">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  <h5 class="mb-0">
+                    Posso contratar um pedreiro pelo Mão na Roda?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+                <div class="card-block">
+                  Lamentomos mas o Mão na Roda é focado no mercado de pinturas, não trabalhamos com projetos que
+                  envolvam pedreiros, engenheiros, etc.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingNine">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  <h5 class="mb-0">
+                    Como faço para trabalhar com o Mão na Roda?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+                <div class="card-block">
+                  Seria um prazer em tê-lo na equipe! Você pode deixar seus dados na área do site destinada ao
+                  programa de afiliados clicando aqui.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingTen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  <h5 class="mb-0">
+                    Como faço para ser um parceiro comercial?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen">
+                <div class="card-block">
+                  É Sempre bom sabermos que temos mais pessoas para contar! Para ser parceiro, você pode clicar aqui e
+                  seguir as instruções que disponibilizamos, é rápido e simples, logo logo entraremos em contato.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header pl-0" role="tab" id="headingTwelve">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                  <h5 class="mb-0">
+                    Quanto este serviço vai me custar?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                <div class="card-block">
+                  Os preços só podem ser passados mediante o orçamento completo. Mas não se preocupe, nosso foco é fornecer o
+                  melhor custo beneficio, alinhando praticidade, matéria prima de qualidade e profissionais certificados.
+                  Contamos com formas de pagamento bem flexíveis.
+                </div>
+              </div>
+            </div>
+            <div class="card d-none">
+              <div class="card-header pl-0" role="tab" id="headingThirteen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                  <h5 class="mb-0">
+                    Do I have to pay for every new Update of MDB Pro?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseThirteen" class="collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                <div class="card-block">
+                  <p>Once you buy MDB product e.g. MDB 4 Pro, all updates for this product, along with Premium Support are free for a year.
+                    After this period your license is still valid and you can build projects with the most recent version of MDB in your account.
+                    Nevertheless, if you'd like to use Premium Support and the features from next updates you'd have to prolong your license.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card d-none">
+              <div class="card-header pl-0" role="tab" id="headingFourteen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                  <h5 class="mb-0">
+                    Does MDB support RTL?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseFourteen" class="collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                <div class="card-block">
+                  <p>Currently MDB doesn't support RTL support. This is caused due to fact that Bootstrap doesn't support
+                    RTL itself.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card d-none">
+              <div class="card-header pl-0" role="tab" id="headingFifteen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                  <h5 class="mb-0">
+                    After buying MDB Pro do I get access to jQuery, Angular, React and Vue versions?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseFifteen" class="collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                <div class="card-block">
+                  <p>In order to create different versions of MDB we had to develop them from scratch so you'll need to purchase them separately.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card d-none">
+              <div class="card-header pl-0" role="tab" id="headingSixteen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                  <h5 class="mb-0">
+                    Do I need to place MDB copyrights or logo on my website created with your tools?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseSixteen" class="collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                <div class="card-block">
+                  <p>You are not required to attribute or link to Material Design for Bootstrap in any of projects.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card d-none">
+              <div class="card-header pl-0" role="tab" id="headingSeventeen">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                  <h5 class="mb-0">
+                    How can I get access to your GitLab Repositories?
+                    <i class="fas fa-angle-down rotate-icon"></i>
+                  </h5>
+                </a>
+              </div>
+              <div id="collapseSeventeen" class="collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+                <div class="card-block">
+                  <p>Our account creation system has been automated and you should be able to log in to <a href="https://git.mdbootstrap.com/">gitlab server</a> with the credentials used for your purchase.</p>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="text-center mt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col pl-0">
+                  <hr>
+                </div>
+                <p class="h5-responsive fw-500 text-center">
+                  Ainda restaram Dúvidas?
+                </p>
+                <div class="col pr-0">
+                  <hr>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
           <div class="row mt-3">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-              <button data-toggle="modal" data-target="#modalColetaLeadFAQ" type="button" class="btn btn-lg btn-block px-2 btn-amarelo fw-500 waves-effect waves-light hoverable" id="footer-btn-faq">Faça-nos sua pergunta!</button>
+              <button data-toggle="modal" data-target="#modalColetaLeadFAQ" type="button" class="btn btn-lg btn-block px-2 btn-laranjado fw-500 waves-effect waves-light hoverable" id="footer-btn-faq">Faça-nos sua pergunta!</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer bg-color-azul-claro">
-        <button type="button" class="btn btn-laranjado waves-effect waves-light mx-auto" data-dismiss="modal">Fechar</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-neutro waves-effect waves-light mx-auto" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
@@ -125,8 +316,8 @@
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button id="modalColetaLeadFAQ-enviar" class="btn btn-laranjado waves-effect waves-light mr-auto">Enviar</button>
-        <button id="modalColetaLeadFAQ-fechar" class="btn btn-laranjado waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
+        <button id="modalColetaLeadFAQ-enviar" class="btn bg-azul-medio waves-effect waves-light mr-auto">Enviar</button>
+        <button id="modalColetaLeadFAQ-fechar" class="btn btn-outline-neutro waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

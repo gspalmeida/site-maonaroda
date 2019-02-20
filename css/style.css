@@ -157,11 +157,19 @@
 .btn-laranjado{
   background-color: #ff6f00;
 }
+.btn-outline-neutro{
+  border: 2px solid #5e5e5e!important;
+  background-color: transparent!important;
+  color: #5e5e5e!important;
+}
 .bg-color-azul-escuro{
-  background-color: #007a8f;
+  background-color: #004E5B;
+}
+.bg-azul-medio{
+  background-color: #08399B;
 }
 .bg-color-azul-claro{
-  background-color: #0099b2;
+  background-color: #06879c;
 }
 .bg-color-azul-calcinha{
   background-color: #b6f6f3;
@@ -171,6 +179,10 @@
 }
 .bg-color-laranjado{
   background-color: #ff7200;
+}
+.text-azul-escuro >div > .card-header > a > h5{
+  color: #06879c!important;
+  font-weight: 500;
 }
 /*NAVBAR*/
 .navbar {
@@ -539,16 +551,6 @@ header .carousel {
 #servicos-intro-cta-comercial{
   bottom: 2vh;
   background-color: #ff7200;
-}
-
-/*MODAL FAQ*/
-#modalFAQ .modal-header{
-  border: 0 solid #00000000;
-}
-#modalFAQ .modal-footer{
-  border: 0 solid #00000000;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 /*Footer*/
