@@ -214,19 +214,6 @@
 @media (max-width: 768px) {
     .navbar {
         background-color: #e0e0e0;
-    }
-    #logoBranca{
-        display: none;
-    }
-    #logoColorida{
-        display: inline!important;
-    }
-    #navbar-wrapper > div > button > div > span{
-        background: #fd7d12!important;
-    }
-@media (max-width: 768px) {
-    .navbar {
-        background-color: #e0e0e0;
         color: #000000 !important;
     }
     #logoBranca{
