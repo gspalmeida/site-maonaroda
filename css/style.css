@@ -90,6 +90,9 @@
 .height10vh{
   min-height: 10vh;
 }
+.borderRadius10px{
+    border-radius: 10px!important;
+}
 .w-30{
   min-width: 30% !important;
 }
@@ -198,7 +201,7 @@
 /*NAVBAR*/
 .navbar {
   background-color: #00000040;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .navbarBtn{
   border: 2px solid #dee2e6;
@@ -426,7 +429,7 @@
 }
 /*Home-Garantia100%*/
 #home-garantia100{
-  background-image: url('../assets/bg-textura-laranja.jpeg');
+  background-image: url('../assets/bg-textura-laranja.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -526,6 +529,14 @@ header .carousel {
   header .carousel {
     height: 100vh!important;
   }
+}
+/*SOBRE NÓS*/
+#sobreNos-intro{
+  background-image: url("../assets/bg-pincel-parede.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  color: #ffffff;
 }
 /*COMO FUNCIONA*/
 #comoFunciona-intro{

@@ -4,16 +4,16 @@
     <div class="row align-items-center">
       <div class="col-6 col-md-3 flex-column order-2 order-md-0 text-center">
         <div class="footer-link">
-          <a href="sobreNos.html">Sobre nós</a>
+          <a target="_blank" href="sobreNos.html">Sobre nós</a>
         </div>
         <div class="footer-link">
-          <a href="linkDoBlog" class="disabled">Blog</a>
+          <a target="_blank" href="linkDoBlog" class="disabled">Blog</a>
         </div>
         <div class="footer-link">
-          <a href="linkContato">Contato</a>
+          <a data-toggle="modal" data-target="#modalOrcamento">Contato</a>
         </div>
         <div class="footer-link">
-          <a href="linkTrabalheConosco">Trabalhe Conosco</a>
+          <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">Trabalhe Conosco</a>
         </div>
       </div>
       <hr class="clearfix w-100 d-md-none order-1 ">
@@ -22,25 +22,31 @@
           <div class="row d-flex justify-content-center align-items-center">
             <div class="col-4 text-center">
               <div class="flex-column">
-                <img src="assets/icon-footer-para-clientes.png" class="footer-img img-fluid" alt="Icone Para Clientes">
+                <a target="_blank" href="servicos.html">
+                  <img src="assets/icon-footer-para-clientes.png" class="footer-img img-fluid" alt="Icone Para Clientes">
+                </a>
                 <div class="footer-link">
-                  <a href="linkParaClientes">Para Clientes</a>
+                  <a target="_blank" href="servicos.html">Para Clientes</a>
                 </div>
               </div>
             </div>
             <div class="col-4 text-center">
               <div class="flex-column">
-                <img src="assets/icon-footer-para-pintores.png" class="footer-img img-fluid" alt="Icone Para Pintores">
+                <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">
+                  <img src="assets/icon-footer-para-pintores.png" class="footer-img img-fluid" alt="Icone Para Pintores">
+                </a>
                 <div class="footer-link">
-                  <a href="linkParaPintores">Para Pintores</a>
+                  <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">Para Pintores</a>
                 </div>
               </div>
             </div>
             <div class="col-4 text-center">
               <div class="flex-column">
-                <img src="assets/icon-footer-programa-afiliados.png" class="footer-img img-fluid" alt="Icone Programa Afiliados">
+                <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')">
+                  <img src="assets/icon-footer-programa-afiliados.png" class="footer-img img-fluid" alt="Icone Programa Afiliados">
+                </a>
                 <div class="footer-link">
-                  <a href="linkParaAfiliados">Programa de Afiliados</a>
+                  <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')">Para Parceiros</a>
                 </div>
               </div>
             </div>
@@ -52,13 +58,13 @@
           <p class="h6-responsive fw-400">Entre em Contato:</p>
         </div>
         <div class="footer-link">
-          <a href="sobreNos.html">(xx) 3333-4444</a>
+          <a href="tel:1131069166">(11) 3106-9166</a>
         </div>
         <div class="footer-link">
-          <a href="sobreNos.html">(xx) 9999-8888</a>
+          <a target="_blank" href="tel:xxxxxxxxxx">(xx) 9999-8888</a>
         </div>
         <div class="footer-link ">
-          <a class="texto-83pcent" href="sobreNos.html">email@email.com</a>
+          <a class="texto-83pcent" href="mailto:contato@maonaroda.com">contato@maonaroda.com</a>
         </div>
       </div>
     </div>
@@ -68,7 +74,7 @@
       <div class="row">
         <div class="col-6 text-left">
           <p class="mb-0">
-            <a href="#linkPoliticas"> Políticas de Privacidade <span class="d-none d-md-inline">| Termos de Uso</span></a>
+            <a onclick="alertar('Quais são as políticas?')" href="#linkPoliticas"> Políticas de Privacidade <span class="d-none d-md-inline">| Termos de Uso</span></a>
           </p>
         </div>
         <div class="col-6 text-right">
