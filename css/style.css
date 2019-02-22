@@ -143,6 +143,9 @@
 .transparencia-preta{
   background-color: #00000066;
 }
+.transparencia-preta-clarissima{
+  background-color: #0000001a;
+}
 .transparencia-laranja{
   background-color: #bb54005b;
 }
@@ -165,6 +168,11 @@
 }
 .btn-laranjado{
   background-color: #ff6f00;
+}
+.btn-outline-laranjado{
+  border: 2px solid #ff6f00!important;
+  background-color: transparent!important;
+  color: #ff6f00!important;
 }
 .btn-outline-neutro{
   border: 2px solid #5e5e5e!important;
@@ -538,19 +546,37 @@ header .carousel {
   background-position: top left;
   color: #ffffff;
 }
-/*COMO FUNCIONA*/
-#comoFunciona-intro{
-  background-image: url("../assets/bg-sala-organizada.jpeg");
+/*SERVIÇOS*/
+#servicos-intro{
+  background-image: url("../assets/bg-texturaComPincel.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   color: #ffffff;
 }
-
-/*SERVICOS*/
-.gifClickHere{
-  height: 10vh;
+.container-bottom{
+  position: absolute;
+  bottom: 0;
 }
+#servicos-residencial-img{
+  background-image: url("../assets/bg-parallax-residencial.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: initial!important;
+  height: 40vh!important;
+ }
+#servicos-comercial-img{
+  background-image: url("../assets/bg-parallax-comercial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: initial!important;
+  height: 40vh!important;
+}
+
+
+/*SERVICOS 2*/
 .bg-servicos-residencial{
   background-image: url("../assets/servicos-residencial.jpg");
   background-repeat: no-repeat;
@@ -587,7 +613,14 @@ header .carousel {
   bottom: 2vh;
   background-color: #ff7200;
 }
-
+/*COMO FUNCIONA*/
+#comoFunciona-intro{
+  background-image: url("../assets/bg-sala-organizada.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
 /*Footer*/
 #footer-btn-faq{
   position: relative;
