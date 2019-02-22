@@ -152,6 +152,12 @@
 .transparencia-laranja-escuro{
   background-color: #8f00004d;
 }
+.btn-azul-esverdeado{
+  background-color: #005765;
+}
+.btn-azul-esverdeado-claro{
+  background-color: #0099B2;
+}
 .btn-azul-escuro{
   background-color: #007a8e;
 }
@@ -164,6 +170,10 @@
 }
 .btn-amarelo{
   background-color: #fee50d;
+  color: #000000;
+}
+.btn-amarelo-amarromzado{
+  background-color: #DAC40B;
   color: #000000;
 }
 .btn-laranjado{
