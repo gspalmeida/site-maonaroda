@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Mão na Roda - Serviços</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<body>
+
+<!-- Navbar-->
+<div data-include="navbar"></div>
+<main>
+  <section id="servicos-intro" class="height90vh">
+    <div class="container-fluid height90vh" id="servicos-intro-corpo">
+      <div class="row">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-residencial')">
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="fw-400 black-text">Pintura Residencial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-row height50vh justify-content-center align-items-center">
+            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-residencial">
+              Veja o que o Mão na Roda pode fazer na sua Residência
+            </button>
+          </div>
+        </div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-comercial')">
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="fw-400">Pintura Comercial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-row height50vh justify-content-center align-items-center">
+            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-comercial">
+              Veja o que o Mão na Roda pode fazer no seu Negócio
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid height90vh hide-section" id="servicos-intro-residencial">
+      <div class="row">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial-2"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
+          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="h1-responsive">Pintura Residencial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
+            <p class="text-center h5-responsive">
+              O Mão na Roda trabalha para encurtar distâncias e agilizar processos na contratação de profissionais qualificados para pintura residencial.
+              Atentendo sempre em prontidão, em até 48h , apenas com profissionais homologados e um selo de garantia 100%.
+            </p>
+            <p class="text-center fw-600 h5-responsive">
+              Casa ou apartamento, basta selecionar a opção e deixar o resto conosco!
+            </p>
+            <div class="container-fluid text-center mt-4">
+              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de pintura interna ou externa')">CASA</button>
+              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a calculadora')">APARTAMENTO</button>
+            </div>
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
+                    onclick="trocaSlide('#servicos-intro-residencial', '#servicos-intro-comercial')">
+              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid height90vh hide-section" id="servicos-intro-comercial">
+      <div class="row">
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial-2"></div>
+        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
+          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
+            <div class="container-fluid text-center">
+              <h1 class="h1-responsive">Pintura Comercial</h1>
+            </div>
+          </div>
+          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
+            <p class="text-center h5-responsive">
+              Quando o assunto é um ambiente comercial, não podemos deixar nas mãos de qualquer um. Por isso o Mão na Roda está aqui,
+              para proporcionar o melhor serviço de pintura comercial, com profissionais homologados, prontidão no atendimento e
+              as melhores tintas do mercado.
+            </p>
+            <p class="text-center fw-600 h5-responsive">
+              O que a sua empresa precisa é de um serviço com garantia 100% Conte com o Mão na Roda pra isso!
+            </p>
+            <div class="container-fluid text-center mt-4">
+              <button type="button" class="btn btn-lg waves-effect waves-light mb-4 btnPreenchimento"
+                      onclick="alertar('abre a modal de orçamento na view de contactForm')">Solicitar Orçamento!</button>
+            </div>
+          </div>
+          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
+            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
+                    onclick="trocaSlide('#servicos-intro-comercial', '#servicos-intro-residencial')">
+              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modais">
+    <div data-include="modalGarantia100"></div>
+    <div data-include="modalFAQ"></div>
+    <div data-include="modalVirarAfiliado"></div>
+  </section>
+</main>
+
+<!-- Footer-->
+<div data-include="footer"></div>
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/galileoJS.js"></script>
+<script>
+  $(document).ready(function collapseNavbar() {
+      if(checkInclude() === true){
+          $("#navbar-wrapper").addClass('top-nav-collapse');
+      }
+      else {
+          setTimeout(collapseNavbar,1)
+      }
+  })
+</script>
+</body>
+
+</html>

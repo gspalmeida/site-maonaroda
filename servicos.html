@@ -16,105 +16,172 @@
 <!-- Navbar-->
 <div data-include="navbar"></div>
 <main>
-  <section id="servicos-intro" class="height90vh">
-    <div class="container-fluid height90vh" id="servicos-intro-corpo">
-      <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-residencial')">
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <div class="container-fluid text-center">
-              <h1 class="fw-400 black-text">Pintura Residencial</h1>
-            </div>
-          </div>
-          <div class="d-flex flex-row height50vh justify-content-center align-items-center">
-            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
-          </div>
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg w-50 waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-residencial">
-              Veja o que o Mão na Roda pode fazer na sua Residência
+  <section class="d-flex flex-column height100vh view jarallax" id="servicos-intro">
+    <div class="mask height100vh flex-center align-items-center transparencia-preta-clarissima">
+      <div class="container container-bottom">
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-3 col-lx-4 pb-5 mx-auto">
+            <button class="animated slower fadeInLeftBig btn btn-block btn-lg mx-auto btn-block px-2 mb-5 waves-effect waves-light btn-laranjado">
+              <span class="size-094rem fw-500">Residencial</span>
             </button>
           </div>
-        </div>
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial" onclick="trocaSlide('#servicos-intro-corpo', '#servicos-intro-comercial')">
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <div class="container-fluid text-center">
-              <h1 class="fw-400">Pintura Comercial</h1>
-            </div>
-          </div>
-          <div class="d-flex flex-row height50vh justify-content-center align-items-center">
-            <img src="assets/clickHere.gif" alt="Gif: Clique Aqui" class="gifClickHere">
-          </div>
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4" id="servicos-intro-cta-comercial">
-              Veja o que o Mão na Roda pode fazer no seu Negócio
+          <div class="col-6 col-md-4 col-lg-3 col-lx-4 pb-5 mx-auto">
+            <button class="animated slower fadeInRightBig btn btn-block btn-lg mx-auto btn-block px-2 mb-5 waves-effect waves-light btn-laranjado">
+              <span class="size-094rem fw-500">Comercial</span>
             </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid height90vh hide-section" id="servicos-intro-residencial">
+    <div class="container 1stSection pb-4 text-center">
       <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-residencial-2"></div>
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
-          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
-            <div class="container-fluid text-center">
-              <h1 class="h1-responsive">Pintura Residencial</h1>
-            </div>
-          </div>
-          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
-            <p class="text-center h5-responsive">
-              O Mão na Roda trabalha para encurtar distâncias e agilizar processos na contratação de profissionais qualificados para pintura residencial.
-              Atentendo sempre em prontidão, em até 48h , apenas com profissionais homologados e um selo de garantia 100%.
-            </p>
-            <p class="text-center fw-600 h5-responsive">
-              Casa ou apartamento, basta selecionar a opção e deixar o resto conosco!
-            </p>
-            <div class="container-fluid text-center mt-4">
-              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a modal de orçamento na view de pintura interna ou externa')">CASA</button>
-              <button type="button" class="btn btn-lg w-30 waves-effect waves-light mb-4 btnPreenchimento" onclick="alertar('abre a calculadora')">APARTAMENTO</button>
-            </div>
-          </div>
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
-                    onclick="trocaSlide('#servicos-intro-residencial', '#servicos-intro-comercial')">
-              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
-            </button>
-          </div>
+        <div class="col-12 py-3 py-sm-5 mt-2 mt-sm-4">
+          <h1 class="fw-500 mb-0 animated slow fadeInLeft">Conheça os Serviços</h1>
+          <h1 class="fw-500 mb-0 animated slow fadeInRight">Mão na Roda</h1>
         </div>
       </div>
     </div>
-    <div class="container-fluid height90vh hide-section" id="servicos-intro-comercial">
-      <div class="row">
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh bg-servicos-comercial-2"></div>
-        <div class="col-6 d-flex flex-column align-items-stretch height90vh">
-          <div class="d-flex flex-row height20vh align-items-center justify-content-center">
-            <div class="container-fluid text-center">
-              <h1 class="h1-responsive">Pintura Comercial</h1>
-            </div>
-          </div>
-          <div class="d-flex flex-column height50vh justify-content-center align-items-center">
-            <p class="text-center h5-responsive">
-              Quando o assunto é um ambiente comercial, não podemos deixar nas mãos de qualquer um. Por isso o Mão na Roda está aqui,
-              para proporcionar o melhor serviço de pintura comercial, com profissionais homologados, prontidão no atendimento e
-              as melhores tintas do mercado.
+  </section>
+  <section class="container text-center px-2 px-sm-4 py-5" id="servicos-vantagens">
+    <p class="h1-responsive font-weight-bold pt-4 pb-2">
+      Pintores Profissionais para a sua Casa ou Escritório
+    </p>
+    <p class="text-muted fw-500">
+      O Mão na roda garante um serviço impecável e sem dor de cabeça
+    </p>
+    <p class="h5-responsive fw-600">
+      Veja algumas de nossas vantagens:
+    </p>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="assets/icon-comoFunciona-1.png" alt="">
+        <p class="fw-600">
+          Profissionais prontos para começar em até 48h
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/icon-comoFunciona-2.png" alt="">
+        <p class="fw-600">
+          Pagamento Facilitado
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/icon-comoFunciona-3.png" alt="">
+        <p class="fw-600">
+          Garantia de Satisfação
+        </p>
+      </div>
+    </div>
+    <!--<ul class="list-inline">-->
+      <!--<li class="list-inline-item fw-500 text-muted"><i class="fas fa-circle mr-2" style="font-size: 11px"></i>Início em até 48h</li>-->
+      <!--<li class="list-inline-item fw-500 text-muted"><i class="fas fa-circle mr-2" style="font-size: 11px"></i>Pagamento Facilitado</li>-->
+      <!--<li class="list-inline-item fw-500 text-muted"><i class="fas fa-circle mr-2" style="font-size: 11px"></i>Profissionais Homologados</li>-->
+      <!--<li class="list-inline-item fw-500 text-muted"><i class="fas fa-circle mr-2" style="font-size: 11px"></i>Garantia de Satisfação 100%</li>-->
+    <!--</ul>-->
+    <!--<hr class="mb-4 mt-2">-->
+  </section>
+  <section class="text-center view jarallax" id="servicos-residencial-img"></section>
+  <section class="container text-center py-5" id="servicos-residencial-corpo">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <p class="h1-responsive fw-500">
+          Pintura Residencial
+        </p>
+        <p class="h5-responsive fw-400">
+          O Mão na Roda trabalha para encurtar distâncias e agilizar processos na contratação de profissionais
+          qualificados para pintura residencial.
+          Atentendo sempre em prontidão, em até 48h , apenas com profissionais homologados
+          e um selo de garantia 100%.
+        </p>
+        <p class="h5-responsive text-muted">
+          Casa ou Apartamento, o Mão na roda é a melhor opção para um serviço impecável e sem stress!
+        </p>
+        <div class="row py-3">
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-1.png" alt="">
+            <p class="fw-600">
+              Profissionais prontos para começar em até 48h
             </p>
-            <p class="text-center fw-600 h5-responsive">
-              O que a sua empresa precisa é de um serviço com garantia 100% Conte com o Mão na Roda pra isso!
-            </p>
-            <div class="container-fluid text-center mt-4">
-              <button type="button" class="btn btn-lg waves-effect waves-light mb-4 btnPreenchimento"
-                      onclick="alertar('abre a modal de orçamento na view de contactForm')">Solicitar Orçamento!</button>
-            </div>
           </div>
-          <div class="d-flex flex-row height20vh align-items-end justify-content-center">
-            <button type="button" class="btn btn-lg btn-block waves-effect waves-light height10vh mb-4 btnPreenchimento"
-                    onclick="trocaSlide('#servicos-intro-comercial', '#servicos-intro-residencial')">
-              Se você procura pintura de ambientes comerciais, <strong class="size-13em">clique aqui.</strong>
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-2.png" alt="">
+            <p class="fw-600">
+              Pagamento Facilitado
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-3.png" alt="">
+            <p class="fw-600">
+              Garantia de Satisfação
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-md-9 col-lg-8 mx-auto">
+            <hr>
+            <p class="h5-responsive fw-500">
+              Gostou das vantagens que podemos lhe orefecer? Solicite seu orçamento gratuítamente no botão abaixo
+            </p>
+            <button data-toggle="modal" data-target="#modalOrcamento" type="button"
+                    class="btn-outline-laranjado btn-lg size-12rem mx-auto fw-500 waves-effect waves-light mt-3 hoverable">
+              Solicitar Orçamento!
             </button>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <section class="text-center view jarallax" id="servicos-comercial-img"></section>
+  <section class="container text-center py-5" id="servicos-comercial-corpo">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <p class="h1-responsive fw-500">
+          Pintura Comercial
+        </p>
+        <p class="h5-responsive fw-400">
+          Quando o assunto é um ambiente comercial, não podemos deixar nas mãos de qualquer um. Por isso o Mão na Roda está aqui,
+          para proporcionar o melhor serviço de pintura comercial, com profissionais homologados, prontidão no atendimento e
+          as melhores tintas do mercado.
+        </p>
+        <p class="h5-responsive text-muted">
+          O que a sua empresa precisa é de um serviço com garantia 100% Conte com o Mão na Roda pra isso!
+        </p>
+        <div class="row py-3">
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-1.png" alt="">
+            <p class="fw-600">
+              Profissionais prontos para começar em até 48h
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-2.png" alt="">
+            <p class="fw-600">
+              Pagamento Facilitado
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img src="assets/icon-comoFunciona-3.png" alt="">
+            <p class="fw-600">
+              Garantia de Satisfação
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-md-9 col-lg-8 mx-auto">
+            <hr>
+            <p class="h5-responsive fw-500">
+              O Mão na Roda oferece tudo que sua empresa precisa! Solicite já seu orçamento de deixe que nós cuidamos do resto.
+            </p>
+            <button data-toggle="modal" data-target="#modalOrcamento" type="button"
+                    class="btn-outline-laranjado btn-lg size-12rem mx-auto fw-500 waves-effect waves-light mt-3 hoverable">
+              Solicitar Orçamento!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section id="modais">
     <div data-include="modalGarantia100"></div>
@@ -133,14 +200,13 @@
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/galileoJS.js"></script>
 <script>
-  $(document).ready(function collapseNavbar() {
-      if(checkInclude() === true){
-          $("#navbar-wrapper").addClass('top-nav-collapse');
-      }
-      else {
-          setTimeout(collapseNavbar,1)
-      }
-  })
+    // object-fit polyfill run
+    objectFitImages();
+    /* init Jarallax */
+    jarallax(document.querySelectorAll('.jarallax'));
+    jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+        keepImg: true
+    });
 </script>
 </body>
 
