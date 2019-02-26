@@ -468,6 +468,10 @@
   background-position: center center;
   color: #ffffff;
 }
+#home-img-intro{
+  padding-top: 20px;
+  max-height: 35vh;
+}
 /*HOME-ComoFunciona*/
 @media (min-width: 576px) and (max-width: 1200px){
   .title-min-height{
@@ -593,6 +597,17 @@ header .carousel {
     height: 100vh!important;
   }
 }
+@media (max-width: 379px) {
+  .equal-width-btn{
+    width: 100%;
+  }
+}
+@media (min-width: 380px) and (max-width: 451px) {
+  .equal-width-btn{
+    width: 80%;
+  }
+}
+
 /*SOBRE NÓS*/
 #sobreNos-intro{
   background-image: url("../assets/bg-pincel-parede.jpg");

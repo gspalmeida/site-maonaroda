@@ -20,10 +20,10 @@
       <div class="container">
         <div class="row 1stSection mb-4">
           <div class="col-12 text-center">
-            <img src="assets/logo-intro-home.png" class="img-fluid mx-auto" height="250px" alt="">
+            <img src="assets/logo-intro-home.png" class="img-fluid mx-auto" alt="Logo Mão na Roda" id="home-img-intro">
           </div>
           <div class="col-12 col-md-9 mx-auto text-center">
-            <h1 class="fw-400 mt-3">Pintores profissionais para a sua Casa ou Escritorio</h1>
+            <p class="h1-responsive fw-400 mt-3">Pintores profissionais para a sua Casa ou Escritorio</p>
           </div>
           <div class="col-12 text-center">
             <a data-toggle="modal" data-target="#modalOrcamento" class="btn size-094rem btn-laranjado borderRadius7px fw-500">Solicitar Orçamento</a>
@@ -67,11 +67,10 @@
         </div>
       </div>
     </section>
-    <!--TODO ADICIONAR MOBILE CONTROLS-->
-    <section class="d-md-none text-center my-5" id="home-comoFunciona-mobile">
+    <section class="d-md-none container-fluid text-center my-5" id="home-comoFunciona-mobile">
       <h2 class="h2-responsive font-weight-bold my-3 my-sm-5">Como Funciona</h2>
       <div class="wrapper-carousel-fix">
-        <div id="carousel-comoFunciona-mobile" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+        <div id="carousel-home-comoFunciona-mobile" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
              data-interval="false">
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
@@ -111,23 +110,21 @@
               </div>
             </div>
           </div>
-          <a class="carousel-control-prev left carousel-control" href="#carousel-comoFunciona-mobile" role="button"
+          <a class="carousel-control-prev left carousel-control" href="#carousel-home-comoFunciona-mobile" role="button"
              data-slide="prev">
             <span class="icon-prev" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
           </a>
-          <a class="carousel-control-next right carousel-control" href="#carousel-comoFunciona-mobile" role="button"
+          <a class="carousel-control-next right carousel-control" href="#carousel-home-comoFunciona-mobile" role="button"
              data-slide="next">
             <span class="icon-next" aria-hidden="true"></span>
             <span class="sr-only">Próximo</span>
           </a>
-          <!--Controls-->
         </div>
-        <!-- Carousel Wrapper -->
       </div>
       <div class="row">
         <div class="col-10 col-sm-9 col-md-7 col-lg-4 mx-auto">
-          <button onclick="alertar('abre a modal de orçamento')"  data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
+          <button data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
             <span class="size-094rem fw-500">Solicitar Orçamento!</span>
           </button>
         </div>
@@ -248,7 +245,7 @@
     </section>
     <section class="container-fluid text-center" id="home-servicos">
       <div class="d-flex align-items-center justify-content-center px-0 px-lg-5 mx-lg-5" id="home-servicos-corpo">
-        <div class="container-fluid px-0 px-lg-5 mx-lg-5">
+        <div class="container-fluid px-0 px-lg-4 mx-xl-5">
           <div class="row">
             <div class="col-12">
               <h2 class="h2-responsive font-weight-bold my-3 my-sm-5">Serviços</h2>
@@ -256,7 +253,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-sm-10 col-lg-6 mb-3 mb-sm-5 mx-sm-auto">
-              <div class="card hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
+              <div class="card justify-content-end align-items-center hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
                 <h2 class="h3-responsive font-weight-bold">Residencial</h2>
                 <p class="h5-responsive">
                   Explicação sobre residencial, com o que abrange tanto casa
@@ -265,11 +262,11 @@
                   pra ap, separado e com botões chamando para a página de
                   serviços e para solicitar orçamento para cada modalidade.
                 </p>
-                <a target="_blank" href="servicos.html#servicos-residencial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable mb-2" id="home-servicos-residencial-cta">Ver mais Detalhes</a>
+                <a target="_blank" href="servicos.html#servicos-residencial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable w-sm-50 mx-sm-auto mb-2">Ver mais Detalhes</a>
               </div>
             </div>
             <div class="col-12 col-sm-10 col-lg-6 mb-3 mb-sm-5 mx-sm-auto">
-              <div class="card hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
+              <div class="card justify-content-end align-items-center hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
                 <h2 class="h3-responsive font-weight-bold">Comercial</h2>
                 <p class="h5-responsive">
                   Explicação sobre comercial, com o que abrange toda esta
@@ -278,7 +275,7 @@
                   detalhada, e com botões chamando pra página de serviço e
                   para solicitar orçamento.
                 </p>
-                <a target="_blank" href="servicos.html#servicos-comercial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable mb-2" id="home-servicos-comercial-cta">Ver mais Detalhes</a>
+                <a target="_blank" href="servicos.html#servicos-comercial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable w-sm-50 mx-sm-auto mb-2">Ver mais Detalhes</a>
               </div>
             </div>
           </div>
@@ -365,15 +362,11 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-1 ml-auto"></div>
-          <div class="col col-md-4 col-lg-3">
-            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-block btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Ser um pintor Homologado!</button>
+        <div class="row px-2 justify-content-center align-items-center">
+          <div class="col">
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Virar um Parceiro!</button>
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Ser um pintor Homologado!</button>
           </div>
-          <div class="col col-md-4 col-lg-3">
-            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-block btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Virar um Parceiro!</button>
-          </div>
-          <div class="col-1 mr-auto"></div>
         </div>
       </div>
     </section>
@@ -419,6 +412,20 @@
     jarallax(document.querySelectorAll('.jarallax'));
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true
+    });
+    $(document).ready(function () {
+        $('#carousel-home-comoFunciona-mobile').hammer().on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#carousel-home-comoFunciona-mobile').hammer().on('swiperight', function () {
+            $(this).carousel('prev');
+        });
+        $('#home-carousel-depoimentos').hammer().on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#home-carousel-depoimentos').hammer().on('swiperight', function () {
+            $(this).carousel('prev');
+        })
     });
 </script>
 </body>

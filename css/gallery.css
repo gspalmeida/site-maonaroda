@@ -4,7 +4,7 @@
   color: #554A26!important;
   font-weight: 500!important;
   font-size: 1.1rem !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 0.8rem !important;
 }
 .btn-outline-vermelho{
   border: 2px solid #591B1B!important;
@@ -12,7 +12,7 @@
   color: #591B1B!important;
   font-weight: 500!important;
   font-size: 1.1rem !important;
-  padding: 0.5rem 1rem!important;
+  padding: 0.5rem 0.8rem!important;
 }
 .btn-outline-vermelho-claro{
   border: 2px solid #733a3a!important;
@@ -20,7 +20,7 @@
   color: #733a3a!important;
   font-weight: 500!important;
   font-size: 1.1rem !important;
-  padding: 0.5rem 1rem!important;
+  padding: 0.5rem 0.8rem!important;
 }
 .btn-outline-azul{
   border: 2px solid #2E554E!important;
@@ -28,7 +28,7 @@
   color: #2E554E!important;
   font-weight: 500!important;
   font-size: 1.1rem !important;
-  padding: 0.5rem 1rem!important;
+  padding: 0.5rem 0.8rem!important;
 }
 .btn-outline-verde {
   border: 2px solid #4caf50!important;
@@ -36,7 +36,7 @@
   color: #4caf50!important;
   font-weight: 500!important;
   font-size: 1.1rem !important;
-  padding: 0.5rem 1rem!important;
+  padding: 0.5rem 0.8rem!important;
 }
 .gallery {
   -webkit-column-count: 3;
