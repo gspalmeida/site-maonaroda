@@ -1,0 +1,40 @@
+<div class="modal fade show" id="modalColetaLeadFAQ" tabindex="-1" role="dialog" aria-labelledby="Modal Coleta Lead FAQ">
+  <div class="modal-dialog modal-side modal-top-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Mais alguma Dúvida? Conta pra Gente!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <p class="text-center">Ficou com alguma dúvida que nao foi respondida?</p>
+        <p class="text-center">Manda pra gente, nós respondemos o quanto antes!</p>
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <input type="text" id="modalColetaLeadFAQ-nome" class="form-control validate">
+          <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-nome" class="fw-500">Seu Nome</label>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="modalColetaLeadFAQ-email" class="form-control validate">
+          <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-email" class="fw-500">Seu email</label>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-phone prefix grey-text" style="transform: rotateY(180deg);"></i>
+          <input type="text" id="modalColetaLeadFAQ-telefone" class="form-control validate">
+          <label data-error="Obrigatório" data-success="Correto" for="modalColetaLeadFAQ-telefone" class="fw-500">Seu Número</label>
+        </div>
+        <div class="md-form amber-textarea active-amber-textarea mb-4">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <textarea type="text" id="modalColetaLeadFAQ-pergunta" class="md-textarea form-control" rows="4"></textarea>
+          <label data-error="Verifique" data-success="Correto" for="modalColetaLeadFAQ-pergunta" class="fw-500">Digite sua Pergunta</label>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button id="modalColetaLeadFAQ-enviar" class="btn bg-azul-medio borderRadius7px waves-effect waves-light mr-auto">Enviar</button>
+        <button id="modalColetaLeadFAQ-fechar" class="btn btn-outline-neutro waves-effect waves-light ml-auto" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

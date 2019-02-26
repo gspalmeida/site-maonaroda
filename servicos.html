@@ -207,10 +207,10 @@
             <p class="h5-responsive fw-500">
               Gostou das vantagens que podemos lhe orefecer? Solicite seu orçamento gratuítamente no botão abaixo
             </p>
-            <button data-toggle="modal" data-target="#modalOrcamento" type="button"
+            <a href="solicitarOrcamento.html" target="_blank" type="button"
                     class="btn-outline-laranjado btn-lg size-12rem mx-auto fw-500 waves-effect waves-light mt-3 hoverable">
               Solicitar Orçamento!
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -303,10 +303,10 @@
             <p class="h5-responsive fw-500">
               O Mão na Roda oferece tudo que sua empresa precisa! Solicite já seu orçamento de deixe que nós cuidamos do resto.
             </p>
-            <button data-toggle="modal" data-target="#modalOrcamento" type="button"
+            <a href="solicitarOrcamento.html" target="_blank" type="button"
                     class="btn-outline-laranjado btn-lg size-12rem mx-auto fw-500 waves-effect waves-light mt-3 hoverable">
               Solicitar Orçamento!
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -316,7 +316,7 @@
 
   <section id="modais">
     <div data-include="modalGarantia100"></div>
-    <div data-include="modalFAQ"></div>
+    <div data-include="coletaLeadFAQ"></div>
     <div data-include="modalVirarAfiliado"></div>
   </section>
 </main>
@@ -346,6 +346,26 @@
         $('body,html').animate({
             scrollTop: $(elAttr).offset().top + offset
         }, 1000);
+    });
+    $(window).on('load',function () {
+        $('#carousel-servicos-vantagens-mobile').on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#carousel-servicos-vantagens-mobile').on('swiperight', function () {
+            $(this).carousel('prev');
+        });
+        $('#carousel-servicos-vantagensResidencial-mobile').on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#carousel-servicos-vantagensResidencial-mobile').on('swiperight', function () {
+            $(this).carousel('prev');
+        });
+        $('#carousel-servicos-vantagensComercial-mobile').on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#carousel-servicos-vantagensComercial-mobile').on('swiperight', function () {
+            $(this).carousel('prev');
+        })
     });
 </script>
 </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Mão na Roda - Orçamento</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<body>
+
+  <!-- Navbar-->
+  <div data-include="navbar"></div>
+  <main>
+    <section class="height100vh">
+
+    </section>
+    <section id="modais">
+      <div data-include="modalGarantia100"></div>
+      <div data-include="coletaLeadFAQ"></div>
+      <div data-include="modalVirarAfiliado"></div>
+    </section>
+  </main>
+  <!-- Footer-->
+  <div data-include="footer"></div>
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/galileoJS.js"></script>
+<script>
+    // object-fit polyfill run
+    objectFitImages();
+    /* init Jarallax */
+    jarallax(document.querySelectorAll('.jarallax'));
+    jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+        keepImg: true
+    });
+    $(document).ready(function () {
+        $('#carousel-home-comoFunciona-mobile').hammer().on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#carousel-home-comoFunciona-mobile').hammer().on('swiperight', function () {
+            $(this).carousel('prev');
+        });
+        $('#home-carousel-depoimentos').hammer().on('swipeleft', function () {
+            $(this).carousel('next');
+        });
+        $('#home-carousel-depoimentos').hammer().on('swiperight', function () {
+            $(this).carousel('prev');
+        })
+    });
+</script>
+</body>
+
+</html>

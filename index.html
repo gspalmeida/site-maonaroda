@@ -26,7 +26,7 @@
             <p class="h1-responsive fw-400 mt-3">Pintores profissionais para a sua Casa ou Escritorio</p>
           </div>
           <div class="col-12 text-center">
-            <a data-toggle="modal" data-target="#modalOrcamento" class="btn size-094rem btn-laranjado borderRadius7px fw-500">Solicitar Orçamento</a>
+            <a href="solicitarOrcamento.html" target="_blank" class="btn size-094rem btn-laranjado borderRadius7px fw-500">Solicitar Orçamento</a>
           </div>
         </div>
       </div>
@@ -59,9 +59,9 @@
           <p class="h4-responsive text-center fw-500">Quer um serviço de pintura com Garantia de Qualidade 100%?</p>
           <div class="row">
             <div class="col-10 col-sm-9 col-md-7 col-lg-4 mx-auto">
-              <button onclick="alertar('abre a modal de orçamento')"  data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
+              <a href="solicitarOrcamento.html" target="_blank"  type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
                 <span class="size-094rem fw-500">Solicitar Orçamento!</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -124,9 +124,9 @@
       </div>
       <div class="row">
         <div class="col-10 col-sm-9 col-md-7 col-lg-4 mx-auto">
-          <button data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
+          <a href="solicitarOrcamento.html" target="_blank"  type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
             <span class="size-094rem fw-500">Solicitar Orçamento!</span>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -364,8 +364,8 @@
         </div>
         <div class="row px-2 justify-content-center align-items-center">
           <div class="col">
-            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Virar um Parceiro!</button>
-            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Ser um pintor Homologado!</button>
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Vire um parceiro!</button>
+            <button data-toggle="modal" data-target="#modalVirarAfiliado" type="button" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')" class="btn borderRadius7px btn-lg btn-amarelo fw-400 waves-effect waves-light hoverable px-2 card-same-height">Seja um pintor homologado!</button>
           </div>
         </div>
       </div>
@@ -385,16 +385,17 @@
       </div>
       <div class="row">
         <div class="col">
-          <a data-toggle="modal" data-target="#modalFAQ" class="btn size-094rem btn-outline-azul-claro fw-500 waves-effect waves-light">Acesse o nosso FAQ!</a>
+          <a href="faq.html" target="_blank" class="btn size-094rem btn-outline-azul-claro fw-500 waves-effect waves-light">Acesse o nosso FAQ!</a>
           <a data-toggle="modal" data-target="#modalColetaLeadFAQ" class="btn size-094rem btn-outline-azul-claro fw-500 waves-effect waves-light">Faça a sua pergunta!</a>
         </div>
       </div>
     </section>
     <section id="modais">
       <div data-include="modalGarantia100"></div>
-      <div data-include="modalFAQ"></div>
+      <div data-include="coletaLeadFAQ"></div>
       <div data-include="modalVirarAfiliado"></div>
     </section>
+    <div data-include="fixed-btn"></div>
   </main>
   <!-- Footer-->
   <div data-include="footer"></div>
@@ -413,17 +414,17 @@
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true
     });
-    $(document).ready(function () {
-        $('#carousel-home-comoFunciona-mobile').hammer().on('swipeleft', function () {
+    $(window).on('load',function () {
+        $('#carousel-home-comoFunciona-mobile').on('swipeleft', function () {
             $(this).carousel('next');
         });
-        $('#carousel-home-comoFunciona-mobile').hammer().on('swiperight', function () {
+        $('#carousel-home-comoFunciona-mobile').on('swiperight', function () {
             $(this).carousel('prev');
         });
-        $('#home-carousel-depoimentos').hammer().on('swipeleft', function () {
+        $('#home-carousel-depoimentos').on('swipeleft', function () {
             $(this).carousel('next');
         });
-        $('#home-carousel-depoimentos').hammer().on('swiperight', function () {
+        $('#home-carousel-depoimentos').on('swiperight', function () {
             $(this).carousel('prev');
         })
     });
