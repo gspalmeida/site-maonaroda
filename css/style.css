@@ -610,11 +610,12 @@ header .carousel {
 
 /*SOBRE NÓS*/
 #sobreNos-intro{
-  background-image: url("../assets/bg-pincel-parede.jpg");
+  background-image: url("../assets/bg-sobre-nos.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
+  background-position: center center;
   color: #ffffff;
+  min-height: 60vh!important;
 }
 /*SERVIÇOS*/
 #servicos-intro{
@@ -767,7 +768,7 @@ header .carousel {
 
 /*FixedBTN*/
 .fixed-action-btn.active ul {
-  height: calc(100% + 80px);
+  height: calc(100% + 50px);
 }
 #fixed-btn-itens-pc .btn-floating{
   width:auto !important;
