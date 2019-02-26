@@ -25,37 +25,32 @@
           <div class="col-12 col-md-9 mx-auto text-center">
             <h1 class="fw-400 mt-3">Pintores profissionais para a sua Casa ou Escritorio</h1>
           </div>
-          <!--<div class="col-12 col-sm-8  mx-auto text-center">-->
-          <!--<p class="h4-responsive fw-400">-->
-          <!--Prontos para começar qualquer projeto de pintura dentro de 48 horas. Sem surpresas, sem dor de cabeça.-->
-          <!--</p>-->
-          <!--</div>-->
           <div class="col-12 text-center">
-            <a href="portifolio.html" class="btn size-094rem btn-laranjado borderRadius7px fw-500">Conheça nosso trabalho!</a>
+            <a data-toggle="modal" data-target="#modalOrcamento" class="btn size-094rem btn-laranjado borderRadius7px fw-500">Solicitar Orçamento</a>
           </div>
         </div>
       </div>
     </section>
-    <section class="container text-center mt-5" id="home-comoFunciona">
+    <section class="d-none d-md-block container text-center mt-5" id="home-comoFunciona">
       <h2 class="h2-responsive font-weight-bold my-5">Como Funciona</h2>
       <div class="row">
         <div class="col-12 col-sm-4 mx-auto">
           <img src="assets/icon-comoFunciona-1.png" alt="">
-          <p class="h4-responsive font-weight-bold text-center">Descreva seu projeto</p>
+          <p class="h4-responsive font-weight-bold text-center title-min-height">Descreva seu projeto</p>
           <p class="h5-responsive text-center">
             Entre em contato por um de nossos canais e diga-nos o que você planeja, e rápidamente lhe encaminharemos um orçamento.
           </p>
         </div>
         <div class="col-12 col-sm-4 mx-auto">
           <img src="assets/icon-comoFunciona-2.png" alt="">
-          <p class="h4-responsive font-weight-bold text-center">Assine o Contrato</p>
+          <p class="h4-responsive font-weight-bold text-center title-min-height">Assine o Contrato</p>
           <p class="h5-responsive text-center">
             Todos os nossos serviços possuem um contrato assinado e contam com um selo de garantia 100%.
           </p>
         </div>
         <div class="col-12 col-sm-4 mx-auto">
           <img src="assets/icon-comoFunciona-3.png" alt="">
-          <p class="h4-responsive font-weight-bold text-center">Aproveite as novas cores</p>
+          <p class="h4-responsive font-weight-bold text-center title-min-height">Aproveite as novas cores</p>
           <p class="h5-responsive text-center">
             Em poucos dias estará tudo pronto! Cores renovadas, zero estresse, zero dor de cabeça e serviço nota dez.
           </p>
@@ -65,10 +60,76 @@
           <div class="row">
             <div class="col-10 col-sm-9 col-md-7 col-lg-4 mx-auto">
               <button onclick="alertar('abre a modal de orçamento')"  data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
-                <span class="size-094rem fw-500">Conte com o Mão na Roda!</span>
+                <span class="size-094rem fw-500">Solicitar Orçamento!</span>
               </button>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!--TODO ADICIONAR MOBILE CONTROLS-->
+    <section class="d-md-none text-center my-5" id="home-comoFunciona-mobile">
+      <h2 class="h2-responsive font-weight-bold my-3 my-sm-5">Como Funciona</h2>
+      <div class="wrapper-carousel-fix">
+        <div id="carousel-comoFunciona-mobile" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+             data-interval="false">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="testimonial">
+                <div class="mx-auto">
+                  <img src="assets/icon-comoFunciona-1.png" class="img-fluid"
+                       alt="Ícone Descreva seu Projeto">
+                </div>
+                <p class="h4-responsive font-weight-bold text-center title-min-height">Descreva seu projeto</p>
+                <p class="h5-responsive text-center">
+                  Entre em contato por um de nossos canais e diga-nos o que você planeja, e rápidamente lhe encaminharemos um orçamento.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial">
+                <div class="mx-auto">
+                  <img src="assets/icon-comoFunciona-2.png" class="img-fluid"
+                       alt="Ícone Assine o Contrato">
+                </div>
+                <p class="h4-responsive font-weight-bold text-center title-min-height">Assine o Contrato</p>
+                <p class="h5-responsive text-center">
+                  Todos os nossos serviços possuem um contrato assinado e contam com um selo de garantia 100%.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial">
+                <div class="mx-auto">
+                  <img src="assets/icon-comoFunciona-3.png" class="img-fluid"
+                       alt="Ícone Aproveite as novas cores">
+                </div>
+                <p class="h4-responsive font-weight-bold text-center title-min-height">Aproveite as novas cores</p>
+                <p class="h5-responsive text-center">
+                  Em poucos dias estará tudo pronto! Cores renovadas, zero estresse, zero dor de cabeça e serviço nota dez.
+                </p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev left carousel-control" href="#carousel-comoFunciona-mobile" role="button"
+             data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next right carousel-control" href="#carousel-comoFunciona-mobile" role="button"
+             data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
+          <!--Controls-->
+        </div>
+        <!-- Carousel Wrapper -->
+      </div>
+      <div class="row">
+        <div class="col-10 col-sm-9 col-md-7 col-lg-4 mx-auto">
+          <button onclick="alertar('abre a modal de orçamento')"  data-toggle="modal" data-target="#modalOrcamento" type="button" class="btn btn-block btn-lg mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
+            <span class="size-094rem fw-500">Solicitar Orçamento!</span>
+          </button>
         </div>
       </div>
     </section>
@@ -186,16 +247,16 @@
       </div>
     </section>
     <section class="container-fluid text-center" id="home-servicos">
-      <div class="d-flex align-items-center justify-content-center" id="home-servicos-corpo">
-        <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-center px-0 px-lg-5 mx-lg-5" id="home-servicos-corpo">
+        <div class="container-fluid px-0 px-lg-5 mx-lg-5">
           <div class="row">
             <div class="col-12">
-              <h2 class="h2-responsive font-weight-bold my-5">Serviços</h2>
+              <h2 class="h2-responsive font-weight-bold my-3 my-sm-5">Serviços</h2>
             </div>
           </div>
           <div class="row">
-            <div class="col-12 col-lg-6 mb-5">
-              <div class="card hoverable px-4 pt-4 h-100">
+            <div class="col-12 col-sm-10 col-lg-6 mb-3 mb-sm-5 mx-sm-auto">
+              <div class="card hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
                 <h2 class="h3-responsive font-weight-bold">Residencial</h2>
                 <p class="h5-responsive">
                   Explicação sobre residencial, com o que abrange tanto casa
@@ -204,13 +265,11 @@
                   pra ap, separado e com botões chamando para a página de
                   serviços e para solicitar orçamento para cada modalidade.
                 </p>
-                <div class="container px-md-5">
-                  <button onclick="trocaSlide('#home-servicos-corpo', '#home-servicos-residencial')" type="button" class="borderRadius7px btn btn-lg btn-block px-2 btn-azul-escuro waves-effect waves-light hoverable height10vh mb-4" id="home-servicos-residencial-cta">Ver mais Detalhes</button>
-                </div>
+                <a target="_blank" href="servicos.html#servicos-residencial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable mb-2" id="home-servicos-residencial-cta">Ver mais Detalhes</a>
               </div>
             </div>
-            <div class="col-12 col-lg-6 mb-5">
-              <div class="card hoverable px-4 pt-4 h-100">
+            <div class="col-12 col-sm-10 col-lg-6 mb-3 mb-sm-5 mx-sm-auto">
+              <div class="card hoverable px-2 px-sm-4 pt-2 pt-sm-4 h-100">
                 <h2 class="h3-responsive font-weight-bold">Comercial</h2>
                 <p class="h5-responsive">
                   Explicação sobre comercial, com o que abrange toda esta
@@ -219,9 +278,7 @@
                   detalhada, e com botões chamando pra página de serviço e
                   para solicitar orçamento.
                 </p>
-                <div class="container px-md-5">
-                  <button onclick="trocaSlide('#home-servicos-corpo', '#home-servicos-comercial')" type="button" class="btn btn-lg borderRadius7px btn-block px-2 btn-azul-escuro waves-effect waves-light hoverable height10vh mb-4" id="home-servicos-comercial-cta">Ver mais Detalhes</button>
-                </div>
+                <a target="_blank" href="servicos.html#servicos-comercial-img" type="button" class="btn btn-lg size-094rem px-3 btn-azul-escuro borderRadius7px fw-500 waves-effect waves-light hoverable mb-2" id="home-servicos-comercial-cta">Ver mais Detalhes</a>
               </div>
             </div>
           </div>

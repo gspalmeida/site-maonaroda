@@ -45,7 +45,7 @@ $(document).ready(function scrollSpy() {
 });
 //ScrollToTop Navbar
 function scrollToTop() {
-    $('body, html').animate({scrollTop: 0});
+    $('body, html').animate({scrollTop: 0},1000);
 }
 //Padding Para a Navbar nao Sobrepor o Conteudo
 function setPadding() {

@@ -7,10 +7,10 @@
           <a target="_blank" href="sobreNos.html">Sobre nós</a>
         </div>
         <div class="footer-link">
-          <a target="_blank" href="linkDoBlog" class="disabled" onclick="alertar('Blog em breve')">Blog</a>
+          <a target="_blank" href="https://blog.maonaroda.com">Blog</a>
         </div>
         <div class="footer-link">
-          <a data-toggle="modal" data-target="#modalOrcamento">Contato</a>
+          <a data-toggle="modal" data-target="#modalColetaLeadFAQ">Contato</a>
         </div>
         <div class="footer-link">
           <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">Trabalhe Conosco</a>
@@ -19,13 +19,13 @@
       <hr class="clearfix w-100 d-md-none order-1 ">
       <div class="col-12 col-md-6 order-0 order-md-1 mt-3 mt-md-0">
         <div class="container-fluid">
-          <div class="row d-flex justify-content-center align-items-center">
+          <div class="row pt-3 d-flex justify-content-center align-items-center">
             <div class="col-4 text-center">
               <div class="flex-column">
                 <a target="_blank" href="servicos.html">
                   <img src="assets/icon-footer-para-clientes.png" class="footer-img img-fluid" alt="Icone Para Clientes">
                 </a>
-                <div class="footer-link te">
+                <div>
                   <a target="_blank" href="servicos.html">Para Clientes</a>
                 </div>
               </div>
@@ -35,7 +35,7 @@
                 <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">
                   <img src="assets/icon-footer-para-pintores.png" class="footer-img img-fluid" alt="Icone Para Pintores">
                 </a>
-                <div class="footer-link">
+                <div>
                   <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabPintor','modalVirarAfiliado')">Para Pintores</a>
                 </div>
               </div>
@@ -45,8 +45,28 @@
                 <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')">
                   <img src="assets/icon-footer-programa-afiliados.png" class="footer-img img-fluid" alt="Icone Programa Afiliados">
                 </a>
-                <div class="footer-link">
+                <div>
                   <a data-toggle="modal" data-target="#modalVirarAfiliado" onclick="escolheTabAtiva('tabParceiro','modalVirarAfiliado')">Para Parceiros</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 text-center mt-2">
+              <div class="flex-column">
+                <a href="linkDoInsta">
+                  <i class="fab fa-instagram" style="font-size: 50px"></i>
+                </a>
+                <div>
+                  <a href="linkDoInsta">Instagram</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 text-center mt-2">
+              <div class="flex-column">
+                <a href="linkDoLinkedin">
+                  <i class="fab fa-linkedin" style="font-size: 50px"></i>
+                </a>
+                <div>
+                  <a href="linkDoLinkedin">Linkedin</a>
                 </div>
               </div>
             </div>
@@ -62,7 +82,9 @@
           <a href="tel:1131069166">(11) 3106-9166</a>
         </div>
         <div class="footer-link">
-          <a target="_blank" href="tel:xxxxxxxxxx">(xx) 9999-8888</a>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=5511974748643&text=Ol%C3%A1%20M%C3%A3o%20na%20Roda%2C%20quero%20dar%20vida%20aos%20meus%20ambientes!%20Como%20voc%C3%AAs%20podem%20me%20ajudar%3F">
+            <i class="fab fa-whatsapp mr-2"></i>(xx) 9999-8888
+          </a>
         </div>
         <div class="footer-link ">
           <a class="texto-menor" href="mailto:contato@maonaroda.com">contato@maonaroda.com</a>
@@ -73,16 +95,25 @@
   <div class="footer-copyright copyright-custom-color py-3">
     <div class="container">
       <div class="row">
-        <div class="col-6 text-left">
-          <p class="mb-0">
-            <a onclick="alertar('Quais são as políticas?')" href="#linkPoliticas"> Políticas de Privacidade <span class="d-none d-md-inline">| Termos de Uso</span></a>
+        <div class="col-6 text-center">
+          <p class="my-2">
+            <a target="_blank" href="#linkPoliticas" class="disabled"> Políticas de Privacidade <span class="d-none d-md-inline">| Termos de Uso</span></a>
           </p>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6 text-center">
+          <p class="mb-0 texto-menor">
+            <span class="texto-menor">Mão na Roda Serviços de Internet LTDA</span>
+          </p>
+          <p class="mb-0 texto-menor">
+            <span class="texto-menor">CNPJ 21.316.456/0001-35</span>
+          </p>
+        </div>
+        <div class="col-6 mx-auto text-center">
           <p class="mb-0 texto-menor">
             <span class="texto-menor">© 2018 Copyright:</span><a href="http://www.galileosoft.com.br"> GalileoSoft</a>
           </p>
         </div>
+
       </div>
     </div>
   </div>
@@ -96,15 +127,15 @@
     //animação navbar
     $(document).ready(function () {
         $('.first-button').on('click', function () {
-            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('#navbar-wrapper').toggleClass('top-nav-collapse-click');
             $('.animated-icon1').toggleClass('open');
         });
         $('.second-button').on('click', function () {
-            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('#navbar-wrapper').toggleClass('top-nav-collapse-click');
             $('.animated-icon2').toggleClass('open');
         });
         $('.third-button').on('click', function () {
-            $('#navbar-wrapper').toggleClass('top-nav-collapse');
+            $('#navbar-wrapper').toggleClass('top-nav-collapse-click');
             $('.animated-icon3').toggleClass('open');
         });
     });

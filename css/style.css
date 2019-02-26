@@ -2,6 +2,9 @@
 .btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
   word-wrap: initial !important;
 }
+.h5-responsive{
+  font-size: 100%!important;/*Correção pq os h5 estavam iguais os outros h's e queria qu eles fossem 10% menores*/
+}
 #navbar-wrapper{
   padding-top: 5px!important;
   padding-bottom: 5px!important;
@@ -138,6 +141,11 @@
     max-width: 95%!important;
   }
 }
+@media (min-width: 768px) {
+  .h5-responsive{
+    font-size: 98% !important;
+  }
+}
 
 /*Cores*/
 .transparencia-preta{
@@ -224,6 +232,25 @@
 .navbarBtn{
   border: 2px solid #dee2e6;
 }
+.top-nav-collapse-click > div > div > ul.navbar-nav.nav-flex-icons > li > .navbarBtn{
+  border: 2px solid #000000;
+}
+.top-nav-collapse-click > div > div > ul.navbar-nav.mr-auto > li.nav-item.active > a {
+  background-color: #00000029 !important;
+}
+.top-nav-collapse-click {
+  background-color: #e0e0e0;
+  color: #000000 !important;
+}
+.top-nav-collapse-click > div > #navbarSupportedContent > ul > li > .nav-link{
+  color: #000 !important;
+}
+.top-nav-collapse-click > div > a > #logoBranca{
+  display: none;
+}
+.top-nav-collapse-click > div > a > #logoColorida{
+  display: inline!important;
+}
 .top-nav-collapse > div > div > ul.navbar-nav.nav-flex-icons > li > .navbarBtn{
   border: 2px solid #000000;
 }
@@ -299,6 +326,9 @@
   background: #fff;
 }
 .top-nav-collapse > div > button > div > span{
+  background: #fd7d12!important;
+}
+.top-nav-collapse-click > div > button > div > span{
   background: #fd7d12!important;
 }
 .animated-icon2 span {
@@ -438,6 +468,21 @@
   background-position: center center;
   color: #ffffff;
 }
+/*HOME-ComoFunciona*/
+@media (min-width: 576px) and (max-width: 1200px){
+  .title-min-height{
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 74px;
+  }
+}
 /*Home-Depoimentos*/
 .testimonial-carousel .carousel-control{
   top: 16vh;
@@ -509,19 +554,19 @@
   .bg-slide-1{
   background-image: url('../assets/portifolio-banner-cell-1.jpg');
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
   }
   .bg-slide-2{
     background-image: url('../assets/portifolio-banner-cell-2.jpg');
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
   }
   .bg-slide-3{
     background-image: url('../assets/portifolio-banner-cell-3.jpg');
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center bottom;
     background-size: cover;
   }
 }
@@ -631,33 +676,38 @@ header .carousel {
   background-position: center center;
   color: #ffffff;
 }
-/*Footer*/
-#footer-btn-faq{
-  position: relative;
-  bottom: 5px;
+
+/*MODAL GARANTIA 100%*/
+@media (min-width: 576px) and (max-width: 768px) {
+  .garantia100-title-min-height{
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 120px;
+  }
 }
-.faq-item{
-  background-color: #007a8e;
-  padding: 0;
-  margin-bottom: 1rem;
-  color: #ffffff !important;
-}
-.faq-title{
-  border: 2px solid #FFFFFF;
-  padding: 5px 1px;
-}
-.faq-title.hoverable:hover{
-  box-shadow: 0 16px 28px 0 rgba(0,0,0,.22), 0 25px 55px 0 rgba(0,0,0,.21);
-  transition: all .55s ease-in-out;
-}
-.faq-title i{
-  float: right;
-  position: relative;
-  right: 10px;
-  margin-top: 6px;
+@media (min-width: 769px) {
+  .garantia100-title-min-height{
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 60px;
+  }
 }
 
-/*FOOTER*/
+/*Footer*/
 .footer-custom-color{
   background-color: #413f40;
 }
