@@ -1,4 +1,7 @@
 /*CSS PADRAO*/
+.wow {
+  visibility: hidden;
+}
 .btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
   word-wrap: initial !important;
 }
@@ -615,7 +618,11 @@ header .carousel {
   background-size: cover;
   background-position: center center;
   color: #ffffff;
-  min-height: 60vh!important;
+  min-height: 70vh!important;
+}
+#sobreNos-img-intro{
+  padding-top: 20px;
+  max-height: 50vh;
 }
 /*SERVIÇOS*/
 #servicos-intro{

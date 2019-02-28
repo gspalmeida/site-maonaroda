@@ -7,7 +7,6 @@
   <title>Mão na Roda - Sobre Nós</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
-  <link href="css/slideUpCard.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -19,13 +18,20 @@
 <div data-include="navbar"></div>
 
 <main>
-  <section class="view 1stSection" id="sobreNos-intro">
-    <div class="mask transparencia-preta-clarissima"></div>
+  <section class="view d-flex justify-content-center align-items-center 1stSection" id="sobreNos-intro">
+    <div class="mask height70vh flex-center align-items-center transparencia-preta"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <img src="assets/selo-garantia-sobre-nos.png" class="wow fadeIn slow img-fluid mx-auto" alt="Logo Mão na Roda" id="sobreNos-img-intro">
+        </div>
+      </div>
+    </div>
   </section>
   <section class="container text-center" id="sobreNos-sobreMNR">
     <p class="h5-responsive animated slow fadeIn font-weight-bold my-3">
       <span class="texto-menor">
-        Conheça quem traz cores e vida à sua casa ou escritório
+        Nós trazemos cores e vida à sua casa ou escritório!
       </span>
     </p>
     <p class="h2-responsive animated slower fadeIn font-weight-bold pb-2">
@@ -90,6 +96,11 @@
         </p>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="solicitarOrcamento.html" target="_blank" class="btn size-094rem btn-laranjado borderRadius7px fw-500 wow fadeInUpBig slow">Solicitar Orçamento</a>
+      </div>
+    </div>
     <hr class="mb-4 mt-2 wow fadeInRight slow">
   </section>
 
@@ -117,21 +128,6 @@
     jarallax(document.querySelectorAll('.jarallax'));
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true
-    });
-    $('.card1').click(function() {
-        $('.card-body1').toggleClass('close');
-    });
-    $('.card2').click(function() {
-        $('.card-body2').toggleClass('close');
-    });
-    $('.card3').click(function() {
-        $('.card-body3').toggleClass('close');
-    });
-    $('.card4').click(function() {
-        $('.card-body4').toggleClass('close');
-    });
-    $('.card5').click(function() {
-        $('.card-body5').toggleClass('close');
     });
 </script>
 </body>
