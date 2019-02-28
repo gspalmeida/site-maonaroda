@@ -195,6 +195,9 @@
   background-color: transparent!important;
   color: #ff6f00!important;
 }
+.btn-outline-white-bold{
+  border: 0.125rem solid #fff!important;
+}
 .btn-outline-neutro{
   border: 2px solid #5e5e5e!important;
   background-color: transparent!important;
@@ -637,7 +640,7 @@ header .carousel {
   bottom: 0;
 }
 #servicos-residencial-img{
-  background-image: url("../assets/bg-parallax-residencial.jpeg");
+  background-image: url("../assets/bg-parallax-residencial.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
