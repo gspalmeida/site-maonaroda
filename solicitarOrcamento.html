@@ -42,19 +42,13 @@
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true
     });
-    $(document).ready(function () {
-        $('#carousel-home-comoFunciona-mobile').hammer().on('swipeleft', function () {
-            $(this).carousel('next');
-        });
-        $('#carousel-home-comoFunciona-mobile').hammer().on('swiperight', function () {
-            $(this).carousel('prev');
-        });
-        $('#home-carousel-depoimentos').hammer().on('swipeleft', function () {
-            $(this).carousel('next');
-        });
-        $('#home-carousel-depoimentos').hammer().on('swiperight', function () {
-            $(this).carousel('prev');
-        })
+    $(document).ready(function collapseNavbar() {
+        if(checkInclude() === true){
+            $('#navbar-wrapper').addClass('top-nav-collapse-fix');
+        }
+        else {
+            setTimeout(collapseNavbar,1)
+        }
     });
 </script>
 </body>
