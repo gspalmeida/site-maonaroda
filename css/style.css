@@ -1,6 +1,8 @@
 /*CSS PADRAO*/
-.wow {
-  visibility: hidden;
+@media (min-width: 768px) {
+  .wow {
+    visibility: hidden;
+  }
 }
 .btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
   word-wrap: initial !important;
@@ -257,6 +259,25 @@
 .top-nav-collapse-click > div > a > #logoColorida{
   display: inline!important;
 }
+.top-nav-collapse-fix > div > div > ul.navbar-nav.nav-flex-icons > li > .navbarBtn{
+  border: 2px solid #000000;
+}
+.top-nav-collapse-fix > div > div > ul.navbar-nav.mr-auto > li.nav-item.active > a {
+  background-color: #00000029 !important;
+}
+.top-nav-collapse-fix {
+  background-color: #e0e0e0;
+  color: #000000 !important;
+}
+.top-nav-collapse-fix > div > #navbarSupportedContent > ul > li > .nav-link{
+  color: #000 !important;
+}
+.top-nav-collapse-fix > div > a > #logoBranca{
+  display: none;
+}
+.top-nav-collapse-fix > div > a > #logoColorida{
+  display: inline!important;
+}
 .top-nav-collapse > div > div > ul.navbar-nav.nav-flex-icons > li > .navbarBtn{
   border: 2px solid #000000;
 }
@@ -335,6 +356,9 @@
   background: #fd7d12!important;
 }
 .top-nav-collapse-click > div > button > div > span{
+  background: #fd7d12!important;
+}
+.top-nav-collapse-fix > div > button > div > span{
   background: #fd7d12!important;
 }
 .animated-icon2 span {

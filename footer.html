@@ -102,7 +102,7 @@
             </span>
           </a>
         </div>
-        <div class="footer-link ">
+        <div class="footer-link">
           <a class="texto-menor" href="mailto:contato@maonaroda.com">
             <span class="texto-menor">
               contato@maonaroda.com
@@ -133,13 +133,16 @@
             <span class="texto-menor">© 2018 Copyright:</span><a href="http://www.galileosoft.com.br"> GalileoSoft</a>
           </p>
         </div>
-
       </div>
     </div>
   </div>
 </footer>
 <script>
-    new WOW().init();
+    var largura = screen.width;
+    if( largura >= 768 ){
+        // Animations init
+        new WOW().init();
+    }
     //animação navbar
     $(document).ready(function () {
         $('.first-button').on('click', function () {
