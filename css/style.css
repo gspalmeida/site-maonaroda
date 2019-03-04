@@ -640,16 +640,32 @@ header .carousel {
 
 /*SOBRE NÓS*/
 #sobreNos-intro{
-  background-image: url("../assets/bg-sobre-nos.jpg");
+  background-image: url("../assets/bg-textura-laranja.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   color: #ffffff;
   min-height: 70vh!important;
 }
-#sobreNos-img-intro{
-  padding-top: 20px;
-  max-height: 50vh;
+@media (max-width: 425px) {
+  #sobreNos-intro {
+    min-height: 100vh!important;
+    height: 100vh!important;
+  }
+}
+#sobreNos2-intro{
+  background-image: url("../assets/bg-quadro-pintado.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  min-height: 70vh!important;
+}
+@media (max-width: 425px) {
+  #sobreNos2-intro {
+    min-height: 100vh!important;
+    height: 100vh!important;
+  }
 }
 /*SERVIÇOS*/
 #servicos-intro{
