@@ -805,9 +805,14 @@ header .carousel {
 .copyright-custom-color{
   background-color: rgba(0,0,0,.2);
 }
-.footer-link{
+.footer-title{
   font-size: 1rem!important;
   margin: 0.98rem;
+}
+.footer-link{
+  font-size: 1rem!important;
+  /*margin: 0.98rem;*/
+  margin: 0.3rem;
 }
 .footer-img{
   max-height: 45px;
