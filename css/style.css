@@ -743,7 +743,32 @@ header .carousel {
   color: #ffffff;
 }
 
-/*MODAL GARANTIA 100%*/
+/*GARANTIA 100%*/
+#garantia100-intro{
+  background-image: url("../assets/bg-textura-azul.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  min-height: 70vh!important;
+}
+#garantia100-img-intro{
+  padding-top: 20px;
+  max-height: 35vh;
+}
+@media (max-width: 425px) {
+  #garantia100-intro {
+    min-height: 100vh!important;
+    height: 100vh!important;
+  }
+  #garantia100-intro > div.container > div > div > h1{
+    font-size: 2.3rem!important;
+  }
+  #garantia100-img-intro{
+    padding-top: 10px;
+    max-height: 40vh;
+  }
+}
 @media (min-width: 576px) and (max-width: 768px) {
   .garantia100-title-min-height{
     display: flex;
