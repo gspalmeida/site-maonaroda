@@ -10,14 +10,276 @@
   <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="css/addons-pro/stepper.css" rel="stylesheet">
+  <!--<link href="css/stepperCustom.css" rel="stylesheet">-->
 </head>
 <body>
 
   <!-- Navbar-->
   <div data-include="navbar"></div>
   <main>
-    <section class="height100vh">
-
+    <section class="height100vh 1stSection d-flex align-items-center justify-content-center">
+      <div class="container-fluid">
+        <ul class="stepper parallel horizontal horizontal-fix z-depth-2 mx-2 my-2" style="min-height: 80vh!important;">
+          <li class="step active">
+            <div data-step-label="Para te contatarmos" class="step-title waves-effect waves-dark">Dados Pessoais</div>
+            <div class="step-new-content">
+              <form id="stepperForm">
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-nome" name="nome" type="text" class="form-control validate" required>
+                    <label for="stepperForm-nome">Seu Nome</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-email" name="email" type="email" class="form-control validate" required>
+                    <label for="stepperForm-email">Seu Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
+                           maxlength="14" onkeypress="mascaraTelefone(stepperForm.phone)" required>
+                    <label for="stepperForm-telefone">Telefone</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
+                           onkeypress="mascaraCep(stepperForm.zip_code)" maxlength="9" required>
+                    <label for="stepperForm-cep">CEP</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-rua" name="street" type="text" placeholder="Ex: Rua da Pintura" class="form-control validate" required>
+                    <label for="stepperForm-rua">Número</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-numero" name="number" type="text" placeholder="Ex: 123" class="form-control validate"
+                           maxlength="6" required>
+                    <label for="stepperForm-numero">Número</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="md-form col-12 ml-auto">
+                    <input id="stepperForm-complemento" name="complement" type="text" placeholder="Ex: Casa A" class="form-control validate"
+                           maxlength="6" required>
+                    <label for="stepperForm-complemento">Complemento</label>
+                  </div>
+                </div>
+              </form>
+              <div class="step-actions" style="position: relative!important; bottom: 20px!important;">
+                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step" data-feedback="someFunction">CONTINUE</button>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-title waves-effect waves-dark" data-step-label="Para conhecermos o local">Dados da Pintura &nbsp;</div>
+            <div class="step-new-content">
+              <div class="container-fluid">
+                <div class="row justify-content-center">
+                  <div class="col-12 text-center">
+                    <p class="h4-responsive text-center fw-400 mb-1">Tipo de Ambiente:</p>
+                  </div>
+                  <div class="col-12 col-lg-11 text-center">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-light-blue form-check-label active">
+                        <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked>
+                        Apartamento
+                      </label>
+                      <label class="btn btn-light-blue form-check-label">
+                        <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off"> Escritório
+                      </label>
+                      <label class="btn btn-light-blue form-check-label">
+                        <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Casa-Interna
+                      </label>
+                      <label class="btn btn-light-blue form-check-label">
+                        <input class="form-check-input" type="radio" name="options" id="option4" autocomplete="off"> Casa-Externa
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <p class="h4-responsive text-center fw-400 mt-2 mb-0">Cômodos para Pintar:</p>
+                  </div>
+                  <div class="col-xl-2"></div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos01.png" alt="Comodo 1">
+                    <p>Dormitórios</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos02.png" alt="Comodo 1">
+                    <p>Banheiro</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos03.png" alt="Comodo 1">
+                    <p>Cozinha</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos04.png" alt="Comodo 1">
+                    <p>Garagem</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-2"></div>
+                  <div class="col-xl-2"></div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos05.png" alt="Comodo 1">
+                    <p>Corredor</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos06.png" alt="Comodo 1">
+                    <p>Sacada</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos07.png" alt="Comodo 1">
+                    <p>Sala</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 text-center">
+                    <img src="http://maonaroda.com/img/icon_comodos08.png" alt="Comodo 1">
+                    <p>Dispensa</p>
+                    <div class="input-group flex-nowrap mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                             aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-blue-grey m-0 px-3 py-2 z-depth-0 waves-effect" type="button">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-2"></div>
+                </div>
+              </div>
+              <div class="step-actions">
+                <button class="waves-effect waves-dark btn-sm btn btn-primary next-step">CONTINUE</button>
+                <button class="waves-effect waves-dark btn-sm btn btn-secondary previous-step">BACK</button>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <div data-step-label="Para dar tudo certo" class="step-title waves-effect waves-dark">Recapitulando</div>
+            <div class="step-new-content">
+              <strong>PARA TIPOS DE AMBIENTE QUE NÃO TERAO CALCULADORA:</strong>Dados Pessoais e lista de comodos com botões de edição(para revisão dos dados e solicitação de orçamento)
+              <br>
+              <br>
+              <br>
+              <br>
+              <strong>PARA TIPOS DE AMBIENTE QUE TEM CALCULADORA:</strong>Lista de todos os comododos inseridos no step02 com campos para inserção de variantes(material;Portas;Janelas;Tetos;Paredes;) e valor estimado atualizado instanteamente com onchange
+              <div class="step-actions">
+                <button class="waves-effect waves-dark btn-sm  btn btn-primary m-0 mt-4" type="button">SUBMIT</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
     <section id="modais">
       <div data-include="coletaLeadFAQ"></div>
@@ -34,6 +296,7 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/galileoJS.js"></script>
+<script type="text/javascript" src="js/addons-pro/stepper.min.js"></script>
 <script>
     // object-fit polyfill run
     objectFitImages();
@@ -50,7 +313,224 @@
             setTimeout(collapseNavbar,1)
         }
     });
+    $(document).ready(function () {
+        $('.stepper').mdbStepper();
+    });
+    function someFunction() {
+        setTimeout(function () {
+            $('#id-your-stepper').nextStep();
+        }, 2000);
+    }
 </script>
+<script>
+      // JavaScript Document
+      function setFocus(id)
+      {
+          setTimeout(function(){
+              document.getElementById(id).focus()
+          },1);
+      }
+      //adiciona mascara de cnpj
+      function mascaraCNPJ(cnpj){
+          if(mascaraInteiro(cnpj)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(cnpj, '00.000.000/0000-00', event);
+      }
+
+      //adiciona mascara de cep
+      function mascaraCep(cep){
+          if(mascaraInteiro(cep)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(cep, '00000-000', event);
+      }
+
+      //adiciona mascara de data
+      function mascaraData(data){
+          if(mascaraInteiro(data)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(data, '00/00/0000', event);
+      }
+
+      //adiciona mascara ao telefone
+      function mascaraTelefone(tel){
+          if(mascaraInteiro(tel)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(tel, '00 0 0000-0000', event);
+      }
+
+      //adiciona mascara ao CPF
+      function mascaraCPF(cpf){
+          if(mascaraInteiro(cpf)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(cpf, '000.000.000-00', event);
+      }
+
+      //adiciona mascara à validade do cartão
+      function mascaraValidade(validade){
+          if(mascaraInteiro(validade)===false){
+              event.returnValue = false;
+          }
+          return formataCampo(validade, '00/0000', event);
+      }
+
+      //valida telefone
+      function validaTelefone(tel){
+          var exp = /\(\d{2}\)\ \d{5}\-\d{4}/;
+          if(!exp.test(tel.value))
+              alert('Numero de Telefone Invalido!');
+      }
+
+      //valida CEP
+      function validaCep(cep){
+          var exp = /\d{5}\-\d{3}/;
+          if(!exp.test(cep.value))
+              alert('Numero de Cep Invalido!');
+      }
+
+      //valida data
+      function validaData(data){
+          var exp = /\d{2}\/\d{2}\/\d{4}/;
+          if(!exp.test(data.value))
+              alert('Data Invalida!');
+      }
+
+      //valida validade de CC
+      function validaValidade(validade){
+          var exp = /\d{2}\/\d{4}/;
+          if(!exp.test(validade.value))
+              alert('Validade incorreta!');
+      }
+
+      //valida o CPF digitado
+      function validarCPF(objCpf){
+          cpf = objCpf.value;
+          cpf = cpf.replace(/[^\d]+/g,'');
+          if(cpf === '') return false;
+          // Elimina CPFs invalidos conhecidos
+          if (cpf.length !== 11 || cpf.match('/(\d)\1{10}/')) {
+              alert('CPF Inválido');
+              setFocus(objCpf.id);
+              return false;
+          }
+          // Valida 1o digito
+          add = 0;
+          for (i=0; i < 9; i ++)
+              add += parseInt(cpf.charAt(i)) * (10 - i);
+          rev = 11 - (add % 11);
+          if (rev === 10 || rev === 11)
+              rev = 0;
+          if (rev !== parseInt(cpf.charAt(9))) {
+              alert('CPF Inválido');
+              setFocus(objCpf.id);
+              return false;
+          }
+          // Valida 2o digito
+          add = 0;
+          for (i = 0; i < 10; i ++)
+              add += parseInt(cpf.charAt(i)) * (11 - i);
+          rev = 11 - (add % 11);
+          if (rev === 10 || rev === 11)
+              rev = 0;
+          if (rev !== parseInt(cpf.charAt(10))) {
+              alert('CPF Inválido');
+              setFocus(objCpf.id);
+              return false;
+          }
+
+          return true;
+      }
+
+      //valida numero inteiro com mascara
+      function mascaraInteiro(){
+          if (event.keyCode < 48 || event.keyCode > 57){
+              event.returnValue = false;
+              return false;
+          }
+          return true;
+      }
+
+      //valida o CNPJ digitado
+      function validarCNPJ(ObjCnpj){
+          var cnpj = ObjCnpj.value;
+          var valida = new Array(6,5,4,3,2,9,8,7,6,5,4,3,2);
+          var dig1= new Number;
+          var dig2= new Number;
+
+          var exp = /\.|\-|\//g;
+          cnpj = cnpj.toString().replace( exp, "" );
+          var digito = new Number(eval(cnpj.charAt(12)+cnpj.charAt(13)));
+
+          for(i = 0; i<valida.length; i++){
+              dig1 += (i>0? (cnpj.charAt(i-1)*valida[i]):0);
+              dig2 += cnpj.charAt(i)*valida[i];
+          }
+          dig1 = (((dig1%11)<2)? 0:(11-(dig1%11)));
+          dig2 = (((dig2%11)<2)? 0:(11-(dig2%11)));
+
+          if(((dig1*10)+dig2) != digito)
+          {
+              alert('CNPJ Invalido!');
+              setFocus(ObjCnpj.id);
+              return false;
+          }
+          return true;
+      }
+
+      //formata de forma generica os campos
+      function formataCampo(campo, Mascara, evento) {
+          var boleanoMascara;
+
+          var digitado = evento.keyCode;
+          exp = /\-|\.|\/|\(|\)| /g
+          campoSoNumeros = campo.value.toString().replace( exp, "" );
+
+          var posicaoCampo = 0;
+          var NovoValorCampo="";
+          var TamanhoMascara = campoSoNumeros.length;;
+
+          if (digitado != 8) { // backspace
+              for(i=0; i<= TamanhoMascara; i++) {
+                  boleanoMascara  = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
+                      || (Mascara.charAt(i) == "/"))
+                  boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "(")
+                      || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
+                  if (boleanoMascara) {
+                      NovoValorCampo += Mascara.charAt(i);
+                      TamanhoMascara++;
+                  }else {
+                      NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                      posicaoCampo++;
+                  }
+              }
+              campo.value = NovoValorCampo;
+              return true;
+          }else {
+              return true;
+          }
+      }
+
+      /* Máscara para Cartões de Crédito */
+      function mascara(o,f){
+          v_obj=o;
+          v_fun=f;
+          setTimeout("execmascara()",1)
+      }
+      function execmascara(){
+          v_obj.value=v_fun(v_obj.value)
+      }
+      function mcc(v){
+          v=v.replace(/\D/g,"");
+          v=v.replace(/^(\d{4})(\d)/g,"$1 $2");
+          v=v.replace(/^(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3");
+          v=v.replace(/^(\d{4})\s(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3 $4");
+          return v;
+      }
+  </script>
 </body>
 
 </html>

@@ -62,12 +62,12 @@ ul.stepper .step {
   ul.stepper .step.active:before {
     background-color: #4285f4; }
   ul.stepper .step.done:before {
-    content: '\f00c';
+    content: 'OK';
     font-family: FontAwesome;
     font-size: 1rem;
     background-color: #00c851; }
   ul.stepper .step.wrong:before {
-    content: '\f071';
+    content: 'X';
     font-family: FontAwesome;
     font-size: 1.1rem;
     background-color: #ff3547; }
@@ -206,12 +206,12 @@ ul.stepper .md-form .validate {
      ul.stepper.horizontal .step.active .step-title:before {
       background-color: #4285f4; }
      ul.stepper.horizontal .step.done .step-title:before {
-      content: '\f00c';
+      content: 'OK';
       font-family: FontAwesome;
       font-size: 1rem;
       background: #00c851; }
      ul.stepper.horizontal .step.wrong .step-title:before {
-      content: '\f071';
+      content: 'X';
       font-family: FontAwesome;
       font-size: 1.1rem;
       background-color: #ff3547; }
