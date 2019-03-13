@@ -217,7 +217,7 @@
   background-color: #08399B;
 }
 .bg-color-azul-claro{
-  background-color: #06879c;
+  background-color: #06879c!important;
 }
 .bg-color-azul-calcinha{
   background-color: #b6f6f3;
@@ -796,6 +796,189 @@ header .carousel {
     align-items: center;
     min-height: 60px;
   }
+}
+/*ORÇAMENTO*/
+.btn-tipo-imovel{
+  padding:0.6rem 1.2rem;
+  background-color: #39abbfc2;
+  color: #fff!important;
+}
+.btn-tipo-imovel.active{
+  padding:0.6rem 1.2rem;
+  background-color: #005665!important;
+  color: #fff!important;
+}
+.btn-tipo-pintura{
+  padding:0.6rem 1.2rem;
+  background-color: #97880ac2;
+  color: #fff!important;
+}
+.btn-tipo-pintura.active{
+  padding:0.6rem 1.2rem;
+  background-color: #7F730D!important;
+  color: #fff!important;
+}
+.w-65{
+  width: 65%!important;
+}
+.animatebar{
+  transition: width 2s;
+}
+.blue-icon-panel{
+  background-color: #0097B1!important;
+}
+@media (max-width: 675px) {
+  #btn-TipoImovel{
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap!important;
+  }
+  #btn-TipoImovel > label{
+    width: 50%;
+  }
+  .btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {
+  	margin-left: 0;
+  }
+}
+@media (max-width: 420px) {
+  #btn-TipoPintura{
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  #btn-TipoPintura > label{
+    width: 100%;
+  }
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 40vh;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+.table td, .table th {
+  vertical-align: middle!important;
+}
+td .form-control{
+  width: auto!important;
+}
+/*Card Calculadora*/
+.z-depth-2, .cascading-admin-card .admin-up .fas,
+.cascading-admin-card .admin-up .far,
+.cascading-admin-card .admin-up .fab {
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; }
+.cascading-admin-card {
+  margin-top: 20px; }
+.cascading-admin-card .admin-up {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: -20px; }
+.cascading-admin-card .admin-up .fas,
+.cascading-admin-card .admin-up .far,
+.cascading-admin-card .admin-up .fab {
+  padding: 1.7rem;
+  font-size: 2rem;
+  color: #fff;
+  text-align: left;
+  margin-right: 1rem;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+.cascading-admin-card .admin-up .data {
+  float: right;
+  margin-top: 2rem;
+  text-align: right; }
+.cascading-admin-card .admin-up .data p {
+  color: #999999;
+  font-size: 12px; }
+
+/*Input - e + */
+.number-input {
+  margin-bottom: 1rem!important;
+}
+.number-input input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.number-input {
+  margin-bottom: 3rem;
+}
+.number-input button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.number-input input[type=number] {
+  text-align: center;
+}
+.number-input.number-input {
+  border: 1px solid #ced4da;
+  width: 10rem;
+  border-radius: .25rem;
+}
+.number-input.number-input button {
+  width: 2.6rem;
+  height: .7rem;
+}
+.number-input.number-input button.minus {
+  padding-left: 10px;
+}
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+  width: .7rem;
+  background-color: #495057;
+}
+.number-input.number-input input[type=number] {
+  max-width: 4rem;
+  padding: .5rem;
+  border: solid #ced4da;
+  border-width: 0 1px;
+  font-size: 1rem;
+  height: 2rem;
+  color: #495057;
+}
+#stepperForm .md-form{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#stepperForm .md-form label{
+  left: auto!important;
 }
 
 /*Footer*/
