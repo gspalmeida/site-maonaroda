@@ -821,11 +821,29 @@ header .carousel {
 .w-65{
   width: 65%!important;
 }
+.w-90{
+  width: 90%!important;
+}
 .animatebar{
   transition: width 2s;
 }
 .blue-icon-panel{
   background-color: #0097B1!important;
+}
+.img-calculadora{
+  height: 100px;
+}
+@media (min-width: 578px) {
+  .w-sm-35{
+    width: 35%;
+  }
+}
+@media (max-width: 575px) {
+  .col-4-custom{
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 50%;
+  }
 }
 @media (max-width: 675px) {
   #btn-TipoImovel{
@@ -949,11 +967,11 @@ td .form-control{
 }
 .number-input.number-input {
   border: 1px solid #ced4da;
-  width: 10rem;
+  width: 6rem;
   border-radius: .25rem;
 }
 .number-input.number-input button {
-  width: 2.6rem;
+  width: 1.5rem;
   height: .7rem;
 }
 .number-input.number-input button.minus {
@@ -965,7 +983,7 @@ td .form-control{
   background-color: #495057;
 }
 .number-input.number-input input[type=number] {
-  max-width: 4rem;
+  max-width: 2rem;
   padding: .5rem;
   border: solid #ced4da;
   border-width: 0 1px;
