@@ -47,6 +47,13 @@ $(document).ready(function scrollSpy() {
 function scrollToTop() {
     $('body, html').animate({scrollTop: 0},1000);
 }
+//TODO futuramente passar um ID para scrollar até ele
+function scrollToSection() {
+    var position = $('#navegacao-principal').height()-10;
+    $('html, body').animate({
+        scrollTop: position
+    }, 1000)
+}
 //Padding Para a Navbar nao Sobrepor o Conteudo
 function setPadding() {
     if(checkInclude() === true){
@@ -76,6 +83,7 @@ function trocaSlide(elementoQueSai, elementoQueEntra) {
         $(elementoQueSai).removeClass('zoomIn animated');
         $(elementoQueEntra).off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
     });
+    scrollToSection();
 }
 //    Abre a modal de cursos com a Respectiva TAB ativa
 function escolheTabAtiva(nomeDaTab,nomeDaModal){
