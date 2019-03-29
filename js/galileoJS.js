@@ -83,7 +83,7 @@ function trocaSlide(elementoQueSai, elementoQueEntra) {
         $(elementoQueSai).removeClass('zoomIn animated');
         $(elementoQueEntra).off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
     });
-    scrollToSection();
+    scrollToTop();
 }
 //    Abre a modal de cursos com a Respectiva TAB ativa
 function escolheTabAtiva(nomeDaTab,nomeDaModal){
@@ -97,4 +97,10 @@ function escolheTabAtiva(nomeDaTab,nomeDaModal){
         tabAtivaFinal = document.getElementsByClassName('active show');
         $(tabAtivaFinal).removeClass('active show');
     });
+}
+// Radio Card
+function radioCardActive(cardClick) {
+    $('.radio-card').addClass('d-none').removeClass('active');
+    $(cardClick).removeClass('d-none');
+    $(cardClick).addClass('active');
 }

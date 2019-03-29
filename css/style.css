@@ -811,16 +811,16 @@ header .carousel {
   background-color: #005665!important;
   color: #fff!important;
 }
-.btn-tipo-pintura{
-  padding:0.6rem 1.2rem;
-  background-color: #97880ac2;
-  color: #fff!important;
-}
-.btn-tipo-pintura.active{
-  padding:0.6rem 1.2rem;
-  background-color: #7F730D!important;
-  color: #fff!important;
-}
+/*.btn-tipo-pintura{*/
+  /*padding:0.6rem 1.2rem;*/
+  /*background-color: #97880ac2;*/
+  /*color: #fff!important;*/
+/*}*/
+/*.btn-tipo-pintura.active{*/
+  /*padding:0.6rem 1.2rem;*/
+  /*background-color: #7F730D!important;*/
+  /*color: #fff!important;*/
+/*}*/
 .w-65{
   width: 65%!important;
 }
@@ -836,6 +836,18 @@ header .carousel {
 .img-calculadora{
   height: 100px;
 }
+.radio-card{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 35px;
+  width: 40px;
+  color: #fff!important;
+  border-radius: 3px;
+  background-color: #0097B1!important;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
 @media (min-width: 578px) {
   .w-sm-35{
     width: 35%;
@@ -849,7 +861,7 @@ header .carousel {
   }
 }
 @media (max-width: 675px) {
-  #btn-TipoImovel{
+  .btn-TipoImovel{
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-flex-pack: center;
@@ -860,7 +872,7 @@ header .carousel {
     vertical-align: middle;
     flex-wrap: wrap!important;
   }
-  #btn-TipoImovel > label{
+  .btn-TipoImovel > label{
     width: 50%;
   }
   .btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {
@@ -994,14 +1006,16 @@ td .form-control{
   height: 2rem;
   color: #495057;
 }
-#stepperForm .md-form{
+.md-form{
   margin-top: 0;
   margin-bottom: 0;
 }
-#stepperForm .md-form label{
-  left: auto!important;
+.md-form label{
+  left: auto;
 }
-
+.tableLabel{
+  left: 0!important;
+}
 /*Footer*/
 .footer-custom-color{
   background-color: #413f40;

@@ -16,8 +16,8 @@
   <div data-include="navbar"></div>
   <main>
     <section class="1stSection" id="navegacao-principal">
-      <div class="container">
-        <div class="row justify-content-center pt-4">
+      <div class="container-fluid">
+        <div class="row justify-content-center pt-3">
           <div class="col-12 text-center">
             <p class="h4-responsive text-center fw-500 mb-1">Falta pouco para colorirmos o seu ambiente!</p>
           </div>
@@ -27,77 +27,90 @@
             <p class="h5-responsive text-center fw-400 mb-1">Precisamos apenas algumas informações para lhe darmos um orçamento personalizado:</p>
           </div>
         </div>
-        <div class="row justify-content-center">
+        <hr>
+        <div class="row justify-content-center base">
           <div class="col-12 text-center">
-            <p class="h4-responsive text-center fw-400 pt-3 mb-1">
+            <p class="h4-responsive text-center fw-400 mb-1">
               <span class="texto-menor">
-                Tipo de Imóvel:
+                Selecione o Tipo de Imóvel:
               </span>
             </p>
           </div>
           <div class="col-12 col-lg-11 text-center">
-            <div class="btn-group" data-toggle="buttons" id="btn-TipoImovel">
+            <div class="btn-group btn-TipoImovel" data-toggle="buttons">
               <label onclick="mudaTipoImovel('casa');" class="btn form-check-label btn-tipo-imovel active">
-                <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked>
+                <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
                 Casa
               </label>
               <label onclick="mudaTipoImovel('apartamento');" class="btn form-check-label btn-tipo-imovel">
-                <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Apartamento
               </label>
               <label onclick="mudaTipoImovel('escritorio');" class="btn form-check-label btn-tipo-imovel">
-                <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Escritório
               </label>
               <label onclick="mudaTipoImovel('outros');" class="btn form-check-label btn-tipo-imovel">
-                <input class="form-check-input" type="radio" name="options" id="option4" autocomplete="off">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Outros
               </label>
             </div>
           </div>
         </div>
-        <div class="row justify-content-center" id="tipoPintura">
+        <div class="row justify-content-center base" id="tamanhoImovel">
           <div class="col-12 text-center">
             <p class="h4-responsive text-center fw-400 pt-3 mb-1">
               <span class="texto-menor">
-                Tipo de Pintura:
+                Marque o tamanho total do seu imóvel:
+              </span>
+            </p>
+          </div>
+          <div class="col-12 col-lg-11 text-center">
+            <div class="btn-group btn-TipoImovel" data-toggle="buttons">
+              <label class="btn form-check-label btn-tipo-imovel">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
+                Até 50m²
+              </label>
+              <label class="btn form-check-label btn-tipo-imovel">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
+                Até 75m²
+              </label>
+              <label class="btn form-check-label btn-tipo-imovel">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
+                Até 100m²
+              </label>
+              <label class="btn form-check-label btn-tipo-imovel">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
+                Até 150m²
+              </label>
+              <label class="btn form-check-label btn-tipo-imovel">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
+                Maior que 150m²
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center base" id="tipoPintura">
+          <div class="col-12 text-center">
+            <p class="h4-responsive text-center fw-400 pt-3 mb-1">
+              <span class="texto-menor">
+                Escolha o Tipo de Pintura:
               </span>
             </p>
           </div>
           <div class="col-12 col-lg-11 text-center">
             <div class="btn-group" data-toggle="buttons" id="btnTipoPintura">
-              <label class="btn form-check-label btn-tipo-pintura active" onclick="mudaTipoPintura()" id="btn-pinturaInterna">
+              <label class="btn form-check-label btn-tipo-imovel active" onclick="mudaTipoPintura()" id="btn-pinturaInterna">
                 <input class="form-check-input" type="checkbox" autocomplete="off">
                 Interna
               </label>
-              <label class="btn form-check-label btn-tipo-pintura" onclick="mudaTipoPintura()" id="btn-pinturaExterna">
+              <label class="btn form-check-label btn-tipo-imovel" onclick="mudaTipoPintura()" id="btn-pinturaExterna">
                 <input class="form-check-input" type="checkbox" autocomplete="off">
                 Externa
               </label>
             </div>
           </div>
         </div>
-        <div class="row justify-content-center view1" id="tamanhoImovel">
-          <div class="col-12 text-center">
-            <p class="h4-responsive text-center fw-400 pt-3 mb-1">
-              <span class="texto-menor">
-                Metragem Total do Imóvel:
-              </span>
-            </p>
-          </div>
-          <div class="col-12 col-lg-11 text-center">
-            <div class="row justify-content-center">
-              <div class="input-group col-12 col-sm-4 my-auto">
-                <input type="text" class="form-control text-center py-0 mb-0" id="tamanhoImovel-input"
-                       placeholder="Ex: 70m², 100m², etc" onblur="progressBarAnimate('20%')">
-                <div class="input-group-append">
-                  <div class="input-group-text">M²</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
       </div>
     </section>
     <section class="container-fluid" id="calculadora">
@@ -125,7 +138,11 @@
             </div>
             <div class="row justify-content-center">
               <div class="calculadora-controls">
-                <div class="row justify-content-center view1">
+                <div class="row justify-content-center base">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.base','.view1');progressBarAnimate('20%');">Próximo</a>
+                </div>
+                <div class="row justify-content-center hide-section view1">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('10%');">Anterior</a>
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.view2');progressBarAnimate('40%');">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view2">
@@ -185,7 +202,11 @@
               </div>
               <div class="row justify-content-center">
                 <div class="calculadora-controls">
-                  <div class="row justify-content-center view1">
+                  <div class="row justify-content-center base">
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.base','.view1');progressBarAnimate('20%');">Próximo</a>
+                  </div>
+                  <div class="row justify-content-center hide-section view1">
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.view2');progressBarAnimate('40%');">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view2">
@@ -221,7 +242,53 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-7 view1 order-1 justify-content-center" id="calculadora-view1">
+        <div class="col-12 col-md-7 base order-1 justify-content-center" id="alturaParede">
+          <div class="col-12 text-center">
+            <p class="h4-responsive text-center fw-400 pt-3 mb-1">
+              <span class="texto-menor">
+                Altura do pé direito do Imóvel:
+              </span>
+            </p>
+          </div>
+          <div class="col-12 col-sm-11 col-md-10 col-lg-8 mx-auto">
+            <div class="row justify-content-center">
+              <div class="col-6 col-sm-4 pr-2 px-sm-2 mb-3">
+                <div class="card hoverable card-same-height text-center">
+                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
+                    <div class="radio-card flex-center d-none active">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <img src="https://images.typeform.com/images/JMWdqwTtd365/image/default" class="img-calculadora" alt="">
+                    <h5 class="h5-responsive text-uppercase font-weight-bold mt-2"><strong class="texto-menor">Comum - Até 2,70m</strong></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4 pl-2 px-sm-2 mb-3">
+                <div class="card hoverable card-same-height text-center">
+                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
+                    <div class="radio-card flex-center d-none">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <img src="https://images.typeform.com/images/ruLbzvMjLjCX/image/default" class="img-calculadora" alt="">
+                    <h5 class="h5-responsive text-uppercase font-weight-bold mt-2"><strong class="texto-menor">Duplo - Até 4,5m</strong></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4 px-sm-2 mb-3">
+                <div class="card hoverable card-same-height text-center">
+                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
+                    <div class="radio-card flex-center d-none">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <img src="https://images.typeform.com/images/EHzGXUbePgjJ/image/default" class="img-calculadora" alt="">
+                    <h5 class="h5-responsive text-uppercase font-weight-bold mt-2"><strong class="texto-menor">Triplo - Mais de 4,5m</strong></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 view1 order-1 justify-content-center hide-section" id="calculadora-view1">
           <div class="row justify-content-center">
             <div class="col-12 col-xl-8">
               <p class="h5-responsive text-center fw-500 mt-2 mb-0">
@@ -328,22 +395,69 @@
           </div>
           <div class="row justify-content-center" id="view2-slide1">
             <div class="col-12 text-center">
-              <p class="h3-responsive text-center fw-500 mb-1">
-                Voce deseja o material Incluso no Orçamento?
+              <p class="h4-responsive text-center fw-500 mb-1">
+                Escolha a opção de material que mais se adequa a sua obra!
               </p>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="trocaSlide('#view2-slide1','#view2-slide2');progressBarAnimate('50%');">
-                <div class="text-center">
-                  <img class="img-calculadora" src="http://maonaroda.com/img/icon_material01.png" alt="Sim">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
+                <div class="radio-card flex-center d-none">
+                  <i class="fas fa-check"></i>
                 </div>
-                <p class="h5-responsive text-center fw-400 mt-2">
-                  Desejo Material Incluso
+                <div class="text-center">
+                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 1" >
+                </div>
+                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
+                  <span class="texto-maior">
+                    Tinta 1
+                  </span>
+                </p>
+                <p class="card-text text-center">
+                  Explicação dos detalhes da tinta
                 </p>
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
+                <div class="radio-card flex-center d-none">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text-center">
+                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 2" >
+                </div>
+                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
+                  <span class="texto-maior">
+                    Tinta 2
+                  </span>
+                </p>
+                <p class="card-text text-center">
+                  Explicação dos detalhes da tinta
+                </p>
+              </div>
+            </div>
+            <div class="col-6 my-3">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
+                <div class="radio-card flex-center d-none">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text-center">
+                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 3" >
+                </div>
+                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
+                  <span class="texto-maior">
+                    Tinta 3
+                  </span>
+                </p>
+                <p class="card-text text-center">
+                  Explicação dos detalhes da tinta
+                </p>
+              </div>
+            </div>
+            <div class="col-6 my-3">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
+                <div class="radio-card flex-center d-none">
+                  <i class="fas fa-check"></i>
+                </div>
                 <div class="text-center">
                   <img class="img-calculadora" src="http://maonaroda.com/img/icon_material02.png" alt="Não" >
                 </div>
@@ -359,51 +473,7 @@
                 Tipos de Tinta Disponiveis:
               </p>
             </div>
-            <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">
-                <div class="text-center">
-                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 1" >
-                </div>
-                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
-                  <span class="texto-maior">
-                    Tinta 1
-                  </span>
-                </p>
-                <p class="card-text text-center">
-                  Explicação dos detalhes da tinta
-                </p>
-              </div>
-            </div>
-            <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">
-                <div class="text-center">
-                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 2" >
-                </div>
-                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
-                  <span class="texto-maior">
-                    Tinta 2
-                  </span>
-                </p>
-                <p class="card-text text-center">
-                  Explicação dos detalhes da tinta
-                </p>
-              </div>
-            </div>
-            <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">
-                <div class="text-center">
-                  <img class="img-calculadora" src="tipoDeTinta" alt="Imagem da Tinta 3" >
-                </div>
-                <p class="h5-responsive text-center fw-500 mt-2 mb-0">
-                  <span class="texto-maior">
-                    Tinta 3
-                  </span>
-                </p>
-                <p class="card-text text-center">
-                  Explicação dos detalhes da tinta
-                </p>
-              </div>
-            </div>
+
             <div class="col-12 my-3 text-center">
               <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%')">Não Desejo Material Incluso</a>
             </div>
@@ -432,9 +502,9 @@
                       <th scope="col">Cômodos</th>
                       <th scope="col" class="text-center">Paredes</th>
                       <th scope="col" class="text-center">Teto</th>
-                      <th scope="col" class="text-center">Portas</th>
-                      <th scope="col" class="text-center">Janelas</th>
-                      <th scope="col" class="text-center">Mais de uma Cor</th>
+                      <th scope="col" class="text-center">Molduras</th>
+                      <th scope="col" class="text-center">Mudança de Cor</th>
+                      <th scope="col" class="text-center">Qtd. Portas</th>
                       <th scope="col" class="text-center">
                         Observações
                         <i class="fas fa-info material-tooltip-main" data-toggle="tooltip" data-placement="top"
@@ -455,20 +525,23 @@
                       <label class="form-check-label label-table" for="teto-1" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="portas-1">
-                      <label class="form-check-label label-table" for="portas-1" ></label>
+                      <input class="form-check-input" type="checkbox" id="moldura-1">
+                      <label class="form-check-label label-table" for="moldura-1" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="janelas-1">
-                      <label class="form-check-label label-table" for="janelas-1" ></label>
+                      <input class="form-check-input" type="checkbox" id="mudaCor-1">
+                      <label class="form-check-label label-table" for="mudaCor-1" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="duasCores-1">
-                      <label class="form-check-label label-table" for="duasCores-1" ></label>
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="number" class="form-control" id="qtdPortas-1">
+                        <label for="qtdPortas-1" class="tableLabel">Qdt. Portas</label>
+                      </div>
                     </td>
                     <td class="text-center">
-                      <input type="text" class="form-control text-center mx-auto" id="m2-1" placeholder="Ex: Infiltração no teto">
-                      <!--<label class="form-check-label label-table" for="m2-1" ></label>-->
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="text" id="observacoes-1" class="form-control mx-auto" placeholder="Ex: Infiltração no teto">
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -482,19 +555,23 @@
                       <label class="form-check-label label-table" for="teto-2" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="portas-2">
-                      <label class="form-check-label label-table" for="portas-2" ></label>
+                      <input class="form-check-input" type="checkbox" id="moldura-2">
+                      <label class="form-check-label label-table" for="moldura-2" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="janelas-2">
-                      <label class="form-check-label label-table" for="janelas-2" ></label>
+                      <input class="form-check-input" type="checkbox" id="mudaCor-2">
+                      <label class="form-check-label label-table" for="mudaCor-2" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="duasCores-2">
-                      <label class="form-check-label label-table" for="duasCores-2" ></label>
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="number" class="form-control" id="qtdPortas-2">
+                        <label for="qtdPortas-2" class="tableLabel">Qdt. Portas</label>
+                      </div>
                     </td>
                     <td class="text-center">
-                      <input type="text" class="form-control text-center mx-auto" id="m2-2" placeholder="Ex: Rachadura na Parede">
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="text" id="observacoes-2" class="form-control mx-auto" placeholder="Ex: Rachadura na Parede">
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -508,19 +585,23 @@
                       <label class="form-check-label label-table" for="teto-3" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="portas-3">
-                      <label class="form-check-label label-table" for="portas-3" ></label>
+                      <input class="form-check-input" type="checkbox" id="moldura-3">
+                      <label class="form-check-label label-table" for="moldura-3" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="janelas-3">
-                      <label class="form-check-label label-table" for="janelas-3" ></label>
+                      <input class="form-check-input" type="checkbox" id="mudaCor-3">
+                      <label class="form-check-label label-table" for="mudaCor-3" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="duasCores-3">
-                      <label class="form-check-label label-table" for="duasCores-3" ></label>
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="number" class="form-control" id="qtdPortas-3">
+                        <label for="qtdPortas-3" class="tableLabel">Qdt. Portas</label>
+                      </div>
                     </td>
                     <td class="text-center">
-                      <input type="text" class="form-control text-center mx-auto" id="m2-3" placeholder="Ex: Parede sem Reboco">
+                      <div class="md-form mt-2 mb-0">
+                        <input type="text" id="observacoes-3" class="form-control mx-auto" placeholder="Ex: Parede sem Reboco">
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -534,19 +615,23 @@
                       <label class="form-check-label label-table" for="teto-4" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="portas-4">
-                      <label class="form-check-label label-table" for="portas-4" ></label>
+                      <input class="form-check-input" type="checkbox" id="moldura-4">
+                      <label class="form-check-label label-table" for="moldura-4" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="janelas-4">
-                      <label class="form-check-label label-table" for="janelas-4" ></label>
+                      <input class="form-check-input" type="checkbox" id="mudaCor-4">
+                      <label class="form-check-label label-table" for="mudaCor-4" ></label>
                     </td>
                     <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="duasCores-4">
-                      <label class="form-check-label label-table" for="duasCores-4" ></label>
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="number" class="form-control" id="qtdPortas-4">
+                        <label for="qtdPortas-4" class="tableLabel">Qdt. Portas</label>
+                      </div>
                     </td>
                     <td class="text-center">
-                      <input type="text" class="form-control text-center mx-auto" id="m2-4" placeholder="Ex: Infiltração na Parede">
+                      <div class="md-form form-sm mt-2 mb-0">
+                        <input type="text" id="observacoes-4" class="form-control mx-auto" placeholder="Ex: Infiltração na Parede">
+                      </div>
                     </td>
                   </tr>
                   </tbody>
@@ -578,24 +663,28 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-11">
-              <form class="row" id="stepperForm">
+              <form class="row" id="calculadoraForm">
                 <div class="md-form col-12 col-md-6">
-                  <input id="stepperForm-nome" name="nome" type="text" class="form-control validate" required>
-                  <label for="stepperForm-nome">Seu Nome</label>
+                  <input id="calculadoraForm-nome" name="nome" type="text" class="form-control validate" required>
+                  <label for="calculadoraForm-nome" style="left: auto!important;">Seu Nome</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
-                  <input id="stepperForm-email" name="email" type="email" class="form-control validate" required>
-                  <label for="stepperForm-email">Seu Email</label>
+                  <input id="calculadoraForm-email" name="email" type="email" class="form-control validate" required>
+                  <label for="calculadoraForm-email">Seu Email</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
-                  <input id="stepperForm-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
-                         maxlength="14" onkeypress="mascaraTelefone(stepperForm.phone)" required>
-                  <label for="stepperForm-telefone">Telefone</label>
+                  <input id="calculadoraForm-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
+                         maxlength="14" onkeypress="mascaraTelefone(calculadoraForm.phone)" required>
+                  <label for="calculadoraForm-telefone">Telefone</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
-                  <input id="stepperForm-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
-                         onkeypress="mascaraCep(stepperForm.zip_code)" maxlength="9" required>
-                  <label for="stepperForm-cep">CEP</label>
+                  <input id="calculadoraForm-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
+                         onkeypress="mascaraCep(calculadoraForm.zip_code)" maxlength="9" required>
+                  <label for="calculadoraForm-cep">CEP</label>
+                </div>
+                <div class="md-form col-12">
+                  <textarea id="calculadoraForm-msg" class="md-textarea form-control" rows="3" placeholder="Informe quaisquer detalhes adicionais que deseje informar"></textarea>
+                  <label for="calculadoraForm-msg" style="color: #757575!important;">Mensagem</label>
                 </div>
               </form>
             </div>
@@ -607,77 +696,50 @@
       </div>
     </section>
     <div class="container hide-section" id="orcamento-padrao">
-      <div class="row">
-        <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-11">
           <p class="h5-responsive text-center fw-400 mt-2">
-            <span class="texto-maior">
-              Dados para Contato:
-            </span>
+              <span class="texto-maior">
+                Dados para Contato:
+              </span>
           </p>
         </div>
       </div>
       <div class="row justify-content-center">
-        <p class="h5-responsive text-center fw-400 mb-0">
-          Precisamos desses dados para coisas de trabalho
-        </p>
+        <div class="col-11">
+          <p class="h5-responsive text-center text-muted">
+            Seus dados estão protegidos conosco, eles serão utilizados unica e exclusivamente para entrarmos em contato.
+          </p>
+        </div>
       </div>
       <div class="row justify-content-center">
-        <p class="h5-responsive text-center text-muted">
-          Mas nao se preocupe, somos uma empresa séria e seus dados estarão protegidos.
-        </p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-10 col-xl-8">
-          <form id="stepperForm">
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-nome" name="nome" type="text" class="form-control validate" required>
-                <label for="stepperForm-nome">Seu Nome</label>
-              </div>
+        <div class="col-11">
+          <form class="row" id="formPadrao">
+            <div class="md-form col-12 col-md-6">
+              <input id="formPadrao-nome" name="nome" type="text" class="form-control validate" required>
+              <label for="formPadrao-nome">Seu Nome</label>
             </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-email" name="email" type="email" class="form-control validate" required>
-                <label for="stepperForm-email">Seu Email</label>
-              </div>
+            <div class="md-form col-12 col-md-6">
+              <input id="formPadrao-email" name="email" type="email" class="form-control validate" required>
+              <label for="formPadrao-email">Seu Email</label>
             </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
-                       maxlength="14" onkeypress="mascaraTelefone(stepperForm.phone)" required>
-                <label for="stepperForm-telefone">Telefone</label>
-              </div>
+            <div class="md-form col-12 col-md-6">
+              <input id="formPadrao-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
+                     maxlength="14" onkeypress="mascaraTelefone(formPadrao.phone)" required>
+              <label for="formPadrao-telefone">Telefone</label>
             </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
-                       onkeypress="mascaraCep(stepperForm.zip_code)" maxlength="9" required>
-                <label for="stepperForm-cep">CEP</label>
-              </div>
+            <div class="md-form col-12 col-md-6">
+              <input id="formPadrao-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
+                     onkeypress="mascaraCep(formPadrao.zip_code)" maxlength="9" required>
+              <label for="formPadrao-cep">CEP</label>
             </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-rua" name="street" type="text" placeholder="Ex: Rua da Pintura" class="form-control validate" required>
-                <label for="stepperForm-rua">Número</label>
-              </div>
+            <div class="md-form col-12">
+              <textarea id="formPadrao-msg" class="md-textarea form-control" rows="3" placeholder="Informe quaisquer detalhes adicionais que deseje informar"></textarea>
+              <label for="formPadrao-msg" style="color: #757575!important;">Mensagem</label>
             </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-numero" name="number" type="text" placeholder="Ex: 123" class="form-control validate"
-                       maxlength="6" required>
-                <label for="stepperForm-numero">Número</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="md-form col-12 ml-auto">
-                <input id="stepperForm-complemento" name="complement" type="text" placeholder="Ex: Casa A" class="form-control validate"
-                       maxlength="6" required>
-                <label for="stepperForm-complemento">Complemento</label>
-              </div>
-            </div>
-            <div class="row">
+            <div class="md-form col-12">
               <div class="col-6 col-sm-4 col-md-3 mx-auto wow fadeInUp slower">
-                <button type="submit" class="btn btn-block btn-md mx-auto btn-block px-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
+                <button type="submit" class="btn btn-block btn-md mx-auto btn-block px-2 mt-2 mb-4 waves-effect borderRadius7px waves-light btn-laranjado">
                   <span class="size-094rem fw-500">Enviar!</span>
                 </button>
               </div>
@@ -810,7 +872,6 @@
                   $('.data').removeClass('hide-section');
                   $('.calculadora-controls').removeClass('hide-section');
                   $('#tamanhoImovel').removeClass('hide-section');
-                  progressBarAnimate('20%');
               }
           }
           else{
@@ -842,7 +903,6 @@
           $('.data').removeClass('hide-section');
           $('.calculadora-controls').removeClass('hide-section');
           $('#tamanhoImovel').removeClass('hide-section');
-          progressBarAnimate('20%');
       }
       if(tipoImovel==='casa'){
           $('#tipoPintura').removeClass('hide-section');
@@ -855,7 +915,6 @@
           $('#tamanhoImovel').addClass('hide-section');
           $('.calculadora-controls').addClass('hide-section');
           $('#orcamento-padrao').removeClass('hide-section');
-          progressBarAnimate('80%');
       }
       if(tipoImovel==='outros'){
           $('#tipoPintura').addClass('hide-section');
@@ -864,7 +923,6 @@
           $('#tamanhoImovel').addClass('hide-section');
           $('.calculadora-controls').addClass('hide-section');
           $('#orcamento-padrao').removeClass('hide-section');
-          progressBarAnimate('80%');
       }
   }
 
