@@ -38,19 +38,19 @@
           </div>
           <div class="col-12 col-lg-11 text-center">
             <div class="btn-group btn-TipoImovel" data-toggle="buttons">
-              <label onclick="mudaTipoImovel('casa');" class="btn form-check-label btn-tipo-imovel active">
+              <label onclick="mudaTipoImovel('casa');armazenaDados('tipoImovel','Casa');" class="btn form-check-label btn-tipo-imovel active">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
                 Casa
               </label>
-              <label onclick="mudaTipoImovel('apartamento');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('apartamento');armazenaDados('tipoImovel','Apartamento');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Apartamento
               </label>
-              <label onclick="mudaTipoImovel('escritorio');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('escritorio');armazenaDados('tipoImovel','Escritório');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Escritório
               </label>
-              <label onclick="mudaTipoImovel('outros');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('outros');armazenaDados('tipoImovel','Outros');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Outros
               </label>
@@ -67,23 +67,23 @@
           </div>
           <div class="col-12 col-lg-11 text-center">
             <div class="btn-group btn-TipoImovel" data-toggle="buttons">
-              <label class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','1');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
                 Até 50m²
               </label>
-              <label class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','2');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 75m²
               </label>
-              <label class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','3');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 100m²
               </label>
-              <label class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','4');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 150m²
               </label>
-              <label class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','5');" class="btn form-check-label btn-tipo-imovel">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Maior que 150m²
               </label>
@@ -767,15 +767,15 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript" src="js/galileoJS.js"></script>
+<script type="text/javascript" src="js/calculadora.js"></script>
 <script>
-    // object-fit polyfill run
+    //Init Jarallax
     objectFitImages();
-    /* init Jarallax */
     jarallax(document.querySelectorAll('.jarallax'));
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true
     });
-    $(document).ready(function collapseNavbar() {
+    $(function collapseNavbar() {
         if(checkInclude() === true){
             $('#navbar-wrapper').addClass('top-nav-collapse-fix');
         }
@@ -783,271 +783,26 @@
             setTimeout(collapseNavbar,1)
         }
     });
-</script>
-<script>
-  //ToolTip Initilize
-  // Tooltips Initialization
-  $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-  });
-  //Sticky Initialize
-  $(function () {
-        $(".sticky").sticky({
-            topSpacing: 70
-            , zIndex: 2
-            , stopper: ".stopper"
-        });
+    //ToolTip Initilize
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
     });
-  //Input - e +
-  function changeValue(click,type) {
-      var input = click.parentNode.querySelector('input[type=number]');
-      if(type ==='minus'){
-          click.parentNode.querySelector('input[type=number]').stepDown();
-      }
-      if(type ==='plus'){
-          click.parentNode.querySelector('input[type=number]').stepUp();
-      }
-      var inputSelector = '#'+input.id+':visible';
-      var inputVisibleValue = $(inputSelector).val();
-      $(input).attr('value',inputVisibleValue);
-  }
-  function setValue(input) {
-      $(input).on('focusout',function () {
-          var inputSelector = '#'+input.id+':visible';
-          var inputVisibleValue = $(inputSelector).val();
-          $(input).attr('value',inputVisibleValue);
-      })
-  }
-  // Calculadora
-  function progressBarAnimate(width) {
-      document.getElementById("progressBar-mobile").style.width = width;
-      document.getElementById("progressBar-pc").style.width = width;
-      $('#progressBar-mobile').html(width);
-      $('#progressBar-pc').html(width);
-      if (width==='0%'){
-          document.getElementById("progressBar-mobile").style.color = '#000';
-          document.getElementById("progressBar-pc").style.color = '#000';
-          document.getElementById("progressBar-mobile").style.paddingLeft = "10px";
-          document.getElementById("progressBar-pc").style.paddingLeft = "10px";
-          document.getElementById("progressBar-mobile").style.backgroundColor = "#eee";
-          document.getElementById("progressBar-pc").style.backgroundColor = "#eee";
-      }else{
-          document.getElementById("progressBar-mobile").style.color = '#fff';
-          document.getElementById("progressBar-pc").style.color = '#fff';
-          document.getElementById("progressBar-mobile").style.paddingLeft = "0px";
-          document.getElementById("progressBar-pc").style.paddingLeft = "0px";
-          document.getElementById("progressBar-mobile").style.backgroundColor = "#0d47a1";
-          document.getElementById("progressBar-pc").style.backgroundColor = "#0d47a1";
-      }
-      if (width==='100%'){
-          document.getElementById("progressBar-mobile").style.color = '#fff';
-          document.getElementById("progressBar-pc").style.color = '#fff';
-          document.getElementById("progressBar-mobile").style.fontSize = '16px';
-          document.getElementById("progressBar-pc").style.fontSize = '16px';
-          document.getElementById("progressBar-mobile").style.fontWeight = '500';
-          document.getElementById("progressBar-pc").style.fontWeight = '500';
-          document.getElementById("progressBar-mobile").style.paddingLeft = "0px";
-          document.getElementById("progressBar-pc").style.paddingLeft = "0px";
-          document.getElementById("progressBar-mobile").style.backgroundColor = "#00c851";
-          document.getElementById("progressBar-pc").style.backgroundColor = "#00c851";
-          $('.view4').addClass('hide-section');
-          $('.orcamentoEnviado').removeClass('hide-section');
-      }
-  }
-  function mudaTipoPintura() {
-      setTimeout(function () {
-          if($('#btn-pinturaInterna').hasClass('active')){
-              if($('#btn-pinturaExterna').hasClass('active')) {
-                  $('#calculadora').addClass('hide-section');
-                  $('#alerta').addClass('hide-section');
-                  $('.data').addClass('hide-section');
-                  $('.calculadora-controls').addClass('hide-section');
-                  $('#tamanhoImovel').addClass('hide-section');
-                  $('#orcamento-padrao').removeClass('hide-section');
-              }
-              else{
-                  $('#alerta').addClass('hide-section');
-                  $('#orcamento-padrao').addClass('hide-section');
-                  $('#calculadora').removeClass('hide-section');
-                  $('.data').removeClass('hide-section');
-                  $('.calculadora-controls').removeClass('hide-section');
-                  $('#tamanhoImovel').removeClass('hide-section');
-              }
-          }
-          else{
-              if($('#btn-pinturaExterna').hasClass('active')) {
-                  $('#calculadora').addClass('hide-section');
-                  $('#alerta').addClass('hide-section');
-                  $('.data').addClass('hide-section');
-                  $('.calculadora-controls').addClass('hide-section');
-                  $('#tamanhoImovel').addClass('hide-section');
-                  $('#orcamento-padrao').removeClass('hide-section');
-              }
-              else{
-                  $('#calculadora').addClass('hide-section');
-                  $('#orcamento-padrao').addClass('hide-section');
-                  $('#tamanhoImovel').addClass('hide-section');
-                  $('#alerta').removeClass('hide-section');
-                  $('.data').removeClass('hide-section');
-                  $('.calculadora-controls').removeClass('hide-section');
-              }
-          }
-      },50);
-  }
-  function mudaTipoImovel(tipoImovel) {
-      if(tipoImovel==='apartamento'){
-          $('#tipoPintura').addClass('hide-section');
-          $('#alerta').addClass('hide-section');
-          $('#orcamento-padrao').addClass('hide-section');
-          $('#calculadora').removeClass('hide-section');
-          $('.data').removeClass('hide-section');
-          $('.calculadora-controls').removeClass('hide-section');
-          $('#tamanhoImovel').removeClass('hide-section');
-      }
-      if(tipoImovel==='casa'){
-          $('#tipoPintura').removeClass('hide-section');
-          mudaTipoPintura();
-      }
-      if(tipoImovel==='escritorio'){
-          $('#tipoPintura').addClass('hide-section');
-          $('#calculadora').addClass('hide-section');
-          $('.data').addClass('hide-section');
-          $('#tamanhoImovel').addClass('hide-section');
-          $('.calculadora-controls').addClass('hide-section');
-          $('#orcamento-padrao').removeClass('hide-section');
-      }
-      if(tipoImovel==='outros'){
-          $('#tipoPintura').addClass('hide-section');
-          $('#calculadora').addClass('hide-section');
-          $('.data').addClass('hide-section');
-          $('#tamanhoImovel').addClass('hide-section');
-          $('.calculadora-controls').addClass('hide-section');
-          $('#orcamento-padrao').removeClass('hide-section');
-      }
-  }
-
-
-
-//  $(window).on('load',function () {
-//      var i=0;
-//      $(".inputPlusMinusParent").each(function () {
-//          $(this).attr('id',i);
-//          i++;
-//      });
-//  });
-//  function inputPlusMinus(type,elementID) {
-//      elementID = '#'+elementID+'>input';
-//      var elementVal = $(elementID).val();
-//      if (type === 'plus'){
-//          elementVal++;
-//          $(elementID).attr('value',elementVal);
-//      }
-//      if (type === 'minus'&&elementVal!=0){
-//          elementVal--;
-//          $(elementID).attr('value',elementVal);
-//      }
-//  }
-</script>
-<script>
-      // JavaScript Document
-      function setFocus(id)
-      {
-          setTimeout(function(){
-              document.getElementById(id).focus()
-          },1);
-      }
-      //adiciona mascara de cnpj
-      function mascaraCNPJ(cnpj){
-          if(mascaraInteiro(cnpj)===false){
-              event.returnValue = false;
-          }
-          return formataCampo(cnpj, '00.000.000/0000-00', event);
-      }
-      //adiciona mascara de cep
+    //Validações e ajustes para os forms
+      //Adiciona mascara de cep
       function mascaraCep(cep){
           if(mascaraInteiro(cep)===false){
               event.returnValue = false;
           }
           return formataCampo(cep, '00000-000', event);
       }
-      //adiciona mascara de data
-      function mascaraData(data){
-          if(mascaraInteiro(data)===false){
-              event.returnValue = false;
-          }
-          return formataCampo(data, '00/00/0000', event);
-      }
-      //adiciona mascara ao telefone
+      //Adiciona mascara ao telefone
       function mascaraTelefone(tel){
           if(mascaraInteiro(tel)===false){
               event.returnValue = false;
           }
           return formataCampo(tel, '00 0 0000-0000', event);
       }
-      //adiciona mascara ao CPF
-      function mascaraCPF(cpf){
-          if(mascaraInteiro(cpf)===false){
-              event.returnValue = false;
-          }
-          return formataCampo(cpf, '000.000.000-00', event);
-      }
-      //valida telefone
-      function validaTelefone(tel){
-          var exp = /\(\d{2}\)\ \d{5}\-\d{4}/;
-          if(!exp.test(tel.value))
-              alert('Numero de Telefone Invalido!');
-      }
-      //valida CEP
-      function validaCep(cep){
-          var exp = /\d{5}\-\d{3}/;
-          if(!exp.test(cep.value))
-              alert('Numero de Cep Invalido!');
-      }
-      //valida data
-      function validaData(data){
-          var exp = /\d{2}\/\d{2}\/\d{4}/;
-          if(!exp.test(data.value))
-              alert('Data Invalida!');
-      }
-      //valida o CPF digitado
-      function validarCPF(objCpf){
-          cpf = objCpf.value;
-          cpf = cpf.replace(/[^\d]+/g,'');
-          if(cpf === '') return false;
-          // Elimina CPFs invalidos conhecidos
-          if (cpf.length !== 11 || cpf.match('/(\d)\1{10}/')) {
-              alert('CPF Inválido');
-              setFocus(objCpf.id);
-              return false;
-          }
-          // Valida 1o digito
-          add = 0;
-          for (i=0; i < 9; i ++)
-              add += parseInt(cpf.charAt(i)) * (10 - i);
-          rev = 11 - (add % 11);
-          if (rev === 10 || rev === 11)
-              rev = 0;
-          if (rev !== parseInt(cpf.charAt(9))) {
-              alert('CPF Inválido');
-              setFocus(objCpf.id);
-              return false;
-          }
-          // Valida 2o digito
-          add = 0;
-          for (i = 0; i < 10; i ++)
-              add += parseInt(cpf.charAt(i)) * (11 - i);
-          rev = 11 - (add % 11);
-          if (rev === 10 || rev === 11)
-              rev = 0;
-          if (rev !== parseInt(cpf.charAt(10))) {
-              alert('CPF Inválido');
-              setFocus(objCpf.id);
-              return false;
-          }
-
-          return true;
-      }
-      //valida numero inteiro com mascara
+      //Valida numero inteiro com mascara
       function mascaraInteiro(){
           if (event.keyCode < 48 || event.keyCode > 57){
               event.returnValue = false;
@@ -1055,65 +810,39 @@
           }
           return true;
       }
-      //valida o CNPJ digitado
-      function validarCNPJ(ObjCnpj){
-          var cnpj = ObjCnpj.value;
-          var valida = new Array(6,5,4,3,2,9,8,7,6,5,4,3,2);
-          var dig1= new Number;
-          var dig2= new Number;
-
-          var exp = /\.|\-|\//g;
-          cnpj = cnpj.toString().replace( exp, "" );
-          var digito = new Number(eval(cnpj.charAt(12)+cnpj.charAt(13)));
-
-          for(i = 0; i<valida.length; i++){
-              dig1 += (i>0? (cnpj.charAt(i-1)*valida[i]):0);
-              dig2 += cnpj.charAt(i)*valida[i];
-          }
-          dig1 = (((dig1%11)<2)? 0:(11-(dig1%11)));
-          dig2 = (((dig2%11)<2)? 0:(11-(dig2%11)));
-
-          if(((dig1*10)+dig2) != digito)
-          {
-              alert('CNPJ Invalido!');
-              setFocus(ObjCnpj.id);
-              return false;
-          }
-          return true;
-      }
-      //formata de forma generica os campos
+      //Formata de forma generica os campos
       function formataCampo(campo, Mascara, evento) {
-          var boleanoMascara;
+        var boleanoMascara;
 
-          var digitado = evento.keyCode;
-          exp = /\-|\.|\/|\(|\)| /g
-          campoSoNumeros = campo.value.toString().replace( exp, "" );
+        var digitado = evento.keyCode;
+        exp = /\-|\.|\/|\(|\)| /g;
+        campoSoNumeros = campo.value.toString().replace( exp, "" );
 
-          var posicaoCampo = 0;
-          var NovoValorCampo="";
-          var TamanhoMascara = campoSoNumeros.length;;
+        var posicaoCampo = 0;
+        var NovoValorCampo="";
+        var TamanhoMascara = campoSoNumeros.length;;
 
-          if (digitado != 8) { // backspace
-              for(i=0; i<= TamanhoMascara; i++) {
-                  boleanoMascara  = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
-                      || (Mascara.charAt(i) == "/"))
-                  boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "(")
-                      || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
-                  if (boleanoMascara) {
-                      NovoValorCampo += Mascara.charAt(i);
-                      TamanhoMascara++;
-                  }else {
-                      NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                      posicaoCampo++;
-                  }
-              }
-              campo.value = NovoValorCampo;
-              return true;
-          }else {
-              return true;
-          }
-      }
-  </script>
+        if (digitado != 8) { // backspace
+            for(i=0; i<= TamanhoMascara; i++) {
+                boleanoMascara  = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
+                    || (Mascara.charAt(i) == "/"))
+                boleanoMascara  = boleanoMascara || ((Mascara.charAt(i) == "(")
+                    || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+            campo.value = NovoValorCampo;
+            return true;
+        }else {
+            return true;
+        }
+    }
+</script>
 </body>
 
 </html>
