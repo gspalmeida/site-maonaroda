@@ -99,8 +99,10 @@ function escolheTabAtiva(nomeDaTab,nomeDaModal){
     });
 }
 // Radio Card
-function radioCardActive(cardClick) {
-    $('.radio-card').addClass('d-none').removeClass('active');
-    $(cardClick).removeClass('d-none');
-    $(cardClick).addClass('active');
-}
+$("[data-card-type='radio-card']").on('click',function () {
+  var cardGroup = $(this).attr("data-card-group");
+  $("[data-card-group='"+cardGroup+"']:not(.radio-card-active) div.radio-card-icon").addClass('d-none').removeClass('active');
+  $(this).addClass('radio-card-active');
+  $("[data-card-group='"+cardGroup+"'].radio-card-active div.radio-card-icon").removeClass('d-none').addClass('active');
+  $(this).removeClass('radio-card-active');
+});
