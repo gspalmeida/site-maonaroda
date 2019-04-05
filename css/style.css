@@ -801,12 +801,12 @@ header .carousel {
   }
 }
 /*ORÇAMENTO*/
-.btn-tipo-imovel{
+.btn-group-custom-child{
   padding:0.6rem 1.2rem;
   background-color: #39abbfc2;
   color: #fff!important;
 }
-.btn-tipo-imovel.active{
+.btn-group-custom-child.active{
   padding:0.6rem 1.2rem;
   background-color: #005665!important;
   color: #fff!important;
@@ -833,10 +833,13 @@ header .carousel {
 .blue-icon-panel{
   background-color: #0097B1!important;
 }
+.bg-color-rosa-claro{
+  background-color: #faebd7;
+}
 .img-calculadora{
   height: 100px;
 }
-.radio-card{
+.radio-card-icon{
   position: absolute;
   right: 10px;
   top: 10px;
@@ -861,7 +864,7 @@ header .carousel {
   }
 }
 @media (max-width: 675px) {
-  .btn-TipoImovel{
+  .btn-group-custom{
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-flex-pack: center;
@@ -872,7 +875,7 @@ header .carousel {
     vertical-align: middle;
     flex-wrap: wrap!important;
   }
-  .btn-TipoImovel > label{
+  .btn-group-custom > label{
     width: 50%;
   }
   .btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {
