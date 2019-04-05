@@ -37,20 +37,20 @@
             </p>
           </div>
           <div class="col-12 col-lg-11 text-center">
-            <div class="btn-group btn-TipoImovel" data-toggle="buttons">
-              <label onclick="mudaTipoImovel('casa');armazenaDados('tipoImovel','Casa');" class="btn form-check-label btn-tipo-imovel active">
-                <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
+            <div class="btn-group btn-group-custom" data-toggle="buttons">
+              <label onclick="mudaTipoImovel('casa');" class="btn form-check-label btn-tipo-imovel btn-group-custom-child">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Casa
               </label>
-              <label onclick="mudaTipoImovel('apartamento');armazenaDados('tipoImovel','Apartamento');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('apartamento');" class="btn form-check-label btn-tipo-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Apartamento
               </label>
-              <label onclick="mudaTipoImovel('escritorio');armazenaDados('tipoImovel','Escritório');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('escritorio');" class="btn form-check-label btn-tipo-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Escritório
               </label>
-              <label onclick="mudaTipoImovel('outros');armazenaDados('tipoImovel','Outros');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="mudaTipoImovel('outros');" class="btn form-check-label btn-tipo-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Outros
               </label>
@@ -66,24 +66,24 @@
             </p>
           </div>
           <div class="col-12 col-lg-11 text-center">
-            <div class="btn-group btn-TipoImovel" data-toggle="buttons">
-              <label onclick="armazenaDados('tamanhoImovel','1');" class="btn form-check-label btn-tipo-imovel">
-                <input class="form-check-input" type="radio" name="options" autocomplete="off" checked>
+            <div class="btn-group btn-group-custom" data-toggle="buttons">
+              <label onclick="armazenaDados('tamanhoImovel','1');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+                <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 50m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','2');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','2');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 75m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','3');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','3');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 100m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','4');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','4');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 150m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','5');" class="btn form-check-label btn-tipo-imovel">
+              <label onclick="armazenaDados('tamanhoImovel','5');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Maior que 150m²
               </label>
@@ -100,11 +100,11 @@
           </div>
           <div class="col-12 col-lg-11 text-center">
             <div class="btn-group" data-toggle="buttons" id="btnTipoPintura">
-              <label class="btn form-check-label btn-tipo-imovel active" onclick="mudaTipoPintura()" id="btn-pinturaInterna">
+              <label class="btn form-check-label btn-tipo-pintura btn-group-custom-child" onclick="mudaTipoPintura()" id="btn-pinturaInterna">
                 <input class="form-check-input" type="checkbox" autocomplete="off">
                 Interna
               </label>
-              <label class="btn form-check-label btn-tipo-imovel" onclick="mudaTipoPintura()" id="btn-pinturaExterna">
+              <label class="btn form-check-label btn-tipo-pintura btn-group-custom-child" onclick="mudaTipoPintura()" id="btn-pinturaExterna">
                 <input class="form-check-input" type="checkbox" autocomplete="off">
                 Externa
               </label>
@@ -113,8 +113,8 @@
         </div>
       </div>
     </section>
-    <section class="container-fluid" id="calculadora">
-      <div class="row justify-content-center align-items-center">
+    <section class="container-fluid height60vh flex-center" id="calculadora">
+      <div class="row justify-content-center align-items-center w-100">
         <div class="col-12 order-2 d-flex d-md-none mb-4 text-center" style="height: auto!important;">
           <div class="card card-cascade cascading-admin-card w-100">
             <div class="admin-up d-flex">
@@ -139,23 +139,23 @@
             <div class="row justify-content-center">
               <div class="calculadora-controls">
                 <div class="row justify-content-center base">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.base','.view1');progressBarAnimate('20%');">Próximo</a>
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view1">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('10%');">Anterior</a>
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.view2');progressBarAnimate('40%');">Próximo</a>
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView1();">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view2">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">Próximo</a>
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView2();">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view3">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view4');progressBarAnimate('90%');">Próximo</a>
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView3();">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view4">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                  <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="progressBarAnimate('100%')">
+                  <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaForm();">
                     Enviar!
                   </a>
                 </div>
@@ -203,23 +203,23 @@
               <div class="row justify-content-center">
                 <div class="calculadora-controls">
                   <div class="row justify-content-center base">
-                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.base','.view1');progressBarAnimate('20%');">Próximo</a>
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view1">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
-                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.view2');progressBarAnimate('40%');">Próximo</a>
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView1();">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view2">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
-                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view3');progressBarAnimate('60%');">Próximo</a>
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView2();">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view3">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
-                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view4');progressBarAnimate('90%');">Próximo</a>
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView3();">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view4">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                    <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="progressBarAnimate('100%')">
+                    <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaForm();">
                       Enviar!
                     </a>
                   </div>
@@ -253,9 +253,9 @@
           <div class="col-12 col-sm-11 col-md-10 col-lg-8 mx-auto">
             <div class="row justify-content-center">
               <div class="col-6 col-sm-4 pr-2 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center">
-                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
-                    <div class="radio-card flex-center d-none active">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','1');">
+                  <div class="card-body">
+                    <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
                     </div>
                     <img src="https://images.typeform.com/images/JMWdqwTtd365/image/default" class="img-calculadora" alt="">
@@ -264,9 +264,9 @@
                 </div>
               </div>
               <div class="col-6 col-sm-4 pl-2 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center">
-                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
-                    <div class="radio-card flex-center d-none">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','2');">
+                  <div class="card-body">
+                    <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
                     </div>
                     <img src="https://images.typeform.com/images/ruLbzvMjLjCX/image/default" class="img-calculadora" alt="">
@@ -275,9 +275,9 @@
                 </div>
               </div>
               <div class="col-12 col-sm-4 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center">
-                  <div class="card-body" onclick="radioCardActive(this.firstElementChild)">
-                    <div class="radio-card flex-center d-none">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','3');">
+                  <div class="card-body">
+                    <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
                     </div>
                     <img src="https://images.typeform.com/images/EHzGXUbePgjJ/image/default" class="img-calculadora" alt="">
@@ -376,12 +376,6 @@
             </div>
             <!--<div class="col-md-2 d-none d-sm-flex"></div>-->
           </div>
-          <div class="stopper"></div>
-          <!--<div class="row justify-content-center">-->
-            <!--<div class="col-12 text-center">-->
-              <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view1','.view2')">Proximo passo</a>-->
-            <!--</div>-->
-          <!--</div>-->
         </div>
         <div class="col-12 col-md-7 view2 order-1 justify-content-center hide-section" id="calculadora-view2">
           <div class="row">
@@ -400,8 +394,8 @@
               </p>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
-                <div class="radio-card flex-center d-none" data-option="Tinta 1">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 1');" data-card-type="radio-card" data-card-group="materiais">
+                <div class="radio-card-icon flex-center d-none" data-option="Tinta 1">
                   <i class="fas fa-check"></i>
                 </div>
                 <div class="text-center">
@@ -418,8 +412,8 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
-                <div class="radio-card flex-center d-none" data-option="Tinta 2">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 2');" data-card-type="radio-card" data-card-group="materiais">
+                <div class="radio-card-icon flex-center d-none" data-option="Tinta 2">
                   <i class="fas fa-check"></i>
                 </div>
                 <div class="text-center">
@@ -436,8 +430,8 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
-                <div class="radio-card flex-center d-none" data-option="Tinta 3">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 3');" data-card-type="radio-card" data-card-group="materiais">
+                <div class="radio-card-icon flex-center d-none" data-option="Tinta 3">
                   <i class="fas fa-check"></i>
                 </div>
                 <div class="text-center">
@@ -454,8 +448,8 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="radioCardActive(this.firstElementChild)">
-                <div class="radio-card flex-center d-none" data-option="Sem Material">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Sem Material');" data-card-type="radio-card" data-card-group="materiais">
+                <div class="radio-card-icon flex-center d-none" data-option="Sem Material">
                   <i class="fas fa-check"></i>
                 </div>
                 <div class="text-center">
@@ -495,8 +489,8 @@
           </div>
           <div class="row justify-content-center">
             <div class="w-90">
-              <div class="table-responsive-md text-nowrap table-hover">
-                <table class="table table-sm">
+              <div class="table-responsive-lg scrollbar-primary text-nowrap table-hover">
+                <table class="table table-sm scrollbar-primary">
                   <thead>
                     <tr>
                       <th scope="col">Cômodos</th>
@@ -513,127 +507,7 @@
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row">Cômodo 1</th>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="parede-1">
-                      <label class="form-check-label label-table" for="parede-1" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="teto-1">
-                      <label class="form-check-label label-table" for="teto-1" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="moldura-1">
-                      <label class="form-check-label label-table" for="moldura-1" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="mudaCor-1">
-                      <label class="form-check-label label-table" for="mudaCor-1" ></label>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="number" class="form-control" id="qtdPortas-1">
-                        <label for="qtdPortas-1" class="tableLabel">Qdt. Portas</label>
-                      </div>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="text" id="observacoes-1" class="form-control mx-auto" placeholder="Ex: Infiltração no teto">
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cômodo 2</th>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="parede-2">
-                      <label class="form-check-label label-table" for="parede-2" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="teto-2">
-                      <label class="form-check-label label-table" for="teto-2" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="moldura-2">
-                      <label class="form-check-label label-table" for="moldura-2" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="mudaCor-2">
-                      <label class="form-check-label label-table" for="mudaCor-2" ></label>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="number" class="form-control" id="qtdPortas-2">
-                        <label for="qtdPortas-2" class="tableLabel">Qdt. Portas</label>
-                      </div>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="text" id="observacoes-2" class="form-control mx-auto" placeholder="Ex: Rachadura na Parede">
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cômodo 3</th>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="parede-3">
-                      <label class="form-check-label label-table" for="parede-3" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="teto-3">
-                      <label class="form-check-label label-table" for="teto-3" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="moldura-3">
-                      <label class="form-check-label label-table" for="moldura-3" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="mudaCor-3">
-                      <label class="form-check-label label-table" for="mudaCor-3" ></label>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="number" class="form-control" id="qtdPortas-3">
-                        <label for="qtdPortas-3" class="tableLabel">Qdt. Portas</label>
-                      </div>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form mt-2 mb-0">
-                        <input type="text" id="observacoes-3" class="form-control mx-auto" placeholder="Ex: Parede sem Reboco">
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cômodo 4</th>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="parede-4">
-                      <label class="form-check-label label-table" for="parede-4" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="teto-4">
-                      <label class="form-check-label label-table" for="teto-4" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="moldura-4">
-                      <label class="form-check-label label-table" for="moldura-4" ></label>
-                    </td>
-                    <td class="text-center">
-                      <input class="form-check-input" type="checkbox" id="mudaCor-4">
-                      <label class="form-check-label label-table" for="mudaCor-4" ></label>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="number" class="form-control" id="qtdPortas-4">
-                        <label for="qtdPortas-4" class="tableLabel">Qdt. Portas</label>
-                      </div>
-                    </td>
-                    <td class="text-center">
-                      <div class="md-form form-sm mt-2 mb-0">
-                        <input type="text" id="observacoes-4" class="form-control mx-auto" placeholder="Ex: Infiltração na Parede">
-                      </div>
-                    </td>
-                  </tr>
+                  <tbody id="table-body">
                   </tbody>
                 </table>
               </div>
