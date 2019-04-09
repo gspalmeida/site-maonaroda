@@ -97,12 +97,13 @@ function mudaTipoPintura() {
           }
           //Alerta de 'Marque ao menos uma Opção
           else{
-            $('#calculadora').addClass('hide-section');
-            $('#orcamento-padrao').addClass('hide-section');
-            $('#tamanhoImovel').addClass('hide-section');
-            $('#alerta').removeClass('hide-section');
-            $('.data').removeClass('hide-section');
-            $('.calculadora-controls').removeClass('hide-section');
+
+            // $('#calculadora').addClass('hide-section');
+            // $('#orcamento-padrao').addClass('hide-section');
+            // $('#tamanhoImovel').addClass('hide-section');
+            // $('#alerta').removeClass('hide-section');
+            // $('.data').removeClass('hide-section');
+            // $('.calculadora-controls').removeClass('hide-section');
             armazenaDados('tipoPintura','Undefined');
           }
         }
@@ -152,6 +153,9 @@ function mudaTipoImovel(tipoImovel) {
 }
 function atualizaValorEstimado(valorOrcado) {
   $('.valorEstimado').html('R$ '+Math.ceil(valorOrcado)+',00');
+}
+function notificaErro(titulo,mensagem) {
+  toastr.error(mensagem,titulo);
 }
 
 //Logica para validação e armazenamento dos dados
@@ -267,12 +271,16 @@ function validaViewBase() {
   var tipoImovel = sessionStorage.getItem('tipoImovel');
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var alturaParede = sessionStorage.getItem('alturaParede');
+  var tipoPintura = sessionStorage.getItem('tipoPintura');
   if (tipoImovel==='Casa'){
     if(tamanhoImovel!=0&&tamanhoImovel!=1&&tamanhoImovel!=2&&tamanhoImovel!=3&&tamanhoImovel!=4){
-      alert("Marque uma das opções para o tamanho do Imóvel");
+      notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para o Tamanho do Imóvel');
     }
     else if (alturaParede!=0&&alturaParede!=1&&alturaParede!=2){
-      alert("Marque uma opção para altura");
+      notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para a Altura do Pé Direito');
+    }
+    else if(tipoPintura === 'Undefined'){
+      notificaErro('Você esqueceu um campo obrigatório','É necessário marcar o Tipo de Pintura desejado');
     }
     else{
       trocaSlide('.base','.view1');
@@ -281,10 +289,10 @@ function validaViewBase() {
   }
   else if (tipoImovel==='Apartamento') {
     if(tamanhoImovel!==1&&tamanhoImovel!==2&&tamanhoImovel!==3&&tamanhoImovel!==4&&tamanhoImovel!==5){
-      alert("Marque uma das opções para o tamanho do Imóvel");
+      notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para o Tamanho do Imóvel');
     }
     else if (alturaParede!==1&&alturaParede!==2&&alturaParede!==3){
-      alert("Marque uma opção para altura");
+      notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para a Altura do Pé Direito');
     }
     else{
       trocaSlide('.base','.view1');
@@ -333,13 +341,19 @@ function validaView1() {
     }
   }
   else{
-    alert("É necessário Informar ao menos 1 comodo")
+    notificaErro('Você esqueceu um campo obrigatório',"É necessário Informar pelo menos um comodo");
   }
 }
 function validaView2() {
-  var tipoMaterial = sessionStorage.getItem('tipoMaterial');
-  if (tipoMaterial!=="1"&&tipoMaterial!=="2"&&tipoMaterial!=="3"&&tipoMaterial!=="0"){
-    alert("Escolha um tipo de Material");
+  var validado = 0
+  $('#view2-slide1 > div > div > div.radio-card-icon').each(function (index) {
+    if($(this).hasClass("active")){
+      validado = 1;
+    }
+  });
+
+  if (validado === 0){
+    notificaErro('Você esqueceu um campo obrigatório',"Escolha um tipo de Material");
   }
   else{
     trocaSlide('.view2','.view3');
@@ -378,11 +392,11 @@ function validaView3() {
       trocaSlide('.view3','.view4');
       progressBarAnimate('90%');
     }else{
-      alert('O valor minimo para orçamentos é 450');
+      notificaErro('Valor Mínimo não atingido','O valor minimo para orçamentos é 450 Reais, insira mais comodos, ou marque mais opções de pintura(Parede, Teto, Moldura ou Rodapé)');
     }
   }
   else{
-    alert("É necessário marcar ao menos uma opção para área de pintura(Parede, Teto ou Moldura)");
+    notificaErro('Você esqueceu um campo obrigatório','É necessário marcar ao menos uma opção para área de pintura(Parede, Teto, Moldura ou Rodapé)');
     setTimeout(function () {
       $("tbody#table-body > tr:not(.animated)").removeClass('bg-color-rosa-claro');
       $("tbody#table-body > tr").removeClass('animated pulse');
@@ -390,10 +404,9 @@ function validaView3() {
   }
 }
 function enviaForm() {
-  alert('Envia o form, se enviado executa o seguinte:');
-  $('.view4').addClass('hide-section');
-  $('.orcamentoEnviado').removeClass('hide-section');
-  progressBarAnimate('100%')
+  console.log($('#calculadoraForm-nome').prop('value'));
+  // trocaSlide('.view4','.orcamentoEnviado');
+  progressBarAnimate('100%');
 }
 // Calculos
 function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
