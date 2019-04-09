@@ -67,23 +67,23 @@
           </div>
           <div class="col-12 col-lg-11 text-center">
             <div class="btn-group btn-group-custom" data-toggle="buttons">
-              <label onclick="armazenaDados('tamanhoImovel','1');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+              <label onclick="armazenaDados('tamanhoImovel','0');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 50m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','2');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+              <label onclick="armazenaDados('tamanhoImovel','1');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 75m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','3');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+              <label onclick="armazenaDados('tamanhoImovel','2');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 100m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','4');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+              <label onclick="armazenaDados('tamanhoImovel','3');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Até 150m²
               </label>
-              <label onclick="armazenaDados('tamanhoImovel','5');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
+              <label onclick="armazenaDados('tamanhoImovel','4');" class="btn form-check-label btn-tamanho-imovel btn-group-custom-child">
                 <input class="form-check-input" type="radio" name="options" autocomplete="off">
                 Maior que 150m²
               </label>
@@ -133,7 +133,7 @@
               </div>
               <div class="data mt-0 ml-auto">
                 <p class="fw-500">Valor Estimado</p>
-                <h4 class="font-weight-bold dark-grey-text">---- $</h4>
+                <h4 class="font-weight-bold dark-grey-text valorEstimado">---- $</h4>
               </div>
             </div>
             <div class="row justify-content-center">
@@ -186,7 +186,7 @@
               </div>
               <div class="data">
                 <p class="">Valor Estimado</p>
-                <h5 class="font-weight-bold dark-grey-text">--- $</h5>
+                <h5 class="font-weight-bold dark-grey-text valorEstimado">--- $</h5>
               </div>
             </div>
             <div class="card-body px-0 py-0 card-body-cascade">
@@ -253,7 +253,7 @@
           <div class="col-12 col-sm-11 col-md-10 col-lg-8 mx-auto">
             <div class="row justify-content-center">
               <div class="col-6 col-sm-4 pr-2 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','1');">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','0');">
                   <div class="card-body">
                     <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
@@ -264,7 +264,7 @@
                 </div>
               </div>
               <div class="col-6 col-sm-4 pl-2 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','2');">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','1');">
                   <div class="card-body">
                     <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
@@ -275,7 +275,7 @@
                 </div>
               </div>
               <div class="col-12 col-sm-4 px-sm-2 mb-3">
-                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','3');">
+                <div class="card hoverable card-same-height text-center" data-card-type="radio-card" data-card-group="alturaParede" onclick="armazenaDados('alturaParede','2');">
                   <div class="card-body">
                     <div class="radio-card-icon flex-center d-none">
                       <i class="fas fa-check"></i>
@@ -329,10 +329,10 @@
             </div>
             <div class="col-4-custom col-sm-4 col-md-3 mb-2 text-center">
               <img class="img-calculadora" src="http://maonaroda.com/img/icon_comodos04.png" alt="Comodo 1">
-              <p>Garagem</p>
+              <p>Hall de Entrada</p>
               <div class="def-number-input number-input mx-auto">
                 <button onclick="changeValue(this,'minus')" class="minus"></button>
-                <input onkeypress="return event.charCode >= 48" onclick="setValue(this)" min="0" name="quantity" value="0" type="number" id="input-garagem">
+                <input onkeypress="return event.charCode >= 48" onclick="setValue(this)" min="0" name="quantity" value="0" type="number" id="input-hallentrada">
                 <button onclick="changeValue(this,'plus')" class="plus"></button>
               </div>
             </div>
@@ -367,10 +367,10 @@
             </div>
             <div class="col-4-custom col-sm-4 col-md-3 mb-2 text-center">
               <img class="img-calculadora" src="http://maonaroda.com/img/icon_comodos08.png" alt="Comodo 1">
-              <p>Dispensa</p>
+              <p>Lavanderia</p>
               <div class="def-number-input number-input mx-auto">
                 <button onclick="changeValue(this,'minus')" class="minus"></button>
-                <input onkeypress="return event.charCode >= 48" onclick="setValue(this)" min="0" name="quantity" value="0" type="number" id="input-dispensa">
+                <input onkeypress="return event.charCode >= 48" onclick="setValue(this)" min="0" name="quantity" value="0" type="number" id="input-lavanderia">
                 <button onclick="changeValue(this,'plus')" class="plus"></button>
               </div>
             </div>
@@ -394,7 +394,7 @@
               </p>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 1');" data-card-type="radio-card" data-card-group="materiais">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoMaterial','1');geraOrcamento();" data-card-type="radio-card" data-card-group="materiais">
                 <div class="radio-card-icon flex-center d-none" data-option="Tinta 1">
                   <i class="fas fa-check"></i>
                 </div>
@@ -412,7 +412,7 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 2');" data-card-type="radio-card" data-card-group="materiais">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoMaterial','2');geraOrcamento();" data-card-type="radio-card" data-card-group="materiais">
                 <div class="radio-card-icon flex-center d-none" data-option="Tinta 2">
                   <i class="fas fa-check"></i>
                 </div>
@@ -430,7 +430,7 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Tinta 3');" data-card-type="radio-card" data-card-group="materiais">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoMaterial','3');geraOrcamento();" data-card-type="radio-card" data-card-group="materiais">
                 <div class="radio-card-icon flex-center d-none" data-option="Tinta 3">
                   <i class="fas fa-check"></i>
                 </div>
@@ -448,7 +448,7 @@
               </div>
             </div>
             <div class="col-6 my-3">
-              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoTinta','Sem Material');" data-card-type="radio-card" data-card-group="materiais">
+              <div class="card py-3 mx-auto card-same-height flex-center" style="cursor: pointer;" onclick="armazenaDados('tipoMaterial','0');geraOrcamento();" data-card-type="radio-card" data-card-group="materiais">
                 <div class="radio-card-icon flex-center d-none" data-option="Sem Material">
                   <i class="fas fa-check"></i>
                 </div>
@@ -477,7 +477,7 @@
             <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view3')">Próximo</a>-->
           <!--</div>-->
         </div>
-        <div class="col-12 col-md-7 view3 order-1 justify-content-center hide-section" id="calculadora-view3">
+        <div class="col-12 col-md-10 view3 order-1 justify-content-center hide-section" id="calculadora-view3">
           <div class="row">
             <div class="col-12">
               <p class="h5-responsive text-center fw-400 mt-2 mb-0">
@@ -489,7 +489,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="w-90">
-              <div class="table-responsive-lg scrollbar-primary text-nowrap table-hover">
+              <div class="table-responsive-xl scrollbar-primary text-nowrap table-hover">
                 <table class="table table-sm scrollbar-primary">
                   <thead>
                     <tr>
@@ -497,9 +497,9 @@
                       <th scope="col" class="text-center">Paredes</th>
                       <th scope="col" class="text-center">Teto</th>
                       <th scope="col" class="text-center">Molduras</th>
-                      <th scope="col" class="text-center">Mudança de Cor</th>
-                      <th scope="col" class="text-center">Qtd. Portas</th>
-                      <th scope="col" class="text-center">
+                      <th scope="col" class="text-center">Rodapés</th>
+                      <th scope="col" class="text-left">Qtd. Portas</th>
+                      <th scope="col" class="text-left">
                         Observações
                         <i class="fas fa-info material-tooltip-main" data-toggle="tooltip" data-placement="top"
                            title="As Informações desse campo nao serão contempladas no valor do orçamento prévio"
@@ -640,6 +640,7 @@
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/configCalculadora.js"></script>
 <script type="text/javascript" src="js/galileoJS.js"></script>
 <script type="text/javascript" src="js/calculadora.js"></script>
 <script>
