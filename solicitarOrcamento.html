@@ -155,7 +155,7 @@
                 </div>
                 <div class="row justify-content-center hide-section view4">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                  <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaForm();">
+                  <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora();">
                     Enviar!
                   </a>
                 </div>
@@ -219,7 +219,7 @@
                   </div>
                   <div class="row justify-content-center hide-section view4">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                    <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaForm();">
+                    <a type="submit" class="btn waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora();">
                       Enviar!
                     </a>
                   </div>
@@ -535,9 +535,9 @@
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center pt-4">
             <div class="col-11">
-              <form class="row" id="calculadoraForm">
+              <form class="row" name="calculadoraForm" id="calculadoraForm">
                 <div class="md-form col-12 col-md-6">
                   <input id="calculadoraForm-nome" name="nome" type="text" class="form-control validate" required>
                   <label for="calculadoraForm-nome" style="left: auto!important;">Seu Nome</label>
@@ -547,17 +547,17 @@
                   <label for="calculadoraForm-email">Seu Email</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
-                  <input id="calculadoraForm-telefone" name="phone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
-                         maxlength="14" onkeypress="mascaraTelefone(calculadoraForm.phone)" required>
+                  <input id="calculadoraForm-telefone" name="telefone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
+                         maxlength="14" onkeypress="mascaraTelefone(calculadoraForm.telefone)" required>
                   <label for="calculadoraForm-telefone">Telefone</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
-                  <input id="calculadoraForm-cep" name="zip_code" type="text" placeholder="12345-678" class="form-control validate"
-                         onkeypress="mascaraCep(calculadoraForm.zip_code)" maxlength="9" required>
+                  <input id="calculadoraForm-cep" name="CEP" type="text" placeholder="12345-678" class="form-control validate"
+                         onkeypress="mascaraCep(calculadoraForm.CEP)" maxlength="9" required>
                   <label for="calculadoraForm-cep">CEP</label>
                 </div>
                 <div class="md-form col-12">
-                  <textarea id="calculadoraForm-msg" class="md-textarea form-control" rows="3" placeholder="Informe quaisquer detalhes adicionais que deseje informar"></textarea>
+                  <textarea id="calculadoraForm-msg" name="mensagem" class="md-textarea form-control" rows="3" placeholder="Informe quaisquer detalhes adicionais que deseje informar"></textarea>
                   <label for="calculadoraForm-msg" style="color: #757575!important;">Mensagem</label>
                 </div>
               </form>
