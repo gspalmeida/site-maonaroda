@@ -106,3 +106,61 @@ $("[data-card-type='radio-card']").on('click',function () {
   $("[data-card-group='"+cardGroup+"'].radio-card-active div.radio-card-icon").removeClass('d-none').addClass('active');
   $(this).removeClass('radio-card-active');
 });
+//Loader para Envio de Forms
+function ShowLoader() {
+  var overlay = jQuery(
+    '<div id="loading-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); z-index: 10000;">' +
+    '   <div style="text-align: center; width: 100%; position: absolute; top: 40%; margin-top: -50px;"> ' +
+    '       <div class="preloader-wrapper big active"> ' +
+    '           <div class="spinner-layer spinner-blue"> ' +
+    '              <div class="circle-clipper left"> ' +
+    '                 <div class="circle"></div> ' +
+    '              </div>' +
+    '              <div class="gap-patch"> ' +
+    '                 <div class="circle"></div> ' +
+    '              </div>' +
+    '              <div class="circle-clipper right"> ' +
+    '                 <div class="circle"></div> ' +
+    '              </div> ' +
+    '           </div> ' +
+    '           <div class="spinner-layer spinner-red"> ' +
+    '               <div class="circle-clipper left"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="gap-patch"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="circle-clipper right"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div> ' +
+    '           </div> ' +
+    '           <div class="spinner-layer spinner-yellow"> ' +
+    '               <div class="circle-clipper left"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="gap-patch">  ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="circle-clipper right"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div> ' +
+    '           </div> ' +
+    '           <div class="spinner-layer spinner-green"> ' +
+    '               <div class="circle-clipper left"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="gap-patch"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div>' +
+    '               <div class="circle-clipper right"> ' +
+    '                   <div class="circle"></div> ' +
+    '               </div> ' +
+    '           </div> ' +
+    '       </div> ' +
+    '   </div> ' +
+    '</div>');
+  overlay.appendTo(document.body);
+}
+function HideLoader() {
+  $('#loading-overlay').remove();
+}
