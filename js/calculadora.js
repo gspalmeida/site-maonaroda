@@ -403,10 +403,54 @@ function validaView3() {
     },1000);
   }
 }
-function enviaForm() {
-  console.log($('#calculadoraForm-nome').prop('value'));
-  // trocaSlide('.view4','.orcamentoEnviado');
-  progressBarAnimate('100%');
+function enviaFormCalculadora() {
+  var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
+  var tipoAlturaParede = sessionStorage.getItem('alturaParede');
+  var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
+  var comodos = JSON.parse(sessionStorage.getItem('comodos'));
+  var validado = 1;
+  $("form#calculadoraForm > div > input").each(function () {
+    if(this.value==""){
+      notificaErro('Um campo obrigatório nao foi preenchido!', 'Confira se digitou seu Nome, Email, Telefone e CEP');
+      validado  = 0;
+      return false
+    }
+  });
+  if (validado === 1){
+    ShowLoader();
+    var formData = $("#calculadoraForm").serializeArray();
+    console.log("Form Data");
+    console.log(formData);
+    var dataObj = {};
+
+    $(formData).each(function(i, field){
+      dataObj[field.name] = field.value;
+    });
+    dataObj["tamanhoImovel"] = tamanhoImovel;
+    dataObj["alturaParede"] = tipoAlturaParede;
+    dataObj["tipoMaterial"] = tipoMaterial;
+    dataObj["comodos"] = comodos;
+    dataObj["submit"] = 'ok';
+
+    $.ajax({
+      type: "POST",
+      url: "php/handlerCalculadora.php",
+      data: dataObj,
+      dataType: "json",
+      success: function (data) {
+        if(data.tipo==="sucesso"){
+          HideLoader();
+          trocaSlide('.view4','.orcamentoEnviado');
+          progressBarAnimate('100%');
+          toastr.success(data.mensagem,data.titulo);
+        }
+        else{
+          HideLoader();
+          toastr.error(data.mensagem,data.titulo);
+        }
+      }
+    });
+  }
 }
 // Calculos
 function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
