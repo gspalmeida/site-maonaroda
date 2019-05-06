@@ -200,7 +200,7 @@ function linhaTabela(tipoComodo,linhaTabela) {
       "  </td>\n" +
       "  <td class=\"text-center\">\n" +
       "    <div class=\"md-form form-sm mt-2 mb-0\">\n" +
-      "      <input type=\"text\" id=\""+tipoComodo+linhaTabela+"-observacoes\" class=\"form-control\" placeholder=\"Ex: Infiltração no teto\">\n" +
+      "      <input type=\"text\" onchange=\"salvaComodos();\" id=\""+tipoComodo+linhaTabela+"-observacoes\" class=\"form-control\" placeholder=\"Ex: Infiltração no teto\">\n" +
       "    </div>\n" +
       "  </td>\n" +
       "</tr>");
