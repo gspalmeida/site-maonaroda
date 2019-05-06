@@ -23,28 +23,139 @@ function IsInjected($str)
 }
 //Função para construir a tabela dos comodos
 function build_table($array){
-  // start table
   $html = '<table style="border-collapse: collapse;width: 100%;">';
-  // header row
   $html .= '<tr>';
   foreach($array[0] as $key=>$value){
-    $html .= '<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' . htmlspecialchars($key) . '</th>';
+    $html .=
+      '<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' .
+          trataCamposTabela(htmlspecialchars($key)) .
+      '</th>';
   }
   $html .= '</tr>';
-
-  // data rows
   foreach( $array as $key=>$value){
     $html .= '<tr>';
     foreach($value as $key2=>$value2){
-      $html .= '<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' . htmlspecialchars($value2) . '</td>';
+      $html .=
+        '<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' .
+            trataCamposTabela(htmlspecialchars($value2)) .
+        '</td>';
     }
     $html .= '</tr>';
   }
-
-  // finish table and return it
-
   $html .= '</table>';
   return $html;
+}
+//Função para Tratar o Tamanho do Imóvel
+function trataTamanhoImovel($tamanhoImovel){
+  $stringTamanhoImovel = '';
+  if($tamanhoImovel==0){
+    $stringTamanhoImovel = 'Até 50 M²';
+  }
+  else if ($tamanhoImovel==1){
+    $stringTamanhoImovel = "Até 75 M²";
+  }
+  else if ($tamanhoImovel==2){
+    $stringTamanhoImovel = "Até 100 M²";
+  }
+  else if ($tamanhoImovel==3){
+    $stringTamanhoImovel = "Até 150 M²";
+  }
+  else if ($tamanhoImovel==4){
+    $stringTamanhoImovel = "Maior que 150 M²";
+  }
+  return $stringTamanhoImovel;
+}
+function trataAlturaPeDireito($alturaPeDireito){
+  $stringAlturaPeDireito = '';
+  if($alturaPeDireito==0){
+    $stringAlturaPeDireito = 'COMUM - Até 2,7 M';
+  }
+  else if ($alturaPeDireito==1){
+    $stringAlturaPeDireito = 'DUPLO - Até 4,5 M';
+  }
+  else if ($alturaPeDireito==2){
+    $stringAlturaPeDireito = 'TRIPLO - Mais de 4,5 M';
+  }
+  return $stringAlturaPeDireito;
+}
+function trataTipoMaterial($tipoMaterial){
+  $stringTipoMaterial = '';
+  if($tipoMaterial==0){
+    $stringTipoMaterial = 'Sem Material Incluso';
+  }
+  else if ($tipoMaterial==1){
+    $stringTipoMaterial = 'Tinta Tipo 1';
+  }
+  else if ($tipoMaterial==2){
+    $stringTipoMaterial = 'Tinta Tipo 2';
+  }
+  else if ($tipoMaterial==3){
+    $stringTipoMaterial = 'Tinta Tipo 3';
+  }
+  return $stringTipoMaterial;
+}
+function trataCamposTabela($campoAtual){
+  if ($campoAtual==='dormitorio'){
+    $campoTratado = 'Dormitório';
+  }
+  else if ($campoAtual==='banheiro'){
+    $campoTratado = 'Banheiro';
+  }
+  else if ($campoAtual==='cozinha'){
+    $campoTratado = 'Cozinha';
+  }
+  else if ($campoAtual==='halldeentrada'){
+    $campoTratado = 'Hall De Entrada';
+  }
+  else if ($campoAtual==='corredor'){
+    $campoTratado = 'Corredor';
+  }
+  else if ($campoAtual==='sacada'){
+    $campoTratado = 'Sacada';
+  }
+  else if ($campoAtual==='sala'){
+    $campoTratado = 'Sala';
+  }
+  else if ($campoAtual==='lavanderia'){
+    $campoTratado = 'Lavanderia';
+  }
+  else if ($campoAtual==='id'){
+    $campoTratado = 'ID';
+  }
+  else if ($campoAtual==='tipo'){
+    $campoTratado = 'Tipo';
+  }
+  else if ($campoAtual==='parede'){
+    $campoTratado = 'Parede';
+  }
+  else if ($campoAtual==='teto'){
+    $campoTratado = 'Teto';
+  }
+  else if ($campoAtual==='moldura'){
+    $campoTratado = 'Moldura';
+  }
+  else if ($campoAtual==='rodape'){
+    $campoTratado = 'Rodapé';
+  }
+  else if ($campoAtual==='qtdPortas'){
+    $campoTratado = 'Quantidade de Portas';
+  }
+  else if ($campoAtual==='observacoes'){
+    $campoTratado = 'Observações';
+  }
+  else if ($campoAtual===''){
+    $campoTratado = 'Não Informado';
+  }
+  else if ($campoAtual==='true'){
+    $campoTratado = 'Sim';
+  }
+  else if ($campoAtual==='false'){
+    $campoTratado = 'Não';
+  }
+  else{
+    $campoTratado = $campoAtual;
+  }
+  return $campoTratado;
 }
 
 //Validações dos dados de entrada
@@ -106,16 +217,20 @@ $mailer->addAddress('gustavo@galileosoft.com.br');
 $mailer->CharSet = 'UTF-8';
 $mailer->isHTML(true);
 $mailer->Subject = "Novo Contato Site - Mão na Roda";
-$mailer->Body = "<p>O seguinte contato do site não foi enviado:</p><br/>
+$mailer->Body = "<p style='text-align: center;font-size: 12px;text-transform: uppercase;'><strong>Novo Orçamento Solicitado no Site</strong></p>
+                    <hr>
+                    <p style='text-align: center'><strong>Dados Pessoais</strong></p>
                     <p><strong>Nome: </strong>".$name."</p>
                     <p><strong>Telefone: </strong>".$phone."</p>
                     <p><strong>Email: </strong>".$visitor_email."</p>
                     <p><strong>CEP: </strong>".$cep."</p>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
-                    <p><strong>Tamanho do Pé Direito do Imóvel: </strong>".$alturaParede."</p>
-                    <p><strong>Tamanho do Imóvel: </strong>".$tamanhoImovel."</p>
-                    <p><strong>Tipo do Material Escolhido:</strong><br/>".$tipoMaterial."</p>
-                    <p><strong>Comodos:</strong><br/>".build_table($comodos)."</p>";
+                    <hr>
+                    <p style='text-align: center'><strong>Dados do Imóvel</strong></p>
+                    <p><strong>Tamanho do Imóvel: </strong>".trataTamanhoImovel($tamanhoImovel)."</p>
+                    <p><strong>Altura do Pé Direito: </strong>".trataAlturaPeDireito($alturaParede)."</p>
+                    <p><strong>Tipo do Material Escolhido:</strong>".trataTipoMaterial($tipoMaterial)."</p>
+                    <p><strong>Cômodos:</strong><br/>".build_table($comodos)."</p>";
 
 $enviado = $mailer->send();
 $mailer->ClearAllRecipients();
