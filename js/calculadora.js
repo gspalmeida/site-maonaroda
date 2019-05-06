@@ -451,10 +451,11 @@ function enviaFormCalculadora() {
 }
 // Calculos
 function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
+  var decryptTamanho = JSON.parse(atob(configTamanho));
   var tamanhoComodo = 0;
   var arrayTamanhoComodos;
   if(tipoPintura==='parede'){
-    arrayTamanhoComodos = configTamanho.perimetroParede;
+    arrayTamanhoComodos = decryptTamanho.perimetroParede;
     arrayTamanhoComodos.forEach(function (index) {
       if(index.tipoComodo === tipoComodo){
         tamanhoComodo = index.tamanho[tamanhoImovel];
@@ -462,7 +463,7 @@ function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
     });
   }
   else if(tipoPintura==='teto'){
-    arrayTamanhoComodos = configTamanho.perimetroTeto;
+    arrayTamanhoComodos = decryptTamanho.perimetroTeto;
     arrayTamanhoComodos.forEach(function (index) {
       if(index.tipoComodo === tipoComodo){
         tamanhoComodo = index.tamanho[tamanhoImovel];
@@ -470,7 +471,7 @@ function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
     });
   }
   else if(tipoPintura==='moldura'){
-    arrayTamanhoComodos = configTamanho.perimetroMoldura;
+    arrayTamanhoComodos = decryptTamanho.perimetroMoldura;
     arrayTamanhoComodos.forEach(function (index) {
       if(index.tipoComodo === tipoComodo){
         tamanhoComodo = index.tamanho[tamanhoImovel];
@@ -478,7 +479,7 @@ function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
     });
   }
   else if(tipoPintura==='rodape'){
-    arrayTamanhoComodos = configTamanho.perimetroRodape;
+    arrayTamanhoComodos = decryptTamanho.perimetroRodape;
     arrayTamanhoComodos.forEach(function (index) {
       if(index.tipoComodo === tipoComodo){
         tamanhoComodo = index.tamanho[tamanhoImovel];
@@ -488,13 +489,15 @@ function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
   return tamanhoComodo
 }
 function capturaAltura(tipoAlturaParede) {
-  var arrayAlturas = configTamanho.alturaParede;
+  var decryptTamanho = JSON.parse(atob(configTamanho));
+  var arrayAlturas = decryptTamanho.alturaParede;
   var alturaParede;
   alturaParede = arrayAlturas[tipoAlturaParede];
   return alturaParede
 }
 function capturaValor(tipoPintura,tipoMaterial) {
-  var arrayValoresComodos = configValor.tabelaPreco;
+  var decryptTamanho = JSON.parse(atob(configValor));
+  var arrayValoresComodos = decryptTamanho.tabelaPreco;
   var valorPorMetro = 0;
   arrayValoresComodos.forEach(function (index) {
     if(index.tipoPintura === tipoPintura){
@@ -504,12 +507,14 @@ function capturaValor(tipoPintura,tipoMaterial) {
   return valorPorMetro
 }
 function calculaValorPortas(qtdPortas,tipoMaterial) {
-  var arrayValorPortas = configValor.tabelaPreco;
+  var decryptTamanho = JSON.parse(atob(configValor));
+  var arrayValorPortas = decryptTamanho.tabelaPreco;
   var valorMaoObra = 0.00;
   var valorMaterial = 0.00;
   var valorPortas = 0.00;
   arrayValorPortas.forEach(function (index) {
     if(index.tipoPintura === 'porta'){
+      console.log(index);
       valorMaoObra = index.maoObra;
       valorMaterial = index.valorMaterial;
     }
