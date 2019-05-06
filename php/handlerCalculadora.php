@@ -21,6 +21,31 @@ function IsInjected($str)
     return false;
   }
 }
+//Função para construir a tabela dos comodos
+function build_table($array){
+  // start table
+  $html = '<table style="border-collapse: collapse;width: 100%;">';
+  // header row
+  $html .= '<tr>';
+  foreach($array[0] as $key=>$value){
+    $html .= '<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' . htmlspecialchars($key) . '</th>';
+  }
+  $html .= '</tr>';
+
+  // data rows
+  foreach( $array as $key=>$value){
+    $html .= '<tr>';
+    foreach($value as $key2=>$value2){
+      $html .= '<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">' . htmlspecialchars($value2) . '</td>';
+    }
+    $html .= '</tr>';
+  }
+
+  // finish table and return it
+
+  $html .= '</table>';
+  return $html;
+}
 
 //Validações dos dados de entrada
 if(!isset($_POST['submit']))
@@ -89,8 +114,8 @@ $mailer->Body = "<p>O seguinte contato do site não foi enviado:</p><br/>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
                     <p><strong>Tamanho do Pé Direito do Imóvel: </strong>".$alturaParede."</p>
                     <p><strong>Tamanho do Imóvel: </strong>".$tamanhoImovel."</p>
-                    <p><strong>Comodos:</strong><br/>".$comodos."</p>
-                    <p><strong>Tipo do Material Escolhido:</strong><br/>".$tipoMaterial."</p>";
+                    <p><strong>Tipo do Material Escolhido:</strong><br/>".$tipoMaterial."</p>
+                    <p><strong>Comodos:</strong><br/>".build_table($comodos)."</p>";
 
 $enviado = $mailer->send();
 $mailer->ClearAllRecipients();
