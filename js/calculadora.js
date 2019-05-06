@@ -419,10 +419,7 @@ function enviaFormCalculadora() {
   if (validado === 1){
     ShowLoader();
     var formData = $("#calculadoraForm").serializeArray();
-    console.log("Form Data");
-    console.log(formData);
     var dataObj = {};
-
     $(formData).each(function(i, field){
       dataObj[field.name] = field.value;
     });
