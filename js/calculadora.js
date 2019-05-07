@@ -288,10 +288,10 @@ function validaViewBase() {
     }
   }
   else if (tipoImovel==='Apartamento') {
-    if(tamanhoImovel!==1&&tamanhoImovel!==2&&tamanhoImovel!==3&&tamanhoImovel!==4&&tamanhoImovel!==5){
+    if(tamanhoImovel!=0&&tamanhoImovel!=1&&tamanhoImovel!=2&&tamanhoImovel!=3&&tamanhoImovel!=4){
       notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para o Tamanho do Imóvel');
     }
-    else if (alturaParede!==1&&alturaParede!==2&&alturaParede!==3){
+    else if (alturaParede!=0&&alturaParede!=1&&alturaParede!=2){
       notificaErro('Você esqueceu um campo obrigatório','Marque uma das opções para a Altura do Pé Direito');
     }
     else{
