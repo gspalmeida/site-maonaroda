@@ -190,9 +190,9 @@ if(empty($name)||empty($visitor_email)||empty($phone)||empty($cep))
 }
 
 
-//require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
 //require_once ('/var/www/html/galileosoft.com.br/site-maonaroda/vendor/autoload.php') ;
-require_once ('/var/www/html/site-maonaroda/vendor/autoload.php');
+//require_once ('/var/www/html/site-maonaroda/vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 
