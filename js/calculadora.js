@@ -194,7 +194,7 @@ function linhaTabela(tipoComodo,linhaTabela) {
       "  </td>\n" +
       "  <td class=\"text-center\">\n" +
       "    <div class=\"md-form form-sm mt-2 mb-0\">\n" +
-      "      <input type=\"number\" onchange=\"salvaComodos();\" class=\"form-control\" id=\""+tipoComodo+linhaTabela+"-qtdPortas\">\n" +
+      "      <input type=\"number\" onchange=\"salvaComodos();\" class=\"form-control\" id=\""+tipoComodo+linhaTabela+"-qtdPortas\" onkeypress=\"this.value=this.value.replace(/[^0-9]/g,'');\">\n" +
       "      <label class=\"tableLabel\" for=\""+tipoComodo+linhaTabela+"-qtdPortas\">Qdt. Portas</label>\n" +
       "    </div>\n" +
       "  </td>\n" +
@@ -514,7 +514,6 @@ function calculaValorPortas(qtdPortas,tipoMaterial) {
   var valorPortas = 0.00;
   arrayValorPortas.forEach(function (index) {
     if(index.tipoPintura === 'porta'){
-      console.log(index);
       valorMaoObra = index.maoObra;
       valorMaterial = index.valorMaterial;
     }
