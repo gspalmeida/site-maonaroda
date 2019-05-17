@@ -3,22 +3,22 @@ var configValor = {
     {
       "tipoPintura":"parede",
       "maoObra":8,
-      "valorMaterial":[0,1,2,3]
+      "valorMaterial":[0,3.5,4.5,6]
     },
     {
       "tipoPintura":"teto",
       "maoObra":8,
-      "valorMaterial":[0,1,2,3]
+      "valorMaterial":[0,3.5,4.5,6]
     },
     {
       "tipoPintura":"rodape",
       "maoObra":8,
-      "valorMaterial":[0,1,2,3]
+      "valorMaterial":[0,3.5,4.5,6]
     },
     {
       "tipoPintura":"moldura",
       "maoObra":2.5,
-      "valorMaterial":[0,1,2,3]
+      "valorMaterial":[0,3.5,4.5,6]
     },
     {
       "tipoPintura":"porta",
