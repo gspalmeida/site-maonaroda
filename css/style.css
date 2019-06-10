@@ -1,9 +1,9 @@
 /*CSS PADRAO*/
-@media (min-width: 768px) {
-  .wow {
-    visibility: hidden;
-  }
-}
+/*@media (min-width: 768px) {*/
+  /*.wow {*/
+    /*visibility: hidden;*/
+  /*}*/
+/*}*/
 .btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
   word-wrap: initial !important;
 }

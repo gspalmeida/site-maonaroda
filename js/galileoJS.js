@@ -1,9 +1,9 @@
 //Ativa as animações em dispositivos de tela grande
-var largura = screen.width;
-if( largura >= 768 ){
-    // Animations init
-    new WOW().init();
-}
+// var largura = screen.width;
+// if( largura >= 768 ){
+//     // Animations init
+//     new WOW().init();
+// }
 //Faz os includes
 $(function(){
     var includes = $('[data-include]');
