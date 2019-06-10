@@ -4,18 +4,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Mão na Roda - Orçamento</title>
+  <title>Mão na Roda - Quinto Andar</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
-<body style="background-color: #f6f6f6">
+<body class="d-flex flex-column height100vh" style="background-color: #f6f6f6">
   <!-- Navbar-->
   <div data-include="navbar"></div>
   <main>
-    <section class="1stSection" id="navegacao-principal">
+    <section class="1stSection text-center quintoandar height60vh">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="blue-text fw-500 my-3">
+              <img src="assets/5to-andar.png" style="max-height: 12vh;" alt="">
+            </h1>
+          </div>
+          <div class="col-12 flex-center">
+            <p class="text-uppercase badge-success rounded z-depth-1-half fw-500 py-1 px-3">Clientes quintoandar têm até 25% de desconto na mão de obra de pintura!</p>
+          </div>
+          <div class="col-12">
+            <p class="fw-500 mt-4 mb-2">
+              Principais benefícios do Mão na Roda:
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-start">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <p class="badge-primary rounded z-depth-1-half fw-500 size-1rem text-uppercase py-1">Segurança</p>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="far fa-edit"></i></p>
+              <p class="mb-0 text-left fw-400">Emitimos um contrato para prestação de serviço.</p>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="fas fa-tasks"></i></p>
+              <p class="mb-0 text-left fw-400">Acompanhamos todos os trabalhos para sua comodidade.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <p class="badge-primary rounded z-depth-1-half fw-500 size-1rem text-uppercase py-1">Qualidade</p>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="fas fa-paint-roller"></i></p>
+              <p class="mb-0 text-left fw-400">Os trabalhos são feitos por pintores profissionais.</p>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="fas fa-award"></i></p>
+              <p class="mb-0 text-left fw-400">O serviço só é concluído se você estiver 100% satisfeito!</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <p class="badge-primary rounded z-depth-1-half fw-500 size-1rem text-uppercase py-1">Agilidade</p>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="far fa-clock"></i></p>
+              <p class="mb-0 text-left fw-400">Podemos iniciar qualquer serviço em até 48h.</p>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 mr-3 size-2rem"><i class="fas fa-people-carry"></i></p>
+              <p class="mb-0 text-left fw-400">As tintas(Suvinil ou Coral) são compradas por nossa equipe e entregues na sua casa, sem custo extra!</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-md-9 col-lg-8 mx-auto">
+            <hr>
+            <p class="h5-responsive fw-500 mb-1">
+              Clique em "Solicitar Orçamento" para iniciarmos a sua cotação.
+            </p>
+            <p class="h5-responsive fw-500">
+              Com apenas alguns dados sobre o imóvel geramos o seu orçamento prévio: Rápido, online e sem compromisso!
+            </p>
+            <a class="btn btn-lg borderRadius7px mb-4 hoverable waves-effect text-white waves-light btn-laranjado"
+               onclick="trocaSlide('.quintoandar','.orcamento');armazenaDados('parceiro','quintoandar')">
+              <span class="size-094rem fw-500">Solicitar orçamento!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="1stSection orcamento hide-section" id="navegacao-principal">
       <div class="container-fluid">
         <div class="row justify-content-center pt-3">
           <div class="col-12 text-center">
@@ -113,7 +182,7 @@
         </div>
       </div>
     </section>
-    <section class="container-fluid height60vh flex-center" id="calculadora">
+    <section class="container-fluid height60vh flex-center orcamento hide-section" id="calculadora">
       <div class="row justify-content-center align-items-center w-100">
         <div class="col-12 order-2 d-flex d-md-none mb-4 text-center" style="height: auto!important;">
           <div class="card card-cascade cascading-admin-card w-100">
@@ -139,7 +208,7 @@
             <div class="row justify-content-center">
               <div class="calculadora-controls">
                 <div class="row justify-content-center base">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();armazenaDados('parceiro','')">Próximo</a>
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
                 </div>
                 <div class="row justify-content-center hide-section view1">
                   <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
@@ -203,7 +272,7 @@
               <div class="row justify-content-center">
                 <div class="calculadora-controls">
                   <div class="row justify-content-center base">
-                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();armazenaDados('parceiro','')">Próximo</a>
+                    <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
                   </div>
                   <div class="row justify-content-center hide-section view1">
                     <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
@@ -639,7 +708,7 @@
     <div data-include="fixed-btn"></div>
   </main>
   <!-- Footer-->
-  <div data-include="footer"></div>
+  <div class="mt-auto" data-include="footer"></div>
 
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

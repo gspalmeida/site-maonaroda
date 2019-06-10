@@ -195,6 +195,9 @@
 .btn-laranjado{
   background-color: #ff6f00;
 }
+.btn-laranjado:hover{
+  color: #212529!important;
+}
 .btn-outline-laranjado{
   border: 2px solid #ff6f00!important;
   background-color: transparent!important;

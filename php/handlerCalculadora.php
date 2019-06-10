@@ -65,6 +65,15 @@ function trataTamanhoImovel($tamanhoImovel){
   }
   return $stringTamanhoImovel;
 }
+function trataParceiros($parceiro){
+  if ($parceiro!=''){
+    $stringParceiro = $parceiro;
+  }
+  else{
+    $stringParceiro = "Sem Indicação";
+  }
+  return $stringParceiro;
+}
 function trataAlturaPeDireito($alturaPeDireito){
   $stringAlturaPeDireito = '';
   if($alturaPeDireito==0){
@@ -175,6 +184,7 @@ $alturaParede = $_POST['alturaParede'];
 $comodos = $_POST['comodos'];
 $tamanhoImovel = $_POST['tamanhoImovel'];
 $tipoMaterial = $_POST['tipoMaterial'];
+$parceiro = $_POST['parceiro'];
 $msgRetorno = [];
 
 //Valida os campos obrigatórios do formulário
@@ -225,6 +235,7 @@ $mailer->Body = "<p style='text-align: center;font-size: 12px;text-transform: up
                     <p><strong>Email: </strong>".$visitor_email."</p>
                     <p><strong>CEP: </strong>".$cep."</p>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
+                    <p><strong>Indicação: </strong>".trataParceiros($parceiro)."</p>
                     <hr>
                     <p style='text-align: center'><strong>Dados do Imóvel</strong></p>
                     <p><strong>Tamanho do Imóvel: </strong>".trataTamanhoImovel($tamanhoImovel)."</p>

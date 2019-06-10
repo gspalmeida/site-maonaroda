@@ -407,6 +407,7 @@ function enviaFormCalculadora() {
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
+  var parceiro = sessionStorage.getItem('parceiro');
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
   $("form#calculadoraForm > div > input").each(function () {
@@ -426,6 +427,7 @@ function enviaFormCalculadora() {
     dataObj["tamanhoImovel"] = tamanhoImovel;
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
+    dataObj["parceiro"] = parceiro;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
 

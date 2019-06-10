@@ -30,9 +30,13 @@ $(document).ready(function scrollSpy() {
         var start = pagina.lastIndexOf("/");
         var stop = pagina.lastIndexOf(".");
         if(pagina.substr(start+1,stop-start-1)==='') {
-            $(document).ready(function () {
+            if(pagina.substr(start+1)!==''){
+
+            }else{
+              $(document).ready(function () {
                 $('#navbar-index').addClass('active');
-            });
+              });
+            }
         }else{
             $(document).ready( function () {
                 $('#navbar-' + pagina.substr(start + 1, stop - start - 1)).addClass('active');
