@@ -215,14 +215,14 @@ $mailer->SMTPAuth   = true;
 $mailer->Port = 587;
 $mailer->SMTPSecure = false;
 $mailer->SMTPAutoTLS = false;
-$mailer->Username   = 'gustavo@galileosoft.com.br';
-$mailer->Password   = '123321ikariam';
+$mailer->Username   = 'site@maonaroda.com';
+$mailer->Password   = 'SMTP!01';
 //Pessoa que ENVIA o email
-$mailer->Sender = "gustavo@galileosoft.com.br"; //Email que envia
-$mailer->From = "gustavo@galileosoft.com.br"; //Email que aparece pra quem recebe
+$mailer->Sender = "site@maonaroda.com"; //Email que envia
+$mailer->From = "site@maonaroda.com"; //Email que aparece pra quem recebe
 $mailer->FromName = "Site - Mão na Roda"; //Nome que aparece pra quem recebe
 //Pessoa que RECEBE o email
-$mailer->addAddress('gustavo@galileosoft.com.br');
+$mailer->addAddress('comercial@maonaroda.com');
 //Escreve o Email
 $mailer->CharSet = 'UTF-8';
 $mailer->isHTML(true);
