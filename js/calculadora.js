@@ -152,7 +152,9 @@ function mudaTipoImovel(tipoImovel) {
   }
 }
 function atualizaValorEstimado(valorOrcado) {
-  $('.valorEstimado').html('R$ '+Math.ceil(valorOrcado)+',00');
+  valorOrcado = Math.ceil(valorOrcado)+',00';
+  $('.valorEstimado').html('R$ '+valorOrcado);
+  armazenaDados('valorOrcado',valorOrcado);
 }
 function notificaErro(titulo,mensagem) {
   toastr.error(mensagem,titulo);
@@ -408,6 +410,7 @@ function enviaFormCalculadora() {
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var parceiro = sessionStorage.getItem('parceiro');
+  var valorOrcado = sessionStorage.getItem('valorOrcado');
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
   $("form#calculadoraForm > div > input").each(function () {
@@ -428,6 +431,7 @@ function enviaFormCalculadora() {
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
     dataObj["parceiro"] = parceiro;
+    dataObj["valorOrcado"] = valorOrcado;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
 

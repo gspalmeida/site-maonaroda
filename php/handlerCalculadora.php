@@ -185,6 +185,7 @@ $comodos = $_POST['comodos'];
 $tamanhoImovel = $_POST['tamanhoImovel'];
 $tipoMaterial = $_POST['tipoMaterial'];
 $parceiro = $_POST['parceiro'];
+$valorOrcado = $_POST['valorOrcado'];
 $msgRetorno = [];
 
 //Valida os campos obrigatórios do formulário
@@ -236,6 +237,7 @@ $mailer->Body = "<p style='text-align: center;font-size: 12px;text-transform: up
                     <p><strong>CEP: </strong>".$cep."</p>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
                     <p><strong>Indicação: </strong>".trataParceiros($parceiro)."</p>
+                    <p><strong>Valor Orçado: </strong>".$valorOrcado."</p>
                     <hr>
                     <p style='text-align: center'><strong>Dados do Imóvel</strong></p>
                     <p><strong>Tamanho do Imóvel: </strong>".trataTamanhoImovel($tamanhoImovel)."</p>
