@@ -74,6 +74,15 @@ function trataParceiros($parceiro){
   }
   return $stringParceiro;
 }
+function trataValor($arrayValorOrcado){
+  if ($arrayValorOrcado[0]===$arrayValorOrcado[1]){
+    $stringValor = $arrayValorOrcado[0];
+  }
+  else{
+    $stringValor = $arrayValorOrcado[0].'<p><strong>Valor Orçado com Desconto: </strong>'.$arrayValorOrcado[1].'</p>';
+  }
+  return $stringValor;
+}
 function trataAlturaPeDireito($alturaPeDireito){
   $stringAlturaPeDireito = '';
   if($alturaPeDireito==0){
@@ -202,6 +211,7 @@ if(empty($name)||empty($visitor_email)||empty($phone)||empty($cep))
 
 
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
+//require_once ('/var/www/html/demonstracao.galileosoft.com.br/vendor/autoload.php') ;
 //require_once ('/var/www/html/galileosoft.com.br/site-maonaroda/vendor/autoload.php') ;
 //require_once ('/var/www/html/site-maonaroda/vendor/autoload.php');
 
@@ -237,7 +247,7 @@ $mailer->Body = "<p style='text-align: center;font-size: 12px;text-transform: up
                     <p><strong>CEP: </strong>".$cep."</p>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
                     <p><strong>Indicação: </strong>".trataParceiros($parceiro)."</p>
-                    <p><strong>Valor Orçado: </strong>".$valorOrcado."</p>
+                    <p><strong>Valor Orçado Sem Desconto: </strong>".trataValor($valorOrcado)."</p>  <!-- Se tiver cupom ativo a function trataValor vai injetar uma linha extra no email -->
                     <hr>
                     <p style='text-align: center'><strong>Dados do Imóvel</strong></p>
                     <p><strong>Tamanho do Imóvel: </strong>".trataTamanhoImovel($tamanhoImovel)."</p>
@@ -268,5 +278,9 @@ if (!$enviado){
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
-
+//$mailer->Sender = "gustavo@galileosoft.com.br"; //Email que envia
+//$mailer->From = "gustavo@galileosoft.com.br"; //Email que aparece pra quem recebe
+//$mailer->addAddress('contato@galileosoft.com.br');
+//$mailer->Username   = 'gustavo@galileosoft.com.br';
+//$mailer->Password   = '';
 
