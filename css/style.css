@@ -14,6 +14,9 @@
   padding-top: 5px!important;
   padding-bottom: 5px!important;
 }
+.fw-300{
+  font-weight: 300!important;
+}
 .fw-400{
   font-weight: 400!important;
 }
@@ -168,6 +171,11 @@
 .transparencia-laranja-escuro{
   background-color: #8f00004d;
 }
+.btn-verde-escuro{
+  background-color: #0097b1;
+  color: #fff!important;
+  font-weight: 600;
+}
 .btn-azul-esverdeado{
   background-color: #005765;
 }
@@ -315,7 +323,7 @@
         display: inline!important;
     }
     #navbar-wrapper > div > button > div > span{
-        background: #fd7d12!important;
+        background: #000000 !important;;
     }
     #navbar-wrapper > div > div > ul.navbar-nav.mr-auto > li.nav-item.active > a {
       background-color: #00000029 !important;
@@ -359,13 +367,13 @@
   background: #fff;
 }
 .top-nav-collapse > div > button > div > span{
-  background: #fd7d12!important;
+  background: #000000 !important;;
 }
 .top-nav-collapse-click > div > button > div > span{
-  background: #fd7d12!important;
+  background: #000000 !important;;
 }
 .top-nav-collapse-fix > div > button > div > span{
-  background: #fd7d12!important;
+  background: #000000 !important;;
 }
 .animated-icon2 span {
   background: #e3f2fd;
@@ -854,6 +862,59 @@ header .carousel {
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
+.cupom-wrapper{
+  /*border-top: 3px solid #0b2a41;*/
+  color: #515151;
+}
+.inserir-cupom{
+  cursor: pointer;
+  text-decoration: none;
+  color: #0097b1!important;
+}
+.inserir-cupom:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: #0056b3 !important;
+}
+.md-outline-custom input[type=text]:focus:not([readonly]){
+  border-color: #0097b1 !important;
+  box-shadow: inset 0 0 0 1px #0097b1 !important;
+  border-bottom: 1px solid #0097b1 !important;
+}
+.md-outline-custom input[type=text]:focus:not([readonly])+label{
+  color: #0097b1 !important;
+}
+.iconCupomAtivo{
+  background-color: #ff6f00!important;
+  padding:1rem 1.7rem!important;
+  font-size: 1.7rem!important;
+}
+.iconCupomAtivoTexto{
+  font-family: "Roboto", sans-serif;
+  font-size: 14px
+}
+.cupom-ativo{
+  border-bottom: 2px solid #0097b1;
+  color: #0097b1;
+}
+.valorEstimado{
+  color: #4f4f4f;
+  font-weight: 700!important;
+  font-size: 1.25rem;
+}
+/*.valoresMobile{*/
+  /*display: none;*/
+/*}*/
+.valorBaseCupomAtivo{
+  font-size: 1rem!important;
+  font-weight: 500;
+  color: #000!important;
+}
+.valorDescontoCupomAtivo{
+  color: #ff6f00;
+  font-weight: 700 !important;
+  font-size: 1.1rem!important;
+}
 @media (min-width: 578px) {
   .w-sm-35{
     width: 35%;
@@ -917,31 +978,52 @@ td .form-control{
   width: auto!important;
 }
 /*Card Calculadora*/
-.z-depth-2, .cascading-admin-card .admin-up .fas,
-.cascading-admin-card .admin-up .far,
-.cascading-admin-card .admin-up .fab {
-  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; }
+@media (min-width: 768px) {
+  .z-depth-2, .cascading-admin-card .admin-up .fas,.cascading-admin-card .admin-up .far,.cascading-admin-card .admin-up .fab {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  }
+  .cascading-admin-card .admin-up .fas,.cascading-admin-card .admin-up .far,.cascading-admin-card .admin-up .fab {
+    padding: 1.7rem;
+    font-size: 2rem;
+    color: #fff;
+    text-align: left;
+    margin-right: 1rem;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+}
+
+@media (max-width: 425px) {
+  .md-form.md-outline label {
+    font-size: .77rem!important;
+  }
+  #flipCard-mobile .btn{
+    margin-right: 0!important;
+  }
+}
+.card-wrapper-fix{
+  min-height: 75px;
+}
+.card-wrapper-fix .face{
+  background-color: transparent!important;
+}
 .cascading-admin-card {
   margin-top: 20px; }
 .cascading-admin-card .admin-up {
   margin-left: 4%;
   margin-right: 4%;
-  margin-top: -20px; }
-.cascading-admin-card .admin-up .fas,
-.cascading-admin-card .admin-up .far,
-.cascading-admin-card .admin-up .fab {
-  padding: 1.7rem;
-  font-size: 2rem;
-  color: #fff;
-  text-align: left;
-  margin-right: 1rem;
-  -webkit-border-radius: 3px;
-  border-radius: 3px; }
+  margin-top: -20px;
+}
+.cascading-admin-card .admin-up i{
+  max-height: fit-content;
+}
 .cascading-admin-card .admin-up .data {
   float: right;
   margin-top: 2rem;
-  text-align: right; }
+  text-align: right;
+  max-width: 33%;
+}
 .cascading-admin-card .admin-up .data p {
   color: #999999;
   font-size: 12px; }
