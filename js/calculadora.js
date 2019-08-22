@@ -26,6 +26,8 @@ $(function setaValoresIniciais() {
   armazenaDados('tipoImovel','Casa');
   armazenaDados('tipoPintura','Interna');
   armazenaDados('tipoMaterial','0');
+  armazenaDados('coeficienteDesconto','1');
+  armazenaDados('valorOrcado','0');
 });
 function progressBarAnimate(width) {
     document.getElementById("progressBar-mobile").style.width = width;
@@ -59,6 +61,24 @@ function progressBarAnimate(width) {
         document.getElementById("progressBar-mobile").style.backgroundColor = "#00c851";
         document.getElementById("progressBar-pc").style.backgroundColor = "#00c851";
     }
+}
+function trocaSlideCupons() {
+  var elementoQueSai ='.inserirCupom';
+  var elementoQueEntra ='.cupomInserido';
+  $(elementoQueSai).addClass('zoomOut animated');
+  $(elementoQueSai).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $('#cardWrapper-pc').hide();
+    $('#iconCalculadora-PC').removeClass('far fa-money-bill-alt blue-icon-panel').addClass('fas fa-tag iconCupomAtivo animated pulse').html('<p class="mb-0 mt-2 iconCupomAtivoTexto">Cupom<br>Ativado</p>');
+    $(elementoQueSai).addClass('hide-section');
+    $(elementoQueSai).removeClass('zoomOut animated');
+    $(elementoQueEntra).removeClass('hide-section');
+    $(elementoQueEntra).addClass('zoomIn animated');
+    $(elementoQueSai).off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
+  });
+  $(elementoQueEntra).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $(elementoQueSai).removeClass('zoomIn animated');
+    $(elementoQueEntra).off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
+  });
 }
 function mudaTipoPintura() {
     setTimeout(function () {
@@ -152,9 +172,24 @@ function mudaTipoImovel(tipoImovel) {
   }
 }
 function atualizaValorEstimado(valorOrcado) {
-  valorOrcado = Math.ceil(valorOrcado)+',00';
-  $('.valorEstimado').html('R$ '+valorOrcado);
-  armazenaDados('valorOrcado',valorOrcado);
+  valorOrcado[0] = Math.ceil(valorOrcado[0])+',00';
+  valorOrcado[1] = Math.ceil(valorOrcado[1])+',00';
+  if(valorOrcado[0] === valorOrcado[1]){
+    $('.valorEstimado').html('R$ '+valorOrcado[0]);
+  }
+  else{
+    $('#cardWrapper-pc').hide();
+    $('#iconCalculadora-PC').removeClass('far fa-money-bill-alt blue-icon-panel').addClass('fas fa-tag iconCupomAtivo animated pulse').html('<p class="mb-0 mt-2 iconCupomAtivoTexto">Cupom<br>Ativado</p>');
+    $('#navegadorHeader-PC').attr('style','padding-right:'+Math.ceil($('#iconCalculadora-PC').innerWidth())+'px'); //Corrige a 'lateralidade do titulo do navegador, sem isso ele fica descentralizado devido ao icone presente do lado esquerdo
+    $('#valorWrapper-mobile').removeClass('data');
+    $('.valorEstimadoTitle').hide();
+    $('.valorEstimado').hide();
+    $('.valorBaseCupomAtivo').html('Valor Estimado: <span style="text-decoration: line-through!important;font-size: 0.9rem!important;color: #999999!important;"> De R$ '+valorOrcado[0]+'</span>');
+    $('.valorDescontoCupomAtivo').html('Por R$ '+valorOrcado[1]);
+    $('.valoresMobile').removeClass('hide-section').addClass('zoomIn animated');
+    $('.valoresPC').removeClass('hide-section').addClass('tada animated');
+  }
+  armazenaDados('valorOrcado',valorOrcado[0]+'-'+valorOrcado[1]);
 }
 function notificaErro(titulo,mensagem) {
   toastr.error(mensagem,titulo);
@@ -390,7 +425,8 @@ function validaView3() {
   });
   //Se validado, salva os dados num objeto e leva para a proxima view, senao notifica o erro
   if(validado===1){
-    if(geraOrcamento()>450){
+    var valorAtual = geraOrcamento();
+    if(parseInt(valorAtual[1])>450){
       trocaSlide('.view3','.view4');
       progressBarAnimate('90%');
     }else{
@@ -410,7 +446,7 @@ function enviaFormCalculadora() {
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var parceiro = sessionStorage.getItem('parceiro');
-  var valorOrcado = sessionStorage.getItem('valorOrcado');
+  var valorOrcado = sessionStorage.getItem('valorOrcado').split('-');
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
   $("form#calculadoraForm > div > input").each(function () {
@@ -456,6 +492,52 @@ function enviaFormCalculadora() {
   }
 }
 // Calculos
+function validaDataCupom(validadeInicio, validadeFinal){
+  var dataAtual = new Date;
+  var dataInicio = new Date;
+  var dataFinal = new  Date;
+  var arrayInicio = validadeInicio.split('-');
+  var arrayFinal = validadeFinal.split('-');
+
+  dataInicio.setDate(parseInt(arrayInicio[0]));
+  dataInicio.setMonth(parseInt(arrayInicio[1])-1);
+  dataInicio.setFullYear(parseInt(arrayInicio[2]));
+  dataFinal.setDate(parseInt(arrayFinal[0]));
+  dataFinal.setMonth(parseInt(arrayFinal[1])-1);
+  dataFinal.setFullYear(parseInt(arrayFinal[2]));
+
+  if(dataInicio<= dataAtual && dataAtual<=dataFinal){
+    return true
+  }
+  return false
+}
+function validarCupom() {
+  var cupomInserido = $('#input-cupom').val();
+  var cupomInseridoMobile = $('#input-cupom-mobile').val();
+  var decryptCupons = JSON.parse(atob(cuponsDesconto));
+  var arrayCupons = decryptCupons.cuponsAtivos;
+  arrayCupons.forEach(function (index) {
+    if(index.idCupom === cupomInserido.toLowerCase() || index.idCupom === cupomInseridoMobile.toLowerCase()){
+      if (validaDataCupom(index.validadeInicio,index.validadeFinal)===true){
+        if(sessionStorage.getItem('valorOrcado')!=='0'){
+          trocaSlideCupons();
+          armazenaDados('coeficienteDesconto',index.desconto);
+          geraOrcamento();
+        }else{
+          trocaSlideCupons();
+          armazenaDados('coeficienteDesconto',index.desconto);
+        }
+      }
+      else {
+        notificaErro('Cupom Vencido','Ops, algo deu errado, o prazo de validade do seu cupom expirou');
+      }
+    }else{
+      notificaErro('Cupom Inválido','Ops, algo deu errado, confira se digitou corretamente o código do seu cupom');
+    }
+  });
+
+
+}
 function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
   var decryptTamanho = JSON.parse(atob(configTamanho));
   var tamanhoComodo = 0;
@@ -504,10 +586,16 @@ function capturaAltura(tipoAlturaParede) {
 function capturaValor(tipoPintura,tipoMaterial) {
   var decryptTamanho = JSON.parse(atob(configValor));
   var arrayValoresComodos = decryptTamanho.tabelaPreco;
-  var valorPorMetro = 0;
+  var coeficienteDesconto = sessionStorage.getItem('coeficienteDesconto');
+  var valorBase = 0;
+  var valorDesconto = 0;
+  var valorPorMetro = [];
   arrayValoresComodos.forEach(function (index) {
     if(index.tipoPintura === tipoPintura){
-      valorPorMetro = index.maoObra + index.valorMaterial[tipoMaterial];
+      valorBase = index.maoObra + index.valorMaterial[tipoMaterial];
+      valorDesconto = (index.maoObra*coeficienteDesconto) + index.valorMaterial[tipoMaterial];
+      valorPorMetro[0]=valorBase;
+      valorPorMetro[1]=valorDesconto;
     }
   });
   return valorPorMetro
@@ -515,9 +603,12 @@ function capturaValor(tipoPintura,tipoMaterial) {
 function calculaValorPortas(qtdPortas,tipoMaterial) {
   var decryptTamanho = JSON.parse(atob(configValor));
   var arrayValorPortas = decryptTamanho.tabelaPreco;
+  var coeficienteDesconto = sessionStorage.getItem('coeficienteDesconto');
   var valorMaoObra = 0.00;
   var valorMaterial = 0.00;
-  var valorPortas = 0.00;
+  var valorBase = 0.00;
+  var valorDesconto = 0.00;
+  var valorPortas = [];
   arrayValorPortas.forEach(function (index) {
     if(index.tipoPintura === 'porta'){
       valorMaoObra = index.maoObra;
@@ -525,20 +616,27 @@ function calculaValorPortas(qtdPortas,tipoMaterial) {
     }
   });
   if (tipoMaterial==0){
-    valorPortas = qtdPortas*valorMaoObra;
+    valorBase = qtdPortas*valorMaoObra;
+    valorDesconto = qtdPortas*valorMaoObra*coeficienteDesconto;
+    valorPortas[0]=valorBase;
+    valorPortas[1]=valorDesconto;
   }
   else{
-    valorPortas = (qtdPortas*valorMaoObra) + ((Math.ceil(qtdPortas/4)*valorMaterial));
+    valorBase = (qtdPortas*valorMaoObra) + ((Math.ceil(qtdPortas/4)*valorMaterial));
+    valorDesconto = (qtdPortas*valorMaoObra*coeficienteDesconto) + ((Math.ceil(qtdPortas/4)*valorMaterial));
+    valorPortas[0]=valorBase;
+    valorPortas[1]=valorDesconto;
   }
   return valorPortas
 }
 function geraOrcamento() {
   const descontoDeVao = 0.85;
   var i=0;
-  var valorOrcado = 0.00;
+  var valorOrcadoBase = 0.00;
+  var valorOrcadoDesconto = 0.00;
   var valorPortas = 0.00;
   var qtdPortas = 0;
-  var custoPorMetro = 0;
+  var custoPorMetro = [0,0];
   var tamanhoComodo = 0;
   var alturaParede = 0;
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
@@ -552,28 +650,34 @@ function geraOrcamento() {
       alturaParede = capturaAltura(tipoAlturaParede);
       tamanhoComodo = capturaTamanho('parede',comodos[i].tipo,tamanhoImovel) * alturaParede * descontoDeVao;
       custoPorMetro = capturaValor('parede',tipoMaterial);
-      valorOrcado = valorOrcado+ (custoPorMetro*tamanhoComodo);
+      valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
+      valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
     }
     if(comodos[i].teto===true){
       custoPorMetro = capturaValor('teto',tipoMaterial);
       tamanhoComodo = capturaTamanho('teto',comodos[i].tipo,tamanhoImovel);
-      valorOrcado = valorOrcado + (custoPorMetro*tamanhoComodo);
+      valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
+      valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
     }
     if(comodos[i].moldura===true){
       custoPorMetro = capturaValor('moldura',tipoMaterial);
       tamanhoComodo = capturaTamanho('moldura',comodos[i].tipo,tamanhoImovel);
-      valorOrcado = valorOrcado + (custoPorMetro*tamanhoComodo);
+      valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
+      valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
     }
     if(comodos[i].rodape===true){
       custoPorMetro = capturaValor('rodape',tipoMaterial);
       tamanhoComodo = capturaTamanho('moldura',comodos[i].tipo,tamanhoImovel);
-      valorOrcado = valorOrcado + (custoPorMetro*tamanhoComodo);
+      valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
+      valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
     }
   }
   if(qtdPortas>0){
     valorPortas = calculaValorPortas(qtdPortas, tipoMaterial);
-    valorOrcado += valorPortas;
+    valorOrcadoBase += valorPortas[0];
+    valorOrcadoDesconto += valorPortas[1];
   }
-  atualizaValorEstimado(valorOrcado);
-  return valorOrcado
+  valoresOrcados = [valorOrcadoBase,valorOrcadoDesconto];
+  atualizaValorEstimado(valoresOrcados);
+  return valoresOrcados
 }
