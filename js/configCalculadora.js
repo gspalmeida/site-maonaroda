@@ -166,3 +166,13 @@ var configTamanho = {
   ],
   "alturaParede":[2.7,3.5,5]
 };
+var cuponsDesconto = {
+  "cuponsAtivos":[
+    {
+      "idCupom":"quintoandar20",
+      "desconto":0.8,
+      "validadeInicio":"15-08-2019",
+      "validadeFinal":"30-10-2019"
+    }
+  ]
+};
