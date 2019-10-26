@@ -516,9 +516,13 @@ function validarCupom() {
   var cupomInseridoMobile = $('#input-cupom-mobile').val();
   var decryptCupons = JSON.parse(atob(cuponsDesconto));
   var arrayCupons = decryptCupons.cuponsAtivos;
+  var cupomValidado = 0;
+  var codigoErro = 0;
   arrayCupons.forEach(function (index) {
-    if(index.idCupom === cupomInserido.toLowerCase() || index.idCupom === cupomInseridoMobile.toLowerCase()){
+    if(index.idCupom.toLowerCase() === cupomInserido.toLowerCase() || index.idCupom.toLowerCase() === cupomInseridoMobile.toLowerCase()){
       if (validaDataCupom(index.validadeInicio,index.validadeFinal)===true){
+        cupomValidado = 1;
+        toastr.success('Desfrute de suas novas cores com um preço especial','Cupom Ativado');
         if(sessionStorage.getItem('valorOrcado')!=='0'){
           trocaSlideCupons();
           armazenaDados('coeficienteDesconto',index.desconto);
@@ -529,12 +533,24 @@ function validarCupom() {
         }
       }
       else {
-        notificaErro('Cupom Vencido','Ops, algo deu errado, o prazo de validade do seu cupom expirou');
+        codigoErro = 2;
       }
     }else{
-      notificaErro('Cupom Inválido','Ops, algo deu errado, confira se digitou corretamente o código do seu cupom');
+      if (codigoErro===0){
+        codigoErro = 1;
+      }
     }
   });
+
+  //Retorna o Erro, caso tenha ocorrido algum
+  if (cupomValidado===0){
+    if (codigoErro===1){
+      notificaErro('Cupom Inválido','Ops, algo deu errado, confira se digitou corretamente o código do seu cupom');
+    }
+    if (codigoErro===2){
+      notificaErro('Cupom Vencido','Ops, algo deu errado, o prazo de validade do seu cupom expirou');
+    }
+  }
 
 
 }
