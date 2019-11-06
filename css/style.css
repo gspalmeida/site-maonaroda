@@ -584,7 +584,7 @@
 /*.testimonial-carousel .carousel-control{*/
 /*  top: 16vh;*/
 /*}*/
-.testimonial-carousel .carousel-control:before{
+.testimonial-carousel-custom-home .carousel-control:before{
   color: rgb(255, 111, 0) !important;
 }
 /*Home-Garantia100%*/
