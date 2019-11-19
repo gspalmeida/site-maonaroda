@@ -446,6 +446,7 @@ function enviaFormCalculadora() {
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var parceiro = sessionStorage.getItem('parceiro');
+  var coefDesconto = sessionStorage.getItem('coeficienteDesconto');
   var valorOrcado = sessionStorage.getItem('valorOrcado').split('-');
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
@@ -467,6 +468,7 @@ function enviaFormCalculadora() {
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
     dataObj["parceiro"] = parceiro;
+    dataObj["coefDesconto"] = parceiro;
     dataObj["valorOrcado"] = valorOrcado;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
