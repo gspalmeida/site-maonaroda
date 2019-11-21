@@ -112,14 +112,14 @@ class PloomesDeals
       'meioContato' =>
                     [
                       [
-                        "Id" => 173941,
-                        "TableId" => 11135,
-                        "Name" => "Whatsapp",
-                      ],
-                      [
                         "Id" => 173942,
                         "TableId" => 11135,
                         "Name" => "Telefone",
+                      ],
+                      [
+                        "Id" => 173941,
+                        "TableId" => 11135,
+                        "Name" => "Whatsapp",
                       ],
                       [
                         "Id" => 173943,
@@ -199,10 +199,9 @@ class PloomesDeals
     {
       if (self::CAMPOS_ADICIONAIS[$optionType]['options'])
       {
-        $array = self::OPCOES[$optionType];
-        $key = array_search($option,array_column($array,'Name'));
-        if ($key)
-          return $array[$key]['Id'];
+        $itens = self::OPCOES[$optionType];
+        $key = array_search($option,array_column($itens,'Name'));
+        return isset($itens[$key]['Id']) ? $itens[$key]['Id'] : false  ;
       }
     }
 
@@ -285,7 +284,6 @@ class PloomesDeals
   public function insertDeal($data)
   {
     $this->setDealData($data);
-
     $response = $this->ploomesConfig->ODataObject
                                     ->from('Deals')
                                     ->expand('OtherProperties')

@@ -26,7 +26,7 @@ $(function setaValoresIniciais() {
   armazenaDados('tipoImovel','Casa');
   armazenaDados('tipoPintura','Interna');
   armazenaDados('tipoMaterial','0');
-  armazenaDados('coeficienteDesconto','1');
+  armazenaDados('coefDesconto','1');
   armazenaDados('valorOrcado','0');
 });
 function progressBarAnimate(width) {
@@ -446,11 +446,14 @@ function enviaFormCalculadora() {
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var parceiro = sessionStorage.getItem('parceiro');
-  var coefDesconto = sessionStorage.getItem('coeficienteDesconto');
+  var coefDesconto = sessionStorage.getItem('coefDesconto');
   var cupomDesconto = sessionStorage.getItem('cupomDesconto');
-  var valorOrcado = sessionStorage.getItem('valorOrcado').split('-');
+  var valorOrcado = sessionStorage.getItem('valorOrcado').replace(/,/g,'.').split('-');
+  var valorSemDesconto = valorOrcado[0];
+  var valorComDesconto = valorOrcado[1];
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
+
   $("form#calculadoraForm > div > input").each(function () {
     if(this.value==""){
       notificaErro('Um campo obrigatório nao foi preenchido!', 'Confira se digitou seu Nome, Email, Telefone e CEP');
@@ -471,15 +474,18 @@ function enviaFormCalculadora() {
     dataObj["parceiro"] = parceiro;
     dataObj["coefDesconto"] = coefDesconto;
     dataObj["cupomDesconto"] = cupomDesconto;
-    dataObj["valorOrcado"] = valorOrcado;
+    dataObj["valorSemDesconto"] = valorSemDesconto;
+    dataObj["valorComDesconto"] = valorComDesconto;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
+    console.log('vai enviar');
     $.ajax({
       type: "POST",
       url: "php/handlerPloomesDeals.php",
       data: dataObj,
       dataType: "json",
       success: function (data) {
+        alert('voltou');
         if(data.tipo==="sucesso"){
           HideLoader();
           trocaSlide('.view4','.orcamentoEnviado');
@@ -529,11 +535,11 @@ function validarCupom() {
         toastr.success('Desfrute de suas novas cores com um preço especial','Cupom Ativado');
         if(sessionStorage.getItem('valorOrcado')!=='0'){
           trocaSlideCupons();
-          armazenaDados('coeficienteDesconto',index.desconto);
+          armazenaDados('coefDesconto',index.desconto);
           geraOrcamento();
         }else{
           trocaSlideCupons();
-          armazenaDados('coeficienteDesconto',index.desconto);
+          armazenaDados('coefDesconto',index.desconto);
         }
       }
       else {
@@ -606,14 +612,14 @@ function capturaAltura(tipoAlturaParede) {
 function capturaValor(tipoPintura,tipoMaterial) {
   var decryptTamanho = JSON.parse(atob(configValor));
   var arrayValoresComodos = decryptTamanho.tabelaPreco;
-  var coeficienteDesconto = sessionStorage.getItem('coeficienteDesconto');
+  var coefDesconto = sessionStorage.getItem('coefDesconto');
   var valorBase = 0;
   var valorDesconto = 0;
   var valorPorMetro = [];
   arrayValoresComodos.forEach(function (index) {
     if(index.tipoPintura === tipoPintura){
       valorBase = index.maoObra + index.valorMaterial[tipoMaterial];
-      valorDesconto = (index.maoObra*coeficienteDesconto) + index.valorMaterial[tipoMaterial];
+      valorDesconto = (index.maoObra*coefDesconto) + index.valorMaterial[tipoMaterial];
       valorPorMetro[0]=valorBase;
       valorPorMetro[1]=valorDesconto;
     }
@@ -623,7 +629,7 @@ function capturaValor(tipoPintura,tipoMaterial) {
 function calculaValorPortas(qtdPortas,tipoMaterial) {
   var decryptTamanho = JSON.parse(atob(configValor));
   var arrayValorPortas = decryptTamanho.tabelaPreco;
-  var coeficienteDesconto = sessionStorage.getItem('coeficienteDesconto');
+  var coefDesconto = sessionStorage.getItem('coefDesconto');
   var valorMaoObra = 0.00;
   var valorMaterial = 0.00;
   var valorBase = 0.00;
@@ -637,13 +643,13 @@ function calculaValorPortas(qtdPortas,tipoMaterial) {
   });
   if (tipoMaterial==0){
     valorBase = qtdPortas*valorMaoObra;
-    valorDesconto = qtdPortas*valorMaoObra*coeficienteDesconto;
+    valorDesconto = qtdPortas*valorMaoObra*coefDesconto;
     valorPortas[0]=valorBase;
     valorPortas[1]=valorDesconto;
   }
   else{
     valorBase = (qtdPortas*valorMaoObra) + ((Math.ceil(qtdPortas/4)*valorMaterial));
-    valorDesconto = (qtdPortas*valorMaoObra*coeficienteDesconto) + ((Math.ceil(qtdPortas/4)*valorMaterial));
+    valorDesconto = (qtdPortas*valorMaoObra*coefDesconto) + ((Math.ceil(qtdPortas/4)*valorMaterial));
     valorPortas[0]=valorBase;
     valorPortas[1]=valorDesconto;
   }

@@ -171,13 +171,14 @@ $dadosOtherProperties = [
   'tamanhoImovel'   => (isset($_POST['tamanhoImovel'])) ? trataTamanhoImovel($_POST['tamanhoImovel']) : null,
   'tipoMaterial'    => (isset($_POST['tipoMaterial'])) ? trataTipoMaterial($_POST['tipoMaterial']) : null,
   'parceiro'        => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
-  'valorOrcado'     => (isset($_POST['valorOrcado'][0])) ? $_POST['valorOrcado'][0] / 100 : null,
-  'valorDesconto'   => (isset($_POST['valorOrcado'][1])) ? $_POST['valorOrcado'][1] / 100: null,
+  'valorOrcado'     => (isset($_POST['valorSemDesconto'])) ? $_POST['valorSemDesconto'] : null,
+  'valorDesconto'   => (isset($_POST['valorComDesconto'])) ? $_POST['valorComDesconto'] : null,
   'observacoes'     => (isset($_POST['mensagem'])) ? $_POST['mensagem'] : null,
   'cupomDesconto'   => (isset($_POST['cupomDesconto'])) ? $_POST['cupomDesconto'] : null,
   'coefDesconto'    => (isset($_POST['coefDesconto'])) ? 100 - ($_POST['coefDesconto']*100) : null,
   'dataInicio'      => (isset($_POST['dataInicio'])) ? $_POST['dataInicio'] : null,
   ];
+
 
 /*$dadosContato = [
   'name'    => ('Nome de Teste') ? 'Nome de Teste' : null,
@@ -199,8 +200,10 @@ $dadosOtherProperties = [
   'cupomDesconto'   => ('x') ? 'cupom10' : null,
   'coefDesconto'    => ('X') ? 100 - (.80 * 100) : null,
   'dataInicio'      => ('X') ? 'Dentro dos próximos 30 dias' : null,
+  'tipoImovel'      => ('X') ? 'Comercial' : null,
+  'meioContato'     => ('X') ? 'Telefone' : null,
+  'tipoPintura'     => ('X') ? 'Interna' : null,
 ];*/
-
 
 $msgRetorno = [];
 
@@ -254,6 +257,3 @@ else
 
 echo json_encode($msgRetorno);
 exit;
-
-
-
