@@ -447,6 +447,7 @@ function enviaFormCalculadora() {
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var parceiro = sessionStorage.getItem('parceiro');
   var coefDesconto = sessionStorage.getItem('coeficienteDesconto');
+  var cupomDesconto = sessionStorage.getItem('cupomDesconto');
   var valorOrcado = sessionStorage.getItem('valorOrcado').split('-');
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
@@ -468,7 +469,8 @@ function enviaFormCalculadora() {
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
     dataObj["parceiro"] = parceiro;
-    dataObj["coefDesconto"] = parceiro;
+    dataObj["coefDesconto"] = coefDesconto;
+    dataObj["cupomDesconto"] = cupomDesconto;
     dataObj["valorOrcado"] = valorOrcado;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
@@ -524,6 +526,7 @@ function validarCupom() {
     if(index.idCupom.toLowerCase() === cupomInserido.toLowerCase() || index.idCupom.toLowerCase() === cupomInseridoMobile.toLowerCase()){
       if (validaDataCupom(index.validadeInicio,index.validadeFinal)===true){
         cupomValidado = 1;
+        armazenaDados('cupomDesconto',index.idCupom);
         toastr.success('Desfrute de suas novas cores com um preço especial','Cupom Ativado');
         if(sessionStorage.getItem('valorOrcado')!=='0'){
           trocaSlideCupons();
