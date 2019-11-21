@@ -478,14 +478,12 @@ function enviaFormCalculadora() {
     dataObj["valorComDesconto"] = valorComDesconto;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
-    console.log('vai enviar');
     $.ajax({
       type: "POST",
       url: "php/handlerPloomesDeals.php",
       data: dataObj,
       dataType: "json",
       success: function (data) {
-        alert('voltou');
         if(data.tipo==="sucesso"){
           HideLoader();
           trocaSlide('.view4','.orcamentoEnviado');

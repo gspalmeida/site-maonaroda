@@ -625,7 +625,6 @@
     });
     function enviaFormLandingPage() {
       var validado = 1;
-      console.log('entrou');
       $("form#formLandingPage input").each(function () {
         if(this.value==""){
           toastr.error('Confira se preencheu todos os dados corretamente','Um campo obrigatório nao foi preenchido!');
@@ -640,6 +639,7 @@
         $(formData).each(function(i, field){
           dataObj[field.name] = field.value;
         });
+        dataObj["submit"] = 'ok';
         $.ajax({
           type: "POST",
           url: "php/handlerPloomesDeals.php",
