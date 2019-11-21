@@ -162,7 +162,7 @@
                 <p class="mb-0">Podemos começar a sua pintura em até 48 horas</p>
               </div>
               <div class="card-body pt-0">
-                <form class="text-center">
+                <form class="text-center" id="formLandingPage">
                   <div class="row">
                     <div class="col">
                       <div class="md-form md-form-lp">
@@ -188,12 +188,11 @@
                   <div class="row">
                     <div class="col">
                       <div class="md-form md-form-lp select-custom">
-                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true"
-                                data-val-required="The RoleID field is required." id="lp1-formaDeContato" name="RoleID">
+                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true" id="lp1-formaDeContato" name="meioContato">
                           <option class="select-label" value="0" selected="selected" disabled>Como prefere que te contatemos?</option>
-                          <option value="1">Ligação</option>
-                          <option value="2">WhatsApp</option>
-                          <option value="3">Email</option>
+                          <option value="Whatsapp">WhatsApp</option>
+                          <option value="Telefone">Telefone</option>
+                          <option value="E-mail">Email</option>
                         </select>
                       </div>
                     </div>
@@ -201,13 +200,11 @@
                   <div class="row">
                     <div class="col">
                       <div class="md-form md-form-lp select-custom">
-                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true"
-                                data-val-required="The RoleID field is required." id="lp1-dataPintura" name="RoleID">
-                          <option value="0" selected="selected" disabled>Quando pretende Iniciar?</option>
-                          <option value="1">Ainda essa Semana</option>
-                          <option value="2">Ainda esse Mês</option>
-                          <option value="3">Em uma data Específica</option>
-                          <option value="4">Ainda não decidi</option>
+                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true" id="lp1-dataPintura" name="dataInicio">
+                          <option selected="selected" disabled>Quando pretende Iniciar?</option>
+                          <option value="Estou apenas cotando no momento">Estou apenas cotando no momento</option>
+                          <option value="Dentro dos próximos 30 dias">Dentro dos próximos 30 dias</option>
+                          <option value="O mais rápido possível">O mais rápido possível</option>
                         </select>
                       </div>
                     </div>
@@ -215,28 +212,28 @@
                   <div class="row">
                     <div class="col">
                       <div class="md-form md-form-lp select-custom">
-                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true"
-                                data-val-required="The RoleID field is required." id="lp1-tipoImovel" name="RoleID">
+                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true" id="lp1-tipoImovel" name="tipoImovel">
                           <option value="0" selected="selected" disabled>Tipo de Imóvel</option>
-                          <option value="1">Casa</option>
-                          <option value="2">Apartamento</option>
-                          <option value="3">Escritório</option>
+                          <option value="Casa">Casa</option>
+                          <option value="Apartamento">Apartamento</option>
+                          <option value="Escritório">Escritório</option>
+                          <option value="Comercial">Comercial</option>
+                          <option value="Minha casa / apartamento">Minha casa / apartamento</option>
                         </select>
                       </div>
                     </div>
                     <div class="col">
                       <div class="md-form md-form-lp select-custom">
-                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true"
-                                data-val-required="The RoleID field is required." id="RoleID" name="RoleID">
-                          <option value="0" selected="selected" disabled>Tipo de Pintura</option>
-                          <option value="1">Interna</option>
-                          <option value="2">Externa</option>
-                          <option value="3">Ambos</option>
+                        <select class="mdb-select md-form colorful-select dropdown-custom" data-val="true" id="lp1-tipoPintura" name="tipoPintura">
+                          <option selected="selected" disabled>Tipo de Pintura</option>
+                          <option value="Interna">Interna</option>
+                          <option value="Externa">Externa</option>
+                          <option value="Interna e Externa">Ambos</option>
                         </select>
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="btn bg-color-laranjado btn-rounded z-depth-1-half">Enviar</button>
+                  <button type="button" class="btn bg-color-laranjado btn-rounded z-depth-1-half" onclick="enviaFormLandingPage()">Enviar</button>
                 </form>
               </div>
             </div>
@@ -626,6 +623,41 @@
         $(this).carousel('prev');
       })
     });
+    function enviaFormLandingPage() {
+      var validado = 1;
+      console.log('entrou');
+      $("form#formLandingPage input").each(function () {
+        if(this.value==""){
+          toastr.error('Confira se preencheu todos os dados corretamente','Um campo obrigatório nao foi preenchido!');
+          validado  = 0;
+          return false
+        }
+      });
+      if (validado === 1){
+        ShowLoader();
+        var formData = $("#formLandingPage").serializeArray();
+        var dataObj = {};
+        $(formData).each(function(i, field){
+          dataObj[field.name] = field.value;
+        });
+        $.ajax({
+          type: "POST",
+          url: "php/handlerPloomesDeals.php",
+          data: dataObj,
+          dataType: "json",
+          success: function (data) {
+            if(data.tipo==="sucesso"){
+              HideLoader();
+              toastr.success(data.mensagem,data.titulo);
+            }
+            else{
+              HideLoader();
+              toastr.error(data.mensagem,data.titulo);
+            }
+          }
+        });
+      }
+    }
   </script>
 </body>
 
