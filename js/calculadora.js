@@ -474,10 +474,9 @@ function enviaFormCalculadora() {
     dataObj["valorOrcado"] = valorOrcado;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
-
     $.ajax({
       type: "POST",
-      url: "php/handlerCalculadora.php",
+      url: "php/handlerPloomesDeals.php",
       data: dataObj,
       dataType: "json",
       success: function (data) {
