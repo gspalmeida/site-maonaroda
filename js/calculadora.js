@@ -485,7 +485,6 @@ function enviaFormCalculadora() {
       data: dataObj,
       dataType: "json",
       success: function (data) {
-        alert('voltou');
         if(data.tipo==="sucesso"){
           HideLoader();
           trocaSlide('.view4','.orcamentoEnviado');

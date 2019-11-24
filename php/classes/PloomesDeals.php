@@ -1,7 +1,7 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
-//require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
+//require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
+require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
 
 class PloomesDeals
 {
@@ -20,6 +20,7 @@ class PloomesDeals
       'tipoPintura'     => [ 'options' => true,  'fieldKey' => 'deal_A65E8BF6-98DF-48F2-8F04-2774ABFCA018', 'fieldType' => 'IntegerValue'],
       'meioContato'     => [ 'options' => true,  'fieldKey' => 'deal_19A298CE-F964-4786-846C-1CC103FB8854', 'fieldType' => 'IntegerValue'],
       'dataInicio'      => [ 'options' => true,  'fieldKey' => 'deal_8ACCDE88-AD83-4967-83F9-BDE2BEA017D0', 'fieldType' => 'IntegerValue'],
+      'canal'           => [ 'options' => true,  'fieldKey' => 'deal_49544915-6DEB-424E-B32D-6FA80FBE599A', 'fieldType' => 'IntegerValue'],
     ];
   const OPCOES =
     [
@@ -173,6 +174,14 @@ class PloomesDeals
                         "Name" => "Escritório",
                       ],
                     ],
+      'canal' =>
+                    [
+                      [
+                        "Id" => 186957,
+                        "TableId" => 11662,
+                        "Name" => "Site",
+                      ],
+                    ],
     ];
 
   private $deals = [];
@@ -213,19 +222,22 @@ class PloomesDeals
     $otherProperties = [];
     foreach ($properties as $index => $property)
     {
-      $fieldData = $this->getFieldData($index);
-      if ($fieldData)
+      if (!empty($property))
       {
-        $optionId = false;
-        if ($fieldData['options'])
+        $fieldData = $this->getFieldData($index);
+        if ($fieldData)
         {
-          $optionId = $this->findOptionId($index,$property);
-        }
+          $optionId = false;
+          if ($fieldData['options'])
+          {
+            $optionId = $this->findOptionId($index,$property);
+          }
 
-        $otherProperties[] = [
-          'FieldKey' => $fieldData['fieldKey'],
-          $fieldData['fieldType'] => ($optionId) ? $optionId : $property,
-        ];
+          $otherProperties[] = [
+            'FieldKey' => $fieldData['fieldKey'],
+            $fieldData['fieldType'] => ($optionId) ? $optionId : $property,
+          ];
+        }
       }
     }
 
@@ -246,9 +258,10 @@ class PloomesDeals
 
     $this->deals['StatusId'] = 1; // 'Em Aberto'
 
-    $this->deals['OriginId'] = 56876; // Site
+    if (!empty($data['origin']))
+      $this->deals['OriginId'] = PloomesContacts::getOrigem($data['origin']);
 
-    $this->deals['OwnerId'] = 53011; //Bruna Lodi
+    $this->deals['OwnerId'] = 53012; //Bruna Lodi
 
 
   /*  todo Para OtherProperties teremos uma lista de valores de propriedades que os campos adicionais no Ploomes possuem,

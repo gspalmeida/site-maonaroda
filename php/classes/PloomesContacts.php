@@ -1,7 +1,7 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
-//require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
+//require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
+require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
 
 class PloomesContacts
 {
@@ -12,6 +12,29 @@ class PloomesContacts
   public function __construct()
   {
     $this->ploomesConfig = new PloomesConfig();
+  }
+
+  public static function getOrigem($origem)
+  {
+    switch ($origem)
+    {
+      case 'Quinto Andar':
+        $retorno = 91477;
+        break;
+      case 'Em Canto Meu':
+        $retorno = 92648;
+        break;
+      case 'Suvinil':
+        $retorno = 108424;
+        break;
+      case 'WeWork':
+        $retorno = 109023;
+        break;
+      default:
+        $retorno = 56876; // Site
+    }
+
+    return $retorno;
   }
 
   private function setContactData($data)
@@ -32,6 +55,9 @@ class PloomesContacts
 
     if (!empty($data['zipcode']))
       $this->contact['ZipCode'] = PloomesConfig::removeFormat($data['zipcode']);
+
+    if (!empty($data['origin']))
+      $this->contact['OriginId'] = self::getOrigem($data['origin']);
 
     if (!empty($data['phone']))
     {
