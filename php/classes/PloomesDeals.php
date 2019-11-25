@@ -1,7 +1,7 @@
 <?php
 
-//require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
-require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
+//require_once ( '/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
 
 class PloomesDeals
 {

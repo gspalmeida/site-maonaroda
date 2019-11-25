@@ -6,8 +6,8 @@
  * Time: 09:23
  */
 
-//require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-require_once ('/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+//require_once ('/home/newton/git/sites/site-maonaroda/vendor/autoload.php') ;
 
 Use Monolog\Logger;
 Use Monolog\Handler\StreamHandler;
