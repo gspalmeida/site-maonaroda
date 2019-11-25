@@ -159,10 +159,11 @@ if(!isset($_POST['submit']))
 
 //Recebe os dados do POST
 $dadosContato = [
-  'name'    => (isset($_POST['nome'])) ? $_POST['nome'] : null,
-  'email'   => (isset($_POST['email'])) ? $_POST['email'] : null  ,
-  'phone'   => (isset($_POST['telefone'])) ? $_POST['telefone'] : null,
-  'zipcode' => (isset($_POST['CEP'])) ? $_POST['CEP'] : null,
+  'name'     => (isset($_POST['nome'])) ? $_POST['nome'] : null,
+  'email'    => (isset($_POST['email'])) ? $_POST['email'] : null  ,
+  'phone'    => (isset($_POST['telefone'])) ? $_POST['telefone'] : null,
+  'zipcode'  => (isset($_POST['CEP'])) ? $_POST['CEP'] : null,
+  'origin'   => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
   ];
 
 $dadosOtherProperties = [
@@ -170,14 +171,18 @@ $dadosOtherProperties = [
   'comodos'         => (isset($_POST['comodos'])) ? build_table($_POST['comodos']) : null,
   'tamanhoImovel'   => (isset($_POST['tamanhoImovel'])) ? trataTamanhoImovel($_POST['tamanhoImovel']) : null,
   'tipoMaterial'    => (isset($_POST['tipoMaterial'])) ? trataTipoMaterial($_POST['tipoMaterial']) : null,
-  'parceiro'        => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
   'valorOrcado'     => (isset($_POST['valorSemDesconto'])) ? $_POST['valorSemDesconto'] : null,
   'valorDesconto'   => (isset($_POST['valorComDesconto'])) ? $_POST['valorComDesconto'] : null,
   'observacoes'     => (isset($_POST['mensagem'])) ? $_POST['mensagem'] : null,
   'cupomDesconto'   => (isset($_POST['cupomDesconto'])) ? $_POST['cupomDesconto'] : null,
   'coefDesconto'    => (isset($_POST['coefDesconto'])) ? 100 - ($_POST['coefDesconto']*100) : null,
   'dataInicio'      => (isset($_POST['dataInicio'])) ? $_POST['dataInicio'] : null,
-  ];
+  'tipoPintura'     => (isset($_POST['tipoPintura'])) ? $_POST['tipoPintura'] : null,
+  'meioContato'     => (isset($_POST['meioContato'])) ? $_POST['meioContato'] : null,
+  'canal'           => 'Site',
+  'origin'          => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
+
+];
 
 
 /*$dadosContato = [
