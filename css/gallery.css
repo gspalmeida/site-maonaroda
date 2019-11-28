@@ -38,6 +38,9 @@
   font-size: 1.1rem !important;
   padding: 0.5rem 0.8rem!important;
 }
+#gallery > div > figure{
+  float: none;
+}
 .gallery {
   -webkit-column-count: 3;
   -moz-column-count: 3;
