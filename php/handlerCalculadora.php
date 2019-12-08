@@ -194,7 +194,8 @@ $comodos = $_POST['comodos'];
 $tamanhoImovel = $_POST['tamanhoImovel'];
 $tipoMaterial = $_POST['tipoMaterial'];
 $parceiro = $_POST['parceiro'];
-$valorOrcado = $_POST['valorOrcado'];
+$valorOrcado[0] = $_POST['valorSemDesconto'];
+$valorOrcado[1] = $_POST['valorComDesconto'];
 $msgRetorno = [];
 
 //Valida os campos obrigatórios do formulário
