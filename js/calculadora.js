@@ -491,8 +491,21 @@ function enviaFormCalculadora() {
           toastr.success(data.mensagem,data.titulo);
         }
         else{
-          HideLoader();
-          toastr.error(data.mensagem,data.titulo);
+          $.ajax({
+            type: "POST",
+            url: "php/handlerCalculadora.php",
+            data: dataObj,
+            dataType: "json",
+            success: function (data) {
+              if (data.tipo === "sucesso") {
+                HideLoader();
+                toastr.success(data.mensagem, data.titulo);
+              } else {
+                HideLoader();
+                toastr.error(data.mensagem, data.titulo);
+              }
+            }
+          });
         }
       }
     });
