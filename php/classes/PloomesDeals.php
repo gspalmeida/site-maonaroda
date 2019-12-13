@@ -7,7 +7,7 @@ class PloomesDeals
 {
   const CAMPOS_ADICIONAIS =
     [
-      'comodos'         => [ 'options' => false, 'fieldKey' => 'deal_08B06064-CD82-416D-B6E2-3D0C57845495', 'fieldType' => 'BigStringValue'],
+      'comodos'         => [ 'options' => false, 'fieldKey' => 'deal_EA36AEF5-EA50-4AEC-B7AF-BFB9237DEB7A', 'fieldType' => 'BigStringValue'],
       'tamanhoImovel'   => [ 'options' => true,  'fieldKey' => 'deal_3F81B4C6-FBF2-4849-A978-E48DCAA6E31D', 'fieldType' => 'IntegerValue'],
       'alturaParede'    => [ 'options' => true,  'fieldKey' => 'deal_080FC833-40DB-4714-85AD-08E6443EEA47', 'fieldType' => 'IntegerValue'],
       'tipoMaterial'    => [ 'options' => true,  'fieldKey' => 'deal_ADCCC4F7-E4DF-4BF2-AB06-C379EA53DEC2', 'fieldType' => 'IntegerValue'],
