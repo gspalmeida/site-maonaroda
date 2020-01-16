@@ -27,25 +27,27 @@
               <p class="dark-grey-text text-center">
                 Preencha os dados abaixo que em breve vamos entrar em contato com você.
               </p>
-              <div class="md-form form-sm">
-                <i class="fas fa-lock prefix"></i>
-                <input type="text" id="modalVirarAfiliado-pintor-nome" class="form-control form-control-sm validate">
-                <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-nome">Seu Nome</label>
-              </div>
-              <div class="md-form form-sm">
-                <i class="fas fa-phone prefix" style="transform: rotateY(180deg);"></i>
-                <input type="text" id="modalVirarAfiliado-pintor-telefone" class="form-control form-control-sm validate">
-                <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-telefone">Seu Telefone</label>
-              </div>
-              <div class="md-form form-sm">
-                <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="modalVirarAfiliado-pintor-email" class="form-control form-control-sm validate">
-                <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-pintor-email">Seu Email</label>
-              </div>
-              <div class="form-sm mt-2 d-flex">
-                <button class="btn borderRadius7px bg-azul-medio mr-auto">Enviar</button>
-                <button type="button" class="btn btn-outline-neutro waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-              </div>
+              <form name="formLandingPage" id="coletaLeadPintor">
+                <div class="md-form form-sm">
+                  <i class="fas fa-lock prefix"></i>
+                  <input name="nome" type="text" id="modalVirarAfiliado-pintor-nome" class="form-control form-control-sm validate">
+                  <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-nome">Seu Nome</label>
+                </div>
+                <div class="md-form form-sm">
+                  <i class="fas fa-phone prefix" style="transform: rotateY(180deg);"></i>
+                  <input name="telefone" type="text" id="modalVirarAfiliado-pintor-telefone" class="form-control form-control-sm validate">
+                  <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-pintor-telefone">Seu Telefone</label>
+                </div>
+                <div class="md-form form-sm">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input name="email" type="email" id="modalVirarAfiliado-pintor-email" class="form-control form-control-sm validate">
+                  <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-pintor-email">Seu Email</label>
+                </div>
+                <div class="form-sm mt-2 d-flex">
+                  <a class="btn borderRadius7px bg-azul-medio mr-auto" style="color: #fff!important;" onclick="enviaColetaLeadPintor()">Enviar</a>
+                  <button type="button" class="btn btn-outline-neutro waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+                </div>
+              </form>
             </div>
           </div>
           <div class="tab-pane fade tabParceiro" id="tabParceiro" role="tabpanel">
@@ -58,25 +60,27 @@
               <p class="dark-grey-text text-center">
                 Preencha os dados abaixo que em breve vamos entrar em contato com você.
               </p>
-              <div class="md-form form-sm">
-                <i class="fas fa-lock prefix"></i>
-                <input type="text" id="modalVirarAfiliado-parceiro-nome" class="form-control form-control-sm validate">
-                <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-nome">Seu Nome</label>
-              </div>
-              <div class="md-form form-sm">
-                <i class="fas fa-phone prefix" style="transform: rotateY(180deg);"></i>
-                <input type="text" id="modalVirarAfiliado-parceiro-telefone" class="form-control form-control-sm validate">
-                <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-telefone">Seu Número</label>
-              </div>
-              <div class="md-form form-sm">
-                <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="modalVirarAfiliado-parceiro-email" class="form-control form-control-sm validate">
-                <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-parceiro-email">Seu Email</label>
-              </div>
-              <div class="form-sm mt-2 d-flex">
-                <button class="btn borderRadius7px bg-azul-medio mr-auto">Enviar</button>
-                <button type="button" class="btn btn-outline-neutro waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-              </div>
+              <form name="formLandingPage" id="coletaLeadParceiro">
+                <div class="md-form form-sm">
+                  <i class="fas fa-lock prefix"></i>
+                  <input name="nome" type="text" id="modalVirarAfiliado-parceiro-nome" class="form-control form-control-sm validate">
+                  <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-nome">Seu Nome</label>
+                </div>
+                <div class="md-form form-sm">
+                  <i class="fas fa-phone prefix" style="transform: rotateY(180deg);"></i>
+                  <input name="telefone" type="text" id="modalVirarAfiliado-parceiro-telefone" class="form-control form-control-sm validate">
+                  <label data-error="Obrigatório" data-success="Correto" for="modalVirarAfiliado-parceiro-telefone">Seu Número</label>
+                </div>
+                <div class="md-form form-sm">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input name="email" type="email" id="modalVirarAfiliado-parceiro-email" class="form-control form-control-sm validate">
+                  <label data-error="Verifique!" data-success="Correto" for="modalVirarAfiliado-parceiro-email">Seu Email</label>
+                </div>
+                <div class="form-sm mt-2 d-flex">
+                  <a class="btn borderRadius7px bg-azul-medio mr-auto" style="color: #fff!important;"  onclick="enviaColetaLeadParceiro()">Enviar</a>
+                  <button type="button" class="btn btn-outline-neutro waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -84,3 +88,77 @@
     </div>
   </div>
 </div>
+<script>
+  function enviaColetaLeadPintor() {
+    var validado = 1;
+    $("form#coletaLeadPintor input").each(function () {
+      if(this.value==""){
+        toastr.error('Confira se preencheu todos os dados corretamente','Um campo obrigatório nao foi preenchido!');
+        validado  = 0;
+        return false
+      }
+    });
+    if (validado === 1){
+      ShowLoader();
+      var formData = $("#coletaLeadPintor").serializeArray();
+      var dataObj = {};
+      $(formData).each(function(i, field){
+        dataObj[field.name] = field.value;
+      });
+      dataObj["tipoLead"] = 'Pintor';
+      dataObj["submit"] = 'ok';
+      $.ajax({
+        type: "POST",
+        url: "php/handlerColetaLead.php",
+        data: dataObj,
+        dataType: "json",
+        success: function (data) {
+          if(data.tipo==="sucesso"){
+            HideLoader();
+            toastr.success(data.mensagem,data.titulo);
+          }
+          else{
+            HideLoader();
+            toastr.error('Favor tentar novamente, persistindo o erro entrar em contato através de outro canal (whatsapp, email, ligação, etc)','Ocorreu um erro ao enviar seus dados!');
+          }
+        }
+      });
+    }
+  }
+  function enviaColetaLeadParceiro() {
+    var validado = 1;
+    $("form#coletaLeadParceiro input").each(function () {
+      if(this.value==""){
+        toastr.error('Confira se preencheu todos os dados corretamente','Um campo obrigatório nao foi preenchido!');
+        validado  = 0;
+        return false
+      }
+    });
+    if (validado === 1){
+      ShowLoader();
+      var formData = $("#coletaLeadParceiro").serializeArray();
+      var dataObj = {};
+      $(formData).each(function(i, field){
+        dataObj[field.name] = field.value;
+      });
+      dataObj["tipoLead"] = 'Parceiro';
+      dataObj["submit"] = 'ok';
+      $.ajax({
+        type: "POST",
+        url: "php/handlerColetaLead.php",
+        data: dataObj,
+        dataType: "json",
+        success: function (data) {
+          if(data.tipo==="sucesso"){
+            HideLoader();
+            toastr.success(data.mensagem,data.titulo);
+          }
+          else{
+            HideLoader();
+            toastr.error('Favor tentar novamente, persistindo o erro entrar em contato através de outro canal (whatsapp, email, ligação, etc)','Ocorreu um erro ao enviar seus dados!');
+          }
+        }
+      });
+    }
+  }
+</script>
