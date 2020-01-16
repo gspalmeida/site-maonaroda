@@ -511,6 +511,58 @@ function enviaFormCalculadora() {
     });
   }
 }
+function enviaFormPadrao() {
+  var parceiro = sessionStorage.getItem('parceiro');
+  var validado = 1;
+  $("form#formPadrao > div > input").each(function () {
+    if(this.value==""){
+      notificaErro('Um campo obrigatório nao foi preenchido!', 'Confira se digitou seu Nome, Email, Telefone e CEP');
+      validado  = 0;
+      return false
+    }
+  });
+  if (validado === 1){
+    ShowLoader();
+    var formData = $("#formPadrao").serializeArray();
+    var dataObj = {};
+    $(formData).each(function(i, field){
+      dataObj[field.name] = field.value;
+    });
+    dataObj["parceiro"] = parceiro;
+    dataObj["submit"] = 'ok';
+    $.ajax({
+      type: "POST",
+      url: "php/handlerPloomesDeals.php",
+      data: dataObj,
+      dataType: "json",
+      success: function (data) {
+        if(data.tipo==="sucesso"){
+          HideLoader();
+          trocaSlide('.view4','.orcamentoEnviado');
+          progressBarAnimate('100%');
+          toastr.success(data.mensagem,data.titulo);
+        }
+        else{
+          $.ajax({
+            type: "POST",
+            url: "php/handlerCalculadora.php",
+            data: dataObj,
+            dataType: "json",
+            success: function (data) {
+              if (data.tipo === "sucesso") {
+                HideLoader();
+                toastr.success(data.mensagem, data.titulo);
+              } else {
+                HideLoader();
+                toastr.error(data.mensagem, data.titulo);
+              }
+            }
+          });
+        }
+      }
+    });
+  }
+}
 // Calculos
 function validaDataCupom(validadeInicio, validadeFinal){
   var dataAtual = new Date;
