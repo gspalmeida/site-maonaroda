@@ -65,14 +65,14 @@ function trataTamanhoImovel($tamanhoImovel){
   }
   return $stringTamanhoImovel;
 }
-function trataParceiros($parceiro){
-  if ($parceiro!=''){
-    $stringParceiro = $parceiro;
+function trataOrigens($origem){
+  if ($origem!=''){
+    $stringOrigem = $origem;
   }
   else{
-    $stringParceiro = "Sem Indicação";
+    $stringOrigem = "Sem Indicação";
   }
-  return $stringParceiro;
+  return $stringOrigem;
 }
 function trataValor($arrayValorOrcado){
   if ($arrayValorOrcado[0]===$arrayValorOrcado[1]){
@@ -193,7 +193,7 @@ $alturaParede = $_POST['alturaParede'];
 $comodos = $_POST['comodos'];
 $tamanhoImovel = $_POST['tamanhoImovel'];
 $tipoMaterial = $_POST['tipoMaterial'];
-$parceiro = $_POST['parceiro'];
+$origem = $_POST['origem'];
 $valorOrcado[0] = $_POST['valorSemDesconto'];
 $valorOrcado[1] = $_POST['valorComDesconto'];
 $msgRetorno = [];
@@ -247,7 +247,7 @@ $mailer->Body = "<p style='text-align: center;font-size: 12px;text-transform: up
                     <p><strong>Email: </strong>".$visitor_email."</p>
                     <p><strong>CEP: </strong>".$cep."</p>
                     <p><strong>Comentários Adicionais: </strong>".$message."</p>
-                    <p><strong>Indicação: </strong>".trataParceiros($parceiro)."</p>
+                    <p><strong>Indicação: </strong>" . trataOrigens($origem) . "</p>
                     <p><strong>Valor Orçado Sem Desconto: </strong>".trataValor($valorOrcado)."</p>  <!-- Se tiver cupom ativo a function trataValor vai injetar uma linha extra no email -->
                     <hr>
                     <p style='text-align: center'><strong>Dados do Imóvel</strong></p>

@@ -28,6 +28,7 @@ $(function setaValoresIniciais() {
   armazenaDados('tipoMaterial','0');
   armazenaDados('coefDesconto','1');
   armazenaDados('valorOrcado','0');
+  armazenaDados('cupomDesconto','');
 });
 function progressBarAnimate(width) {
     document.getElementById("progressBar-mobile").style.width = width;
@@ -445,7 +446,8 @@ function enviaFormCalculadora() {
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
-  var parceiro = sessionStorage.getItem('parceiro');
+  var origem = sessionStorage.getItem('origem');
+  var nomeDaPagina = sessionStorage.getItem('nomeDaPagina');
   var coefDesconto = sessionStorage.getItem('coefDesconto');
   var cupomDesconto = sessionStorage.getItem('cupomDesconto');
   var valorOrcado = sessionStorage.getItem('valorOrcado').replace(/,/g,'.').split('-');
@@ -471,7 +473,8 @@ function enviaFormCalculadora() {
     dataObj["tamanhoImovel"] = tamanhoImovel;
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
-    dataObj["parceiro"] = parceiro;
+    dataObj["origem"] = origem;
+    dataObj["nomeDaPagina"] = nomeDaPagina;
     dataObj["coefDesconto"] = coefDesconto;
     dataObj["cupomDesconto"] = cupomDesconto;
     dataObj["valorSemDesconto"] = valorSemDesconto;
@@ -512,7 +515,7 @@ function enviaFormCalculadora() {
   }
 }
 function enviaFormPadrao() {
-  var parceiro = sessionStorage.getItem('parceiro');
+  var origem = sessionStorage.getItem('origem');
   var validado = 1;
   $("form#formPadrao > div > input").each(function () {
     if(this.value==""){
@@ -528,7 +531,7 @@ function enviaFormPadrao() {
     $(formData).each(function(i, field){
       dataObj[field.name] = field.value;
     });
-    dataObj["parceiro"] = parceiro;
+    dataObj["origem"] = origem;
     dataObj["submit"] = 'ok';
     $.ajax({
       type: "POST",
@@ -614,7 +617,6 @@ function validarCupom() {
       }
     }
   });
-
   //Retorna o Erro, caso tenha ocorrido algum
   if (cupomValidado===0){
     if (codigoErro===1){
@@ -624,8 +626,6 @@ function validarCupom() {
       notificaErro('Cupom Vencido','Ops, algo deu errado, o prazo de validade do seu cupom expirou');
     }
   }
-
-
 }
 function capturaTamanho(tipoPintura, tipoComodo, tamanhoImovel) {
   var decryptTamanho = JSON.parse(atob(configTamanho));

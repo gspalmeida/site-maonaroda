@@ -47,16 +47,15 @@ function trataTamanhoImovel($tamanhoImovel){
   }
   return $stringTamanhoImovel;
 }
-function trataParceiros($parceiro){
-  if ($parceiro!=''){
-    $stringParceiro = $parceiro;
+function trataOrigens($origem){
+  if ($origem!=''){
+    $stringOrigem = $origem;
   }
   else{
-    $stringParceiro = "Sem Indicação";
+    $stringOrigem = "Orgânico";
   }
-  return $stringParceiro;
+  return $stringOrigem;
 }
-
 function trataAlturaPeDireito($alturaPeDireito){
   $stringAlturaPeDireito = '';
   if($alturaPeDireito==0){
@@ -163,7 +162,7 @@ $dadosContato = [
   'email'    => (isset($_POST['email'])) ? $_POST['email'] : null  ,
   'phone'    => (isset($_POST['telefone'])) ? $_POST['telefone'] : null,
   'zipcode'  => (isset($_POST['CEP'])) ? $_POST['CEP'] : null,
-  'origin'   => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
+  'origin'   => (isset($_POST['origem'])) ? $_POST['origem'] : null,
   ];
 
 $dadosOtherProperties = [
@@ -180,8 +179,7 @@ $dadosOtherProperties = [
   'tipoPintura'     => (isset($_POST['tipoPintura'])) ? $_POST['tipoPintura'] : null,
   'meioContato'     => (isset($_POST['meioContato'])) ? $_POST['meioContato'] : null,
   'canal'           => 'Site',
-  'origin'          => (isset($_POST['parceiro'])) ? $_POST['parceiro'] : null,
-
+  'origin'          => (isset($_POST['origem'])) ? $_POST['origem'] : null,
 ];
 
 
@@ -198,7 +196,7 @@ $dadosOtherProperties = [
   'comodos'         => ('x') ? build_table([$comodos]) : null,
   'tamanhoImovel'   => ('X') ? trataTamanhoImovel(2) : null,
   'tipoMaterial'    => ('X') ? trataTipoMaterial(2) : null,
-  'parceiro'        => ('X') ? null : null,
+  'origem'        => ('X') ? null : null,
   'valorOrcado'     => ('x') ? 1234.54 : null,
   'valorDesconto'   => ('x') ? 1200.00 : null,
   'observacoes'     => ('x') ? 'Teste de observações' : null,

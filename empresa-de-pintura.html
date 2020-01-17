@@ -610,6 +610,13 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/galileoJS.js"></script>
   <script>
+    //TODO Criar uma function que trate a origem pra saber se é Quinto Andar, Google, Organico ou alguma outra origem online
+    //TODO Criar uma function que trate o nome da página pra mandar isso dinamicamente com base na url
+    // Seta o Nome da página e Origem do Lead Manualmente até ter um tratamento para isso
+    $(function parseOrigin () {
+      sessionStorage.setItem('origem', 'Orgânico');
+      sessionStorage.setItem('nomeDaPagina', 'empresa-de-pintura');
+    });
     // MDB Lightbox Init
     $(function () {
       $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
@@ -632,7 +639,6 @@
         $(this).carousel('prev');
       })
     });
-
     //Validações e ajustes para os forms
     //Formatação genérica dos campos
     function formataCampo(campo, Mascara, evento) {
@@ -690,6 +696,8 @@
     }
     function enviaFormLandingPage() {
       var validado = 1;
+      var origem = sessionStorage.getItem('origem');
+      var nomeDaPagina = sessionStorage.getItem('nomeDaPagina');
       $("form#formLandingPage input").each(function () {
         if(this.value==""){
           toastr.error('Confira se preencheu todos os dados corretamente','Um campo obrigatório nao foi preenchido!');
@@ -705,6 +713,8 @@
           dataObj[field.name] = field.value;
         });
         dataObj["submit"] = 'ok';
+        dataObj["origem"] = origem;
+        dataObj["nomeDaPagina"] = nomeDaPagina;
         $.ajax({
           type: "POST",
           url: "php/handlerPloomesDeals.php",
