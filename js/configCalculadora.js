@@ -169,22 +169,24 @@ var configTamanho = {
 var cuponsDesconto = {
   "cuponsAtivos":[
     {
-      "idCupom":"quintoandar20",
-      "desconto":0.8,
-      "validadeInicio":"15-08-2019",
-      "validadeFinal":"30-10-2019"
-    },
-    {
       "idCupom":"ECM10",
       "desconto":0.9,
       "validadeInicio":"25-10-2019",
       "validadeFinal":"01-01-2029"
     },
+  ],
+  "cuponsVencidos":[
     {
       "idCupom":"ECM15",
       "desconto":0.85,
       "validadeInicio":"25-10-2019",
       "validadeFinal":"31-12-2019"
-    }
+    },
+    {
+      "idCupom":"quintoandar20",
+      "desconto":0.8,
+      "validadeInicio":"15-08-2019",
+      "validadeFinal":"30-10-2019"
+    },
   ]
 };

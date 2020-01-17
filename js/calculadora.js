@@ -598,7 +598,7 @@ function validarCupom() {
       if (validaDataCupom(index.validadeInicio,index.validadeFinal)===true){
         cupomValidado = 1;
         armazenaDados('cupomDesconto',index.idCupom);
-        toastr.success('Desfrute de suas novas cores com um preço especial','Cupom Ativado');
+        toastr.info('Desfrute de suas novas cores com um preço especial','Cupom Ativado');
         if(sessionStorage.getItem('valorOrcado')!=='0'){
           trocaSlideCupons();
           armazenaDados('coefDesconto',index.desconto);
