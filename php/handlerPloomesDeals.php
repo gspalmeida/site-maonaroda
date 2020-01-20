@@ -72,7 +72,7 @@ function trataAlturaPeDireito($alturaPeDireito){
 function trataTipoMaterial($tipoMaterial){
   $stringTipoMaterial = '';
   if($tipoMaterial==0){
-    $stringTipoMaterial = 'Sem Material Incluso';
+    $stringTipoMaterial = 'Não desejo  material';
   }
   else if ($tipoMaterial==1){
     $stringTipoMaterial = 'Tinta 1 - Clássica';
