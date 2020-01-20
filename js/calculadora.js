@@ -155,7 +155,7 @@ function mudaTipoImovel(tipoImovel) {
     $('.calculadora-controls').addClass('hide-section');
     $('#orcamento-padrao').removeClass('hide-section');
     armazenaDados('tipoImovel','Escritório');
-    armazenaDados('tipoPintura','Undefined');
+    armazenaDados('tipoPintura','Interna');
     armazenaDados('tamanhoImovel','Undefined');
     armazenaDados('alturaParede','Undefined');
   }
@@ -167,7 +167,7 @@ function mudaTipoImovel(tipoImovel) {
     $('.calculadora-controls').addClass('hide-section');
     $('#orcamento-padrao').removeClass('hide-section');
     armazenaDados('tipoImovel','Outros');
-    armazenaDados('tipoPintura','Undefined');
+    armazenaDados('tipoPintura','Interna');
     armazenaDados('tamanhoImovel','Undefined');
     armazenaDados('alturaParede','Undefined');
   }
@@ -445,6 +445,7 @@ function validaView3() {
 function enviaFormCalculadora() {
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
+  var tipoPintura  = sessionStorage.getItem('tipoPintura');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
   var tipoImovel  = sessionStorage.getItem('tipoImovel');
   var origem = sessionStorage.getItem('origem');
@@ -473,6 +474,7 @@ function enviaFormCalculadora() {
     });
     dataObj["tamanhoImovel"] = tamanhoImovel;
     dataObj["alturaParede"] = tipoAlturaParede;
+    dataObj["tipoPintura"] = tipoPintura;
     dataObj["tipoMaterial"] = tipoMaterial;
     dataObj["tipoImovel"] = tipoImovel;
     dataObj["origem"] = origem;
@@ -517,6 +519,7 @@ function enviaFormCalculadora() {
   }
 }
 function enviaFormPadrao() {
+  var tipoPintura  = sessionStorage.getItem('tipoPintura');
   var origem = sessionStorage.getItem('origem');
   var tipoImovel  = sessionStorage.getItem('tipoImovel');
   var validado = 1;
@@ -534,6 +537,7 @@ function enviaFormPadrao() {
     $(formData).each(function(i, field){
       dataObj[field.name] = field.value;
     });
+    dataObj["tipoPintura"] = tipoPintura;
     dataObj["origem"] = origem;
     dataObj["tipoImovel"] = tipoImovel;
     dataObj["submit"] = 'ok';
