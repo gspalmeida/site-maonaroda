@@ -170,6 +170,7 @@ $dadosOtherProperties = [
   'comodos'         => (isset($_POST['comodos'])) ? build_table($_POST['comodos']) : null,
   'tamanhoImovel'   => (isset($_POST['tamanhoImovel'])) ? trataTamanhoImovel($_POST['tamanhoImovel']) : null,
   'tipoMaterial'    => (isset($_POST['tipoMaterial'])) ? trataTipoMaterial($_POST['tipoMaterial']) : null,
+  'tipoImovel'     => (isset($_POST['tipoImovel'])) ? $_POST['tipoImovel'] : null,
   'valorOrcado'     => (isset($_POST['valorSemDesconto'])) ? $_POST['valorSemDesconto'] : null,
   'valorDesconto'   => (isset($_POST['valorComDesconto'])) ? $_POST['valorComDesconto'] : null,
   'observacoes'     => (isset($_POST['mensagem'])) ? $_POST['mensagem'] : null,

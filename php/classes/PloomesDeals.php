@@ -151,7 +151,7 @@ class PloomesDeals
                       [
                         "Id" => 130874,
                         "TableId" => 8144,
-                        "Name" => "Comercial",
+                        "Name" => "Comercial", //No Ploomes o André renomeou isso para Loja, porém como em toda a estrutura já está comercial, mantive comercial para não precisar ajustar também no front inteiro
                       ],
                       [
                         "Id" => 130875,
@@ -164,9 +164,9 @@ class PloomesDeals
                         "Name" => "Casa",
                       ],
                       [
-                        "Id" => 172617,
+                        "Id" => 602136,
                         "TableId" => 8144,
-                        "Name" => "Minha casa / apartamento",
+                        "Name" => "Outros",
                       ],
                       [
                         "Id" => 179759,

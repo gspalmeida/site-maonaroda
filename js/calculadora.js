@@ -446,6 +446,7 @@ function enviaFormCalculadora() {
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
   var tipoMaterial  = sessionStorage.getItem('tipoMaterial');
+  var tipoImovel  = sessionStorage.getItem('tipoImovel');
   var origem = sessionStorage.getItem('origem');
   var nomeDaPagina = sessionStorage.getItem('nomeDaPagina');
   var coefDesconto = sessionStorage.getItem('coefDesconto');
@@ -473,6 +474,7 @@ function enviaFormCalculadora() {
     dataObj["tamanhoImovel"] = tamanhoImovel;
     dataObj["alturaParede"] = tipoAlturaParede;
     dataObj["tipoMaterial"] = tipoMaterial;
+    dataObj["tipoImovel"] = tipoImovel;
     dataObj["origem"] = origem;
     dataObj["nomeDaPagina"] = nomeDaPagina;
     dataObj["coefDesconto"] = coefDesconto;
@@ -516,6 +518,7 @@ function enviaFormCalculadora() {
 }
 function enviaFormPadrao() {
   var origem = sessionStorage.getItem('origem');
+  var tipoImovel  = sessionStorage.getItem('tipoImovel');
   var validado = 1;
   $("form#formPadrao > div > input").each(function () {
     if(this.value==""){
@@ -532,6 +535,7 @@ function enviaFormPadrao() {
       dataObj[field.name] = field.value;
     });
     dataObj["origem"] = origem;
+    dataObj["tipoImovel"] = tipoImovel;
     dataObj["submit"] = 'ok';
     $.ajax({
       type: "POST",
