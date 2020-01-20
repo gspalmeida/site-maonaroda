@@ -519,9 +519,10 @@ function enviaFormCalculadora() {
   }
 }
 function enviaFormPadrao() {
+  var tipoImovel  = sessionStorage.getItem('tipoImovel');
   var tipoPintura  = sessionStorage.getItem('tipoPintura');
   var origem = sessionStorage.getItem('origem');
-  var tipoImovel  = sessionStorage.getItem('tipoImovel');
+  var nomeDaPagina = sessionStorage.getItem('nomeDaPagina');
   var validado = 1;
   $("form#formPadrao > div > input").each(function () {
     if(this.value==""){
@@ -538,8 +539,9 @@ function enviaFormPadrao() {
       dataObj[field.name] = field.value;
     });
     dataObj["tipoPintura"] = tipoPintura;
-    dataObj["origem"] = origem;
     dataObj["tipoImovel"] = tipoImovel;
+    dataObj["origem"] = origem;
+    dataObj["nomeDaPagina"] = nomeDaPagina;
     dataObj["submit"] = 'ok';
     $.ajax({
       type: "POST",
