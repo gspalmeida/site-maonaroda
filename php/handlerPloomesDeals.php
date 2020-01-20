@@ -181,6 +181,7 @@ $dadosOtherProperties = [
   'meioContato'     => (isset($_POST['meioContato'])) ? $_POST['meioContato'] : null,
   'canal'           => 'Site',
   'origin'          => (isset($_POST['origem'])) ? $_POST['origem'] : null,
+  'nomeDaPagina'    => (isset($_POST['nomeDaPagina'])) ? $_POST['nomeDaPagina'] : null,
 ];
 
 
@@ -243,7 +244,7 @@ $respContato = $respContato->first();
 $deal = new PloomesDeals();
 
 $dealData = [
-  'title' => $dadosContato['name'],
+  'title' => 'Cotação via site: '.$dadosContato['name'],
   'contactId' => $respContato->Id,
   'otherProperties' => $deal->createOtherProperties($dadosOtherProperties)
 ];
