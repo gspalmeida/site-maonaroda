@@ -59,13 +59,13 @@ function trataOrigens($origem){
 function trataAlturaPeDireito($alturaPeDireito){
   $stringAlturaPeDireito = '';
   if($alturaPeDireito==0){
-    $stringAlturaPeDireito = 'Até 2,7m';
+    $stringAlturaPeDireito = 'Até 2,70m';
   }
   else if ($alturaPeDireito==1){
     $stringAlturaPeDireito = 'Até 4,5m';
   }
   else if ($alturaPeDireito==2){
-    $stringAlturaPeDireito = 'Acima de 4,5m';
+    $stringAlturaPeDireito = 'Acima de 4,50m';
   }
   return $stringAlturaPeDireito;
 }
