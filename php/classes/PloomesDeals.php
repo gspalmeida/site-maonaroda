@@ -15,7 +15,8 @@ class PloomesDeals
       'valorOrcado'     => [ 'options' => false, 'fieldKey' => 'deal_F3301037-1BFC-45AC-8599-E4E02B234C11', 'fieldType' => 'DecimalValue'],
       'valorDesconto'   => [ 'options' => false, 'fieldKey' => 'deal_19626A2C-2D75-42F5-BDBE-280EC287ADA8', 'fieldType' => 'DecimalValue'],
       'coefDesconto'    => [ 'options' => false, 'fieldKey' => 'deal_C348AF39-FCC8-49CB-89F8-60B6870CE0AA', 'fieldType' => 'DecimalValue'],
-      'cupomDesconto'   => [ 'options' => false, 'fieldKey' => 'deal_AE209A6A-95AD-46D0-9664-0B0C82E5A165', 'fieldType' => 'StringValue'],
+      //Sempre que for adicionado um novo cupom ele deve ser adicionado tbm as options abaixo
+      'cupomDesconto'   => [ 'options' => true,  'fieldKey' => 'deal_AE209A6A-95AD-46D0-9664-0B0C82E5A165', 'fieldType' => 'IntegerValue'],
       'tipoImovel'      => [ 'options' => true,  'fieldKey' => 'deal_08B06064-CD82-416D-B6E2-3D0C57845495', 'fieldType' => 'IntegerValue'],
       'tipoPintura'     => [ 'options' => true,  'fieldKey' => 'deal_A65E8BF6-98DF-48F2-8F04-2774ABFCA018', 'fieldType' => 'IntegerValue'],
       'meioContato'     => [ 'options' => true,  'fieldKey' => 'deal_19A298CE-F964-4786-846C-1CC103FB8854', 'fieldType' => 'IntegerValue'],
@@ -144,6 +145,34 @@ class PloomesDeals
                         "Id" => 130871,
                         "TableId" => 8142,
                         "Name" => "Interna",
+                      ],
+                    ],
+      'cupomDesconto' =>
+                    [
+                      [
+                        "Id" => 165900,
+                        "TableId" => 10322,
+                        "Name" => "ecm15",
+                      ],
+                      [
+                        "Id" => 165901,
+                        "TableId" => 10322,
+                        "Name" => "ecm10",
+                      ],
+                      [
+                        "Id" => 165902,
+                        "TableId" => 10322,
+                        "Name" => "quinto20",
+                      ],
+                      [
+                        "Id" => 814836,
+                        "TableId" => 10322,
+                        "Name" => "ECM10",
+                      ],
+                      [
+                        "Id" => 860318,
+                        "TableId" => 10322,
+                        "Name" => "cupomParaTracking",
                       ],
                     ],
       'tipoImovel' =>
