@@ -551,8 +551,7 @@ function enviaFormPadrao() {
       success: function (data) {
         if(data.tipo==="sucesso"){
           HideLoader();
-          trocaSlide('.view4','.orcamentoEnviado');
-          progressBarAnimate('100%');
+          trocaSlide('.base,#orcamento-padrao','#agradecimentoFormPadrao');
           toastr.success(data.mensagem,data.titulo);
         }
         else{
