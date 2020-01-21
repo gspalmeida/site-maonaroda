@@ -39,7 +39,12 @@
   font-weight: 700;
   font-display: swap;
 }
-
+.custom-link-green{
+  cursor: pointer;
+  text-decoration: none;
+  color: #0097b1!important;
+  font-weight: 500!important;
+}
 .btn{     /*Correção para sobrepor o mdb.css pq botões estavam quebrando a '!' em outra linha'*/
   word-wrap: initial !important;
 }
