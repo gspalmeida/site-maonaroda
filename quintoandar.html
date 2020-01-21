@@ -768,12 +768,12 @@
                 </div>
                 <div class="md-form col-12 col-md-6">
                   <input id="calculadoraForm-telefone" name="telefone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
-                         maxlength="14" onchange="mascaraTelefone(calculadoraForm.telefone)" required>
+                         maxlength="14" onchange="mascaraTelefone(this)" onkeypress="mascaraTelefone(this)" required>
                   <label for="calculadoraForm-telefone">Telefone</label>
                 </div>
                 <div class="md-form col-12 col-md-6">
                   <input id="calculadoraForm-cep" name="CEP" type="text" placeholder="12345-678" class="form-control validate"
-                         onchange="mascaraCep(calculadoraForm.CEP)" maxlength="9" required>
+                         onchange="mascaraCep(this)" onkeypress="mascaraCep(this)" maxlength="9" required>
                   <label for="calculadoraForm-cep">CEP</label>
                 </div>
                 <div class="md-form col-12">
@@ -819,12 +819,12 @@
             </div>
             <div class="md-form col-12 col-md-6">
               <input id="formPadrao-telefone" name="telefone" type="text" placeholder="11 9 9999-9999" class="form-control validate"
-                     maxlength="14" onchange="mascaraTelefone(formPadrao.phone)" required>
+                     maxlength="14" onchange="mascaraTelefone(this)" onkeypress="mascaraTelefone(this)" required>
               <label for="formPadrao-telefone">Telefone</label>
             </div>
             <div class="md-form col-12 col-md-6">
               <input id="formPadrao-cep" name="CEP" type="text" placeholder="12345-678" class="form-control validate"
-                     onchange="mascaraCep(formPadrao.zip_code)" maxlength="9" required>
+                     onchange="mascaraCep(this)" onkeypress="mascaraCep(this)" maxlength="9" required>
               <label for="formPadrao-cep">CEP</label>
             </div>
             <div class="md-form col-12">
