@@ -30,8 +30,11 @@ class PloomesContacts
       case 'WeWork':
         $retorno = 109023;
         break;
+      case 'Orgânico':
+        $retorno = 120222;
+        break;
       default:
-        $retorno = 56876; // Site
+        $retorno = 120222; // Orgânico
     }
 
     return $retorno;
