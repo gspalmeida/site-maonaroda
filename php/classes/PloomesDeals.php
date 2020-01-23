@@ -10,6 +10,7 @@ class PloomesDeals
       'comodos'            => [ 'options' => false, 'fieldKey' => 'deal_EA36AEF5-EA50-4AEC-B7AF-BFB9237DEB7A', 'fieldType' => 'BigStringValue'],
       'observacoes'        => [ 'options' => false, 'fieldKey' => 'deal_A9580C0E-30CD-42BC-B233-3C30D2DB545D', 'fieldType' => 'BigStringValue'],
       'briefingDoCliente'  => [ 'options' => false, 'fieldKey' => 'deal_2BCFB607-C75A-4AD2-AA7A-29C53AACA9E3', 'fieldType' => 'BigStringValue'],
+      'meioContato'        => [ 'options' => false, 'fieldKey' => 'deal_19A298CE-F964-4786-846C-1CC103FB8854', 'fieldType' => 'BigStringValue'],
       'valorOrcado'        => [ 'options' => false, 'fieldKey' => 'deal_F3301037-1BFC-45AC-8599-E4E02B234C11', 'fieldType' => 'DecimalValue'],
       'valorDesconto'      => [ 'options' => false, 'fieldKey' => 'deal_19626A2C-2D75-42F5-BDBE-280EC287ADA8', 'fieldType' => 'DecimalValue'],
       'coefDesconto'       => [ 'options' => false, 'fieldKey' => 'deal_C348AF39-FCC8-49CB-89F8-60B6870CE0AA', 'fieldType' => 'DecimalValue'],
@@ -19,7 +20,7 @@ class PloomesDeals
       'cupomDesconto'      => [ 'options' => true,  'fieldKey' => 'deal_AE209A6A-95AD-46D0-9664-0B0C82E5A165', 'fieldType' => 'IntegerValue'],
       'tipoImovel'         => [ 'options' => true,  'fieldKey' => 'deal_08B06064-CD82-416D-B6E2-3D0C57845495', 'fieldType' => 'IntegerValue'],
       'tipoPintura'        => [ 'options' => true,  'fieldKey' => 'deal_A65E8BF6-98DF-48F2-8F04-2774ABFCA018', 'fieldType' => 'IntegerValue'],
-      'meioContato'        => [ 'options' => true,  'fieldKey' => 'deal_19A298CE-F964-4786-846C-1CC103FB8854', 'fieldType' => 'IntegerValue'],
+//      'meioContato'        => [ 'options' => true,  'fieldKey' => 'deal_19A298CE-F964-4786-846C-1CC103FB8854', 'fieldType' => 'IntegerValue'],
       'dataInicio'         => [ 'options' => true,  'fieldKey' => 'deal_8ACCDE88-AD83-4967-83F9-BDE2BEA017D0', 'fieldType' => 'IntegerValue'],
       'canal'              => [ 'options' => true,  'fieldKey' => 'deal_49544915-6DEB-424E-B32D-6FA80FBE599A', 'fieldType' => 'IntegerValue'],
       'tamanhoImovel'      => [ 'options' => true,  'fieldKey' => 'deal_3F81B4C6-FBF2-4849-A978-E48DCAA6E31D', 'fieldType' => 'IntegerValue'],
@@ -115,24 +116,24 @@ class PloomesDeals
                         "Name" => "O mais rápido possível",
                       ],
                     ],
-      'meioContato' =>
-                    [
-                      [
-                        "Id" => 173942,
-                        "TableId" => 11135,
-                        "Name" => "Telefone",
-                      ],
-                      [
-                        "Id" => 173941,
-                        "TableId" => 11135,
-                        "Name" => "Whatsapp",
-                      ],
-                      [
-                        "Id" => 173943,
-                        "TableId" => 11135,
-                        "Name" => "E-mail",
-                      ],
-                    ],
+//      'meioContato' =>
+//                    [
+//                      [
+//                        "Id" => 173942,
+//                        "TableId" => 11135,
+//                        "Name" => "Telefone",
+//                      ],
+//                      [
+//                        "Id" => 173941,
+//                        "TableId" => 11135,
+//                        "Name" => "Whatsapp",
+//                      ],
+//                      [
+//                        "Id" => 173943,
+//                        "TableId" => 11135,
+//                        "Name" => "E-mail",
+//                      ],
+//                    ],
       'tipoPintura' =>
                     [
                       [
