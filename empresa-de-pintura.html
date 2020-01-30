@@ -707,6 +707,7 @@
       });
       if (validado === 1){
         ShowLoader();
+        var dataLayer = window.dataLayer || [];
         var formData = $("#formLandingPage").serializeArray();
         var dataObj = {};
         $(formData).each(function(i, field){
@@ -723,6 +724,9 @@
           success: function (data) {
             if(data.tipo==="sucesso"){
               HideLoader();
+              dataLayer.push({
+                'event': 'marcarConversao'
+              });
               toastr.success(data.mensagem,data.titulo);
             }
             else{

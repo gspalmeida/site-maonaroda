@@ -467,6 +467,7 @@ function enviaFormCalculadora() {
   });
   if (validado === 1){
     ShowLoader();
+    var dataLayer = window.dataLayer || [];
     var formData = $("#calculadoraForm").serializeArray();
     var dataObj = {};
     $(formData).each(function(i, field){
@@ -492,6 +493,9 @@ function enviaFormCalculadora() {
       dataType: "json",
       success: function (data) {
         if(data.tipo==="sucesso"){
+          dataLayer.push({
+            'event': 'marcarConversao'
+          });
           HideLoader();
           trocaSlide('.view4','.orcamentoEnviado');
           progressBarAnimate('100%');
@@ -533,6 +537,7 @@ function enviaFormPadrao() {
   });
   if (validado === 1){
     ShowLoader();
+    var dataLayer = window.dataLayer || [];
     var formData = $("#formPadrao").serializeArray();
     var dataObj = {};
     $(formData).each(function(i, field){
@@ -550,6 +555,9 @@ function enviaFormPadrao() {
       dataType: "json",
       success: function (data) {
         if(data.tipo==="sucesso"){
+          dataLayer.push({
+            'event': 'marcarConversao'
+          });
           HideLoader();
           trocaSlide('.base,#orcamento-padrao','#agradecimentoFormPadrao');
           toastr.success(data.mensagem,data.titulo);
