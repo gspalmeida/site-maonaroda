@@ -198,17 +198,17 @@ $valorOrcado[0] = $_POST['valorSemDesconto'];
 $valorOrcado[1] = $_POST['valorComDesconto'];
 $msgRetorno = [];
 
-//Valida os campos obrigatórios do formulário
-if(empty($name)||empty($visitor_email)||empty($phone)||empty($cep))
-{
-  $msgRetorno = [
-    'titulo'=>"Campos obrigatórios não foram preenchidos",
-    'mensagem'=>"Confira se digitou seu Nome, Email, Telefone e CEP",
-    'tipo'=>"erro"
-  ];
-  echo json_encode($msgRetorno);
-  exit;
-}
+////Valida os campos obrigatórios do formulário
+//if(empty($name)||empty($visitor_email)||empty($phone)||empty($cep))
+//{
+//  $msgRetorno = [
+//    'titulo'=>"Campos obrigatórios não foram preenchidos",
+//    'mensagem'=>"Confira se digitou seu Nome, Email, Telefone e CEP",
+//    'tipo'=>"erro"
+//  ];
+//  echo json_encode($msgRetorno);
+//  exit;
+//}
 
 
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php') ;
@@ -234,7 +234,7 @@ $mailer->Sender = "site@maonaroda.com"; //Email que envia
 $mailer->From = "site@maonaroda.com"; //Email que aparece pra quem recebe
 $mailer->FromName = "Site - Mão na Roda"; //Nome que aparece pra quem recebe
 //Pessoa que RECEBE o email
-$mailer->addAddress('comercial@maonaroda.com');
+$mailer->addAddress('gustavo@galileosoft.com.br');
 //Escreve o Email
 $mailer->CharSet = 'UTF-8';
 $mailer->isHTML(true);
