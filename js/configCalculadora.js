@@ -186,6 +186,12 @@ var cuponsDesconto = {
       "desconto":0.85,
       "validadeInicio":"25-10-2019",
       "validadeFinal":"31-12-2019"
+    },
+    {
+      "idCupom":"CLARO10",
+      "desconto":0.9,
+      "validadeInicio":"30-01-2020",
+      "validadeFinal":"01-01-2029"
     }
   ]
 };

@@ -179,6 +179,11 @@ class PloomesDeals
                         "TableId" => 10322,
                         "Name" => "cupomParaTracking",
                       ],
+                      [
+                        "Id" => 1148775,
+                        "TableId" => 10322,
+                        "Name" => "claro10",
+                      ],
                     ],
       'tipoImovel' =>
                     [
