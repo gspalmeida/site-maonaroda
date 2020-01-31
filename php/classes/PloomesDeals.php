@@ -152,12 +152,13 @@ class PloomesDeals
                         "Name" => "Interna",
                       ],
                     ],
+//  !!!IMPORTANTE!!!     Sempre adicionar o name do cupom com as letras maiúsculas, intependente de como está cadastrado lá no ploomes
       'cupomDesconto' =>
                     [
                       [
                         "Id" => 165900,
                         "TableId" => 10322,
-                        "Name" => "ecm15",
+                        "Name" => "ECM15",
                       ],
                       [
                         "Id" => 165901,
@@ -167,7 +168,7 @@ class PloomesDeals
                       [
                         "Id" => 165902,
                         "TableId" => 10322,
-                        "Name" => "quinto20",
+                        "Name" => "QUINTO20",
                       ],
                       [
                         "Id" => 814836,
@@ -177,12 +178,12 @@ class PloomesDeals
                       [
                         "Id" => 860318,
                         "TableId" => 10322,
-                        "Name" => "cupomParaTracking",
+                        "Name" => "CUPOMPARATRACKING",
                       ],
                       [
                         "Id" => 1148775,
                         "TableId" => 10322,
-                        "Name" => "claro10",
+                        "Name" => "CLARO10",
                       ],
                     ],
       'tipoImovel' =>
