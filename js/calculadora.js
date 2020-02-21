@@ -23,8 +23,10 @@ $(function setaValoresIniciais() {
   sessionStorage.clear();
   $('.btn-tipo-imovel:first-child').addClass('active');
   $('.btn-tipo-pintura:first-child').addClass('active');
+  $('.btn-tamanho-imovel:first-child').addClass('active');
   armazenaDados('tipoImovel','Casa');
   armazenaDados('tipoPintura','Interna');
+  armazenaDados('tamanhoImovel','0');
   armazenaDados('tipoMaterial','0');
   armazenaDados('coefDesconto','1');
   armazenaDados('valorOrcado','0');
