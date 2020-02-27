@@ -29,22 +29,26 @@ $(document).ready(function scrollSpy() {
         var pagina = window.location.pathname;
         var start = pagina.lastIndexOf("/");
         var stop = pagina.lastIndexOf(".");
-        if(pagina.substr(start+1,stop-start-1)==='') {
-            if(pagina.substr(start+1)!==''){
 
-            }else{
-              $(document).ready(function () {
+        if(pagina.substr(start+1)===''){
+            $(document).ready(function () {
                 $('#navbar-index').addClass('active');
-              });
-            }
-        }else{
-            $(document).ready( function () {
-                $('#navbar-' + pagina.substr(start + 1, stop - start - 1)).addClass('active');
             });
+        }else{
+            if (stop === -1){
+                $(document).ready( function () {
+                    $('#navbar-' + pagina.substr(start + 1)).addClass('active');
+                });
+            }
+            else {
+                $(document).ready( function () {
+                    $('#navbar-' + pagina.substr(start + 1, stop - start - 1)).addClass('active');
+                });
+            }
         }
     }
     else {
-        setTimeout(scrollSpy,1);
+        setTimeout(scrollSpy,10);
     }
 });
 //ScrollToTop Navbar
