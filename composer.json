@@ -4,6 +4,6 @@
         "educoder/pest": "^1.0",
         "monolog/monolog": "^2.0",
         "saintsystems/odata-client": "^0.2.6",
-      "ext-json": "*"
+        "ext-json": "*"
     }
 }
