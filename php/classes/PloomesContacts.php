@@ -33,6 +33,9 @@ class PloomesContacts
       case 'Orgânico':
         $retorno = 120222;
         break;
+      case 'Indicação':
+        $retorno = 56875;
+        break;
       default:
         $retorno = 120222; // Orgânico
     }
