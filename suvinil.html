@@ -146,8 +146,9 @@
         </div>
       </div>
     </section>
+    <!--Tela Inicial da Calculadora-->
     <section class="1stSection orcamento hide-section" id="navegacao-principal">
-      <div class="container-fluid">
+      <div class="container-fluid" id="header-calculadora">
         <div class="row justify-content-center pt-3">
           <div class="col-12 text-center">
             <p class="h4-responsive text-center fw-500 mb-1">Falta pouco para colorirmos o seu ambiente!</p>
@@ -159,7 +160,9 @@
           </div>
         </div>
         <hr>
-        <div class="row justify-content-center base">
+      </div>
+      <div class="container-fluid" id="detalhesImovel">
+        <div class="row justify-content-center base" id="tipoImovel">
           <div class="col-12 text-center">
             <p class="h4-responsive text-center fw-400 mb-1">
               <span class="texto-menor">
@@ -242,229 +245,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="container-fluid height60vh flex-center orcamento hide-section" id="calculadora">
-      <div class="row justify-content-center align-items-center w-100">
-        <div class="col-12 order-2 d-flex d-md-none mb-4 text-center" style="height: auto!important;">
-          <div class="card card-cascade cascading-admin-card w-100">
-            <div class="admin-up d-flex">
-              <div class="align-items-center justify-content-center mb-2 d-flex blue-icon-panel px-2 py-2 rounded size-13rem text-center z-depth-2 w-100 h-75">
-                <p class="mb-0 mx-1 text-white"> Orçamento Prévio </p>
-              </div>
-            </div>
-            <div class="admin-up flex-column card-body d-flex px-0 pb-1">
-              <div class="container-fluid">
-                <div class="row mt-3">
-                  <div class="w-65 mx-auto">
-                    <p class="card-text text-center">
-                      Progresso:
-                    </p>
-                    <div class="progress md-progress" style="height: 20px">
-                      <div class="progress-bar animatebar" role="progressbar" style="width: 15%; height: 20px" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="progressBar-mobile">10%</div>
-                    </div>
-                  </div>
-                  <div class="data mt-0 mx-auto" id="valorWrapper-mobile">
-                    <p class="fw-500 text-center valorEstimadoTitle">Valor Estimado</p>
-                    <div class="d-flex align-items-center justify-content-center flex-column">
-                      <h5 class="valorEstimado"> --- $</h5>
-                      <h5 class="valorBaseCupomAtivo mb-0 hide-section valoresMobile"></h5>
-                      <h5 class="valorDescontoCupomAtivo hide-section valoresMobile"></h5>
-                    </div>
-                  </div>
-                  <div class="card-wrapper card-wrapper-fix view4" id="cupomWrapper-mobile">
-                    <div id="flipCard-mobile" class="card-rotating text-center d-flex align-items-center justify-content-center">
-                      <div class="face front">
-                        <div class="justify-content-center">
-                          <div class="cupom-wrapper">
-                            <p class="mx-auto text-center fw-300 my-0">Tem um cupom de desconto?
-                            </p>
-                            <p class="mx-auto text-center fw-300 my-0">
-                              <a class="inserir-cupom rotate-btn fw-500" data-card="flipCard-mobile">
-                                Clique aqui
-                              </a>
-                              para ativá-lo!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="face back d-flex justify-content-center align-items-center">
-                        <div class="justify-content-center align-items-center d-flex flex-nowrap inserirCupom">
-                          <div class="my-2">
-                            <div class="md-form md-outline md-outline-custom my-1">
-                              <input type="text" class="form-control mb-0 pr-2" id="input-cupom-mobile">
-                              <label for="input-cupom-mobile">Insira o Cupom:</label>
-                            </div>
-                          </div>
-                          <div class="my-2">
-                            <a onclick="validarCupom()" class="btn btn-rounded btn-sm btn-verde-escuro">Ativar</a>
-                          </div>
-                        </div>
-                        <div class="row justify-content-center align-items-center d-flex hide-section cupomInserido">
-                          <div class="cupom-wrapper cupom-ativo my-0">
-                            <p class="mx-auto text-center fw-500 my-0">
-                              Cupom de Desconto Ativado <i class="fas pl-2 fa-check"></i>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="calculadora-controls">
-                <div class="row justify-content-center base">
-                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaViewBase();">Próximo</a>
-                </div>
-                <div class="row justify-content-center hide-section view1">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
-                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView1();">Próximo</a>
-                </div>
-                <div class="row justify-content-center hide-section view2">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
-                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView2();">Próximo</a>
-                </div>
-                <div class="row justify-content-center hide-section view3">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
-                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView3();">Próximo</a>
-                </div>
-                <div class="row justify-content-center hide-section view4">
-                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                  <a type="submit" class="btn enviarFormulario waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora()">
-                    Enviar!
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center hide-section orcamentoEnviado">
-              <div class="col-11">
-                <p class="h5-responsive text-center fw-400 mb-1">
-                  Agradecemos a solicitação de orçamento e estamos ansiosos para renovar as suas cores.
-                </p>
-                <p class="h5-responsive text-center fw-500 mb-4">
-                  Em breve entraremos em contato para confirmação e agendamento.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-7 order-2 d-none d-md-flex mb-4" style="height: fit-content">
-          <div class="card mx-auto card-cascade cascading-admin-card w-100">
-            <div class="admin-up d-flex" id="navegadorHeader-PC">
-              <i class="far fa-money-bill-alt text-center blue-icon-panel" id="iconCalculadora-PC"></i>
-              <div class="align-self-center d-flex mx-auto" style="float: right;margin-top: 2rem;">
-                <p class="h4-responsive text-center fw-500 mb-0">
-                  <span class="texto-menor">
-                    Orçamento Prévio:
-                  </span>
-                </p>
-              </div>
-              <div class="data">
-                <p class="fw-500 text-center valorEstimadoTitle">Valor Estimado</p>
-                <div class="d-flex align-items-center justify-content-center flex-column">
-                  <h5 class="valorEstimado"> --- $</h5>
-                </div>
-              </div>
-            </div>
-            <div class="card-body px-0 py-0 card-body-cascade">
-              <div class="container-fluid">
-                <div class="row justify-content-center">
-                  <div class="w-65 mx-auto">
-                    <p class="card-text text-center">
-                      Progresso:
-                    </p>
-                    <div class="progress md-progress" style="height: 20px">
-                      <div class="progress-bar animatebar" role="progressbar" style="width: 10%; height: 20px" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" id="progressBar-pc">10%</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center hide-section valoresPC">
-                  <h5 class="valorBaseCupomAtivo fw-500 mt-2 mb-0"></h5>
-                  <h5 class="valorDescontoCupomAtivo"></h5>
-                </div>
-                <div class="card-wrapper card-wrapper-fix view4" id="cardWrapper-pc">
-                  <div id="flipCard-pc" class="card-rotating text-center d-flex align-items-center justify-content-center">
-                    <div class="face front">
-                      <div class="row justify-content-center">
-                        <div class="cupom-wrapper">
-                          <p class="mx-auto text-center fw-300">Tem um cupom de desconto?
-                          </p>
-                          <p class="mx-auto text-center fw-300">
-                            <a class="inserir-cupom rotate-btn fw-500" data-card="flipCard-pc">
-                              Clique aqui
-                            </a>
-                            para ativá-lo!
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="face back d-flex align-items-center justify-content-center">
-                      <div class="row justify-content-center align-items-center d-flex inserirCupom">
-                        <div class="my-2">
-                          <div class="md-form md-outline md-outline-custom my-1">
-                            <input type="text" class="form-control mb-0 pr-2" id="input-cupom">
-                            <label for="input-cupom">Insira o Cupom:</label>
-                          </div>
-                        </div>
-                        <div class="my-2">
-                          <a onclick="validarCupom()" class="btn btn-rounded btn-sm btn-verde-escuro">Ativar</a>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center align-items-center d-flex hide-section cupomInserido">
-                        <div class="cupom-wrapper cupom-ativo my-2">
-                          <p class="mx-auto text-center fw-500 mt-2">
-                            Cupom de Desconto Ativado <i class="fas pl-2 fa-check"></i>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="calculadora-controls">
-                    <div class="row justify-content-center base">
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
-                    </div>
-                    <div class="row justify-content-center hide-section view1">
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView1();">Próximo</a>
-                    </div>
-                    <div class="row justify-content-center hide-section view2">
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView2();">Próximo</a>
-                    </div>
-                    <div class="row justify-content-center hide-section view3">
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView3();">Próximo</a>
-                    </div>
-                    <div class="row justify-content-center hide-section view4">
-                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
-                      <a type="submit" class="btn enviarFormulario waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora()">
-                        Enviar!
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="row justify-content-center hide-section orcamentoEnviado">
-                  <div class="col-10">
-                    <p class="h5-responsive text-center fw-400 mb-1">
-                    <span class="texto-maior">
-                      Agradecemos a solicitação de orçamento e estamos ansiosos para renovar as suas cores.
-                    </span>
-                    </p>
-                    <p class="h4-responsive text-center fw-500 mb-4">
-                    <span class="texto-menor">
-                      Em breve entraremos em contato para confirmação e agendamento.
-                    </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="col-12 base order-1 justify-content-center" id="alturaParede">
           <div class="col-12 text-center">
             <p class="h4-responsive text-center fw-400 pt-3 mb-1">
@@ -511,7 +291,13 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-7 view1 order-1 justify-content-center hide-section" id="calculadora-view1">
+      </div>
+    </section>
+    <!--Corpo da Calculadora-->
+    <section class="container-fluid orcamento hide-section" id="calculadora">
+      <!--Telas Calculadora-->
+      <div class="row justify-content-center align-items-center" id="telasCalculadora">
+        <div class="col-12 col-md-7 view1 justify-content-center hide-section" id="calculadora-view1">
           <div class="row justify-content-center">
             <div class="col-12 col-xl-8">
               <p class="h5-responsive text-center fw-500 mt-2 mb-0">
@@ -600,7 +386,7 @@
             <!--<div class="col-md-2 d-none d-sm-flex"></div>-->
           </div>
         </div>
-        <div class="col-12 col-md-7 view2 order-1 justify-content-center hide-section" id="calculadora-view2">
+        <div class="col-12 col-md-7 view2 justify-content-center hide-section" id="calculadora-view2">
           <div class="row">
             <div class="col-12">
               <p class="h5-responsive text-center fw-400 mt-2 mb-0">
@@ -705,11 +491,11 @@
             </div>
           </div>
           <!--<div class="row justify-content-center">-->
-            <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view1')">Anterior</a>-->
-            <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view3')">Próximo</a>-->
+          <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view1')">Anterior</a>-->
+          <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view3')">Próximo</a>-->
           <!--</div>-->
         </div>
-        <div class="col-12 col-md-10 view3 order-1 justify-content-center hide-section" id="calculadora-view3">
+        <div class="col-12 col-md-10 view3 justify-content-center hide-section" id="calculadora-view3">
           <div class="row">
             <div class="col-12">
               <p class="h5-responsive text-center fw-400 mt-2 mb-0">
@@ -724,20 +510,20 @@
               <div class="table-responsive-xl scrollbar-primary text-nowrap table-hover">
                 <table class="table table-sm scrollbar-primary">
                   <thead>
-                    <tr>
-                      <th scope="col">Cômodos</th>
-                      <th scope="col" class="text-center">Paredes</th>
-                      <th scope="col" class="text-center">Teto</th>
-                      <th scope="col" class="text-center">Molduras</th>
-                      <th scope="col" class="text-center">Rodapés</th>
-                      <th scope="col" class="text-left">Qtd. Portas</th>
-                      <th scope="col" class="text-left">
-                        Observações
-                        <i class="fas fa-info material-tooltip-main" data-toggle="tooltip" data-placement="top"
-                           title="As Informações desse campo nao serão contempladas no valor do orçamento prévio"
-                           style="font-size: 0.7rem;position: relative;top: -7px;left: 3px;"></i>
-                      </th>
-                    </tr>
+                  <tr>
+                    <th scope="col">Cômodos</th>
+                    <th scope="col" class="text-center">Paredes</th>
+                    <th scope="col" class="text-center">Teto</th>
+                    <th scope="col" class="text-center">Molduras</th>
+                    <th scope="col" class="text-center">Rodapés</th>
+                    <th scope="col" class="text-left">Qtd. Portas</th>
+                    <th scope="col" class="text-left">
+                      Observações
+                      <i class="fas fa-info material-tooltip-main" data-toggle="tooltip" data-placement="top"
+                         title="As Informações desse campo nao serão contempladas no valor do orçamento prévio"
+                         style="font-size: 0.7rem;position: relative;top: -7px;left: 3px;"></i>
+                    </th>
+                  </tr>
                   </thead>
                   <tbody id="table-body">
                   </tbody>
@@ -750,7 +536,7 @@
           <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view2','.view3')">Próximo</a>-->
           <!--</div>-->
         </div>
-        <div class="col-12 col-md-7 view4 order-1 justify-content-center hide-section" id="calculadora-view4">
+        <div class="col-12 col-md-7 view4 justify-content-center hide-section" id="calculadora-view4">
           <div class="row justify-content-center">
             <div class="col-11">
               <p class="h5-responsive text-center fw-400 mt-2">
@@ -796,8 +582,230 @@
             </div>
           </div>
           <!--<div class="row justify-content-center">-->
-            <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view3','.view2')">Passo Anterior</a>-->
+          <!--<a class="btn btn-outline-laranjado mb-4" onclick="trocaSlide('.view3','.view2')">Passo Anterior</a>-->
           <!--</div>-->
+        </div>
+      </div>
+      <!--Navegação Celular e PC-->
+      <div class="row justify-content-center align-items-center" id="navegacaoCalculadora">
+        <div class="col-12 d-flex d-md-none mb-4 text-center" style="height: auto!important;" id="navegacaoCelular">
+          <div class="card card-cascade cascading-admin-card w-100">
+            <div class="admin-up d-flex">
+              <div class="align-items-center justify-content-center mb-2 d-flex blue-icon-panel px-2 py-2 rounded size-13rem text-center z-depth-2 w-100 h-75">
+                <p class="mb-0 mx-1 text-white"> Orçamento Prévio </p>
+              </div>
+            </div>
+            <div class="admin-up flex-column card-body d-flex px-0 pb-1">
+              <div class="container-fluid">
+                <div class="row mt-3">
+                  <div class="w-65 mx-auto">
+                    <p class="card-text text-center">
+                      Progresso:
+                    </p>
+                    <div class="progress md-progress" style="height: 20px">
+                      <div class="progress-bar animatebar" role="progressbar" style="width: 15%; height: 20px" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="progressBar-mobile">10%</div>
+                    </div>
+                  </div>
+                  <div class="data mt-0 mx-auto" id="valorWrapper-mobile">
+                    <p class="fw-500 text-center valorEstimadoTitle">Valor Estimado</p>
+                    <div class="d-flex align-items-center justify-content-center flex-column">
+                      <h5 class="valorEstimado"> --- $</h5>
+                      <h5 class="valorBaseCupomAtivo mb-0 hide-section valoresMobile"></h5>
+                      <h5 class="valorDescontoCupomAtivo hide-section valoresMobile"></h5>
+                    </div>
+                  </div>
+                  <div class="card-wrapper card-wrapper-fix view4" id="cupomWrapper-mobile">
+                    <div id="flipCard-mobile" class="card-rotating text-center d-flex align-items-center justify-content-center">
+                      <div class="face front">
+                        <div class="justify-content-center">
+                          <div class="cupom-wrapper">
+                            <p class="mx-auto text-center fw-300 my-0">Tem um cupom de desconto?
+                            </p>
+                            <p class="mx-auto text-center fw-300 my-0">
+                              <a class="inserir-cupom rotate-btn fw-500" data-card="flipCard-mobile">
+                                Clique aqui
+                              </a>
+                              para ativá-lo!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="face back d-flex justify-content-center align-items-center">
+                        <div class="justify-content-center align-items-center d-flex flex-nowrap inserirCupom">
+                          <div class="my-2">
+                            <div class="md-form md-outline md-outline-custom my-1">
+                              <input type="text" class="form-control mb-0 pr-2" id="input-cupom-mobile">
+                              <label for="input-cupom-mobile">Insira o Cupom:</label>
+                            </div>
+                          </div>
+                          <div class="my-2">
+                            <a onclick="validarCupom()" class="btn btn-rounded btn-sm btn-verde-escuro">Ativar</a>
+                          </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center d-flex hide-section cupomInserido">
+                          <div class="cupom-wrapper cupom-ativo my-0">
+                            <p class="mx-auto text-center fw-500 my-0">
+                              Cupom de Desconto Ativado <i class="fas pl-2 fa-check"></i>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="calculadora-controls">
+                <div class="row justify-content-center base">
+                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaViewBase();">Próximo</a>
+                </div>
+                <div class="row justify-content-center hide-section view1">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
+                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView1();">Próximo</a>
+                </div>
+                <div class="row justify-content-center hide-section view2">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
+                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView2();">Próximo</a>
+                </div>
+                <div class="row justify-content-center hide-section view3">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
+                  <a class="btn size-094rem btn-laranjado borderRadius7px fw-500 waves-effect waves-light text-white" onclick="validaView3();">Próximo</a>
+                </div>
+                <div class="row justify-content-center hide-section view4">
+                  <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
+                  <a type="submit" class="btn enviarFormulario waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora();">
+                    Enviar!
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 d-none d-md-flex mb-4" style="height: fit-content" id="navegacaoPC">
+          <div class="card mx-auto card-cascade cascading-admin-card w-100">
+            <div class="admin-up d-flex" id="navegadorHeader-PC">
+              <i class="far fa-money-bill-alt text-center blue-icon-panel" id="iconCalculadora-PC"></i>
+              <div class="align-self-center d-flex mx-auto" style="float: right;margin-top: 2rem;">
+                <p class="h4-responsive text-center fw-500 mb-0">
+                  <span class="texto-menor">
+                    Orçamento Prévio:
+                  </span>
+                </p>
+              </div>
+              <div class="data">
+                <p class="fw-500 text-center valorEstimadoTitle">Valor Estimado</p>
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                  <h5 class="valorEstimado"> --- $</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0 py-0 card-body-cascade">
+              <div class="container-fluid">
+                <div class="row justify-content-center">
+                  <div class="w-65 mx-auto">
+                    <p class="card-text text-center">
+                      Progresso:
+                    </p>
+                    <div class="progress md-progress" style="height: 20px">
+                      <div class="progress-bar animatebar" role="progressbar" style="width: 10%; height: 20px" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" id="progressBar-pc">10%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center hide-section valoresPC">
+                  <h5 class="valorBaseCupomAtivo fw-500 mt-2 mb-0"></h5>
+                  <h5 class="valorDescontoCupomAtivo"></h5>
+                </div>
+                <div class="card-wrapper card-wrapper-fix view4" id="cardWrapper-pc">
+                  <div id="flipCard-pc" class="card-rotating text-center d-flex align-items-center justify-content-center">
+                    <div class="face front">
+                      <div class="row justify-content-center">
+                        <div class="cupom-wrapper">
+                          <p class="mx-auto text-center fw-300">Tem um cupom de desconto?
+                          </p>
+                          <p class="mx-auto text-center fw-300">
+                            <a class="inserir-cupom rotate-btn fw-500" data-card="flipCard-pc">
+                              Clique aqui
+                            </a>
+                            para ativá-lo!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="face back d-flex align-items-center justify-content-center">
+                      <div class="row justify-content-center align-items-center d-flex inserirCupom">
+                        <div class="my-2">
+                          <div class="md-form md-outline md-outline-custom my-1">
+                            <input type="text" class="form-control mb-0 pr-2" id="input-cupom">
+                            <label for="input-cupom">Insira o Cupom:</label>
+                          </div>
+                        </div>
+                        <div class="my-2">
+                          <a onclick="validarCupom()" class="btn btn-rounded btn-sm btn-verde-escuro">Ativar</a>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center align-items-center d-flex hide-section cupomInserido">
+                        <div class="cupom-wrapper cupom-ativo my-2">
+                          <p class="mx-auto text-center fw-500 mt-2">
+                            Cupom de Desconto Ativado <i class="fas pl-2 fa-check"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center" id="controleCalculadora">
+                  <div class="calculadora-controls">
+                    <div class="row justify-content-center base">
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaViewBase();">Próximo</a>
+                    </div>
+                    <div class="row justify-content-center hide-section view1">
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view1','.base');progressBarAnimate('10%');">Anterior</a>
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView1();">Próximo</a>
+                    </div>
+                    <div class="row justify-content-center hide-section view2">
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view2','.view1');progressBarAnimate('20%');">Anterior</a>
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView2();">Próximo</a>
+                    </div>
+                    <div class="row justify-content-center hide-section view3">
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view3','.view2');progressBarAnimate('40%');">Anterior</a>
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="validaView3();">Próximo</a>
+                    </div>
+                    <div class="row justify-content-center hide-section view4">
+                      <a class="btn btn-outline-laranjado mb-2 waves-effect waves-light" onclick="trocaSlide('.view4','.view3');progressBarAnimate('60%')">Voltar</a>
+                      <a type="submit" class="btn enviarFormulario waves-effect borderRadius7px fw-500 waves-light btn-laranjado" onclick="enviaFormCalculadora()">
+                        Enviar!
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid orcamentoEnviado 1stSection hide-section mt-4" id="orcamentoEnviado">
+      <!--Corpo Orcamento Enviado PC-->
+      <div class="row justify-content-center align-items-center">
+        <div class="col-11 col-lg-10 card card-cascade narrower z-depth-1-half mt-3 mb-4">
+          <div class="row">
+            <div class="col-10 col-xl-5 col-lg-12 mr-0 mx-auto view view-cascade gradient-card-header light-blue lighten-1">
+              <h2 class="h2-responsive mb-0 fw-600">Orçamento Solicitado</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card-body card-body-cascade pb-0">
+              <p class="h5-responsive text-center fw-400 mb-1">
+                Agradecemos a solicitação de orçamento e estamos ansiosos para renovar as suas cores.
+              </p>
+              <p class="h5-responsive text-center fw-500">
+                Em breve entraremos em contato para confirmação e agendamento.
+              </p>
+              <hr class="w-75">
+              <div id="corpoResumoOrcamento"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

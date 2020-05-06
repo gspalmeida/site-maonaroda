@@ -1158,6 +1158,11 @@ td .form-control{
 .tableLabel{
   left: 0!important;
 }
+/*Resumo Orçamento Calculadora*/
+.border-orcamento{
+  border: 1px solid rgb(224, 225, 226);
+  border-radius: 5px;
+}
 /*Footer*/
 .footer-custom-color{
   background-color: #413f40;

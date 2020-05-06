@@ -177,6 +177,9 @@ function mudaTipoImovel(tipoImovel) {
 function atualizaValorEstimado(valorOrcado) {
   valorOrcado[0] = Math.ceil(valorOrcado[0])+',00';
   valorOrcado[1] = Math.ceil(valorOrcado[1])+',00';
+  valorOrcado[2] = Math.ceil(valorOrcado[2])+',00';
+  valorOrcado[3] = Math.ceil(valorOrcado[3])+',00';
+  valorOrcado[4] = Math.ceil(valorOrcado[4])+',00';
   if(valorOrcado[0] === valorOrcado[1]){
     $('.valorEstimado').html('R$ '+valorOrcado[0]);
   }
@@ -192,7 +195,7 @@ function atualizaValorEstimado(valorOrcado) {
     $('.valoresMobile').removeClass('hide-section').addClass('zoomIn animated');
     $('.valoresPC').removeClass('hide-section').addClass('tada animated');
   }
-  armazenaDados('valorOrcado',valorOrcado[0]+'-'+valorOrcado[1]);
+  armazenaDados('valorOrcado',valorOrcado[0]+'-'+valorOrcado[1]+'-'+valorOrcado[2]+'-'+valorOrcado[3]+'-'+valorOrcado[4]);
 }
 function notificaErro(titulo,mensagem) {
   toastr.error(mensagem,titulo);
@@ -256,6 +259,38 @@ function Comodo(id,tipo,parede,teto,moldura,rodape,qtdPortas,observacoes) {
   this.rodape = rodape;
   this.qtdPortas = qtdPortas;
   this.observacoes = observacoes;
+}
+function trataAlturaPeDireito(alturaPeDireito){
+  var stringAlturaPeDireito = '';
+  if(alturaPeDireito==0){
+    stringAlturaPeDireito = 'COMUM - Até 2,7 M';
+  }
+  else if (alturaPeDireito==1){
+    stringAlturaPeDireito = 'DUPLO - Até 4,5 M';
+  }
+  else if (alturaPeDireito==2){
+    stringAlturaPeDireito = 'TRIPLO - Mais de 4,5 M';
+  }
+  return stringAlturaPeDireito;
+}
+function trataTamanhoImovel(tamanhoImovel){
+  var stringTamanhoImovel = '';
+  if(tamanhoImovel==0){
+    stringTamanhoImovel = 'Até 50 M²';
+  }
+  else if (tamanhoImovel==1){
+    stringTamanhoImovel = "Até 75 M²";
+  }
+  else if (tamanhoImovel==2){
+    stringTamanhoImovel = "Até 100 M²";
+  }
+  else if (tamanhoImovel==3){
+    stringTamanhoImovel = "Até 150 M²";
+  }
+  else if (tamanhoImovel==4){
+    stringTamanhoImovel = "Maior que 150 M²";
+  }
+  return stringTamanhoImovel;
 }
 //Transforma do ID do elemento html para o formato de tipoComodo
 function capturaTipo(elementID) {
@@ -385,7 +420,7 @@ function validaView1() {
   }
 }
 function validaView2() {
-  var validado = 0
+  var validado = 0;
   $('#view2-slide1 > div > div > div.radio-card-icon').each(function (index) {
     if($(this).hasClass("active")){
       validado = 1;
@@ -444,6 +479,296 @@ function validaView3() {
     },1000);
   }
 }
+function checkOrNot(item) {
+  const check = '<i class="fas fa-check"></i>';
+  const notCheck = '<i class="fas fa-times"></i>';
+  if (item === true){
+    return check
+  }else{
+    return notCheck
+  }
+}
+function trataCamposTabela($campoAtual){
+  if ($campoAtual==='dormitorio'){
+    $campoTratado = 'Dormitório';
+  }
+  else if ($campoAtual==='banheiro'){
+    $campoTratado = 'Banheiro';
+  }
+  else if ($campoAtual==='cozinha'){
+    $campoTratado = 'Cozinha';
+  }
+  else if ($campoAtual==='halldeentrada'){
+    $campoTratado = 'Hall De Entrada';
+  }
+  else if ($campoAtual==='corredor'){
+    $campoTratado = 'Corredor';
+  }
+  else if ($campoAtual==='sacada'){
+    $campoTratado = 'Sacada';
+  }
+  else if ($campoAtual==='sala'){
+    $campoTratado = 'Sala';
+  }
+  else if ($campoAtual==='lavanderia'){
+    $campoTratado = 'Lavanderia';
+  }
+  else if ($campoAtual==='id'){
+    $campoTratado = 'ID';
+  }
+  else if ($campoAtual==='tipo'){
+    $campoTratado = 'Tipo';
+  }
+  else if ($campoAtual==='parede'){
+    $campoTratado = 'Parede';
+  }
+  else if ($campoAtual==='teto'){
+    $campoTratado = 'Teto';
+  }
+  else if ($campoAtual==='moldura'){
+    $campoTratado = 'Moldura';
+  }
+  else if ($campoAtual==='rodape'){
+    $campoTratado = 'Rodapé';
+  }
+  else if ($campoAtual==='qtdPortas'){
+    $campoTratado = 'Quantidade de Portas';
+  }
+  else if ($campoAtual==='observacoes'){
+    $campoTratado = 'Observações';
+  }
+  return $campoTratado;
+}
+function tabelaComodos(comodos) {
+  var qtdComodos = comodos.length;
+  var texto = '';
+
+  for (var i = 0; i<qtdComodos; i++){
+    texto=
+        texto +
+        `<div class="col-12 col-md-6 py-2">
+        <div class="border-orcamento">
+          <table class="table table-sm table-striped mb-0">
+            <thead>
+              <tr>
+                <th class="text-center" colspan="2">
+                  <h4 class="fw-500">
+                  `
+                    + trataCamposTabela(comodos[i].tipo) + " " +  (i+1) +
+                  `
+                  </h4>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Pintar Parede?
+                </td>
+                <td>
+                  `
+                    + checkOrNot(comodos[i].parede) +
+                  `
+                </td>
+              </tr>
+              <tr>
+                <td>Pintar Teto?</td>
+                <td>
+                  `
+                    + checkOrNot(comodos[i].teto) +
+                  `
+                </td>
+              </tr>
+              <tr>
+                <td>Pintar Moldura?</td>
+                <td>
+                  `
+                    + checkOrNot(comodos[i].moldura) +
+                  `
+                </td>
+              </tr>
+              <tr>
+                <td>Pintar Rodapé?</td>
+                <td>
+                  `
+                    + checkOrNot(comodos[i].rodape) +
+                  `
+                </td>
+              </tr>
+              <tr>
+                <td>Qtd. Portas</td>
+                <td>
+                  `
+                    + comodos[i].qtdPortas +
+                  `
+                </td>
+              </tr>
+              <tr>
+                <td>Observações</td>
+                <td>
+                  `
+                    + comodos[i].observacoes +
+                  `
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      `;
+  }
+  return texto
+}
+function gerarResumoOrcamento(dadosOrcamento) {
+  $('#corpoResumoOrcamento').append(
+      "<div class=\"row justify-content-center align-items-start\" id=\"corpoResumoOrcamento-infoGeral\">\n" +
+      "                  <h3 class=\"fw-500 w-100 text-center\">Informações Gerais</h3>\n" +
+      "                  <div class=\"col-12 col-md-6\">\n" +
+      "                    <div class=\"border-orcamento mb-3\">\n" +
+      "                      <table class=\"table table-sm table-striped mb-0\">\n" +
+      "                        <thead>\n" +
+      "                        <tr>\n" +
+      "                          <th class=\"text-center\" colspan=\"2\">\n" +
+      "                            <h4 class=\"fw-500\">Dados para Contato</h4>\n" +
+      "                          </th>\n" +
+      "                        </tr>\n" +
+      "                        </thead>\n" +
+      "                        <tbody>\n" +
+      "                        <tr>\n" +
+      "                          <td>\n" +
+      "                            Nome\n" +
+      "                          </td>\n" +
+      "                          <td>\n" +
+      "                            \n" + dadosOrcamento['nome'] +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Telefone</td>\n" +
+      "                          <td>\n" +  dadosOrcamento['telefone'] + "</td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Email</td>\n" +
+      "                          <td>\n" +  dadosOrcamento['email'] + "</td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>CEP</td>\n" +
+      "                          <td>\n" +  dadosOrcamento['CEP'] + "</td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Mensagem</td>\n" +
+      "                          <td>\n" +  dadosOrcamento['mensagem'] + "</td>\n" +
+      "                        </tr>\n" +
+      "                        </tbody>\n" +
+      "                      </table>\n" +
+      "                    </div>\n" +
+      "                  </div>\n" +
+      "                  <div class=\"col-12 col-md-6\">\n" +
+      "                    <div class=\"border-orcamento\">\n" +
+      "                      <table class=\"table table-sm table-striped mb-0\">\n" +
+      "                        <thead>\n" +
+      "                        <tr>\n" +
+      "                          <th class=\"text-center\" colspan=\"2\">\n" +
+      "                            <h4 class=\"fw-500\">Descrição do Imóvel</h4>\n" +
+      "                          </th>\n" +
+      "                        </tr>\n" +
+      "                        </thead>\n" +
+      "                        <tbody>\n" +
+      "                        <tr>\n" +
+      "                          <td>\n" +
+      "                            Tipo do Imóvel\n" +
+      "                          </td>\n" +
+      "                          <td>\n" +
+      "                            \n" + dadosOrcamento['tipoImovel'] +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Tamanho total do Imóvel</td>\n" +
+      "                          <td>\n" +  trataTamanhoImovel(dadosOrcamento['tamanhoImovel']) + "</td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Tipo de Pintura</td>\n" +
+      "                          <td>\n" +  dadosOrcamento['tipoPintura'] + "</td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td>Altura do Pé Direito</td>\n" +
+      "                          <td>\n" +  trataAlturaPeDireito(dadosOrcamento['alturaParede']) + "</td>\n" +
+      "                        </tr>\n" +
+      "                        </tbody>\n" +
+      "                      </table>\n" +
+      "                    </div>\n" +
+      "                  </div>\n" +
+      "                </div>\n" +
+      "                <hr class=\"w-75\">\n" +
+      "                <div class=\"row\" id=\"corpoResumoOrcamento-comodos\">\n" +
+      "                  <h3 class=\"fw-500 w-100 text-center\">Cômodos</h3>\n" +
+      tabelaComodos(dadosOrcamento['comodos']) +
+      "                </div>\n" +
+      "                <hr class=\"w-75\">\n" +
+      "                <div class=\"row justify-content-center align-items-start\" id=\"corpoResumoOrcamento-valor\">\n" +
+      "                  <h3 class=\"fw-500 w-100 text-center\">Resumo do orçamento</h3>\n" +
+      "                  <div class=\"col-12 col-md-6 pt-2 pb-4\">\n" +
+      "                    <div class=\"border-orcamento\">\n" +
+      "                      <table class=\"table table-sm table-striped mb-0\">\n" +
+      "                        <thead>\n" +
+      "                        <tr>\n" +
+      "                          <th class=\"text-center\" colspan=\"2\">\n" +
+      "                            <h4 class=\"fw-500\">Resumo do Orçamento</h4>\n" +
+      "                          </th>\n" +
+      "                        </tr>\n" +
+      "                        </thead>\n" +
+      "                        <tbody>\n" +
+      "                        <tr>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            Valor da Mão de Obra\n" +
+      "                          </td>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            R$ \n"  + dadosOrcamento['valorMOComDesconto'] +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            Valor do Material\n" +
+      "                          </td>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            R$ \n" + dadosOrcamento['valorMaterial'] +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            Valor das Ferramentas\n" +
+      "                          </td>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            R$ \n" + dadosOrcamento['valorFerramentas'] +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr >\n" +
+      "                          <td class=\"text-right fw-600 texto-maior\" style=\"text-decoration: underline\">\n" +
+      "                            Garantia de 100% de Satisfação\n" +
+      "                          </td>\n" +
+      "                          <td class=\"text-right fw-600 texto-maior\">\n" +
+      "                            Inclusa\n" +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        <tr>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            <h3 class=\"fw-400\">\n" +
+      "                              Total\n" +
+      "                            </h3>\n" +
+      "                          </td>\n" +
+      "                          <td class=\"text-right\">\n" +
+      "                            <h3 class=\"fw-500\">\n" +
+      "                              R$ \n" + dadosOrcamento['valorComDesconto'] +
+      "                            </h3>\n" +
+      "                          </td>\n" +
+      "                        </tr>\n" +
+      "                        </tbody>\n" +
+      "                      </table>\n" +
+      "                    </div>\n" +
+      "                  </div>\n" +
+      "                </div>"
+  );
+}
+
 function enviaFormCalculadora() {
   var tamanhoImovel = sessionStorage.getItem('tamanhoImovel');
   var tipoAlturaParede = sessionStorage.getItem('alturaParede');
@@ -457,6 +782,10 @@ function enviaFormCalculadora() {
   var valorOrcado = sessionStorage.getItem('valorOrcado').replace(/,/g,'.').split('-');
   var valorSemDesconto = valorOrcado[0];
   var valorComDesconto = valorOrcado[1];
+  var valorMaterial = valorOrcado[2];
+  var valorMO = valorOrcado[3];
+  var valorMOComDesconto = valorOrcado[4];
+  var valorFerramentas = Math.ceil(valorMaterial*0.1);
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
 
@@ -486,24 +815,29 @@ function enviaFormCalculadora() {
     dataObj["cupomDesconto"] = cupomDesconto;
     dataObj["valorSemDesconto"] = valorSemDesconto;
     dataObj["valorComDesconto"] = valorComDesconto;
+    dataObj["valorMaterial"] = valorMaterial-valorFerramentas;
+    dataObj["valorFerramentas"] = valorFerramentas;
+    dataObj["valorMO"] = valorMO;
+    dataObj["valorMOComDesconto"] = valorMOComDesconto;
     dataObj["comodos"] = comodos;
     dataObj["submit"] = 'ok';
     $.ajax({
-      type: "POST",
-      url: "php/handlerPloomesDeals.php",
-      data: dataObj,
-      dataType: "json",
-      success: function (data) {
-        if(data.tipo==="sucesso"){
-          dataLayer.push({
-            'event': 'marcarConversao'
-          });
-          HideLoader();
-          trocaSlide('.view4','.orcamentoEnviado');
-          progressBarAnimate('100%');
-          toastr.success(data.mensagem,data.titulo);
-        }
-        else{
+          type: "POST",
+          url: "php/handlerPloomesDeals.php",
+          data: dataObj,
+          dataType: "json",
+          success: function (data) {
+            if(data.tipo==="sucesso"){
+              dataLayer.push({
+                'event': 'marcarConversao'
+              });
+              HideLoader();
+              gerarResumoOrcamento(dataObj);
+              trocaSlide('.orcamento','.orcamentoEnviado');
+              progressBarAnimate('100%');
+              toastr.success(data.mensagem,data.titulo);
+            }
+            else{
           $.ajax({
             type: "POST",
             url: "php/handlerCalculadora.php",
@@ -697,13 +1031,22 @@ function capturaValor(tipoPintura,tipoMaterial) {
   var coefDesconto = sessionStorage.getItem('coefDesconto');
   var valorBase = 0;
   var valorDesconto = 0;
+  var valorMaterial = 0;
+  var valorMO = 0;
+  var valorMODesconto = 0;
   var valorPorMetro = [];
   arrayValoresComodos.forEach(function (index) {
     if(index.tipoPintura === tipoPintura){
       valorBase = index.maoObra + index.valorMaterial[tipoMaterial];
       valorDesconto = (index.maoObra*coefDesconto) + index.valorMaterial[tipoMaterial];
+      valorMaterial = index.valorMaterial[tipoMaterial];
+      valorMO = index.maoObra;
+      valorMODesconto = index.maoObra*coefDesconto;
       valorPorMetro[0]=valorBase;
       valorPorMetro[1]=valorDesconto;
+      valorPorMetro[2]=valorMaterial;
+      valorPorMetro[3]=valorMO;
+      valorPorMetro[4]=valorMODesconto;
     }
   });
   return valorPorMetro
@@ -742,7 +1085,9 @@ function geraOrcamento() {
   var i=0;
   var valorOrcadoBase = 0.00;
   var valorOrcadoDesconto = 0.00;
-  var valorPortas = 0.00;
+  var valorOrcadoMaterial = 0.00;
+  var valorMaoObra = 0.00;
+  var valorMaoObraDesconto = 0.00;
   var qtdPortas = 0;
   var custoPorMetro = [0,0];
   var tamanhoComodo = 0;
@@ -760,32 +1105,46 @@ function geraOrcamento() {
       custoPorMetro = capturaValor('parede',tipoMaterial);
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
+      valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
+      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
+      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].teto===true){
       custoPorMetro = capturaValor('teto',tipoMaterial);
       tamanhoComodo = capturaTamanho('teto',comodos[i].tipo,tamanhoImovel);
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
+      valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
+      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
+      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].moldura===true){
       custoPorMetro = capturaValor('moldura',tipoMaterial);
       tamanhoComodo = capturaTamanho('moldura',comodos[i].tipo,tamanhoImovel);
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
+      valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
+      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
+      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].rodape===true){
       custoPorMetro = capturaValor('rodape',tipoMaterial);
       tamanhoComodo = capturaTamanho('moldura',comodos[i].tipo,tamanhoImovel);
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
+      valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
+      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
+      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
   }
   if(qtdPortas>0){
     valorPortas = calculaValorPortas(qtdPortas, tipoMaterial);
     valorOrcadoBase += valorPortas[0];
     valorOrcadoDesconto += valorPortas[1];
+    valorMaoObra = valorPortas[0] + (custoPorMetro[3]*tamanhoComodo);
+    valorMaoObraDesconto = valorPortas[1] + (custoPorMetro[4]*tamanhoComodo);
   }
-  valoresOrcados = [valorOrcadoBase,valorOrcadoDesconto];
+  valoresOrcados = [valorOrcadoBase,valorOrcadoDesconto,valorOrcadoMaterial,valorMaoObra,valorMaoObraDesconto];
   atualizaValorEstimado(valoresOrcados);
   return valoresOrcados
 }
