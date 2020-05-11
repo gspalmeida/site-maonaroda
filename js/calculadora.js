@@ -620,6 +620,7 @@ function tabelaComodos(comodos) {
   return texto
 }
 function gerarResumoOrcamento(dadosOrcamento) {
+  var valorTotal = dadosOrcamento['valorFerramentas'] + dadosOrcamento['valorMaterial'] + parseInt(dadosOrcamento['valorMOComDesconto']);
   $('#corpoResumoOrcamento').append(
       "<div class=\"row justify-content-center align-items-start\" id=\"corpoResumoOrcamento-infoGeral\">\n" +
       "                  <h3 class=\"fw-500 w-100 text-center\">Informações Gerais</h3>\n" +
@@ -722,7 +723,7 @@ function gerarResumoOrcamento(dadosOrcamento) {
       "                            Valor da Mão de Obra\n" +
       "                          </td>\n" +
       "                          <td class=\"text-right\">\n" +
-      "                            R$ \n"  + dadosOrcamento['valorMOComDesconto'] +
+      "                            R$ \n"  + parseInt(dadosOrcamento['valorMOComDesconto']) +",00"+
       "                          </td>\n" +
       "                        </tr>\n" +
       "                        <tr>\n" +
@@ -730,7 +731,7 @@ function gerarResumoOrcamento(dadosOrcamento) {
       "                            Valor do Material\n" +
       "                          </td>\n" +
       "                          <td class=\"text-right\">\n" +
-      "                            R$ \n" + dadosOrcamento['valorMaterial'] +
+      "                            R$ \n" + dadosOrcamento['valorMaterial'] + ",00"+
       "                          </td>\n" +
       "                        </tr>\n" +
       "                        <tr>\n" +
@@ -738,7 +739,7 @@ function gerarResumoOrcamento(dadosOrcamento) {
       "                            Valor das Ferramentas\n" +
       "                          </td>\n" +
       "                          <td class=\"text-right\">\n" +
-      "                            R$ \n" + dadosOrcamento['valorFerramentas'] +
+      "                            R$ \n" + dadosOrcamento['valorFerramentas'] + ",00"+
       "                          </td>\n" +
       "                        </tr>\n" +
       "                        <tr >\n" +
@@ -757,7 +758,7 @@ function gerarResumoOrcamento(dadosOrcamento) {
       "                          </td>\n" +
       "                          <td class=\"text-right\">\n" +
       "                            <h3 class=\"fw-500\">\n" +
-      "                              R$ \n" + dadosOrcamento['valorComDesconto'] +
+      "                              R$ \n" + valorTotal + ",00"+
       "                            </h3>\n" +
       "                          </td>\n" +
       "                        </tr>\n" +
@@ -782,10 +783,10 @@ function enviaFormCalculadora() {
   var valorOrcado = sessionStorage.getItem('valorOrcado').replace(/,/g,'.').split('-');
   var valorSemDesconto = valorOrcado[0];
   var valorComDesconto = valorOrcado[1];
-  var valorMaterial = valorOrcado[2];
+  var valorMaterial = Math.ceil(valorOrcado[2]*0.9);
   var valorMO = valorOrcado[3];
   var valorMOComDesconto = valorOrcado[4];
-  var valorFerramentas = Math.ceil(valorMaterial*0.1);
+  var valorFerramentas = Math.floor(valorOrcado[2]*0.1);
   var comodos = JSON.parse(sessionStorage.getItem('comodos'));
   var validado = 1;
 
@@ -815,7 +816,7 @@ function enviaFormCalculadora() {
     dataObj["cupomDesconto"] = cupomDesconto;
     dataObj["valorSemDesconto"] = valorSemDesconto;
     dataObj["valorComDesconto"] = valorComDesconto;
-    dataObj["valorMaterial"] = valorMaterial-valorFerramentas;
+    dataObj["valorMaterial"] = valorMaterial;
     dataObj["valorFerramentas"] = valorFerramentas;
     dataObj["valorMO"] = valorMO;
     dataObj["valorMOComDesconto"] = valorMOComDesconto;
@@ -854,7 +855,13 @@ function enviaFormCalculadora() {
             }
           });
         }
-      }
+      },
+          error: function (data) {
+            HideLoader();
+            gerarResumoOrcamento(dataObj);
+            trocaSlide('.orcamento','.orcamentoEnviado');
+            progressBarAnimate('100%');
+          }
     });
   }
 }
@@ -1106,8 +1113,6 @@ function geraOrcamento() {
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
       valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
-      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
-      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].teto===true){
       custoPorMetro = capturaValor('teto',tipoMaterial);
@@ -1115,8 +1120,6 @@ function geraOrcamento() {
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
       valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
-      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
-      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].moldura===true){
       custoPorMetro = capturaValor('moldura',tipoMaterial);
@@ -1124,8 +1127,6 @@ function geraOrcamento() {
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
       valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
-      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
-      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
     if(comodos[i].rodape===true){
       custoPorMetro = capturaValor('rodape',tipoMaterial);
@@ -1133,17 +1134,14 @@ function geraOrcamento() {
       valorOrcadoBase = valorOrcadoBase + (custoPorMetro[0]*tamanhoComodo);
       valorOrcadoDesconto = valorOrcadoDesconto + (custoPorMetro[1]*tamanhoComodo);
       valorOrcadoMaterial = valorOrcadoMaterial + (custoPorMetro[2]*tamanhoComodo);
-      valorMaoObra = valorMaoObra + (custoPorMetro[3]*tamanhoComodo);
-      valorMaoObraDesconto = valorMaoObraDesconto + (custoPorMetro[4]*tamanhoComodo);
     }
   }
   if(qtdPortas>0){
     valorPortas = calculaValorPortas(qtdPortas, tipoMaterial);
     valorOrcadoBase += valorPortas[0];
     valorOrcadoDesconto += valorPortas[1];
-    valorMaoObra = valorPortas[0] + (custoPorMetro[3]*tamanhoComodo);
-    valorMaoObraDesconto = valorPortas[1] + (custoPorMetro[4]*tamanhoComodo);
   }
+  valorMaoObraDesconto = valorOrcadoDesconto - valorOrcadoMaterial;
   valoresOrcados = [valorOrcadoBase,valorOrcadoDesconto,valorOrcadoMaterial,valorMaoObra,valorMaoObraDesconto];
   atualizaValorEstimado(valoresOrcados);
   return valoresOrcados
