@@ -192,6 +192,12 @@ var cuponsDesconto = {
       "desconto":0.9,
       "validadeInicio":"30-01-2020",
       "validadeFinal":"01-01-2029"
+    },
+    {
+      "idCupom":"VANTAGEM5A",
+      "desconto":0.88,
+      "validadeInicio":"19-05-2020",
+      "validadeFinal":"31-12-2020"
     }
   ]
 };
