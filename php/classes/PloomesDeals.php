@@ -185,6 +185,21 @@ class PloomesDeals
                         "TableId" => 10322,
                         "Name" => "CLARO10",
                       ],
+                      [
+                        "Id" => 5852018,
+                        "TableId" => 10322,
+                        "Name" => "VANTAGEM5A",
+                      ],
+                      [
+                        "Id" => 6587216,
+                        "TableId" => 10322,
+                        "Name" => "CLARISSE3",
+                      ],
+                      //[
+//                        "Id" => xxxx,
+//                        "TableId" => 10322,
+//                        "Name" => "xxxx",
+//                      ],
                     ],
       'tipoImovel' =>
                     [

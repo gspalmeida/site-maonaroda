@@ -198,6 +198,12 @@ var cuponsDesconto = {
       "desconto":0.88,
       "validadeInicio":"19-05-2020",
       "validadeFinal":"31-12-2020"
+    },
+    {
+      "idCupom":"CLARICE3",
+      "desconto":0.97,
+      "validadeInicio":"13-07-2020",
+      "validadeFinal":"31-12-2020"
     }
   ]
 };
