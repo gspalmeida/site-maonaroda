@@ -1,4 +1,6 @@
-//Input - e +
+//Sempre que fizer alterações nesses arquivos da calculadora, lembrar que elas tem que ser replicadas em todas as páginas de parceiross
+
+//Input customizado "- e +"
 function changeValue(click,type) {
     var input = click.parentNode.querySelector('input[type=number]');
     if(type ==='minus'){
@@ -473,6 +475,7 @@ function validaView3() {
   }
   else{
     notificaErro('Você esqueceu um campo obrigatório','É necessário marcar ao menos uma opção para área de pintura(Parede, Teto, Moldura ou Rodapé)');
+    //Highlight dos itens errados na table
     setTimeout(function () {
       $("tbody#table-body > tr:not(.animated)").removeClass('bg-color-rosa-claro');
       $("tbody#table-body > tr").removeClass('animated pulse');

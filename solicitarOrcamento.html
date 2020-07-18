@@ -1,3 +1,5 @@
+<!-- Sempre que fizer alterações nesses arquivos da calculadora, lembrar que elas tem que ser replicadas em todas as páginas de parceiross -->
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -213,7 +215,7 @@
         </div>
       </div>
     </section>
-    <!--Corpo da Calculadora-->
+    <!--Corpo da Calculadora (Views para preenchimento + Navegação)-->
     <section class="container-fluid orcamento" id="calculadora">
       <!--Telas Calculadora-->
       <div class="row justify-content-center align-items-center" id="telasCalculadora">
@@ -705,6 +707,7 @@
         </div>
       </div>
     </section>
+    <!-- Tela de agradecimento/resumo orçamento após geração do orçamento no ploomes (populado via js na function gerarResumoOrcamento em calculadora.js)    -->
     <section class="container-fluid orcamentoEnviado 1stSection hide-section mt-4" id="orcamentoEnviado">
       <!--Corpo Orcamento Enviado PC-->
       <div class="row justify-content-center align-items-center">
@@ -723,12 +726,14 @@
                 Em breve entraremos em contato para confirmação e agendamento.
               </p>
               <hr class="w-75">
+              <!--  Div que recebe o resumo do orçamento de caluladora.js-->
               <div id="corpoResumoOrcamento"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Form para quando não tem orçamento na calculadora (só coleta dados pessoais)-->
     <div class="container hide-section" id="orcamento-padrao">
       <div class="row justify-content-center">
         <div class="col-11">
