@@ -195,6 +195,31 @@ class PloomesDeals
                         "TableId" => 10322,
                         "Name" => "CLARISSE3",
                       ],
+                      [
+                        "Id" => 7005434,
+                        "TableId" => 10322,
+                        "Name" => "RAFASOARES",
+                      ],
+                      [
+                        "Id" => 7005438,
+                        "TableId" => 10322,
+                        "Name" => "TAUHANEB",
+                      ],
+                      [
+                        "Id" => 7005443,
+                        "TableId" => 10322,
+                        "Name" => "MATHEUSP",
+                      ],
+                      [
+                        "Id" => 7005449,
+                        "TableId" => 10322,
+                        "Name" => "SUSANACON",
+                      ]
+//                      [
+//                        "Id" => xxxx,
+//                        "TableId" => 10322,
+//                        "Name" => "xxxx",
+//                      ],
 //                      [
 //                        "Id" => xxxx,
 //                        "TableId" => 10322,

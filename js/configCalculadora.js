@@ -204,6 +204,30 @@ var cuponsDesconto = {
       "desconto":0.97,
       "validadeInicio":"13-07-2020",
       "validadeFinal":"31-12-2020"
+    },
+    {
+      "idCupom":"RAFASOARES",
+      "desconto":0.95,
+      "validadeInicio":"20-07-2020",
+      "validadeFinal":"31-12-2021"
+    },
+    {
+      "idCupom":"TAUHANEB",
+      "desconto":0.95,
+      "validadeInicio":"20-07-2020",
+      "validadeFinal":"31-12-2021"
+    },
+    {
+      "idCupom":"MATHEUSP",
+      "desconto":0.95,
+      "validadeInicio":"20-07-2020",
+      "validadeFinal":"31-12-2021"
+    },
+    {
+      "idCupom":"SUSANACON",
+      "desconto":0.95,
+      "validadeInicio":"20-07-2020",
+      "validadeFinal":"31-12-2021"
     }
   ]
 };
